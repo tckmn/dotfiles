@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='ftp://ftp.keyboardfire.com//'
+let g:netrw_dirhist_2='ftp://ftp.keyboardfire.com//home/'
+let g:netrw_dirhist_3='ftp://ftp.keyboardfire.com//'
+let g:netrw_dirhist_4='ftp://ftp.keyboardfire.com//home/'
+let g:netrw_dirhist_5='ftp://ftp.keyboardfire.com//'
+let g:netrw_dirhist_6='ftp://ftp.keyboardfire.com//home/'
+let g:netrw_dirhist_7='ftp://ftp.keyboardfire.com//'
+let g:netrw_dirhist_8='/home/llama/Documents/latex/DancingWizard'
