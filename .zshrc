@@ -1,9 +1,9 @@
 setopt histignorealldups sharehistory
 
-# Keep 1000 lines of history within the shell and save it to ~/Misc/ZSH_HISTORY
-HISTFILESIZE=
-HISTSIZE=
-SAVEHIST=
+# Keep lots of lines of history within the shell and save it to ~/Misc/ZSH_HISTORY
+HISTFILESIZE=1000000
+HISTSIZE=1000000
+SAVEHIST=1000000
 HISTFILE=~/Misc/ZSH_HISTORY
 
 # Use modern completion system
@@ -100,3 +100,6 @@ alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
+
+# this is only temporary
+alias ksk="ps ax | grep 'python.*screenkey' | grep -o '^[0-9]*' | head -n1 | xargs kill"
