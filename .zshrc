@@ -100,6 +100,3 @@ alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
-
-# this is only temporary
-alias ksk="ps ax | grep 'python.*screenkey' | grep -o '^[0-9]*' | head -n1 | xargs kill"

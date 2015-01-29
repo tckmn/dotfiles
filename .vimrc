@@ -7,6 +7,9 @@ filetype plugin indent on
 
 " Vim-LaTeX plugin
 let g:tex_flavor='latex'
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_ViewRule_pdf='mimeopen'
+
 let g:html_indent_inctags = "html,body,head,tbody"
 
 " Generic global config
