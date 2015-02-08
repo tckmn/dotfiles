@@ -1,4 +1,5 @@
 setopt histignorealldups sharehistory
+export TERM=screen-256color
 
 # Keep lots of lines of history within the shell and save it to ~/Misc/ZSH_HISTORY
 HISTFILESIZE=1000000
