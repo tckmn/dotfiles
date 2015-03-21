@@ -5,7 +5,8 @@ import Graphics.X11.ExtraTypes.XF86
 main = xmonad $ defaultConfig { terminal = "gnome-terminal" }
     `additionalKeysP` [
         ("<Print>",   spawn "import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
-        ("M-<Print>", spawn "import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')")
+        ("M-<Print>", spawn "import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
+        ("M-s", spawn "~/.xmonad/toggle-dzen.sh")
     ]
     `additionalKeys` [
         ((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse set Master 5%-"),
