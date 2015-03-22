@@ -1,4 +1,5 @@
 import XMonad
+import qualified XMonad.StackSet as W
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
@@ -15,7 +16,8 @@ main = xmonad $ defaultConfig
         ("M-<Print>", spawn "import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
         ("M-S-s", sendMessage ToggleStruts),
         ("M-s", do
-        spawnPID "~/.xmonad/toggle-dzen.sh"
+        cur <- withWindowSet (return . W.currentTag)
+        spawn $ "~/.xmonad/toggle-dzen.sh " ++ cur
         liftIO $ threadDelay 100000
         sendMessage ToggleStruts)
     ]

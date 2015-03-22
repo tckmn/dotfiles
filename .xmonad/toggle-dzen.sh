@@ -35,7 +35,8 @@ else
 $(date '+%a. %b %d, %I:%M:%S %p') | \
 ^fg($(color $battery))^r($((battery))x20)^ro($((100-battery))x20)^r(5x10)$charging^fg() | \
 ^fg($(color $volume))^co(100)^p(-$((50+volume/2)))^c($volume)^p(+$((51-volume/2)))^fg() | \
-^i($HOME/.xmonad/network-wireless-signal-$network-symbolic.xpm)"
+^i($HOME/.xmonad/network-wireless-signal-$network-symbolic.xpm) | \
+Workspace $1"
         sleep 0.1
     done
     ) | dzen2 -fn 'monospace-20' &
