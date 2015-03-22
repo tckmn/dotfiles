@@ -1,16 +1,23 @@
 import XMonad
+import XMonad.Hooks.ManageDocks
 import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
+import Control.Concurrent
 
-main = xmonad $ defaultConfig 
+main = xmonad $ defaultConfig
     {
         terminal = "gnome-terminal",
-        borderWidth = 3
+        borderWidth = 3,
+        layoutHook = avoidStruts $ layoutHook defaultConfig
     }
     `additionalKeysP` [
         ("<Print>",   spawn "import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
         ("M-<Print>", spawn "import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
-        ("M-s", spawn "~/.xmonad/toggle-dzen.sh")
+        ("M-S-s", sendMessage ToggleStruts),
+        ("M-s", do
+        spawnPID "~/.xmonad/toggle-dzen.sh"
+        liftIO $ threadDelay 100000
+        sendMessage ToggleStruts)
     ]
     `additionalKeys` [
         ((0, xF86XK_AudioLowerVolume), spawn "amixer -D pulse set Master 5%-"),

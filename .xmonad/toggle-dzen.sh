@@ -38,5 +38,5 @@ $(date '+%a. %b %d, %I:%M:%S %p') | \
 ^i($HOME/.xmonad/network-wireless-signal-$network-symbolic.xpm)"
         sleep 0.1
     done
-    ) | dzen2 -y 100 -fn 'monospace-25' &
+    ) | dzen2 -fn 'monospace-20' &
 fi
