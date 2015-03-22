@@ -1,7 +1,7 @@
 #!/bin/bash
-if [ $(pidof dzen2) ]
+if [ "$(pidof -x toggle-dzen.sh | grep ' [^ ]* ')" ]
 then
-    killall dzen2
+    killall toggle-dzen.sh
 else
     (
     while :
