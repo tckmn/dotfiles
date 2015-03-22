@@ -2,7 +2,11 @@ import XMonad
 import XMonad.Util.EZConfig
 import Graphics.X11.ExtraTypes.XF86
 
-main = xmonad $ defaultConfig { terminal = "gnome-terminal" }
+main = xmonad $ defaultConfig 
+    {
+        terminal = "gnome-terminal",
+        borderWidth = 3
+    }
     `additionalKeysP` [
         ("<Print>",   spawn "import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
         ("M-<Print>", spawn "import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')"),
