@@ -10,34 +10,47 @@ function color {
 # cp /usr/share/icons/gnome/scalable/status/network-wireless-signal-*-symbolic.svg .; for x in *.svg; do inkscape -z -e $(basename $x .svg).png -w 32 -h 32 $x; convert $(basename $x .svg).png -background white -alpha Background $(basename $x .svg).xpm; done; rm *.svg *.png
 # I know. Very very ugly :(
 
+# to use the extrabar() function, add -l 1 to the dzen2 command
+
 # Just For Fun(tm): change the line that sets battery to
 # battery=$((10#$(date +%N | cut -c 1-2)))
 # and remove the sleep 0.1.
+
+function bar {
+    battery=$(upower -d | grep percentage | grep -o '[0-9]*')
+    charging=$([ "$(upower -d | grep state | grep discharging)" ] && echo -n '' || echo -n ' ⚡')
+    volume=$(amixer -D pulse get Master | grep -o '[0-9]*%' | head -n1 | grep -o '[0-9]*')
+    network=$(bc -l <<< "x=$(iwconfig 2>/dev/null | grep -o '[0-9]\+/[0-9]*')*4;scale=0;x/1")
+    case $network in
+        0) network=weak ;;
+        1) network=ok ;;
+        2) network=good ;;
+        3) network=excellent ;;
+        4) network=excellent ;;
+    esac
+    echo "^tw()\
+^fg(white)^bg(#444) $(date '+%a. %b %d, %I:%M:%S %p') ^fg()^bg() | \
+^fg($(color $battery))^r($((battery))x20)^ro($((100-battery))x20)^r(5x10)$charging^fg() | \
+^fg($(color $volume))^co(100)^p(-$((50+volume/2)))^c($volume)^p(+$((51-volume/2)))^fg() | \
+^i($HOME/.xmonad/network-wireless-signal-$network-symbolic.xpm)"
+}
+
+function extrabar {
+    echo 'insert extra stuff here'
+}
 
 if [ "$(pidof -x toggle-dzen.sh | grep ' [^ ]* ')" ]
 then
     killall toggle-dzen.sh
 else
     (
+    echo
+    extrabar
+
     while :
     do
-        battery=$(upower -d | grep percentage | grep -o '[0-9]*')
-        charging=$([ "$(upower -d | grep state | grep discharging)" ] && echo -n '' || echo -n ' ⚡')
-        volume=$(amixer -D pulse get Master | grep -o '[0-9]*%' | head -n1 | grep -o '[0-9]*')
-        network=$(bc -l <<< "x=$(iwconfig 2>/dev/null | grep -o '[0-9]\+/[0-9]*')*4;scale=0;x/1")
-        case $network in
-            0) network=weak ;;
-            1) network=ok ;;
-            2) network=good ;;
-            3) network=excellent ;;
-        esac
-        echo "\
-$(date '+%a. %b %d, %I:%M:%S %p') | \
-^fg($(color $battery))^r($((battery))x20)^ro($((100-battery))x20)^r(5x10)$charging^fg() | \
-^fg($(color $volume))^co(100)^p(-$((50+volume/2)))^c($volume)^p(+$((51-volume/2)))^fg() | \
-^i($HOME/.xmonad/network-wireless-signal-$network-symbolic.xpm) | \
-Workspace $1"
-        sleep 0.1
+        bar
+        sleep 0.2
     done
-    ) | dzen2 -fn 'monospace-20' &
+    ) | dzen2 -fn 'monospace-20' -e "onstart=lower;entertitle=uncollapse;leaveslave=collapse" -sa c &
 fi
