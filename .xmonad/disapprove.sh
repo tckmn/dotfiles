@@ -1,1 +1,1 @@
-echo -n ಠ_ಠ | xclip -i
+echo -n ಠ_ಠ | xclip -selection clipboard

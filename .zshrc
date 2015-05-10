@@ -78,14 +78,13 @@ alias cmatrix="cmatrix -b -u 9"
 alias xcowsay="xcowsay -f monospace"
 alias dwarf="~/Games/df/df"
 alias nao="telnet nethack.alt.org"
+alias bsdgames="apt show bsdgames | tail -n6"
 
 # system toggles
 # true or false
 alias automount="gsettings set org.gnome.desktop.media-handling automount"
 # on or off
 alias monitor="xset dpms force"
-# start or stop
-alias xwindow="sudo service lightdm"
 
 # system status
 alias ipaddr="ifconfig -a | grep inet"
@@ -95,8 +94,8 @@ alias battery="upower -d | grep percentage"
 alias say="spd-say"
 alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
-alias fixcaps="/usr/bin/setxkbmap -option 'ctrl:nocaps'"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
+alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
