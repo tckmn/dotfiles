@@ -150,6 +150,9 @@ bindcode 248 exec amixer -D pulse set Master toggle
 bindsym XF86Sleep exec xbacklight +10%
 bindsym XF86Battery exec xbacklight -10%
 
+# "copy text" tool
+bindsym $mod+c exec ~/.i3/copy_tool.sh
+
 # commands to run on init
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id nm-applet
