@@ -3,7 +3,7 @@
 loadplugins '\.(js|penta)$'
 group user
 map -count -modes=n <C-m> -builtin <count><C-^>
-map -count -modes=n gc -builtin <count>thttp://chat.stackexchange.com/rooms/4/teachers-lounge<cr>thttp://chat.stackexchange.com/rooms/240/the-nineteenth-byte<cr>thttp://chat.stackexchange.com/rooms/14524/the-green-llama<cr>thttp://chat.stackexchange.com/rooms/14918/puzzling-overlords<cr>thttp://chat.stackexchange.com/rooms/11540/charcoal-hq<cr>thttp://chat.meta.stackexchange.com/rooms/89/tavern-on-the-meta<cr>thttp://chat.stackexchange.com/rooms/20803/chat<cr>thttp://chat.stackexchange.com/rooms/22119/tavern-tl-chess<cr>
+map -count -modes=n gc -builtin <count>thttp://chat.stackexchange.com/rooms/4/teachers-lounge<cr>thttp://chat.meta.stackexchange.com/rooms/89/tavern-on-the-meta<cr>thttp://chat.stackoverflow.com/rooms/62927/rust<cr>
 map -count -modes=n <C-h> -builtin <count><C-p>
 map -count -modes=n <C-j> -builtin <count><C-n>
 map -count -modes=n <C-k> -builtin <count><C-p>
