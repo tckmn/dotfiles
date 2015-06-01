@@ -102,8 +102,8 @@ bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
 
 # scratchpad
-bindsym $mod+z move scratchpad
-bindsym $mod+Shift+z scratchpad show
+bindsym $mod+z scratchpad show
+bindsym $mod+Shift+z move scratchpad
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
