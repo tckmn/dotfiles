@@ -133,6 +133,7 @@ mode "resize" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym Space mode "default"
+        bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -154,8 +155,16 @@ mode "mouse" {
         # return to normal
         bindsym Escape mode "default"
         bindsym Space mode "default"
+        bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
+
+mode "nethack" {
+        bindsym --release $mod+e exec ~/.i3/elbereth.sh
+
+        bindsym $mod+n mode "default"
+}
+bindsym $mod+n mode "nethack"
 
 # screenshot keys
 bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')

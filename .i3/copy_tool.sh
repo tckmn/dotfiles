@@ -1,5 +1,4 @@
 echo -n "$(zenity --list --text 'Copy what?' --hide-header --column x \
-    "$(printf 'E-  Elbereth\n]')" \
     ಠ_ಠ \
 )" \
 | perl -e 'my $s = do { local $/; <STDIN> }; $s =~ s/(.*)\|\1/\1/s; print $s' \
