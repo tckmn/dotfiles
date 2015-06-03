@@ -130,11 +130,32 @@ mode "resize" {
         bindsym Up resize shrink height $mv or $mvppt
         bindsym Right resize grow width $mv or $mvppt
 
-        # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
+        bindsym Space mode "default"
 }
 bindsym $mod+r mode "resize"
+
+set $mspeed 5
+mode "mouse" {
+        bindsym h exec xdotool mousemove_relative -- -$mspeed 0
+        bindsym j exec xdotool mousemove_relative -- 0 $mspeed
+        bindsym k exec xdotool mousemove_relative -- 0 -$mspeed
+        bindsym l exec xdotool mousemove_relative -- $mspeed 0
+
+        bindsym Left exec xdotool mousemove_relative -- -$mspeed 0
+        bindsym Down exec xdotool mousemove_relative -- 0 $mspeed
+        bindsym Up exec xdotool mousemove_relative -- 0 -$mspeed
+        bindsym Right exec xdotool mousemove_relative -- $mspeed 0
+
+        bindsym Return exec xdotool click 1
+        bindsym Shift+Return exec xdotool click 3
+
+        # return to normal
+        bindsym Escape mode "default"
+        bindsym Space mode "default"
+}
+bindsym $mod+m mode "mouse"
 
 # screenshot keys
 bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
