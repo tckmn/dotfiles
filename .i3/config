@@ -111,20 +111,13 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# resize mode (can also resize things via mouse)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
         bindsym h resize shrink width $mv or $mvppt
         bindsym j resize grow height $mv or $mvppt
         bindsym k resize shrink height $mv or $mvppt
         bindsym l resize grow width $mv or $mvppt
 
-        # same bindings, but for the arrow keys
         bindsym Left resize shrink width $mv or $mvppt
         bindsym Down resize grow height $mv or $mvppt
         bindsym Up resize shrink height $mv or $mvppt
@@ -132,7 +125,7 @@ mode "resize" {
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
-        bindsym Space mode "default"
+        bindsym space mode "default"
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
@@ -169,7 +162,7 @@ mode "mouse" {
 
         # return to normal
         bindsym Escape mode "default"
-        bindsym Space mode "default"
+        bindsym space mode "default"
         bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
@@ -201,7 +194,6 @@ mode "skype" {
 
         # return to normal
         bindsym Escape mode "default"
-        bindsym Space mode "default"
 }
 bindsym $mod+Shift+s mode "skype"
 
