@@ -96,6 +96,7 @@ alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
+alias pgrep='pgrep -a'
 
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
@@ -117,3 +118,5 @@ export PATH=$NDK_ROOT:$PATH
 export ANDROID_SDK_ROOT=/home/llama/Programs/android-sdk-linux
 export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
+
+export PATH=$PATH:/home/llama/Android/Sdk/platform-tools
