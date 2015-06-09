@@ -114,18 +114,11 @@ mode "skype" {
         bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; \
                               exec xdotool click 1
         bindsym Insert exec ~/.i3/ijs.sh
-        # ugly line
-        bindsym Alt_L \
-            exec echo 1 | dzen2 -x 175 -y  55 -w 30 -h 30 -p 1; \
-            exec echo 2 | dzen2 -x 175 -y  95 -w 30 -h 30 -p 1; \
-            exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; \
-            exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; \
-            exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; \
-            exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; \
-            exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; \
-            exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; \
-            exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; \
-            exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
+        # somewhat hackish
+        bindsym Alt_L !!<\>
+          exec echo !!1..9,0 | dzen2 -x 175 -y !<55+40*!!<0..9>> \
+            -w 30 -h 30 -p 1; !!<\>
+          nop
         # return to normal
         bindsym !!Escape,$mod+Shift+s mode "default"
 }

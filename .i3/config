@@ -1,5 +1,7 @@
+##########
 # Generated via i3bang (https://github.com/KeyboardFire/i3bang).
 # Original file: _config
+##########
 set $mod Mod1
 font pango:monospace 8
 new_window normal 0 px
@@ -138,7 +140,7 @@ mode "skype" {
         bindsym $mod+9 exec xdotool mousemove 90 390; exec xdotool click 1
         bindsym $mod+0 exec xdotool mousemove 90 430; exec xdotool click 1
         bindsym Insert exec ~/.i3/ijs.sh
-        bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
+        bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1; nop
         bindsym Escape mode "default"
         bindsym $mod+Shift+s mode "default"
 }
