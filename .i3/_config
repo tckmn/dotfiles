@@ -1,7 +1,9 @@
 # i3 config file (with i3bang)
 #!nobracket
 
-# VARIABLES
+###############################################################################
+#                                  VARIABLES                                  #
+###############################################################################
 
 set $mod Mod1              # left alt
 font pango:monospace 8     # window titles, status bar
@@ -15,7 +17,9 @@ exec --no-startup-id !!<\  # commands to run on init
   xflux -z 77024\
 >
 
-# KEY BINDINGS
+###############################################################################
+#                                 KEY BINDINGS                                #
+###############################################################################
 
 bindsym $mod+Shift+Return \                 # start a terminal
   exec i3-sensible-terminal
@@ -65,7 +69,9 @@ bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
   exec xbacklight !!<+,->10%                #   because my laptop is weird (found via xev)
 bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
 
-# MODES
+###############################################################################
+#                                    MODES                                    #
+###############################################################################
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
@@ -125,7 +131,9 @@ mode "skype" {
 }
 bindsym $mod+Shift+s mode "skype"
 
-# STATUS BAR
+###############################################################################
+#                                  STATUS BAR                                 #
+###############################################################################
 
 bar {
     status_command          i3status -c ~/.i3/i3status.conf
