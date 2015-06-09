@@ -21,7 +21,9 @@ bindsym $mod+Shift+Return \                 # start a terminal
   exec i3-sensible-terminal
 bindsym $mod+Return exec dmenu_run          # start dmenu
 bindsym $mod+d kill                         # delete focused window
-bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,Left,Down,Up,Right !!2!focus,move !!<1!left,down,up,right>!!<2!, $mv>  # focused window manipulation, vikeys and arrow key support
+bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
+  Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
+  !!<1!left,down,up,right>!!<2!, $mv>
 bindsym $mod+!!backslash,minus split !!h,v  # split (backslash is on same key as |, but no shift)
 bindsym $mod+f fullscreen toggle            # fullscreen
 bindsym $mod+!!q,w,e \
@@ -47,21 +49,28 @@ bindsym $mod!!<,+Shift>+z \                 # scratchpad
 bindsym $mod+Shift+c \
   exec ~/.i3/i3bang.rb; reload              # reload config file and rerun i3bang
 bindsym $mod+Shift+r restart                # restart i3 inplace
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"  # exit i3 (logs you out of your X session)
-bindsym !!<1!,$mod+>Print exec import!!<1! -window root , >$(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')  # screenshot keys
+bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
+  -t warning -m 'You pressed the exit \
+  shortcut. Do you really want to exit \
+  i3? This will end your X session.' \
+  -b 'Yes, exit i3' 'i3-msg exit'
+bindsym !!<1!,$mod+>Print exec import \     # screenshot keys
+  !!<1!-window root ,>$(date '+Pictures/\
+  screenshot_%Y-%m-%d_%H:%M:%S.png')
 bindsym XF86Audio!!<Raise,Lower>Volume \
   exec amixer -D pulse set Master 5%!!+,-   # volume keys
-bindcode 248 exec amixer -D pulse set Master toggle
-# these ones are weird because my laptop is weird (found via xev)
-bindsym XF86!!Sleep,Battery \
-  exec xbacklight !!<+,->10%                # brightness keys
+bindcode 248 \
+  exec amixer -D pulse set Master toggle
+bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
+  exec xbacklight !!<+,->10%                #   because my laptop is weird (found via xev)
 bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
 
 # MODES
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
-        bindsym !!h,j,k,l,Left,Down,Up,Right resize !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
+        bindsym !!h,j,k,l,Left,Down,Up,Right resize \
+          !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
 
         bindsym !!Return,Escape,space,$mod+r mode "default"
 }
@@ -69,16 +78,19 @@ bindsym $mod+r mode "resize"
 
 # mouse mode (moving the cursor and clicking)
 !@<*mousemove
-exec xdotool mousemove_relative !!1!-!s,0,0,!s,-!s,!s,-!s,!s !!1!0,!s,-!s,-,-!s,-!s,!s,!s>
+exec xdotool mousemove_relative !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
+                                !!1!0,!s,-!s,-,-!s,-!s,!s,!s>
 mode "mouse" {
         !s = 20  # hjkl speed
         bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
         !s = 8  # numpad speed
         bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
         # arrow keys: precise, 1-pixel movements
-        bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- !!<-1 0,0 1,0 -1,1 0>
+        bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- \
+          !!<-1 0,0 1,0 -1,1 0>
         # clicking and such
-        bindsym !!Return,Shift+Return,period,comma exec xdotool !!<click 1,click 3,mousedown 1,mouseup 1>
+        bindsym !!Return,Shift+Return,period,comma exec xdotool \
+          !!<click 1,click 3,mousedown 1,mouseup 1>
         # return to normal
         bindsym !!Escape,space,$mod+m mode "default"
 }
@@ -93,10 +105,21 @@ bindsym $mod+n mode "nethack"
 
 # Skype mode (switching chats)
 mode "skype" {
-        bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; exec xdotool click 1
+        bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; \
+                              exec xdotool click 1
         bindsym Insert exec ~/.i3/ijs.sh
         # ugly line
-        bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
+        bindsym Alt_L \
+            exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; \
+            exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; \
+            exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; \
+            exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; \
+            exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; \
+            exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; \
+            exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; \
+            exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; \
+            exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; \
+            exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
         # return to normal
         bindsym !!Escape,$mod+Shift+s mode "default"
 }
