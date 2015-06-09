@@ -1,90 +1,73 @@
 # i3 config file (with i3bang)
-
 #!nobracket
 
-# left alt
-set $mod Mod1
+# VARIABLES
 
-# window titles, status bar
-font pango:monospace 8
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+set $mod Mod1              # left alt
+font pango:monospace 8     # window titles, status bar
+new_window normal 0 px     # no borders
+set $mv 20px               # amount to resize windows (also used for how far to
+set $mvppt 2ppt            # move floating windows with mod+shift+hjkl)
+floating_modifier $mod     # mouse+$mod for manipulating floating windows
+exec --no-startup-id !!<\  # commands to run on init
+  unity-settings-daemon,\
+  nm-applet,\
+  xflux -z 77024\
+>
 
-# no borders
-new_window normal 0 px
+# KEY BINDINGS
 
-# amount to resize windows (also used for how far to move floating windows
-# with mod+shift+hjkl)
-set $mv 20px
-set $mvppt 2ppt
+bindsym $mod+Shift+Return \                 # start a terminal
+  exec i3-sensible-terminal
+bindsym $mod+Return exec dmenu_run          # start dmenu
+bindsym $mod+d kill                         # delete focused window
+bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,Left,Down,Up,Right !!2!focus,move !!<1!left,down,up,right>!!<2!, $mv>  # focused window manipulation, vikeys and arrow key support
+bindsym $mod+!!backslash,minus split !!h,v  # split (backslash is on same key as |, but no shift)
+bindsym $mod+f fullscreen toggle            # fullscreen
+bindsym $mod+!!q,w,e \
+  layout !!<stacking,tabbed,toggle split>   # change container layout
+bindsym $mod!!<,+Shift>+space \
+  !!<focus mode_,floating >toggle           # manage floating windows with keyboard
+bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
+bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
+  !!<2!,move container to >\
+  workspace number !!1!1..10
+bindsym $mod!!<,+Shift>+grave \             # previous workspace
+  !!<,move container to >\
+  workspace back_and_forth
+bindsym $mod+x exec i3-input -F \           # rename workspace
+  "rename workspace to \
+  "'"'"$(~/.i3/cur_wksp.sh):%s"'"' \
+  -P 'Rename: '
+bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
+  "rename workspace to \
+  $(~/.i3/cur_wksp.sh)"
+bindsym $mod!!<,+Shift>+z \                 # scratchpad
+  !!<,move >scratchpad!!< show,>
+bindsym $mod+Shift+c \
+  exec ~/.i3/i3bang.rb; reload              # reload config file and rerun i3bang
+bindsym $mod+Shift+r restart                # restart i3 inplace
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"  # exit i3 (logs you out of your X session)
+bindsym !!<1!,$mod+>Print exec import!!<1! -window root , >$(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')  # screenshot keys
+bindsym XF86Audio!!<Raise,Lower>Volume \
+  exec amixer -D pulse set Master 5%!!+,-   # volume keys
+bindcode 248 exec amixer -D pulse set Master toggle
+# these ones are weird because my laptop is weird (found via xev)
+bindsym XF86!!Sleep,Battery \
+  exec xbacklight !!<+,->10%                # brightness keys
+bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
 
-# mouse+$mod for manipulating floating windows
-# left button drag: move window
-# right button drag: resize window
-# just like xmonad
-# can also hold shift to resize proportionally
-floating_modifier $mod
-
-# start a terminal
-bindsym $mod+Shift+Return exec i3-sensible-terminal
-
-# delete focused window
-bindsym $mod+d kill
-
-# start dmenu
-bindsym $mod+Return exec dmenu_run
-
-# focused window manipulation
-# vikeys and arrow key support
-bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,Left,Down,Up,Right !!2!focus,move !!<1!left,down,up,right>!!<2!, $mv>
-
-# split
-# backslash is on same key as |, but no shift
-bindsym $mod+!!1!backslash,minus split !!1!h,v
-
-# fullscreen
-bindsym $mod+f fullscreen toggle
-
-# change container layout
-bindsym $mod+!!1!q,w,e layout !!<1!stacking,tabbed,toggle split>
-
-# manage floating windows with keyboard
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+space focus mode_toggle
-
-# focus parent/child
-bindsym $mod+!!1!a,s focus !!1!parent,child
-
-# workspaces!
-bindsym $mod!!<2!,+Shift>+!!1!1..9,0 !!<2!,move container to >workspace number !!1!1..10
-
-# previous workspace
-bindsym $mod+grave workspace back_and_forth
-bindsym $mod+Shift+grave move container to workspace back_and_forth
-
-# rename workspace
-bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
-bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
-
-# scratchpad
-bindsym $mod+z scratchpad show
-bindsym $mod+Shift+z move scratchpad
-
-# reload the configuration file
-bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# MODES
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
-        bindsym !!1!h,j,k,l,Left,Down,Up,Right resize !!<1!shrink width,grow height,shrink height,grow width> $mv or $mvppt
+        bindsym !!h,j,k,l,Left,Down,Up,Right resize !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
 
         bindsym !!Return,Escape,space,$mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
+# mouse mode (moving the cursor and clicking)
 !@<*mousemove
 exec xdotool mousemove_relative !!1!-!s,0,0,!s,-!s,!s,-!s,!s !!1!0,!s,-!s,-,-!s,-!s,!s,!s>
 mode "mouse" {
@@ -93,22 +76,24 @@ mode "mouse" {
         !s = 8  # numpad speed
         bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
         # arrow keys: precise, 1-pixel movements
-        bindsym !!1!Left,Down,Up,Right exec xdotool mousemove_relative -- !!<1!-1 0,0 1,0 -1,1 0>
+        bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- !!<-1 0,0 1,0 -1,1 0>
         # clicking and such
-        bindsym !!1!Return,Shift+Return,period,comma exec xdotool !!<1!click 1,click 3,mousedown 1,mouseup 1>
+        bindsym !!Return,Shift+Return,period,comma exec xdotool !!<click 1,click 3,mousedown 1,mouseup 1>
         # return to normal
         bindsym !!Escape,space,$mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
 
+# nethack mode (Elbereth)
 mode "nethack" {
         bindsym --release $mod+e exec ~/.i3/elbereth.sh
         bindsym !!Escape,$mod+n mode "default"
 }
 bindsym $mod+n mode "nethack"
 
+# Skype mode (switching chats)
 mode "skype" {
-        bindsym $mod+!!1!1..9,0 exec xdotool mousemove 90 !<70+40*!!<1!0..9>>; exec xdotool click 1
+        bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; exec xdotool click 1
         bindsym Insert exec ~/.i3/ijs.sh
         # ugly line
         bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
@@ -117,25 +102,8 @@ mode "skype" {
 }
 bindsym $mod+Shift+s mode "skype"
 
-# screenshot keys
-bindsym !!<1!,$mod+>Print exec import!!<1! -window root , >$(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+# STATUS BAR
 
-# volume keys
-bindsym XF86Audio!!<1!Raise,Lower>Volume exec amixer -D pulse set Master 5%!!1!+,-
-bindcode 248 exec amixer -D pulse set Master toggle
-
-# brightness keys
-# these ones are weird because my laptop is weird (found via xev)
-bindsym XF86!!1!Sleep,Battery exec xbacklight !!<1!+,->10%
-
-# "copy text" tool
-bindsym $mod+c exec ~/.i3/copy_tool.sh
-
-# commands to run on init
-exec --no-startup-id !!<unity-settings-daemon,nm-applet,xflux -z 77024>
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
 bar {
     status_command          i3status -c ~/.i3/i3status.conf
    #position                top

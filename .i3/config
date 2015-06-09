@@ -6,9 +6,12 @@ new_window normal 0 px
 set $mv 20px
 set $mvppt 2ppt
 floating_modifier $mod
+exec --no-startup-id unity-settings-daemon
+exec --no-startup-id nm-applet
+exec --no-startup-id xflux -z 77024
 bindsym $mod+Shift+Return exec i3-sensible-terminal
-bindsym $mod+d kill
 bindsym $mod+Return exec dmenu_run
+bindsym $mod+d kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -31,8 +34,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
 bindsym $mod+1 workspace number 1
@@ -64,6 +67,14 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym $mod+Print exec import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
+bindcode 248 exec amixer -D pulse set Master toggle
+bindsym XF86Sleep exec xbacklight +10%
+bindsym XF86Battery exec xbacklight -10%
+bindsym $mod+c exec ~/.i3/copy_tool.sh
 mode "resize" {
         bindsym h resize shrink width $mv or $mvppt
         bindsym j resize grow height $mv or $mvppt
@@ -132,17 +143,6 @@ mode "skype" {
         bindsym $mod+Shift+s mode "default"
 }
 bindsym $mod+Shift+s mode "skype"
-bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym $mod+Print exec import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
-bindcode 248 exec amixer -D pulse set Master toggle
-bindsym XF86Sleep exec xbacklight +10%
-bindsym XF86Battery exec xbacklight -10%
-bindsym $mod+c exec ~/.i3/copy_tool.sh
-exec --no-startup-id unity-settings-daemon
-exec --no-startup-id nm-applet
-exec --no-startup-id xflux -z 77024
 bar {
     status_command          i3status -c ~/.i3/i3status.conf
 }
