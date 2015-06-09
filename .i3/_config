@@ -28,12 +28,12 @@ bindsym $mod+d kill                         # delete focused window
 bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
   !!<1!left,down,up,right>!!<2!, $mv>
-bindsym $mod+!!backslash,minus split !!h,v  # split (backslash is on same key as |, but no shift)
+bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
 bindsym $mod+f fullscreen toggle            # fullscreen
-bindsym $mod+!!q,w,e \
-  layout !!<stacking,tabbed,toggle split>   # change container layout
-bindsym $mod!!<,+Shift>+space \
-  !!<focus mode_,floating >toggle           # manage floating windows with keyboard
+bindsym $mod+!!q,w,e \                      # change container layout
+  layout !!<stacking,tabbed,toggle split>
+bindsym $mod!!<,+Shift>+space \             # manage floating windows with
+  !!<focus mode_,floating >toggle           #   keyboard
 bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
 bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
   !!<2!,move container to >\
@@ -51,7 +51,7 @@ bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
 bindsym $mod!!<,+Shift>+z \                 # scratchpad
   !!<,move >scratchpad!!< show,>
 bindsym $mod+Shift+c \
-  exec ~/.i3/i3bang.rb; reload              # reload config file and rerun i3bang
+  exec ~/.i3/i3bang.rb; reload              # reload config file, rerun i3bang
 bindsym $mod+Shift+r restart                # restart i3 inplace
 bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   -t warning -m 'You pressed the exit \
@@ -61,12 +61,12 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
 bindsym !!<1!,$mod+>Print exec import \     # screenshot keys
   !!<1!-window root ,>$(date '+Pictures/\
   screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym XF86Audio!!<Raise,Lower>Volume \
-  exec amixer -D pulse set Master 5%!!+,-   # volume keys
+bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
+  exec amixer -D pulse set Master 5%!!+,-
 bindcode 248 \
   exec amixer -D pulse set Master toggle
 bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
-  exec xbacklight !!<+,->10%                #   because my laptop is weird (found via xev)
+  exec xbacklight !!<+,->10%                #   because my laptop is weird
 bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
 
 ###############################################################################
@@ -116,8 +116,8 @@ mode "skype" {
         bindsym Insert exec ~/.i3/ijs.sh
         # ugly line
         bindsym Alt_L \
-            exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; \
-            exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; \
+            exec echo 1 | dzen2 -x 175 -y  55 -w 30 -h 30 -p 1; \
+            exec echo 2 | dzen2 -x 175 -y  95 -w 30 -h 30 -p 1; \
             exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; \
             exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; \
             exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; \
