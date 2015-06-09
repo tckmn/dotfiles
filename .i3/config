@@ -79,30 +79,27 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
-set $hjklspeed 20
-set $numpadspeed 8
-set $arrowspeed 1
 mode "mouse" {
-        bindsym h exec xdotool mousemove_relative -- -$hjklspeed 0
-        bindsym j exec xdotool mousemove_relative -- 0 $hjklspeed
-        bindsym k exec xdotool mousemove_relative -- 0 -$hjklspeed
-        bindsym l exec xdotool mousemove_relative -- $hjklspeed 0
-        bindsym y exec xdotool mousemove_relative -- -$hjklspeed -$hjklspeed
-        bindsym u exec xdotool mousemove_relative -- $hjklspeed -$hjklspeed
-        bindsym b exec xdotool mousemove_relative -- -$hjklspeed $hjklspeed
-        bindsym n exec xdotool mousemove_relative -- $hjklspeed $hjklspeed
-        bindsym KP_4 exec xdotool mousemove_relative -- -$numpadspeed 0
-        bindsym KP_2 exec xdotool mousemove_relative -- 0 $numpadspeed
-        bindsym KP_8 exec xdotool mousemove_relative -- 0 -$numpadspeed
-        bindsym KP_6 exec xdotool mousemove_relative -- $numpadspeed 0
-        bindsym KP_7 exec xdotool mousemove_relative -- -$numpadspeed -$numpadspeed
-        bindsym KP_9 exec xdotool mousemove_relative -- $numpadspeed -$numpadspeed
-        bindsym KP_1 exec xdotool mousemove_relative -- -$numpadspeed $numpadspeed
-        bindsym KP_3 exec xdotool mousemove_relative -- $numpadspeed $numpadspeed
-        bindsym Left exec xdotool mousemove_relative -- -$arrowspeed 0
-        bindsym Down exec xdotool mousemove_relative -- 0 $arrowspeed
-        bindsym Up exec xdotool mousemove_relative -- 0 -$arrowspeed
-        bindsym Right exec xdotool mousemove_relative -- $arrowspeed 0
+        bindsym h exec xdotool mousemove_relative -20 0
+        bindsym j exec xdotool mousemove_relative 0 20
+        bindsym k exec xdotool mousemove_relative 0 -20
+        bindsym l exec xdotool mousemove_relative 20 -
+        bindsym y exec xdotool mousemove_relative -20 -20
+        bindsym u exec xdotool mousemove_relative 20 -20
+        bindsym b exec xdotool mousemove_relative -20 20
+        bindsym n exec xdotool mousemove_relative 20 20
+        bindsym KP_4 exec xdotool mousemove_relative -8 0
+        bindsym KP_2 exec xdotool mousemove_relative 0 8
+        bindsym KP_8 exec xdotool mousemove_relative 0 -8
+        bindsym KP_6 exec xdotool mousemove_relative 8 -
+        bindsym KP_7 exec xdotool mousemove_relative -8 -8
+        bindsym KP_9 exec xdotool mousemove_relative 8 -8
+        bindsym KP_1 exec xdotool mousemove_relative -8 8
+        bindsym KP_3 exec xdotool mousemove_relative 8 8
+        bindsym Left exec xdotool mousemove_relative -- -1 0
+        bindsym Down exec xdotool mousemove_relative -- 0 1
+        bindsym Up exec xdotool mousemove_relative -- 0 -1
+        bindsym Right exec xdotool mousemove_relative -- 1 0
         bindsym Return exec xdotool click 1
         bindsym Shift+Return exec xdotool click 3
         bindsym period exec xdotool mousedown 1
@@ -132,6 +129,7 @@ mode "skype" {
         bindsym Insert exec ~/.i3/ijs.sh
         bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
         bindsym Escape mode "default"
+        bindsym $mod+Shift+s mode "default"
 }
 bindsym $mod+Shift+s mode "skype"
 bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')

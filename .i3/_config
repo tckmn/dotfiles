@@ -37,65 +37,27 @@ bindsym $mod+Return exec dmenu_run
 
 # focused window manipulation
 # vikeys and arrow key support
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-bindsym $mod+Shift+h move left $mv
-bindsym $mod+Shift+j move down $mv
-bindsym $mod+Shift+k move up $mv
-bindsym $mod+Shift+l move right $mv
-bindsym $mod+Shift+Left move left $mv
-bindsym $mod+Shift+Down move down $mv
-bindsym $mod+Shift+Up move up $mv
-bindsym $mod+Shift+Right move right $mv
+bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,Left,Down,Up,Right !!2!focus,move !!<1!left,down,up,right>!!<2!, $mv>
 
 # split
 # backslash is on same key as |, but no shift
-bindsym $mod+backslash split h
-bindsym $mod+minus split v
+bindsym $mod+!!1!backslash,minus split !!1!h,v
 
 # fullscreen
 bindsym $mod+f fullscreen toggle
 
 # change container layout
-bindsym $mod+q layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $mod+!!1!q,w,e layout !!<1!stacking,tabbed,toggle split>
 
 # manage floating windows with keyboard
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+space focus mode_toggle
 
 # focus parent/child
-bindsym $mod+a focus parent
-bindsym $mod+s focus child
+bindsym $mod+!!1!a,s focus !!1!parent,child
 
 # workspaces!
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod!!<2!,+Shift>+!!1!1..9,0 !!<2!,move container to >workspace number !!1!1..10
 
 # previous workspace
 bindsym $mod+grave workspace back_and_forth
@@ -117,113 +79,60 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
-        bindsym h resize shrink width $mv or $mvppt
-        bindsym j resize grow height $mv or $mvppt
-        bindsym k resize shrink height $mv or $mvppt
-        bindsym l resize grow width $mv or $mvppt
+        bindsym !!1!h,j,k,l,Left,Down,Up,Right resize !!<1!shrink width,grow height,shrink height,grow width> $mv or $mvppt
 
-        bindsym Left resize shrink width $mv or $mvppt
-        bindsym Down resize grow height $mv or $mvppt
-        bindsym Up resize shrink height $mv or $mvppt
-        bindsym Right resize grow width $mv or $mvppt
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym space mode "default"
-        bindsym $mod+r mode "default"
+        bindsym !!Return,Escape,space,$mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
-set $hjklspeed 20
-set $numpadspeed 8
-set $arrowspeed 1
+!@<*mousemove
+exec xdotool mousemove_relative !!1!-!s,0,0,!s,-!s,!s,-!s,!s !!1!0,!s,-!s,-,-!s,-!s,!s,!s>
 mode "mouse" {
-        bindsym h exec xdotool mousemove_relative -- -$hjklspeed 0
-        bindsym j exec xdotool mousemove_relative -- 0 $hjklspeed
-        bindsym k exec xdotool mousemove_relative -- 0 -$hjklspeed
-        bindsym l exec xdotool mousemove_relative -- $hjklspeed 0
-        bindsym y exec xdotool mousemove_relative -- -$hjklspeed -$hjklspeed
-        bindsym u exec xdotool mousemove_relative -- $hjklspeed -$hjklspeed
-        bindsym b exec xdotool mousemove_relative -- -$hjklspeed $hjklspeed
-        bindsym n exec xdotool mousemove_relative -- $hjklspeed $hjklspeed
-
-        bindsym KP_4 exec xdotool mousemove_relative -- -$numpadspeed 0
-        bindsym KP_2 exec xdotool mousemove_relative -- 0 $numpadspeed
-        bindsym KP_8 exec xdotool mousemove_relative -- 0 -$numpadspeed
-        bindsym KP_6 exec xdotool mousemove_relative -- $numpadspeed 0
-        bindsym KP_7 exec xdotool mousemove_relative -- -$numpadspeed -$numpadspeed
-        bindsym KP_9 exec xdotool mousemove_relative -- $numpadspeed -$numpadspeed
-        bindsym KP_1 exec xdotool mousemove_relative -- -$numpadspeed $numpadspeed
-        bindsym KP_3 exec xdotool mousemove_relative -- $numpadspeed $numpadspeed
-
-        bindsym Left exec xdotool mousemove_relative -- -$arrowspeed 0
-        bindsym Down exec xdotool mousemove_relative -- 0 $arrowspeed
-        bindsym Up exec xdotool mousemove_relative -- 0 -$arrowspeed
-        bindsym Right exec xdotool mousemove_relative -- $arrowspeed 0
-
-        bindsym Return exec xdotool click 1
-        bindsym Shift+Return exec xdotool click 3
-        bindsym period exec xdotool mousedown 1
-        bindsym comma exec xdotool mouseup 1
-
+        !s = 20  # hjkl speed
+        bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
+        !s = 8  # numpad speed
+        bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
+        # arrow keys: precise, 1-pixel movements
+        bindsym !!1!Left,Down,Up,Right exec xdotool mousemove_relative -- !!<1!-1 0,0 1,0 -1,1 0>
+        # clicking and such
+        bindsym !!1!Return,Shift+Return,period,comma exec xdotool !!<1!click 1,click 3,mousedown 1,mouseup 1>
         # return to normal
-        bindsym Escape mode "default"
-        bindsym space mode "default"
-        bindsym $mod+m mode "default"
+        bindsym !!Escape,space,$mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
 
 mode "nethack" {
         bindsym --release $mod+e exec ~/.i3/elbereth.sh
-
-        bindsym Escape mode "default"
-        bindsym $mod+n mode "default"
+        bindsym !!Escape,$mod+n mode "default"
 }
 bindsym $mod+n mode "nethack"
 
 mode "skype" {
-        bindsym $mod+1 exec xdotool mousemove 90 70; exec xdotool click 1
-        bindsym $mod+2 exec xdotool mousemove 90 110; exec xdotool click 1
-        bindsym $mod+3 exec xdotool mousemove 90 150; exec xdotool click 1
-        bindsym $mod+4 exec xdotool mousemove 90 190; exec xdotool click 1
-        bindsym $mod+5 exec xdotool mousemove 90 230; exec xdotool click 1
-        bindsym $mod+6 exec xdotool mousemove 90 270; exec xdotool click 1
-        bindsym $mod+7 exec xdotool mousemove 90 310; exec xdotool click 1
-        bindsym $mod+8 exec xdotool mousemove 90 350; exec xdotool click 1
-        bindsym $mod+9 exec xdotool mousemove 90 390; exec xdotool click 1
-        bindsym $mod+0 exec xdotool mousemove 90 430; exec xdotool click 1
-
+        bindsym $mod+!!1!1..9,0 exec xdotool mousemove 90 !<70+40*!!<1!0..9>>; exec xdotool click 1
         bindsym Insert exec ~/.i3/ijs.sh
-
         # ugly line
         bindsym Alt_L exec echo 1 | dzen2 -x 175 -y 55 -w 30 -h 30 -p 1; exec echo 2 | dzen2 -x 175 -y 95 -w 30 -h 30 -p 1; exec echo 3 | dzen2 -x 175 -y 135 -w 30 -h 30 -p 1; exec echo 4 | dzen2 -x 175 -y 175 -w 30 -h 30 -p 1; exec echo 5 | dzen2 -x 175 -y 215 -w 30 -h 30 -p 1; exec echo 6 | dzen2 -x 175 -y 255 -w 30 -h 30 -p 1; exec echo 7 | dzen2 -x 175 -y 295 -w 30 -h 30 -p 1; exec echo 8 | dzen2 -x 175 -y 335 -w 30 -h 30 -p 1; exec echo 9 | dzen2 -x 175 -y 375 -w 30 -h 30 -p 1; exec echo 0 | dzen2 -x 175 -y 415 -w 30 -h 30 -p 1
-
         # return to normal
-        bindsym Escape mode "default"
+        bindsym !!Escape,$mod+Shift+s mode "default"
 }
 bindsym $mod+Shift+s mode "skype"
 
 # screenshot keys
-bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym $mod+Print exec import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym !!<1!,$mod+>Print exec import!!<1! -window root , >$(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
 
 # volume keys
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
+bindsym XF86Audio!!<1!Raise,Lower>Volume exec amixer -D pulse set Master 5%!!1!+,-
 bindcode 248 exec amixer -D pulse set Master toggle
 
 # brightness keys
 # these ones are weird because my laptop is weird (found via xev)
-bindsym XF86Sleep exec xbacklight +10%
-bindsym XF86Battery exec xbacklight -10%
+bindsym XF86!!1!Sleep,Battery exec xbacklight !!<1!+,->10%
 
 # "copy text" tool
 bindsym $mod+c exec ~/.i3/copy_tool.sh
 
 # commands to run on init
-exec --no-startup-id unity-settings-daemon
-exec --no-startup-id nm-applet
-exec --no-startup-id xflux -z 77024
+exec --no-startup-id !!<unity-settings-daemon,nm-applet,xflux -z 77024>
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
