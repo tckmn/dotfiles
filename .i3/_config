@@ -21,6 +21,7 @@ exec --no-startup-id !!<\  # commands to run on init
 #                                 KEY BINDINGS                                #
 ###############################################################################
 
+!@<+default_bindings
 bindsym $mod+Shift+Return \                 # start a terminal
   exec i3-sensible-terminal
 bindsym $mod+Return exec dmenu_run          # start dmenu
@@ -68,6 +69,7 @@ bindcode 248 \
 bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
   exec xbacklight !!<+,->10%                #   because my laptop is weird
 bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
+>
 
 ###############################################################################
 #                                    MODES                                    #
@@ -104,8 +106,10 @@ bindsym $mod+m mode "mouse"
 
 # nethack mode (Elbereth)
 mode "nethack" {
+        bindsym $mod+e nop  # override $mod+e in default bindings
         bindsym --release $mod+e exec ~/.i3/elbereth.sh
         bindsym !!Escape,$mod+n mode "default"
+        !@default_bindings
 }
 bindsym $mod+n mode "nethack"
 
@@ -113,6 +117,7 @@ bindsym $mod+n mode "nethack"
 mode "skype" {
         bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; \
                               exec xdotool click 1
+        bindsym $mod+!!j,k exec ~/.i3/skypemove.sh !!next,prev
         bindsym Insert exec ~/.i3/ijs.sh
         # somewhat hackish
         bindsym Alt_L !!<\>
@@ -121,6 +126,7 @@ mode "skype" {
           nop
         # return to normal
         bindsym !!Escape,$mod+Shift+s mode "default"
+        !@default_bindings
 }
 bindsym $mod+Shift+s mode "skype"
 
