@@ -1,5 +1,5 @@
 " Pathogen
-let g:pathogen_disabled = ['syntastic', 'youcompleteme']
+let g:pathogen_disabled = ['syntastic']
 execute pathogen#infect()
 
 " Auto-indent and syntax highlighting
