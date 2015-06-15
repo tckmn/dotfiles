@@ -108,6 +108,7 @@ set hidden
 
 " Convenience
 runtime macros/justify.vim
+unmap ,gq
 nnoremap <Leader>y mygg"+yG`y
 nnoremap <Leader>w :w<cr>
 nnoremap <Leader>q :wq<cr>
