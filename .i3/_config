@@ -30,7 +30,7 @@ bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
   !!<1!left,down,up,right>!!<2!, $mv>
 bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
-bindsym $mod+f fullscreen toggle            # fullscreen
+bindsym $mod+Shift+f fullscreen toggle      # fullscreen
 bindsym $mod+!!q,w,e \                      # change container layout
   layout !!<stacking,tabbed,toggle split>
 bindsym $mod!!<,+Shift>+space \             # manage floating windows with
