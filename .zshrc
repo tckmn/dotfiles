@@ -10,7 +10,6 @@ HISTFILE=~/Misc/ZSH_HISTORY
 # Use modern completion system
 autoload -Uz compinit
 compinit
-
 # Uhh, some built-in completion magic
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -99,7 +98,7 @@ alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
-alias ascii='if [ -t 0 ]; then man ascii; else; man ascii | zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
+alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 19) <(man ascii | grep Tables -A 20) | awk -F"\t" '"'"'{printf("%-80 %s\n",$1,$2)}'"'"' | zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
 
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
