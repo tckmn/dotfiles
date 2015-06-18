@@ -1,0 +1,58 @@
+/usr/bin/dmenu_run, modified to support aliases:
+
+    #!/bin/bash
+    cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
+    if [ -d "$cachedir" ]; then
+        cache=$cachedir/dmenu_run
+    else
+        cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
+    fi
+    (
+        echo '. ~/.zshrc; setopt aliases'
+        IFS=:
+        if stest -dqr -n "$cache" $PATH; then
+            cat <(stest -flx $PATH) <(grep '^[ \t]*alias' .zshrc | \
+                sed 's/^[ \t]*alias //; s/=.*$//') | sort -u | tee "$cache" | \
+                dmenu "$@"
+        else
+            dmenu "$@" < "$cache"
+        fi
+    ) | ${SHELL:-"/bin/sh"} &
+
+/etc/acpi/lid.sh, for locking the screen with i3lock:
+
+    #!/bin/sh
+
+    do_lock() {
+        DISPLAY=:0 sudo -u llama /usr/bin/i3lock -i /tmp/screen.png
+    }
+
+    gen_lock() {
+        DISPLAY=:0 sudo -u llama /usr/bin/scrot /tmp/screen.png
+        echo Your fortune: > /tmp/fortune.txt
+        /usr/games/fortune -s -n 200 >> /tmp/fortune.txt
+        convert /tmp/screen.png \
+            -gravity South -pointsize 24 \
+            -fill white -stroke white -strokewidth 8 -annotate +0+50 @/tmp/fortune.txt -blur 0x5 \
+            -fill black -stroke none -annotate +0+50 @/tmp/fortune.txt \
+            -gravity Center \
+            -draw "image over 0,0 0,0 '/home/llama/.locked.png'" \
+            /tmp/screen.png
+    }
+
+    if [ "$3" = "open" ]
+    then
+        do_lock
+    elif [ "$3" = "close" ]
+    then
+        gen_lock
+        pm-suspend
+    else
+        gen_lock
+        do_lock
+    fi
+
+/etc/acpit/events/lm_lid, for making lid.sh work:
+
+    event=button/lid
+    action=/etc/acpi/lid.sh %e

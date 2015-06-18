@@ -85,6 +85,8 @@ alias bsdgames="apt show bsdgames | tail -n6"
 alias automount="gsettings set org.gnome.desktop.media-handling automount"
 # on or off
 alias monitor="xset dpms force"
+# no args
+alias lock="/etc/acpi/lid.sh"
 
 # system status
 alias ipaddr="ifconfig -a | grep inet"
