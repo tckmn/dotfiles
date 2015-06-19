@@ -280,6 +280,24 @@ bindsym XF86Battery exec xbacklight -10%
 bindsym $mod+c exec ~/.i3/copy_tool.sh
 }
 bindsym $mod+Shift+s mode "skype"
+set $launchmenu "launch: (f)irefox"
+mode $launchmenu {
+        bindsym f exec firefox; mode "default"
+        bindsym Escape mode "default"
+}
+set $systemmenu "system: (p)oweroff  (r)eboot  (l)ock"
+mode $systemmenu {
+        bindsym p exec shutdown -P now; mode "default"
+        bindsym r exec shutdown -r now; mode "default"
+        bindsym l exec /etc/acpi/lid.sh; mode "default"
+        bindsym Escape mode "default"
+}
+mode "action: (l)aunch  (s)ystem" {
+        bindsym l mode $launchmenu
+        bindsym s mode $systemmenu
+        bindsym Escape mode "default"
+}
+bindsym --release Alt_L exec ~/.i3/maybe_action.sh
 bar {
     status_command          i3status -c ~/.i3/i3status.conf
 }
