@@ -30,7 +30,7 @@
     gen_lock() {
         DISPLAY=:0 sudo -u llama /usr/bin/scrot /tmp/screen.png
         echo Your fortune: > /tmp/fortune.txt
-        /usr/games/fortune -s -n 200 | column -s $'\t' -t >> /tmp/fortune.txt
+        /usr/games/fortune -s -n 200 | column -s '	' -t >> /tmp/fortune.txt
         convert /tmp/screen.png \
             -gravity South -pointsize 24 \
             -fill white -stroke white -strokewidth 8 -annotate +0+50 @/tmp/fortune.txt -blur 0x5 \
