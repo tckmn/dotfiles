@@ -2,6 +2,9 @@
 let g:pathogen_disabled = ['syntastic']
 execute pathogen#infect()
 
+" Weirdness
+let g:netrw_ftpextracmd='passive'
+
 " Auto-indent and syntax highlighting
 syntax on
 filetype plugin indent on
