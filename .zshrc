@@ -100,6 +100,8 @@ alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
 alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 19) <(man ascii | grep Tables -A 20) | awk -F"\t" '"'"'{printf("%-80 %s\n",$1,$2)}'"'"' | zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
 
+setopt interactivecomments
+
 # PROMPTS
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
