@@ -98,7 +98,7 @@ alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
-alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 18; for (( i=0; i<3; i++ )); do head -c79 < /dev/zero | tr "\0" "."; echo; done)  <(man ascii | grep Tables -A 20) |  zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
+alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 18; for (( i=0; i<3; i++ )); do head -c79 < /dev/zero | tr "\0" " "; echo; done)  <(man ascii | grep Tables -A 20) |  zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
 
 setopt interactivecomments
 
