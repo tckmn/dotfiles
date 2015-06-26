@@ -76,7 +76,7 @@ alias sl="sl -e"
 alias cmatrix="cmatrix -b -u 9"
 alias xcowsay="xcowsay -f monospace"
 alias dwarf="~/Games/df/df"
-alias nao="telnet nethack.alt.org"
+alias nao="ssh nethack@nethack.alt.org"
 alias bsdgames="apt show bsdgames | tail -n6"
 
 # system toggles
