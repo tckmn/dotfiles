@@ -1,5 +1,5 @@
 " Pathogen
-let g:pathogen_disabled = ['syntastic']
+let g:pathogen_disabled = ['syntastic', 'YouCompleteMe']
 execute pathogen#infect()
 
 " Weirdness
@@ -49,6 +49,9 @@ nnoremap <Leader>a :A<cr><C-g>
 " UltiSnips plugin
 let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsListSnippets="<C-S-j>"
+
+" Ruby syntax highlighting is super slow without this
+autocmd FileType ruby setlocal re=1 nornu
 
 " HTML editing
 let g:html_indent_inctags = "html,body,head,tbody"
