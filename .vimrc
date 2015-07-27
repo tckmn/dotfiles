@@ -56,6 +56,9 @@ autocmd FileType ruby setlocal re=1 nornu
 " HTML editing
 let g:html_indent_inctags = "html,body,head,tbody"
 
+" C++
+set cinoptions=l1
+
 " Generic global config
 set nocompatible
 set modelines=0

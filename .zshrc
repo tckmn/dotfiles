@@ -97,7 +97,7 @@ alias say="spd-say"
 alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
-alias snowman="~/Code/snowman/lib/snowman"
+alias snowman="~/Code/snowman/snowman/lib/snowman"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
 alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 18; for (( i=0; i<3; i++ )); do head -c79 < /dev/zero | tr "\0" " "; echo; done)  <(man ascii | grep Tables -A 20) |  zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
@@ -126,3 +126,8 @@ export PATH=$ANDROID_SDK_ROOT:$PATH
 export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
 
 export PATH=$PATH:/home/llama/Android/Sdk/platform-tools
+
+# AFL
+export PATH=$PATH:/home/llama/Programs/afl-1.83b
+alias cpugov-perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+alias cpugov-ondemand='echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
