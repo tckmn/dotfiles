@@ -148,7 +148,7 @@ mode "action: (l)aunch  (s)ystem" {
         bindsym s mode $systemmenu
         bindsym Escape mode "default"
 }
-bindsym --release Alt_L exec ~/.i3/maybe_action.sh
+# bindsym --release Alt_L exec ~/.i3/maybe_action.sh
 bindsym --release Alt_R exec ~/.i3/maybe_action.sh
 
 ###############################################################################
