@@ -49,6 +49,12 @@ bindsym $mod+x exec i3-input -F \           # rename workspace
 bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
   "rename workspace to \
   $(~/.i3/cur_wksp.sh)"
+bindsym $mod+Shift+equal !!<\>              # shoot all workspaces over to my
+  workspace number !!<1!1..9>; move \       #   large monitor except 10
+    workspace to output HDMI2; !!<\>
+  nop
+bindsym $mod+equal move workspace to \      # toggle monitors
+  output left
 bindsym $mod!!<,+Shift>+z \                 # scratchpad
   !!<,move >scratchpad!!< show,>
 bindsym $mod+Shift+c \
