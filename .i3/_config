@@ -50,7 +50,7 @@ bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
   "rename workspace to \
   $(~/.i3/cur_wksp.sh)"
 bindsym $mod+Shift+equal !!<\>              # shoot all workspaces over to my
-  workspace number !!<1!1..9>; move \       #   large monitor except 10
+  workspace number !!<1!2..10>; move \      #   large monitor except 1
     workspace to output HDMI2; !!<\>
   nop
 bindsym $mod+equal move workspace to \      # toggle monitors

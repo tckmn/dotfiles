@@ -69,7 +69,7 @@ bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
-bindsym $mod+Shift+equal workspace number 1; move workspace to output HDMI2; workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; nop
+bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
@@ -189,7 +189,7 @@ bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
-bindsym $mod+Shift+equal workspace number 1; move workspace to output HDMI2; workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; nop
+bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
@@ -276,7 +276,7 @@ bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
-bindsym $mod+Shift+equal workspace number 1; move workspace to output HDMI2; workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; nop
+bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
