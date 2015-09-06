@@ -79,6 +79,7 @@ alias dwarf="~/Games/df/df"
 alias nao="ssh nethack@nethack.alt.org"
 alias knao='ps ax | grep "ssh nethac[j-l]" | awk "{print \$1}" | xargs kill'
 alias bsdgames="apt show bsdgames | tail -n6"
+alias atcrec='ttyrec $(date "+atc_%F_%T.ttyrec") -e "TERM=xterm atc"'
 
 # system toggles
 # true or false
