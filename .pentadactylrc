@@ -2,8 +2,6 @@
 
 loadplugins '\.(js|penta)$'
 group user
-map -count -modes=n <C-m> -builtin <count><C-^>
-map -count -modes=n gc -builtin <count>thttp://chat.stackexchange.com/rooms/4/teachers-lounge<cr>thttp://chat.meta.stackexchange.com/rooms/89/tavern-on-the-meta<cr>thttp://chat.stackoverflow.com/rooms/62927/rust<cr>
 map -count -modes=n <C-h> -builtin <count><C-p>
 map -count -modes=n <C-j> -builtin <count><C-n>
 map -count -modes=n <C-k> -builtin <count><C-p>
