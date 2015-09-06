@@ -102,22 +102,22 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 mode "mouse" {
-        bindsym h exec xdotool mousemove_relative -20 0
-        bindsym j exec xdotool mousemove_relative 0 20
-        bindsym k exec xdotool mousemove_relative 0 -20
-        bindsym l exec xdotool mousemove_relative 20 -
-        bindsym y exec xdotool mousemove_relative -20 -20
-        bindsym u exec xdotool mousemove_relative 20 -20
-        bindsym b exec xdotool mousemove_relative -20 20
-        bindsym n exec xdotool mousemove_relative 20 20
-        bindsym KP_4 exec xdotool mousemove_relative -8 0
-        bindsym KP_2 exec xdotool mousemove_relative 0 8
-        bindsym KP_8 exec xdotool mousemove_relative 0 -8
-        bindsym KP_6 exec xdotool mousemove_relative 8 -
-        bindsym KP_7 exec xdotool mousemove_relative -8 -8
-        bindsym KP_9 exec xdotool mousemove_relative 8 -8
-        bindsym KP_1 exec xdotool mousemove_relative -8 8
-        bindsym KP_3 exec xdotool mousemove_relative 8 8
+        bindsym h exec xdotool mousemove_relative -- -20 0
+        bindsym j exec xdotool mousemove_relative -- 0 20
+        bindsym k exec xdotool mousemove_relative -- 0 -20
+        bindsym l exec xdotool mousemove_relative -- 20 0
+        bindsym y exec xdotool mousemove_relative -- -20 -20
+        bindsym u exec xdotool mousemove_relative -- 20 -20
+        bindsym b exec xdotool mousemove_relative -- -20 20
+        bindsym n exec xdotool mousemove_relative -- 20 20
+        bindsym KP_4 exec xdotool mousemove_relative -- -8 0
+        bindsym KP_2 exec xdotool mousemove_relative -- 0 8
+        bindsym KP_8 exec xdotool mousemove_relative -- 0 -8
+        bindsym KP_6 exec xdotool mousemove_relative -- 8 0
+        bindsym KP_7 exec xdotool mousemove_relative -- -8 -8
+        bindsym KP_9 exec xdotool mousemove_relative -- 8 -8
+        bindsym KP_1 exec xdotool mousemove_relative -- -8 8
+        bindsym KP_3 exec xdotool mousemove_relative -- 8 8
         bindsym Left exec xdotool mousemove_relative -- -1 0
         bindsym Down exec xdotool mousemove_relative -- 0 1
         bindsym Up exec xdotool mousemove_relative -- 0 -1

@@ -92,8 +92,8 @@ bindsym $mod+r mode "resize"
 
 # mouse mode (moving the cursor and clicking)
 !@<*mousemove
-exec xdotool mousemove_relative !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
-                                !!1!0,!s,-!s,-,-!s,-!s,!s,!s>
+exec xdotool mousemove_relative -- !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
+                                   !!1!0,!s,-!s,0,-!s,-!s,!s,!s>
 mode "mouse" {
         !s = 20  # hjkl speed
         bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
