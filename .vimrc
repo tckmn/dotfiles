@@ -51,7 +51,7 @@ let g:UltiSnipsExpandTrigger="<C-j>"
 let g:UltiSnipsListSnippets="<C-S-j>"
 
 " Ruby syntax highlighting is super slow without this
-autocmd FileType ruby setlocal re=1 nornu
+autocmd FileType ruby setlocal re=1 nornu nu
 
 " HTML editing
 let g:html_indent_inctags = "html,body,head,tbody"
