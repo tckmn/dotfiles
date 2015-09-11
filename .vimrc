@@ -92,7 +92,6 @@ nnoremap <leader><space> :noh<cr>
 
 " Wrapping
 set wrap
-set linebreak
 set display=lastline
 highlight ColorColumn ctermbg=1
 set colorcolumn=80
