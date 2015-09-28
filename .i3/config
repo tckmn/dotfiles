@@ -14,6 +14,7 @@ floating_modifier $mod
 exec --no-startup-id unity-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id xflux -z 77024
+exec --no-startup-id xcape -e 'Control_L=Escape'
 ###############################################################################
 ###############################################################################
 bindsym $mod+Shift+Return exec i3-sensible-terminal

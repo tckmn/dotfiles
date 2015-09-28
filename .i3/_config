@@ -14,7 +14,8 @@ floating_modifier $mod     # mouse+$mod for manipulating floating windows
 exec --no-startup-id !!<\  # commands to run on init
   unity-settings-daemon,\
   nm-applet,\
-  xflux -z 77024\
+  xflux -z 77024,\
+  xcape -e 'Control_L=Escape'
 >
 
 ###############################################################################
