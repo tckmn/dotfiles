@@ -101,8 +101,6 @@ nnoremap k gk
 nnoremap gk k
 
 " Easier navigation
-inoremap jk <ESC>
-inoremap kj <ESC>
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <C-m> :b#<cr>
