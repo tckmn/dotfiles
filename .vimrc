@@ -1,5 +1,4 @@
 " Pathogen
-let g:pathogen_disabled = ['syntastic', 'YouCompleteMe']
 execute pathogen#infect()
 
 " Weirdness
