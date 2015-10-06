@@ -16,31 +16,11 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule_pdf='mimeopen'
 
-" Syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-let g:syntastic_cpp_checkers = ['clang_check']
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = '-std=c++11 -Wall'
-let g:syntastic_cpp_check_header = 1
-
 " ctrlp plugin
 let g:ctrlp_map = '<Leader>p'
 
 " NERDTree plugin
 nnoremap <Leader>n :NERDTreeToggle<cr>
-
-" YouCompleteMe plugin
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf_cpp.py'
-let g:ycm_collect_identifiers_from_tags_files = 1
-"let g:ycm_register_as_syntastic_checker = 0
 
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
