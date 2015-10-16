@@ -70,6 +70,9 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# urxvt shenanigans
+function title() { printf '\33]2;%s\007' "$1" }
+
 # fun
 alias ipbt="~/Programs/ipbt/ipbt"
 alias sl="sl -e"
@@ -79,7 +82,9 @@ alias dwarf="~/Games/df/df"
 alias nao="ssh nethack@nethack.alt.org"
 alias knao='ps ax | grep "ssh nethac[j-l]" | awk "{print \$1}" | xargs kill'
 alias bsdgames="apt show bsdgames | tail -n6"
-alias atcrec='ttyrec $(date "+atc_%F_%T.ttyrec") -e "TERM=xterm atc"'
+function atcrec() {
+    ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
+}
 
 # system toggles
 # true or false
@@ -99,6 +104,7 @@ alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
 alias snowman="~/Code/snowman/snowman/lib/snowman"
+alias macaroni="~/Code/rust/macaroni-lang/target/debug/macaroni-lang"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
 alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 18; for (( i=0; i<3; i++ )); do head -c79 < /dev/zero | tr "\0" " "; echo; done)  <(man ascii | grep Tables -A 20) |  zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
@@ -109,26 +115,10 @@ setopt interactivecomments
 PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
 
-# Add environment variable COCOS_CONSOLE_ROOT for cocos2d-x
-export COCOS_CONSOLE_ROOT=/home/llama/Code/cpp/SpelunkyClone/cocos2d-x-3.4/tools/cocos2d-console/bin
-export PATH=$COCOS_CONSOLE_ROOT:$PATH
-
-# Add environment variable COCOS_TEMPLATES_ROOT for cocos2d-x
-export COCOS_TEMPLATES_ROOT=/home/llama/Code/cpp/SpelunkyClone/cocos2d-x-3.4/templates
-export PATH=$COCOS_TEMPLATES_ROOT:$PATH
-
-# Add environment variable NDK_ROOT for cocos2d-x
-export NDK_ROOT=/home/llama/Programs/android-ndk-r10d
-export PATH=$NDK_ROOT:$PATH
-
-# Add environment variable ANDROID_SDK_ROOT for cocos2d-x
-export ANDROID_SDK_ROOT=/home/llama/Programs/android-sdk-linux
-export PATH=$ANDROID_SDK_ROOT:$PATH
-export PATH=$ANDROID_SDK_ROOT/tools:$ANDROID_SDK_ROOT/platform-tools:$PATH
-
-export PATH=$PATH:/home/llama/Android/Sdk/platform-tools
-
 # AFL
 export PATH=$PATH:/home/llama/Programs/afl-1.83b
 alias cpugov-perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 alias cpugov-ondemand='echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
+
+# Google App Engine
+export PATH=$PATH:/home/llama/Programs/google_appengine/
