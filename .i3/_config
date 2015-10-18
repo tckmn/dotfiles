@@ -127,9 +127,16 @@ mode $systemmenu {
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-mode "action: (l)aunch  (s)ystem" {
+set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug"
+mode $copymenu {
+        bindsym !!z,d,l,t,s exec echo -n !!<​,'ಠ_ಠ','( ͡° ͜ʖ ͡°)',\
+            '(╯°□°）╯︵ ┻━┻','¯\_(ツ)_/¯'>  | xsel -ib; mode "default"
+        bindsym Escape mode "default"
+}
+mode "action: (l)aunch  (s)ystem  (c)opy" {
         bindsym l mode $launchmenu
         bindsym s mode $systemmenu
+        bindsym c mode $copymenu
         bindsym Escape mode "default"
 }
 # bindsym --release Alt_L exec ~/.i3/maybe_action.sh
