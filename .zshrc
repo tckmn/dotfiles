@@ -66,19 +66,13 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 # urxvt shenanigans
 function title() { printf '\33]2;%s\007' "$1" }
 
 # fun
-alias ipbt="~/Programs/ipbt/ipbt"
 alias sl="sl -e"
 alias cmatrix="cmatrix -b -u 9"
 alias xcowsay="xcowsay -f monospace"
-alias dwarf="~/Games/df/df"
 alias nao="ssh nethack@nethack.alt.org"
 alias knao='ps ax | grep "ssh nethac[j-l]" | awk "{print \$1}" | xargs kill'
 alias bsdgames="apt show bsdgames | tail -n6"
@@ -87,24 +81,16 @@ function atcrec() {
 }
 
 # system toggles
-# true or false
-alias automount="gsettings set org.gnome.desktop.media-handling automount"
-# on or off
-alias monitor="xset dpms force"
 # no args
 alias lock="/etc/acpi/lid.sh"
 
 # system status
-alias ipaddr="ifconfig -a | grep inet"
-alias battery="upower -d | grep percentage"
+alias ipaddr="ip addr | grep inet"
+alias battery="acpi"
 
 # etc
-alias say="spd-say"
 alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
-alias ostrich="~/Code/python/Ostrich/lib/ostrich.py"
-alias snowman="~/Code/snowman/snowman/lib/snowman"
-alias macaroni="~/Code/rust/macaroni-lang/target/debug/macaroni-lang"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
 alias ascii='if [ -t 0 ]; then man ascii; else; paste <(man ascii | grep Oct -A 47) <(man ascii | grep Oct -A 66 | tail -n 18; for (( i=0; i<3; i++ )); do head -c79 < /dev/zero | tr "\0" " "; echo; done)  <(man ascii | grep Tables -A 20) |  zenity --text-info --font="monospace 8" --width=1920 --height=1080; fi'
@@ -121,4 +107,4 @@ alias cpugov-perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpuf
 alias cpugov-ondemand='echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
 
 # Google App Engine
-export PATH=$PATH:/home/llama/Programs/google_appengine/
+export PATH=$PATH:/home/llama/Programs/google_appengine

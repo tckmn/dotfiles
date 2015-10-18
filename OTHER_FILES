@@ -1,4 +1,4 @@
-/usr/bin/dmenu_run, modified to support aliases:
+/usr/bin/dmenu_path, modified to support aliases:
 
     #!/bin/bash
     cachedir=${XDG_CACHE_HOME:-"$HOME/.cache"}
@@ -7,16 +7,20 @@
     else
         cache=$HOME/.dmenu_cache # if no xdg dir, fall back to dotfile in ~
     fi
+    IFS=:
+    if stest -dqr -n "$cache" $PATH; then
+        cat <(stest -flx $PATH) <(grep '^[ \t]*alias' .zshrc | \
+    	sed 's/^[ \t]*alias //; s/=.*$//') | sort -u | tee "$cache"
+    else
+        cat "$cache"
+    fi
+
+/usr/bin/dmenu_run
+
+    #!/bin/sh
     (
         echo '. ~/.zshrc; setopt aliases'
-        IFS=:
-        if stest -dqr -n "$cache" $PATH; then
-            cat <(stest -flx $PATH) <(grep '^[ \t]*alias' .zshrc | \
-                sed 's/^[ \t]*alias //; s/=.*$//') | sort -u | tee "$cache" | \
-                dmenu "$@"
-        else
-            dmenu "$@" < "$cache"
-        fi
+        dmenu_path | dmenu "$@"
     ) | ${SHELL:-"/bin/sh"} &
 
 /etc/acpi/lid.sh, for locking the screen with i3lock:

@@ -12,10 +12,10 @@ set $mv 20px               # amount to resize windows (also used for how far to
 set $mvppt 2ppt            # move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
 exec --no-startup-id !!<\  # commands to run on init
-  unity-settings-daemon,\
-  nm-applet,\
   xflux -z 77024,\
-  xcape -e 'Control_L=Escape'
+  xcape -e 'Control_L=Escape',\
+  xss-lock i3lock,\
+  setxkbmap -option 'ctrl:nocaps' -option 'compose:menu'
 >
 
 ###############################################################################
@@ -111,32 +111,6 @@ mode "mouse" {
 }
 bindsym $mod+m mode "mouse"
 
-# nethack mode (Elbereth)
-mode "nethack" {
-        bindsym $mod+e nop  # override $mod+e in default bindings
-        bindsym --release $mod+e exec ~/.i3/elbereth.sh
-        bindsym !!Escape,$mod+n mode "default"
-        !@default_bindings
-}
-bindsym $mod+n mode "nethack"
-
-# Skype mode (switching chats)
-mode "skype" {
-        bindsym $mod+!!1..9,0 exec xdotool mousemove 90 !<70+40*!!<0..9>>; \
-                              exec xdotool click 1
-        bindsym $mod+!!j,k exec ~/.i3/skypemove.sh !!next,prev
-        bindsym Insert exec ~/.i3/ijs.sh
-        # somewhat hackish
-        bindsym Alt_L !!<\>
-          exec echo !!1..9,0 | dzen2 -x 175 -y !<55+40*!!<0..9>> \
-            -w 30 -h 30 -p 1; !!<\>
-          nop
-        # return to normal
-        bindsym !!Escape,$mod+Shift+s mode "default"
-        !@default_bindings
-}
-bindsym $mod+Shift+s mode "skype"
-
 set $launchmenu "launch: (f)irefox  (c)alculator"
 mode $launchmenu {
         bindsym f exec firefox; mode "default"
@@ -147,7 +121,7 @@ set $systemmenu "system: (p)oweroff  (r)eboot  (l)ock"
 mode $systemmenu {
         bindsym p exec shutdown -P now; mode "default"
         bindsym r exec shutdown -r now; mode "default"
-        bindsym l exec /etc/acpi/lid.sh; mode "default"
+        bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
 mode "action: (l)aunch  (s)ystem" {

@@ -11,10 +11,9 @@ new_window normal 0 px
 set $mv 20px
 set $mvppt 2ppt
 floating_modifier $mod
-exec --no-startup-id unity-settings-daemon
-exec --no-startup-id nm-applet
 exec --no-startup-id xflux -z 77024
 exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id xss-lock i3lock
 ###############################################################################
 ###############################################################################
 bindsym $mod+Shift+Return exec i3-sensible-terminal
@@ -304,7 +303,7 @@ set $systemmenu "system: (p)oweroff  (r)eboot  (l)ock"
 mode $systemmenu {
         bindsym p exec shutdown -P now; mode "default"
         bindsym r exec shutdown -r now; mode "default"
-        bindsym l exec /etc/acpi/lid.sh; mode "default"
+        bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
 mode "action: (l)aunch  (s)ystem" {

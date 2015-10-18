@@ -101,3 +101,6 @@ nnoremap <Leader>Q :q!<cr>
 nnoremap <Leader>z :w<cr><C-z>
 nnoremap <Leader>m :make<cr>
 cnoremap w!! w !sudo tee %
+
+" annoyances
+imap <Nul> <Esc><Leader>
