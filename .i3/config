@@ -12,11 +12,12 @@ set $mv 20px
 set $mvppt 2ppt
 floating_modifier $mod
 exec --no-startup-id xflux -z 77024
-exec --no-startup-id xcape -e 'Control_L=Escape'
+exec --no-startup-id ( sleep 3 && xcape )&
 exec --no-startup-id xss-lock i3lock
 exec --no-startup-id setxkbmap -option 'ctrl:nocaps' -option 'compose:menu'
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')"
+exec --no-startup-id xrandr --output HDMI2 --right-of eDP1
 ###############################################################################
 ###############################################################################
 bindsym $mod+Shift+Return exec i3-sensible-terminal

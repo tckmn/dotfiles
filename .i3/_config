@@ -13,11 +13,12 @@ set $mvppt 2ppt            # move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
 exec --no-startup-id !!<\  # commands to run on init
   xflux -z 77024,\
-  xcape -e 'Control_L=Escape',\
+  ( sleep 3 && xcape )&,\
   xss-lock i3lock,\
   setxkbmap -option 'ctrl:nocaps' -option 'compose:menu',\
   xrdb ~/.Xresources,\
-  synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')"
+  synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')",\
+  xrandr --output HDMI2 --right-of eDP1
 >
 
 ###############################################################################
