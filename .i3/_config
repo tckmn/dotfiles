@@ -15,7 +15,9 @@ exec --no-startup-id !!<\  # commands to run on init
   xflux -z 77024,\
   xcape -e 'Control_L=Escape',\
   xss-lock i3lock,\
-  setxkbmap -option 'ctrl:nocaps' -option 'compose:menu'
+  setxkbmap -option 'ctrl:nocaps' -option 'compose:menu',\
+  xrdb ~/.Xresources,\
+  synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')"
 >
 
 ###############################################################################
