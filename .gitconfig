@@ -1,0 +1,7 @@
+[user]
+	name = KeyboardFire
+	email = andy@keyboardfire.com
+[push]
+	default = simple
+[core]
+	editor = vim
