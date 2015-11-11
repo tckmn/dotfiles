@@ -70,7 +70,7 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   i3? This will end your X session.' \
   -b 'Yes, exit i3' 'i3-msg exit'
 bindsym !!<1!Print,$mod+Sys_Req> exec import \ # screenshot keys
-  !!<1!-window root ,>$(date '+Pictures/\
+  !!<1!-window root ,>$(date '+pictures/\
   screenshot_%Y-%m-%d_%H:%M:%S.png')
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer -D pulse set Master 5%!!+,-
@@ -78,7 +78,6 @@ bindcode 248 \
   exec amixer -D pulse set Master toggle
 bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
   exec xbacklight !!<+,->10%                #   because my laptop is weird
-bindsym $mod+c exec ~/.i3/copy_tool.sh      # "copy text" tool
 >
 
 ###############################################################################
@@ -130,7 +129,7 @@ mode $systemmenu {
 set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug"
 mode $copymenu {
         bindsym !!z,d,l,t,s exec echo -n !!<​,'ಠ_ಠ','( ͡° ͜ʖ ͡°)',\
-            '(╯°□°）╯︵ ┻━┻','¯\_(ツ)_/¯'>  | xsel -ib; mode "default"
+            '(╯°□°）╯︵ ┻━┻','¯\_(ツ)_/¯'>  | xsel -ibl /dev/null; mode "default"
         bindsym Escape mode "default"
 }
 mode "action: (l)aunch  (s)ystem  (c)opy" {

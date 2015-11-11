@@ -80,14 +80,13 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec import -window root $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym $mod+Sys_Req exec import $(date '+Pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym Print exec import -window root $(date '+pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym $mod+Sys_Req exec import $(date '+pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
 bindcode 248 exec amixer -D pulse set Master toggle
 bindsym XF86Sleep exec xbacklight +10%
 bindsym XF86Battery exec xbacklight -10%
-bindsym $mod+c exec ~/.i3/copy_tool.sh
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -150,11 +149,11 @@ mode $systemmenu {
 }
 set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug"
 mode $copymenu {
-        bindsym z exec echo -n ​  | xsel -ib; mode "default"
-        bindsym d exec echo -n 'ಠ_ಠ'  | xsel -ib; mode "default"
-        bindsym l exec echo -n '( ͡° ͜ʖ ͡°)'  | xsel -ib; mode "default"
-        bindsym t exec echo -n '(╯°□°）╯︵ ┻━┻'  | xsel -ib; mode "default"
-        bindsym s exec echo -n '¯\_(ツ)_/¯'  | xsel -ib; mode "default"
+        bindsym z exec echo -n ​  | xsel -ibl /dev/null; mode "default"
+        bindsym d exec echo -n 'ಠ_ಠ'  | xsel -ibl /dev/null; mode "default"
+        bindsym l exec echo -n '( ͡° ͜ʖ ͡°)'  | xsel -ibl /dev/null; mode "default"
+        bindsym t exec echo -n '(╯°□°）╯︵ ┻━┻'  | xsel -ibl /dev/null; mode "default"
+        bindsym s exec echo -n '¯\_(ツ)_/¯'  | xsel -ibl /dev/null; mode "default"
         bindsym Escape mode "default"
 }
 mode "action: (l)aunch  (s)ystem  (c)opy" {
