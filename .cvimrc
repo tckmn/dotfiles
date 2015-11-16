@@ -1,15 +1,32 @@
+" lines marked with "* are automatically mapped by default in cVim
+
+set noautofocus
+let barposition = 'bottom'
+let completionengines = ['google']
+
 map <C-d> scrollPageDown
 map <C-u> scrollPageUp
 map <C-f> scrollFullPageDown
 map <C-b> scrollFullPageUp
 
-map d closeTab
-map u lastClosedTab
-
 map <C-l> nextTab
 map <C-h> previousTab
 map <C-j> nextTab
 map <C-k> previousTab
+
+map d closeTab
+map u lastClosedTab
+
+map s :open google<Space>
+map S :tabnew google<Space>
+
+map y yankDocumentUrl
+
+imap <C-a> beginningOfLine
+"* imap <C-e> endOfLine
+"* imap <C-u> deleteToBeginning
+imap <C-w> deleteWord
+imap <C-i> editWithVim
 
 let configpath = '/home/llama/.cvimrc'
 set localconfig
