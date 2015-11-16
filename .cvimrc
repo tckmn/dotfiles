@@ -27,6 +27,3 @@ imap <C-a> beginningOfLine
 "* imap <C-u> deleteToBeginning
 imap <C-w> deleteWord
 imap <C-i> editWithVim
-
-let configpath = '/home/llama/.cvimrc'
-set localconfig
