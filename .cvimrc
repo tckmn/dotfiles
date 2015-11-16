@@ -4,6 +4,12 @@ set noautofocus
 let barposition = 'bottom'
 let completionengines = ['google']
 
+"* map j scrollDown
+"* map k scrollUp
+"* map h scrollLeft
+"* map l scrollRight
+"* map gg scrollToTop
+"* map G scrollToBottom
 map <C-d> scrollPageDown
 map <C-u> scrollPageUp
 map <C-f> scrollFullPageDown
@@ -13,6 +19,14 @@ map <C-l> nextTab
 map <C-h> previousTab
 map <C-j> nextTab
 map <C-k> previousTab
+"* map H goBack
+"* map L goForward
+
+map y yankDocumentUrl
+map ;y yankUrl
+"* map gi goToInput
+"* map f createHint
+"* map F createTabbedHint
 
 map d closeTab
 map u lastClosedTab
@@ -20,7 +34,12 @@ map u lastClosedTab
 map s :open google<Space>
 map S :tabnew google<Space>
 
-map y yankDocumentUrl
+"* map : openCommandBar
+"* map / openSearhBar
+"* map ? openSearchBarReverse
+
+"* map r reload
+map R reloadTabUncached
 
 imap <C-a> beginningOfLine
 "* imap <C-e> endOfLine
