@@ -1,0 +1,15 @@
+map <C-d> scrollPageDown
+map <C-u> scrollPageUp
+map <C-f> scrollFullPageDown
+map <C-b> scrollFullPageUp
+
+map d closeTab
+map u lastClosedTab
+
+map <C-l> nextTab
+map <C-h> previousTab
+map <C-j> nextTab
+map <C-k> previousTab
+
+let configpath = '/home/llama/.cvimrc'
+set localconfig
