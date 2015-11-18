@@ -40,11 +40,14 @@ map S :tabnew google<Space>
 
 "* map r reload
 map R reloadTabUncached
+map <C-r> reloadAllTabs
 
 imap <C-a> beginningOfLine
 "* imap <C-e> endOfLine
 "* imap <C-u> deleteToBeginning
 imap <C-w> deleteWord
+imap <A-f> forwardWord
+imap <A-b> backwardWord
 imap <C-i> editWithVim
 
 iunmap <C-o>
