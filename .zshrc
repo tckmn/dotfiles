@@ -81,12 +81,6 @@ function atcrec() {
 }
 
 # system toggles
-# no args
-alias lock="/etc/acpi/lid.sh"
-
-# system status
-alias ipaddr="ip addr | grep inet"
-alias battery="acpi"
 alias 1s="xrandr --auto"
 alias 2s="xrandr --auto && xrandr --output HDMI2 --right-of eDP1"
 
