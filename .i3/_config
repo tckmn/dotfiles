@@ -113,33 +113,26 @@ mode "mouse" {
 }
 bindsym $mod+m mode "mouse"
 
-set $launchmenu "launch: (f)irefox  (c)alculator"
-mode $launchmenu {
-        bindsym f exec firefox; mode "default"
-        bindsym c exec gnome-calculator; mode "default"
-        bindsym Escape mode "default"
-}
-set $systemmenu "system: (p)oweroff  (r)eboot  (l)ock"
+set $systemmenu "system: (l)ock"
 mode $systemmenu {
-        bindsym p exec shutdown -P now; mode "default"
-        bindsym r exec shutdown -r now; mode "default"
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug"
+set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
 mode $copymenu {
-        bindsym !!z,d,l,t,s exec echo -n !!<​,'ಠ_ಠ','( ͡° ͜ʖ ͡°)',\
-            '(╯°□°）╯︵ ┻━┻','¯\_(ツ)_/¯'>  | xsel -ibl /dev/null; mode "default"
+        bindsym !!z,d,l,t,s,r exec echo -n !!<​,'ಠ_ಠ','( ͡° ͜ʖ ͡°)',\
+            '(╯°□°）╯︵ ┻━┻','¯\_(ツ)_/¯',\
+            'http://www.youtube.com/watch?v=dQw4w9WgXcQ'> \
+            | xsel -ibl /dev/null; mode "default"
         bindsym Escape mode "default"
 }
-mode "action: (l)aunch  (s)ystem  (c)opy" {
-        bindsym l mode $launchmenu
+set $actionmenu "action: (s)ystem  (c)opy"
+mode $actionmenu {
         bindsym s mode $systemmenu
         bindsym c mode $copymenu
         bindsym Escape mode "default"
 }
-# bindsym --release Alt_L exec ~/.i3/maybe_action.sh
-bindsym --release Alt_R exec ~/.i3/maybe_action.sh
+bindsym $mod+c mode $actionmenu
 
 ###############################################################################
 #                                  STATUS BAR                                 #
