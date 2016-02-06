@@ -9,7 +9,7 @@ set $mod Mod1              # left alt
 font pango:monospace 8     # window titles, status bar
 new_window normal 0 px     # no borders
 set $mv 20px               # amount to resize windows (also used for how far to
-set $mvppt 2ppt            # move floating windows with mod+shift+hjkl)
+set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
 exec --no-startup-id !!<\  # commands to run on init
   xflux -z 77024,\
