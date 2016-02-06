@@ -96,7 +96,7 @@ runtime macros/justify.vim
 unmap ,gq
 nnoremap <Leader>y mygg"+yG`y
 nnoremap <Leader>w :w<cr>
-nnoremap <Leader>q :wq<cr>
+" nnoremap <Leader>q :wq<cr>
 nnoremap <Leader>Q :q!<cr>
 nnoremap <Leader>z :w<cr><C-z>
 nnoremap <Leader>m :make<cr>
