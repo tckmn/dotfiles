@@ -18,7 +18,8 @@ exec --no-startup-id !!<\  # commands to run on init
   setxkbmap -option 'ctrl:nocaps' -option 'compose:menu',\
   xrdb ~/.Xresources,\
   synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')",\
-  xrandr --output HDMI2 --right-of eDP1
+  xrandr --output HDMI2 --right-of eDP1,\
+  wicd-client -t
 >
 
 ###############################################################################
