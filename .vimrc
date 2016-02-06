@@ -104,3 +104,4 @@ cnoremap w!! w !sudo tee %
 
 " annoyances
 imap <Nul> <Esc><Leader>
+set noesckeys
