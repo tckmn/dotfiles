@@ -1,11 +1,11 @@
 setopt histignorealldups sharehistory
 export TERM=screen-256color
 
-# Keep lots of lines of history within the shell and save it to ~/Misc/ZSH_HISTORY
-HISTFILESIZE=1000000
-HISTSIZE=1000000
-SAVEHIST=1000000
-HISTFILE=~/Misc/ZSH_HISTORY
+# Keep lots of lines of history within the shell and save it to ~/misc/ZSH_HISTORY
+HISTFILESIZE=10000000
+HISTSIZE=10000000
+SAVEHIST=10000000
+HISTFILE=~/misc/ZSH_HISTORY
 
 # Use modern completion system
 autoload -Uz compinit
