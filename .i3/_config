@@ -100,9 +100,9 @@ bindsym $mod+r mode "resize"
 exec xdotool mousemove_relative -- !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
                                    !!1!0,!s,-!s,0,-!s,-!s,!s,!s>
 mode "mouse" {
-        !s = 20  # hjkl speed
+        !s = 30  # hjkl speed
         bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
-        !s = 8  # numpad speed
+        !s = 10  # numpad speed
         bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
         # arrow keys: precise, 1-pixel movements
         bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- \
