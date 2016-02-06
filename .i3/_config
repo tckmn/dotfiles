@@ -76,10 +76,10 @@ bindsym !!<1!Print,$mod+Sys_Req> exec \     # screenshot keys
   screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer -D pulse set Master 5%!!+,-
-bindcode 248 \
+bindsym XF86AudioMute \
   exec amixer -D pulse set Master toggle
-bindsym XF86!!Sleep,Battery \               # brightness keys - these are weird
-  exec xbacklight !!<+,->10%                #   because my laptop is weird
+bindsym XF86MonBrightness!!Up,Down \        # brightness keys
+  exec xbacklight !!<+,->10%
 >
 
 ###############################################################################
