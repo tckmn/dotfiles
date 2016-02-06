@@ -71,9 +71,9 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   shortcut. Do you really want to exit \
   i3? This will end your X session.' \
   -b 'Yes, exit i3' 'i3-msg exit'
-bindsym !!<1!Print,$mod+Sys_Req> exec import \ # screenshot keys
-  !!<1!-window root ,>$(date '+pictures/\
-  screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym !!<1!Print,$mod+Sys_Req> exec \     # screenshot keys
+  scrot !!<1!-,-s>bd 1 'pictures/\
+  screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer -D pulse set Master 5%!!+,-
 bindcode 248 \
