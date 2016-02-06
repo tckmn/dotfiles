@@ -27,9 +27,10 @@ exec --no-startup-id !!<\  # commands to run on init
 ###############################################################################
 
 !@<+default_bindings
-bindsym $mod+Shift+Return \                 # start a terminal
-  exec i3-sensible-terminal
-bindsym $mod+Return exec dmenu_run          # start dmenu
+bindsym $mod!!<,+Shift>+Return exec rofi \  # rofi (dropin dmenu replacement)
+  -show !!<run,window>
+bindsym $mod!!<,+Shift>+apostrophe exec \   # most commonly launched programs
+  !!<i3-sensible-terminal,chromium>
 bindsym $mod+d kill                         # delete focused window
 bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support

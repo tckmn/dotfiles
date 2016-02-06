@@ -33,6 +33,9 @@ URxvt*fadeColor:             S_base03
 URxvt*cursorColor:           S_base1
 URxvt*pointerColorBackground:S_base01
 URxvt*pointerColorForeground:S_base1
+rofi*bg:                     S_base02
+rofi*fg:                     S_base1
+rofi*font:                   Hack 10
 #define S_yellow        #b58900
 #define S_orange        #cb4b16
 #define S_red           #dc322f
