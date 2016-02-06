@@ -18,10 +18,13 @@ exec --no-startup-id setxkbmap -option 'ctrl:nocaps' -option 'compose:menu'
 exec --no-startup-id xrdb ~/.Xresources
 exec --no-startup-id synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')"
 exec --no-startup-id xrandr --output HDMI2 --right-of eDP1
+exec --no-startup-id wicd-client -t
 ###############################################################################
 ###############################################################################
-bindsym $mod+Shift+Return exec i3-sensible-terminal
-bindsym $mod+Return exec dmenu_run
+bindsym $mod+Return exec rofi -show run
+bindsym $mod+Shift+Return exec rofi -show window
+bindsym $mod+apostrophe exec i3-sensible-terminal
+bindsym $mod+Shift+apostrophe exec chromium
 bindsym $mod+d kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
@@ -80,13 +83,13 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec import -window root $(date '+pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
-bindsym $mod+Sys_Req exec import $(date '+pictures/screenshot_%Y-%m-%d_%H:%M:%S.png')
+bindsym Print exec scrot -bd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
+bindsym $mod+Sys_Req exec scrot -sbd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
-bindcode 248 exec amixer -D pulse set Master toggle
-bindsym XF86Sleep exec xbacklight +10%
-bindsym XF86Battery exec xbacklight -10%
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle
+bindsym XF86MonBrightnessUp exec xbacklight +10%
+bindsym XF86MonBrightnessDown exec xbacklight -10%
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -105,22 +108,22 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 mode "mouse" {
-        bindsym h exec xdotool mousemove_relative -- -20 0
-        bindsym j exec xdotool mousemove_relative -- 0 20
-        bindsym k exec xdotool mousemove_relative -- 0 -20
-        bindsym l exec xdotool mousemove_relative -- 20 0
-        bindsym y exec xdotool mousemove_relative -- -20 -20
-        bindsym u exec xdotool mousemove_relative -- 20 -20
-        bindsym b exec xdotool mousemove_relative -- -20 20
-        bindsym n exec xdotool mousemove_relative -- 20 20
-        bindsym KP_4 exec xdotool mousemove_relative -- -8 0
-        bindsym KP_2 exec xdotool mousemove_relative -- 0 8
-        bindsym KP_8 exec xdotool mousemove_relative -- 0 -8
-        bindsym KP_6 exec xdotool mousemove_relative -- 8 0
-        bindsym KP_7 exec xdotool mousemove_relative -- -8 -8
-        bindsym KP_9 exec xdotool mousemove_relative -- 8 -8
-        bindsym KP_1 exec xdotool mousemove_relative -- -8 8
-        bindsym KP_3 exec xdotool mousemove_relative -- 8 8
+        bindsym h exec xdotool mousemove_relative -- -30 0
+        bindsym j exec xdotool mousemove_relative -- 0 30
+        bindsym k exec xdotool mousemove_relative -- 0 -30
+        bindsym l exec xdotool mousemove_relative -- 30 0
+        bindsym y exec xdotool mousemove_relative -- -30 -30
+        bindsym u exec xdotool mousemove_relative -- 30 -30
+        bindsym b exec xdotool mousemove_relative -- -30 30
+        bindsym n exec xdotool mousemove_relative -- 30 30
+        bindsym KP_4 exec xdotool mousemove_relative -- -10 0
+        bindsym KP_2 exec xdotool mousemove_relative -- 0 10
+        bindsym KP_8 exec xdotool mousemove_relative -- 0 -10
+        bindsym KP_6 exec xdotool mousemove_relative -- 10 0
+        bindsym KP_7 exec xdotool mousemove_relative -- -10 -10
+        bindsym KP_9 exec xdotool mousemove_relative -- 10 -10
+        bindsym KP_1 exec xdotool mousemove_relative -- -10 10
+        bindsym KP_3 exec xdotool mousemove_relative -- 10 10
         bindsym Left exec xdotool mousemove_relative -- -1 0
         bindsym Down exec xdotool mousemove_relative -- 0 1
         bindsym Up exec xdotool mousemove_relative -- 0 -1
@@ -134,35 +137,28 @@ mode "mouse" {
         bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
-set $launchmenu "launch: (f)irefox  (c)alculator"
-mode $launchmenu {
-        bindsym f exec firefox; mode "default"
-        bindsym c exec gnome-calculator; mode "default"
-        bindsym Escape mode "default"
-}
-set $systemmenu "system: (p)oweroff  (r)eboot  (l)ock"
+set $systemmenu "system: (l)ock"
 mode $systemmenu {
-        bindsym p exec shutdown -P now; mode "default"
-        bindsym r exec shutdown -r now; mode "default"
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug"
+set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
 mode $copymenu {
-        bindsym z exec echo -n ​  | xsel -ibl /dev/null; mode "default"
-        bindsym d exec echo -n 'ಠ_ಠ'  | xsel -ibl /dev/null; mode "default"
-        bindsym l exec echo -n '( ͡° ͜ʖ ͡°)'  | xsel -ibl /dev/null; mode "default"
-        bindsym t exec echo -n '(╯°□°）╯︵ ┻━┻'  | xsel -ibl /dev/null; mode "default"
-        bindsym s exec echo -n '¯\_(ツ)_/¯'  | xsel -ibl /dev/null; mode "default"
+        bindsym z exec echo -n ​ | xsel -ibl /dev/null; mode "default"
+        bindsym d exec echo -n 'ಠ_ಠ' | xsel -ibl /dev/null; mode "default"
+        bindsym l exec echo -n '( ͡° ͜ʖ ͡°)' | xsel -ibl /dev/null; mode "default"
+        bindsym t exec echo -n '(╯°□°）╯︵ ┻━┻' | xsel -ibl /dev/null; mode "default"
+        bindsym s exec echo -n '¯\_(ツ)_/¯' | xsel -ibl /dev/null; mode "default"
+        bindsym r exec echo -n 'http://www.youtube.com/watch?v=dQw4w9WgXcQ' | xsel -ibl /dev/null; mode "default"
         bindsym Escape mode "default"
 }
-mode "action: (l)aunch  (s)ystem  (c)opy" {
-        bindsym l mode $launchmenu
+set $actionmenu "action: (s)ystem  (c)opy"
+mode $actionmenu {
         bindsym s mode $systemmenu
         bindsym c mode $copymenu
         bindsym Escape mode "default"
 }
-bindsym --release Alt_R exec ~/.i3/maybe_action.sh
+bindsym $mod+c mode $actionmenu
 ###############################################################################
 ###############################################################################
 bar {
