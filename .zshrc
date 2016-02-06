@@ -104,3 +104,16 @@ alias cpugov-ondemand='echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpu
 
 # Google App Engine
 export PATH=$PATH:/home/llama/programs/google_appengine
+
+# this is really awesome
+# what I'm doing here is arbitrarily preprocessing commands before executing
+# them---WAY more powerful than aliasing
+if [ -f ~/.cmdline_intercept ]
+then
+    cmdline_intercept () {
+        BUFFER="$(~/.cmdline_intercept "$BUFFER")"
+        zle accept-line
+    }
+    zle -N cmdline_intercept
+    bindkey '^M' cmdline_intercept
+fi
