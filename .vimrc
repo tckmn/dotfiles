@@ -16,12 +16,6 @@ let g:tex_flavor='latex'
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_ViewRule_pdf='mimeopen'
 
-" ctrlp plugin
-let g:ctrlp_map = '<Leader>p'
-
-" NERDTree plugin
-nnoremap <Leader>n :NERDTreeToggle<cr>
-
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
 
@@ -90,6 +84,9 @@ set listchars=tab:▸…,eol:¬,trail:•
 
 " Fix Vim's brain-damaged buffer handling system
 set hidden
+
+" Fix Vim's brain-damaged Y-handling behavior
+nnoremap Y y$
 
 " Convenience
 runtime macros/justify.vim
