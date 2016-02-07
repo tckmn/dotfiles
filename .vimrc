@@ -26,9 +26,6 @@ let g:Tex_ViewRule_pdf='mimeopen'
 
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
-"iunmap <Leader>ih
-"iunmap <Leader>is
-"iunmap <Leader>ihn
 
 " UltiSnips plugin
 let g:UltiSnipsExpandTrigger="<C-j>"
