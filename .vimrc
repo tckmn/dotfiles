@@ -1,5 +1,13 @@
-" Pathogen
-execute pathogen#infect()
+" vim-plug
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive'
+Plug 'wting/rust.vim'
+Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'vim-scripts/a.vim'
+Plug 'altercation/vim-colors-solarized'
+call plug#end()
 
 " Weirdness
 let g:netrw_ftpextracmd='passive'
@@ -18,6 +26,9 @@ let g:Tex_ViewRule_pdf='mimeopen'
 
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
+"iunmap <Leader>ih
+"iunmap <Leader>is
+"iunmap <Leader>ihn
 
 " UltiSnips plugin
 let g:UltiSnipsExpandTrigger="<C-j>"
@@ -35,7 +46,7 @@ set cinoptions=l1
 " Generic global config
 set nocompatible
 set modelines=0
-set term=screen-256color
+set mouse=
 set t_Co=16
 set background=dark
 colorscheme solarized

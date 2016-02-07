@@ -90,6 +90,7 @@ alias keyftp="ftp ftp.keyboardfire.com"
 alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
+alias v='nvim'
 
 setopt interactivecomments
 
