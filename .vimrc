@@ -7,6 +7,9 @@ Plug 'wting/rust.vim'
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Plug 'vim-scripts/a.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 call plug#end()
 
 " auto-indent, syntax highlighting, leader
@@ -22,10 +25,6 @@ let g:Tex_ViewRule_pdf='mimeopen'
 
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
-
-" UltiSnips plugin
-let g:UltiSnipsExpandTrigger="<C-j>"
-let g:UltiSnipsListSnippets="<C-S-j>"
 
 " Ruby syntax highlighting is super slow without this
 autocmd FileType ruby setlocal re=1 nornu nu
