@@ -45,9 +45,15 @@ bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
 bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
   !!<2!,move container to >\
   workspace number !!1!1..10
-bindsym $mod!!<,+Shift>+grave \             # previous workspace
+bindsym $mod!!<,+Shift>+grave \             # last used workspace
   !!<,move container to >\
   workspace back_and_forth
+bindsym $mod!!<,+Shift>+comma \             # next/prev workspace
+  !!<,move container to >\
+  workspace prev
+bindsym $mod!!<,+Shift>+period \
+  !!<,move container to >\
+  workspace next
 bindsym $mod+x exec i3-input -F \           # rename workspace
   "rename workspace to \
   "'"'"$(~/.i3/cur_wksp.sh):%s"'"' \
