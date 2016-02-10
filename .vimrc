@@ -80,6 +80,9 @@ nnoremap gk k
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <C-m> :b#<cr>
+if has('nvim')
+    tnoremap <Nul> <C-\><C-n>
+endif
 
 " show invisible chars
 set list
