@@ -3,6 +3,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-endwise'
 Plug 'wting/rust.vim'
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Plug 'vim-scripts/a.vim'
