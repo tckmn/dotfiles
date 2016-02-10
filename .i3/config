@@ -5,7 +5,7 @@
 # i3 config file (with i3bang)
 ###############################################################################
 ###############################################################################
-set $mod Mod1
+set $mod Mod4
 font pango:monospace 8
 new_window normal 0 px
 set $mv 20px
@@ -44,7 +44,7 @@ bindsym $mod+Shift+Up move up $mv
 bindsym $mod+Shift+Right move right $mv
 bindsym $mod+backslash split h
 bindsym $mod+minus split v
-bindsym $mod+Shift+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -74,6 +74,10 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
+bindsym $mod+comma workspace prev
+bindsym $mod+Shift+comma move container to workspace prev
+bindsym $mod+period workspace next
+bindsym $mod+Shift+period move container to workspace next
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
 bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
@@ -142,20 +146,20 @@ mode $systemmenu {
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-set $copymenu "copy: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
-mode $copymenu {
-        bindsym z exec echo -n ​ | xsel -ibl /dev/null; mode "default"
-        bindsym d exec echo -n 'ಠ_ಠ' | xsel -ibl /dev/null; mode "default"
-        bindsym l exec echo -n '( ͡° ͜ʖ ͡°)' | xsel -ibl /dev/null; mode "default"
-        bindsym t exec echo -n '(╯°□°）╯︵ ┻━┻' | xsel -ibl /dev/null; mode "default"
-        bindsym s exec echo -n '¯\_(ツ)_/¯' | xsel -ibl /dev/null; mode "default"
-        bindsym r exec echo -n 'http://www.youtube.com/watch?v=dQw4w9WgXcQ' | xsel -ibl /dev/null; mode "default"
+set $typemenu "type: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
+mode $typemenu {
+        bindsym --release z exec xdotool type '​'; mode "default"
+        bindsym --release d exec xdotool type 'ಠ_ಠ'; mode "default"
+        bindsym --release l exec xdotool type '( ͡° ͜ʖ ͡°)'; mode "default"
+        bindsym --release t exec xdotool type '(╯°□°）╯︵ ┻━┻'; mode "default"
+        bindsym --release s exec xdotool type '¯\_(ツ)_/¯'; mode "default"
+        bindsym --release r exec xdotool type 'http://www.youtube.com/watch?v=dQw4w9WgXcQ'; mode "default"
         bindsym Escape mode "default"
 }
-set $actionmenu "action: (s)ystem  (c)opy"
+set $actionmenu "action: (s)ystem  (t)ype"
 mode $actionmenu {
         bindsym s mode $systemmenu
-        bindsym c mode $copymenu
+        bindsym c mode $typemenu
         bindsym Escape mode "default"
 }
 bindsym $mod+c mode $actionmenu
