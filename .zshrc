@@ -66,8 +66,22 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# urxvt shenanigans
+# urxvt title
 function title() { printf '\33]2;%s\007' "$1" }
+function t {
+    if [ -z "$@" ]
+    then
+        TITLE_PREFIX=
+    else
+        TITLE_PREFIX="{{$@}} "
+    fi
+}
+function precmd {
+    title "${TITLE_PREFIX}zsh [$(pwd)]"
+}
+function preexec {
+    title "$TITLE_PREFIX$1 [$(pwd)]"
+}
 
 # fun
 alias sl="sl -e"
