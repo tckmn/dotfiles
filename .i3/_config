@@ -5,7 +5,7 @@
 #                                  VARIABLES                                  #
 ###############################################################################
 
-set $mod Mod1              # left alt
+set $mod Mod4              # super / "windows key"
 font pango:monospace 8     # window titles, status bar
 new_window normal 0 px     # no borders
 set $mv 20px               # amount to resize windows (also used for how far to
@@ -36,7 +36,7 @@ bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
   !!<1!left,down,up,right>!!<2!, $mv>
 bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
-bindsym $mod+Shift+f fullscreen toggle      # fullscreen
+bindsym $mod+f fullscreen toggle            # fullscreen
 bindsym $mod+!!q,w,e \                      # change container layout
   layout !!<stacking,tabbed,toggle split>
 bindsym $mod!!<,+Shift>+space \             # manage floating windows with
