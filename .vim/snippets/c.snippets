@@ -4,4 +4,10 @@ snippet main
 		$0
 		return 0;
 	}
-# TODO: include guards
+snippet guard
+	#ifndef ${1:`toupper(substitute(Filename('__$1_H__', 'UNTITLED_H'), '\\(\\l\\)\\(\\u\\)', '\\1\\_\\2', 'g'))`}
+	#define $1
+
+	$0
+
+	#endif
