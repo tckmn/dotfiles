@@ -2,6 +2,7 @@
 call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-endwise'
 Plug 'wting/rust.vim'
@@ -11,6 +12,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 " auto-indent, syntax highlighting, leader
@@ -26,6 +28,10 @@ let g:Tex_ViewRule_pdf='mimeopen'
 
 " A plugin
 nnoremap <Leader>a :A<cr><C-g>
+
+" easy-align plugin
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 " Ruby syntax highlighting is super slow without this
 autocmd FileType ruby setlocal re=1 nornu nu
