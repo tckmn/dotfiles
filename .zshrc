@@ -105,11 +105,6 @@ alias keyerr="echo 'get stats/cgi_error_log -' | ftp ftp.keyboardfire.com"
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias pgrep='pgrep -a'
 alias v='nvim'
-function vim() {
-    echo 'WAIT!!! Have you considered using v?'
-    sleep 2
-    command vim $@
-}
 
 setopt interactivecomments
 
