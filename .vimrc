@@ -111,6 +111,9 @@ nnoremap <Leader>z :w<cr><C-z>
 nnoremap <Leader>m :make<cr>
 cnoremap w!! w !sudo tee %
 
+" title
+set title titlestring=]2;vim\ [%F]
+
 " annoyances
 imap <Nul> <Esc><Leader>
 set noesckeys
