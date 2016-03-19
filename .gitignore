@@ -1,3 +1,4 @@
 .netrwhist
 .*.sw?
 .i3/i3bang.rb
+.vim/plugged
