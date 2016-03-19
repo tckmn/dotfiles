@@ -134,3 +134,4 @@ then
 fi
 
 alias qpd='pyth -c '\''eh:s`M.wk"http://area51.stackexchange.com/proposals/4570""h-v\D*([^<]*)"4'\'
+alias printer='lp -d home_printer'
