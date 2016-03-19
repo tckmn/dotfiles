@@ -44,7 +44,6 @@ let g:html_indent_inctags = "html,body,head,tbody"
 set cinoptions=l1
 
 " generic global config
-set nocompatible
 set modelines=0
 set mouse=
 set background=dark
