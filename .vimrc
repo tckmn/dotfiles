@@ -13,6 +13,7 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 Plug 'junegunn/vim-easy-align'
+Plug 'ararslan/license-to-vim'
 call plug#end()
 
 " auto-indent, syntax highlighting, leader
