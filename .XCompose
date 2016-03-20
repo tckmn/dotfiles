@@ -63,7 +63,7 @@
 <dead_macron> <space>            	: "¯"   macron # MACRON
 <dead_macron> <dead_macron>      	: "¯"   macron # MACRON
 <Multi_key> <minus> <asciicircum> 	: "¯"   macron # MACRON
-<Multi_key> <asciicircum> <minus> 	: "¯"   macron # MACRON
+#<Multi_key> <asciicircum> <minus> 	: "¯"   macron # MACRON
 <Multi_key> <underscore> <underscore> 	: "¯"   macron # MACRON
 <Multi_key> <underscore> <asciicircum> 	: "¯"   macron # MACRON
 <dead_breve> <space>             	: "˘"   breve # BREVE
@@ -6040,7 +6040,6 @@
 
 <Multi_key> <Multi_key> <d> : "ಠ_ಠ" # disapproval
 <Multi_key> <Multi_key> <l> : "( ͡° ͜ʖ ͡°)" # lenny
-<Multi_key> <Multi_key> <m> : "µ"   U00B5    # micro
 <Multi_key> <Multi_key> <r> : "http://www.youtube.com/watch?v=dQw4w9WgXcQ" # rickroll
 <Multi_key> <Multi_key> <s> : "¯\\_(ツ)_/¯" # shrug
 <Multi_key> <Multi_key> <t> : "(╯°□°）╯︵ ┻━┻" # tableflip
@@ -6094,3 +6093,39 @@
 <Multi_key> <Multi_key> <g> <y>            : "ψ"   U03C8    # GREEK SMALL LETTER PSI
 <Multi_key> <Multi_key> <g> <Z>            : "Ζ"   U0396    # GREEK CAPITAL LETTER ZETA
 <Multi_key> <Multi_key> <g> <z>            : "ζ"   U03B6    # GREEK SMALL LETTER ZETA
+
+<Multi_key> <j> <period> : "ȷ" U0131
+<Multi_key> <period> <j> : "ȷ" U0131
+<Multi_key> <asciicircum> <minus> : "⁻"
+<Multi_key> <period> <L> : "Ŀ" U013F
+<Multi_key> <period> <l> : "ŀ" U0140
+<Multi_key> <Multi_key> <h> <B> : "Ɓ" U0181
+<Multi_key> <Multi_key> <h> <b> : "ɓ" U0253
+<Multi_key> <Multi_key> <h> <C> : "Ƈ" U0187
+<Multi_key> <Multi_key> <h> <c> : "ƈ" U0188
+<Multi_key> <Multi_key> <h> <D> : "Ɗ" U018A
+<Multi_key> <Multi_key> <h> <d> : "ɗ" U0257
+<Multi_key> <Multi_key> <h> <F> : "Ƒ" U0191
+<Multi_key> <Multi_key> <h> <f> : "ƒ" function
+<Multi_key> <Multi_key> <h> <G> : "Ɠ" U0193
+<Multi_key> <Multi_key> <h> <g> : "ɠ" U0260
+<Multi_key> <Multi_key> <h> <h> : "ɦ" U0266
+<Multi_key> <Multi_key> <h> <K> : "Ƙ" U0198
+<Multi_key> <Multi_key> <h> <k> : "ƙ" U0199
+<Multi_key> <Multi_key> <h> <M> : "Ɱ" U2C6E
+<Multi_key> <Multi_key> <h> <m> : "ɱ" U0271
+<Multi_key> <Multi_key> <h> <N> : "Ɲ" U019D
+<Multi_key> <Multi_key> <h> <n> : "ɲ" U0272
+<Multi_key> <Multi_key> <h> <P> : "Ƥ" U01A4
+<Multi_key> <Multi_key> <h> <p> : "ƥ" U01A5
+<Multi_key> <Multi_key> <h> <q> : "ʠ" U02A0
+<Multi_key> <Multi_key> <h> <r> : "ɼ" U027C
+<Multi_key> <Multi_key> <h> <s> : "ʂ" U0282
+<Multi_key> <Multi_key> <h> <T> : "Ƭ" U01AC
+<Multi_key> <Multi_key> <h> <t> : "ƭ" U01AD
+<Multi_key> <Multi_key> <h> <V> : "Ʋ" U01B2
+<Multi_key> <Multi_key> <h> <v> : "ʋ" U028B
+<Multi_key> <Multi_key> <h> <W> : "Ⱳ" U2C72
+<Multi_key> <Multi_key> <h> <w> : "ⱳ" U2C73
+<Multi_key> <Multi_key> <h> <Z> : "Ȥ" U0224
+<Multi_key> <Multi_key> <h> <z> : "ȥ" U0225
