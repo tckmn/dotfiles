@@ -6156,11 +6156,6 @@
 <Multi_key> <Multi_key> <c> <y>: "ʏ"
 <Multi_key> <Multi_key> <c> <z>: "ᴢ"
 
-
-## CONVENIENCE ##
-<Multi_key> <T> <h> : "θ"
-<Multi_key> <t> <H> : "Θ"
-
 ## JELLY ##
 <Multi_key> <j> <period> : "ȷ" U0131
 <Multi_key> <period> <j> : "ȷ" U0131
