@@ -74,6 +74,8 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
+bindsym $mod+Tab focus output right
+bindsym $mod+Shift+Tab move output right
 bindsym $mod+comma workspace prev
 bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+period workspace next
@@ -88,12 +90,15 @@ bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 bindsym Print exec scrot -bd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
-bindsym $mod+Sys_Req exec scrot -sbd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
+bindsym Mod1+Sys_Req exec scrot -sbd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
 bindsym XF86AudioMute exec amixer -D pulse set Master toggle
+bindcode 248 exec amixer -D pulse set Master toggle
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
+bindsym XF86Sleep exec xbacklight +10%
+bindsym XF86Battery exec xbacklight -10%
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -159,7 +164,7 @@ mode $typemenu {
 set $actionmenu "action: (s)ystem  (t)ype"
 mode $actionmenu {
         bindsym s mode $systemmenu
-        bindsym c mode $typemenu
+        bindsym --release t mode $typemenu
         bindsym Escape mode "default"
 }
 bindsym $mod+c mode $actionmenu

@@ -48,6 +48,8 @@ bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
 bindsym $mod!!<,+Shift>+grave \             # last used workspace
   !!<,move container to >\
   workspace back_and_forth
+bindsym $mod!!<,+Shift>+Tab !!focus,move \  # other monitor
+  output right
 bindsym $mod!!<,+Shift>+comma \             # next/prev workspace
   !!<,move container to >\
   workspace prev
@@ -77,14 +79,18 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   shortcut. Do you really want to exit \
   i3? This will end your X session.' \
   -b 'Yes, exit i3' 'i3-msg exit'
-bindsym !!<1!Print,$mod+Sys_Req> exec \     # screenshot keys
+bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
   scrot !!<1!-,-s>bd 1 'pictures/\
   screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer -D pulse set Master 5%!!+,-
 bindsym XF86AudioMute \
   exec amixer -D pulse set Master toggle
+bindcode 248 \                     # weird volume keys
+  exec amixer -D pulse set Master toggle
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
+  exec xbacklight !!<+,->10%
+bindsym XF86!!Sleep,Battery \        # weird brightness keys
   exec xbacklight !!<+,->10%
 >
 
@@ -126,17 +132,9 @@ mode $systemmenu {
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-set $typemenu "type: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
-mode $typemenu {
-        bindsym --release !!z,d,l,t,s,r exec xdotool type '!!<​,ಠ_ಠ,\
-            ( ͡° ͜ʖ ͡°),(╯°□°）╯︵ ┻━┻,¯\_(ツ)_/¯,\
-            http://www.youtube.com/watch?v=dQw4w9WgXcQ>'; mode "default"
-        bindsym Escape mode "default"
-}
-set $actionmenu "action: (s)ystem  (t)ype"
+set $actionmenu "action: (s)ystem"
 mode $actionmenu {
         bindsym s mode $systemmenu
-        bindsym t mode $typemenu
         bindsym Escape mode "default"
 }
 bindsym $mod+c mode $actionmenu
