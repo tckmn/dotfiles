@@ -8,7 +8,7 @@ Plug 'tpope/vim-endwise'
 Plug 'wting/rust.vim'
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Plug 'vim-scripts/a.vim'
-Plug 'altercation/vim-colors-solarized'
+Plug 'chriskempson/base16-vim'
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
@@ -47,7 +47,7 @@ set cinoptions=l1
 set modelines=0
 set mouse=
 set background=dark
-colorscheme solarized
+colorscheme base16-default
 set encoding=utf-8
 
 " indentation

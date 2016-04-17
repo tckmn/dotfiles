@@ -109,7 +109,7 @@ alias v='nvim'
 setopt interactivecomments
 
 # PROMPTS
-PS1="%K{blue}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
+PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
 
 # AFL
