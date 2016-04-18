@@ -16,6 +16,8 @@ URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
 
 URxvt.keysym.M-u: perl:url-select:select_next
 
+! disable stupid behavior of bold text
+URxvt.intensityStyles: false
 
 ! Base16 Default
 ! Scheme: Chris Kempson (http://chriskempson.com)
