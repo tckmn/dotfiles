@@ -40,7 +40,7 @@ map S :tabnew google<Space>
 
 "* map r reload
 map R reloadTabUncached
-map <C-r> reloadAllTabs
+map <C-A-R> reloadAllTabs
 
 imap <C-a> beginningOfLine
 "* imap <C-e> endOfLine
