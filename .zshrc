@@ -96,6 +96,9 @@ alias 2s="xrandr --auto && xrandr --output HDMI2 --right-of eDP1"
 # etc aliases
 alias printer='lp -d home_printer'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
+function xb() {
+    [ -n "$1" ] && xbacklight -set "$1" || xbacklight
+}
 alias v='nvim'
 
 # allow use of comments in shell
