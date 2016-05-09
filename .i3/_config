@@ -11,16 +11,7 @@ new_window normal 0 px     # no borders
 set $mv 20px               # amount to resize windows (also used for how far to
 set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
-exec --no-startup-id !!<\  # commands to run on init
-  xflux -z 77024,\
-  ( sleep 3 && xcape )&,\
-  xss-lock i3lock,\
-  setxkbmap -option 'ctrl:nocaps' -option 'compose:menu',\
-  xrdb ~/.Xresources,\
-  synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')",\
-  xrandr --output HDMI2 --right-of eDP1,\
-  wicd-client -t
->
+exec --no-startup-id ~/.i3/startup.sh &
 
 ###############################################################################
 #                                 KEY BINDINGS                                #
