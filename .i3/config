@@ -11,14 +11,7 @@ new_window normal 0 px
 set $mv 20px
 set $mvppt 2ppt
 floating_modifier $mod
-exec --no-startup-id xflux -z 77024
-exec --no-startup-id ( sleep 3 && xcape )&
-exec --no-startup-id xss-lock i3lock
-exec --no-startup-id setxkbmap -option 'ctrl:nocaps' -option 'compose:menu'
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id synclient "VertScrollDelta=-$(synclient | grep VertScrollDelta | grep -o '[0-9]*')"
-exec --no-startup-id xrandr --output HDMI2 --right-of eDP1
-exec --no-startup-id wicd-client -t
+exec --no-startup-id ~/.i3/startup.sh &
 ###############################################################################
 ###############################################################################
 bindsym $mod+Return exec rofi -show run
@@ -91,14 +84,15 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 bindsym Print exec scrot -bd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym Mod1+Sys_Req exec scrot -sbd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
-bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+
-bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%-
-bindsym XF86AudioMute exec amixer -D pulse set Master toggle
-bindcode 248 exec amixer -D pulse set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer -D pulse set Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse set Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer -D pulse set Master toggle && pkill -RTMIN+10 i3blocks
+bindcode 248 exec amixer -D pulse set Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Sleep exec xbacklight +10%
 bindsym XF86Battery exec xbacklight -10%
+bindsym $mod+Shift+minus exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -151,28 +145,15 @@ mode $systemmenu {
         bindsym l exec i3lock; mode "default"
         bindsym Escape mode "default"
 }
-set $typemenu "type: (z)wsp  (d)isapproval  (l)enny  (t)ableflip  (s)hrug  (r)ickroll"
-mode $typemenu {
-        bindsym --release z exec xdotool type '​'; mode "default"
-        bindsym --release d exec xdotool type 'ಠ_ಠ'; mode "default"
-        bindsym --release l exec xdotool type '( ͡° ͜ʖ ͡°)'; mode "default"
-        bindsym --release t exec xdotool type '(╯°□°）╯︵ ┻━┻'; mode "default"
-        bindsym --release s exec xdotool type '¯\_(ツ)_/¯'; mode "default"
-        bindsym --release r exec xdotool type 'http://www.youtube.com/watch?v=dQw4w9WgXcQ'; mode "default"
-        bindsym Escape mode "default"
-}
-set $actionmenu "action: (s)ystem  (t)ype"
+set $actionmenu "action: (s)ystem"
 mode $actionmenu {
         bindsym s mode $systemmenu
-        bindsym --release t mode $typemenu
         bindsym Escape mode "default"
 }
 bindsym $mod+c mode $actionmenu
 ###############################################################################
 ###############################################################################
 bar {
-    status_command          i3status -c ~/.i3/i3status.conf
-   #position                top
-   #mode                    hide
-   #modifier                Mod1
+    status_command i3blocks -c ~/.i3/i3blocks.conf
 }
+bindsym ISO_Next_Group exec pkill -RTMIN+10 i3blocks
