@@ -6041,12 +6041,15 @@
 ### CUSTOM BINDINGS START HERE ###
 
 ## FUN ##
+<Multi_key> <Multi_key> <b> : "🐃" # water buffalo
 <Multi_key> <Multi_key> <d> : "ಠ_ಠ" # disapproval
 <Multi_key> <Multi_key> <l> : "( ͡° ͜ʖ ͡°)" # lenny
 <Multi_key> <Multi_key> <r> : "http://www.youtube.com/watch?v=dQw4w9WgXcQ" # rickroll
 <Multi_key> <Multi_key> <s> : "¯\\_(ツ)_/¯" # shrug
 <Multi_key> <Multi_key> <t> : "(╯°□°）╯︵ ┻━┻" # tableflip
+<Multi_key> <Multi_key> <w> : "🐃" # water buffalo
 <Multi_key> <Multi_key> <z> : "​" # zwsp
+<KP_Add> : "🐃" # water buffalo
 
 ## GREEK ##
 <Multi_key> <Multi_key> <g> <A> : "Α" U0391
@@ -6162,3 +6165,6 @@
 <Multi_key> <asciicircum> <minus> : "⁻"
 <Multi_key> <period> <L> : "Ŀ" U013F
 <Multi_key> <period> <l> : "ŀ" U0140
+
+## ETC ##
+<Multi_key> <equal> <equal> : "≈"
