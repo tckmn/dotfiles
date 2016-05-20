@@ -1,6 +1,6 @@
 if [ -d "$HOME/bin" ]
 then
-    PATH=$PATH:$HOME/bin
+    export PATH=$PATH:$HOME/bin
 fi
 
 export EDITOR=/usr/bin/nvim

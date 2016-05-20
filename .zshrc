@@ -112,13 +112,6 @@ setopt interactivecomments
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
 
-# AFL
-export PATH=$PATH:/home/llama/programs/afl-1.83b
-alias cpugov-perf='echo performance | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
-alias cpugov-ondemand='echo ondemand | sudo tee /sys/devices/system/cpu/cpu*/cpufreq/scaling_governor'
-# Google App Engine
-export PATH=$PATH:/home/llama/programs/google_appengine
-
 # this is really awesome
 # what I'm doing here is arbitrarily preprocessing commands before executing
 # them---WAY more powerful than aliasing
