@@ -1,46 +1,6 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+# NOTE: for this to work in applications such as firefox, add
+#   export GTK_IM_MODULE=xim
+# to /etc/environment
 
 # UTF-8 (Unicode) compose sequence
 # David.Monniaux@ens.fr
