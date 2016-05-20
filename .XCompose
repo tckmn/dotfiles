@@ -62,7 +62,7 @@
 <dead_abovering> <dead_abovering> 	: "°"   degree # DEGREE SIGN
 <dead_macron> <space>            	: "¯"   macron # MACRON
 <dead_macron> <dead_macron>      	: "¯"   macron # MACRON
-<Multi_key> <minus> <asciicircum> 	: "¯"   macron # MACRON
+#<Multi_key> <minus> <asciicircum> 	: "¯"   macron # MACRON
 #<Multi_key> <asciicircum> <minus> 	: "¯"   macron # MACRON
 <Multi_key> <underscore> <underscore> 	: "¯"   macron # MACRON
 <Multi_key> <underscore> <asciicircum> 	: "¯"   macron # MACRON
@@ -6049,7 +6049,6 @@
 <Multi_key> <Multi_key> <t> : "(╯°□°）╯︵ ┻━┻" # tableflip
 <Multi_key> <Multi_key> <w> : "🐃" # water buffalo
 <Multi_key> <Multi_key> <z> : "​" # zwsp
-<KP_Add> : "🐃" # water buffalo
 
 ## GREEK ##
 <Multi_key> <Multi_key> <g> <A> : "Α" U0391
