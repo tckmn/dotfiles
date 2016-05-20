@@ -11,7 +11,6 @@ new_window normal 0 px     # no borders
 set $mv 20px               # amount to resize windows (also used for how far to
 set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
-exec --no-startup-id ~/.i3/startup.sh &
 
 ###############################################################################
 #                                 KEY BINDINGS                                #
@@ -21,7 +20,7 @@ exec --no-startup-id ~/.i3/startup.sh &
 bindsym $mod!!<,+Shift>+Return exec rofi \  # rofi (dropin dmenu replacement)
   -show !!<run,window>
 bindsym $mod!!<,+Shift>+apostrophe exec \   # most commonly launched programs
-  !!<i3-sensible-terminal,chromium>
+  !!<i3-sensible-terminal,firefox>
 bindsym $mod+d kill                         # delete focused window
 bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
