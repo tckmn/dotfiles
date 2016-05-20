@@ -1,11 +1,11 @@
-"hg7166
+imap -ex <C-n> bn
+imap -ex <C-p> bp
 
-loadplugins '\.(js|penta)$'
-group user
-map -count -modes=n <C-h> -builtin <count><C-p>
-map -count -modes=n <C-j> -builtin <count><C-n>
-map -count -modes=n <C-k> -builtin <count><C-p>
-map -count -modes=n <C-l> -builtin <count><C-n>
-set cdpath=''
+imap <A-b> <C-left>
+imap <A-f> <C-right>
 
-" vim: set ft=pentadactyl:
+nmap -ex -count > tabm +1
+nmap -ex -count <lt> tabm -1
+
+nmap -builtin -count j 5j
+nmap -builtin -count k 5k
