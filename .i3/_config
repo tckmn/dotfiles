@@ -73,19 +73,17 @@ bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
   scrot !!<1!-,-s>bd 1 'pictures/\
   screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
-  exec amixer -D pulse set Master 5%!!+,- \
+  exec amixer sset Master 5%!!+,- \
   && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute \
-  exec amixer -D pulse set Master toggle \
+bindsym XF86AudioMute \                     # mute volume key
+  exec amixer sset Master toggle \
   && pkill -RTMIN+10 i3blocks
-bindcode 248 \                              # weird volume keys
-  exec amixer -D pulse set Master toggle \
+bindsym XF86AudioMicMute \                  # mute mic key
+  exec amixer sset Capture toggle \
   && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
   exec xbacklight !!<+,->10%
-bindsym XF86!!Sleep,Battery \               # weird brightness keys
-  exec xbacklight !!<+,->10%
-bindsym $mod+Shift+minus exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
 >
 
 ###############################################################################
