@@ -1,7 +1,8 @@
 # identify ourselves
 export TERM=screen-256color
 
-# Keep lots of lines of history within the shell and save it to ~/misc/ZSH_HISTORY
+# keep lots of lines of history within the shell and save it to
+# ~/misc/ZSH_HISTORY
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/misc/ZSH_HISTORY
@@ -18,6 +19,9 @@ alias egrep='egrep --color=auto'
 # use modern completion system
 autoload -Uz compinit
 compinit
+
+# emacs mode
+bindkey -e
 
 # some default completion magic
 zstyle ':completion:*' auto-description 'specify: %d'
