@@ -84,6 +84,7 @@ bindsym XF86AudioMicMute \                  # mute mic key
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
   exec xbacklight !!<+,->10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
+bindsym $mod+c exec i3lock
 >
 
 ###############################################################################
@@ -118,18 +119,6 @@ mode "mouse" {
         bindsym !!Escape,space,$mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
-
-set $systemmenu "system: (l)ock"
-mode $systemmenu {
-        bindsym l exec i3lock; mode "default"
-        bindsym Escape mode "default"
-}
-set $actionmenu "action: (s)ystem"
-mode $actionmenu {
-        bindsym s mode $systemmenu
-        bindsym Escape mode "default"
-}
-bindsym $mod+c mode $actionmenu
 
 ###############################################################################
 #                                  STATUS BAR                                 #
