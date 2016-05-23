@@ -81,7 +81,7 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec scrot -bd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
+bindsym Print exec scrot -b 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym Mod1+Sys_Req exec scrot -sbd 1 'pictures/screenshot_%Y-%m-%d_%H:%M:%S.png'
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
