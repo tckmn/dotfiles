@@ -6127,3 +6127,4 @@
 
 ## ETC ##
 <Multi_key> <equal> <equal> : "≈"
+<Multi_key> <less> <greater> : "♦"
