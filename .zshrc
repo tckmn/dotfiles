@@ -104,7 +104,6 @@ function xb() {
     [ -n "$1" ] && xbacklight -set "$1" || xbacklight
 }
 alias v='nvim'
-alias midi='aplaymidi -p 14:0'
 alias n='(cat;echo)'
 
 # licenses
