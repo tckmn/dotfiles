@@ -107,6 +107,12 @@ alias v='nvim'
 alias midi='aplaymidi -p 14:0'
 alias n='(cat;echo)'
 
+# licenses
+for license in mit gpl apache
+do
+    alias $license="cat ~/.license/$license > LICENSE"
+done
+
 # allow use of comments in shell
 setopt interactivecomments
 
