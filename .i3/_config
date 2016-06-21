@@ -70,8 +70,8 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   i3? This will end your X session.' \
   -b 'Yes, exit i3' 'i3-msg exit'
 bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
-  scrot !!<1!-b,-sbd 1> 'pictures/\
-  screenshot_%Y-%m-%d_%H:%M:%S.png'
+  maim!!<1!, -s> $(date +'pictures/\
+  screenshot_%F_%T.png')
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer sset Master 5%!!+,- \
   && pkill -RTMIN+10 i3blocks
@@ -84,7 +84,7 @@ bindsym XF86AudioMicMute \                  # mute mic key
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
   exec xbacklight !!<+,->10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
-bindsym $mod+c exec i3lock
+bindsym $mod+i exec i3lock
 >
 
 ###############################################################################
@@ -125,6 +125,16 @@ mode "numpad" {
         !@default_bindings
 }
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
+
+set $screenshot "screenshot » [i]mgur [r]ename"
+mode $screenshot {
+        bindsym i exec ~/.i3/screenshot/imgur; mode default
+        bindsym r exec ~/.i3/screenshot/rename; mode default
+        bindsym Escape mode default
+        !@default_bindings
+}
+bindsym $mod+c mode $screenshot
+
 ###############################################################################
 #                                  STATUS BAR                                 #
 ###############################################################################

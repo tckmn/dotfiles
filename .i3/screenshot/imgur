@@ -1,0 +1,2 @@
+#!/bin/zsh
+curl -H "Authorization: Client-ID $(cat ~/.i3/screenshot/imgur_authid)" -F "image=@$(~/.i3/screenshot/last)" https://api.imgur.com/3/image 2>/dev/null | jq -r .data.link | tee >(xsel -ip) >(xsel -ib)

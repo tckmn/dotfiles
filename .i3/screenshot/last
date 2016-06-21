@@ -1,0 +1,3 @@
+#!/bin/bash
+cd
+readlink -f "pictures/$(ls -t pictures | head -1)"
