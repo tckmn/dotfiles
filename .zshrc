@@ -84,7 +84,6 @@ function preexec {
 }
 
 # fun
-alias bsdgames="apt show bsdgames | tail -n6"
 alias cmatrix="cmatrix -b -u 9"
 alias xcowsay="xcowsay -f monospace"
 alias nao="ssh nethack@nethack.alt.org"
@@ -104,6 +103,10 @@ function xb() {
     [ -n "$1" ] && xbacklight -set "$1" || xbacklight
 }
 alias v='nvim'
+function xv() {
+    [ -e "$1" ] && echo File exists || ( touch "$1" && chmod +x "$1" && v "$1" )
+}
+alias vx=xv
 alias n='(cat;echo)'
 
 # licenses
