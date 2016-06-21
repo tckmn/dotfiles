@@ -15,6 +15,7 @@ URxvt.keysym.C-V: perl:clipboard:paste
 URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
 
 URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/firefox
 
 ! disable stupid behavior of bold text
 URxvt.intensityStyles: false
