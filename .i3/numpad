@@ -1,0 +1,34 @@
+#!/bin/bash
+if [ "$1" = yes ]
+then
+
+    xmodmap -e "keycode 10 = KP_1 KP_1 KP_1 KP_1"
+    xmodmap -e "keycode 11 = KP_2 KP_2 KP_2 KP_2"
+    xmodmap -e "keycode 12 = KP_3 KP_3 KP_3 KP_3"
+    xmodmap -e "keycode 13 = KP_4 KP_4 KP_4 KP_4"
+    xmodmap -e "keycode 14 = KP_5 KP_5 KP_5 KP_5"
+    xmodmap -e "keycode 15 = KP_6 KP_6 KP_6 KP_6"
+    xmodmap -e "keycode 16 = KP_7 KP_7 KP_7 KP_7"
+    xmodmap -e "keycode 17 = KP_8 KP_8 KP_8 KP_8"
+    xmodmap -e "keycode 18 = KP_9 KP_9 KP_9 KP_9"
+    xmodmap -e "keycode 19 = KP_0 KP_0 KP_0 KP_0"
+    xmodmap -e "keycode 20 = KP_Subtract KP_Subtract KP_Subtract KP_Subtract"
+    xmodmap -e "keycode 21 = KP_Add KP_Add KP_Add KP_Add"
+
+elif [ "$1" = no ]
+then
+
+    xmodmap -e "keycode 10 = 1 exclam 1 exclam"
+    xmodmap -e "keycode 11 = 2 at 2 quotedbl"
+    xmodmap -e "keycode 12 = 3 numbersign 3 numerosign"
+    xmodmap -e "keycode 13 = 4 dollar 4 semicolon"
+    xmodmap -e "keycode 14 = 5 percent 5 percent"
+    xmodmap -e "keycode 15 = 6 asciicircum 6 colon"
+    xmodmap -e "keycode 16 = 7 ampersand 7 question"
+    xmodmap -e "keycode 17 = 8 asterisk 8 asterisk"
+    xmodmap -e "keycode 18 = 9 parenleft 9 parenleft"
+    xmodmap -e "keycode 19 = 0 parenright 0 parenright"
+    xmodmap -e "keycode 20 = minus underscore minus underscore"
+    xmodmap -e "keycode 21 = equal plus equal plus"
+
+fi

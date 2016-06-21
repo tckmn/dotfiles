@@ -120,6 +120,11 @@ mode "mouse" {
 }
 bindsym $mod+m mode "mouse"
 
+mode "numpad" {
+        bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
+        !@default_bindings
+}
+bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 ###############################################################################
 #                                  STATUS BAR                                 #
 ###############################################################################
