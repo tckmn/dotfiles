@@ -3,3 +3,4 @@
 .i3/i3bang.rb
 .vim/plugged
 .vim/autoload/plug.vim.old
+.i3/screenshot/imgur_authid
