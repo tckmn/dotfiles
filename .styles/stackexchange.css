@@ -114,7 +114,7 @@
     border: 2px solid #262626 !important;
   }
 
-  #tabs a {
+  #tabs a, .nav li a {
     border: 1px solid transparent !important;
     padding: 2px 6px 4px 6px !important;
   }
@@ -412,7 +412,7 @@
   }
 
   a:visited {
-    color: /*[[visited-color]]*/ #ff32a0 !important;
+    color: /*[[visited-color]]*/ #008080 !important;
   }
   .rep-up {
     color: #4b553c !important;
@@ -588,6 +588,10 @@
   .atn { color: #088 !important; } /* attribute */
   .atv { color: #0a0 !important; } /* attribute value*/
   .dec { color: #90a !important; } /* doc type */
+
+  /* custom modifications for mod tools */
+  table.mod-summary tbody tr.even > td { background-color: #222 !important; }
+  table.mod-summary tbody tr.odd > td { background-color: #333 !important; }
 
   /* grunt-remove-block-above */
 }
