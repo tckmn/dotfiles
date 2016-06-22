@@ -65,3 +65,9 @@ URxvt.intensityStyles: false
 *.color13:      base06
 *.color14:      base0F
 *.color15:      base07
+
+rofi.color-enabled: true
+rofi.color-window: base00, base05
+rofi.color-normal: base01, base05, base02, base03, base05
+rofi.color-active: base01, base0D, base02, base03, base0D
+rofi.color-urgent: base01, base08, base02, base03, base08
