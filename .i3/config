@@ -309,5 +309,23 @@ bindsym $mod+c mode $screenshot
 ###############################################################################
 bar {
     status_command i3blocks -c ~/.i3/i3blocks.conf
+    colors {
+        background #181818
+        statusline #d8d8d8
+        separator  #585858
+        focused_workspace  #383838 #181818 #d8d8d8
+        active_workspace   #383838 #181818 #d8d8d8
+        inactive_workspace #585858 #383838 #b8b8b8
+        urgent_workspace   #dc9656 #ab4642 #d8d8d8
+        binding_mode       #dc9656 #ab4642 #d8d8d8
+    }
 }
 bindsym ISO_Next_Group exec pkill -RTMIN+10 i3blocks
+###############################################################################
+###############################################################################
+client.focused          #383838 #181818 #d8d8d8 #000000   #000000
+client.focused_inactive #585858 #383838 #b8b8b8 #000000   #000000
+client.unfocused        #585858 #383838 #b8b8b8 #000000   #000000
+client.urgent           #dc9656 #ab4642 #d8d8d8 #000000   #000000
+client.placeholder      #585858 #383838 #b8b8b8 #000000   #000000
+client.background       #181818
