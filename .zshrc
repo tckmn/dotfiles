@@ -108,6 +108,7 @@ function xv() {
 }
 alias vx=xv
 alias n='(cat;echo)'
+alias sc=systemctl
 
 # licenses
 for license in mit gpl apache
