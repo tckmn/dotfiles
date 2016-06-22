@@ -1,0 +1,80 @@
+/* I wrote this! \o/ */
+/* TODO:
+ *  -
+ */
+
+@-moz-document domain("app.groupme.com") {
+
+    body, #app, #page, #chats {
+        background-color: #181818 !important;
+        color: #d8d8d8 !important;
+    }
+
+    #chats .chat-content .chat-messages, #tray > div {
+        background-color: #282828 !important;
+    }
+
+    #chats .chat-header, #chats .chat-input .composer-layout,
+            #tray .tray-header .row,
+            #chats .chat-messages .timestamp-divider,
+            #chats .chat-messages .message.system,
+            .emoji-menu .emoji-preview,
+            .emoji-menu .pack-switcher {
+        background-color: #383838 !important;
+    }
+
+    #chats .chat-messages .message.me,
+            .emoji-menu .slider-control,
+            .emoji-menu-pointer {
+        background-color: #181818 !important;
+    }
+
+    .emoji-menu .pack-container {
+        background-color: #585858 !important;
+    }
+
+    #chats .chat-header .chat-name {
+        color: #d8d8d8 !important;
+    }
+
+    #tray .tray-list .active {
+        background-color: #181818;
+    }
+
+    input, #tray .tray-list .details .list-content {
+        color: #d8d8d8 !important;
+    }
+
+    #tray .tray-list .details .list-heading {
+        color: #e8e8e8 !important;
+    }
+
+    #tray .tray-list .chats > button:hover {
+        background-color: #383838 !important;
+    }
+
+    #tray .tray-header h3, #tray .tray-header .dropdown-toggle {
+        color: #7cafc2 !important;
+    }
+
+    .app-sidebar .pillar {
+        background-color: #181818 !important;
+    }
+
+    .pillar .tray-controls > button, .pillar .logo {
+        color: #7cafc2 !important;
+    }
+
+    .pillar .tray-controls > button:hover {
+        color: #86c1b9 !important;
+    }
+
+    .dropdown-menu, #chats .chat-menu  {
+        background-color: #585858 !important;
+    }
+
+    .dropdown-menu span, #chats .chat-menu span {
+        color: #d8d8d8 !important;
+    }
+
+}
