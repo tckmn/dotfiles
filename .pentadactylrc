@@ -9,3 +9,5 @@ nmap -ex -count <lt> tabm -1
 
 nmap -builtin -count j 5j
 nmap -builtin -count k 5k
+
+colorscheme base16
