@@ -55,11 +55,11 @@ hi s_comp_sep background: -moz-linear-gradient(60deg, #86c1b9, #181818) !importa
 
 " Status Line                                                       {{{1
 " ----------------------------------------------------------------------
-hi -l=s_base0,s_base02_back StatusLineNormal
-hi -l=s_base03,s_orange_back StatusLineBroken
-hi -l=s_base03,s_blue_back StatusLineSecure
-hi -l=s_base03,s_violet_back StatusLineExtended
-hi -l=s_base03,s_magenta_back StatusWarningMsg
+hi -l=s_base1,s_base03_back StatusLineNormal
+hi -l=s_base1,s_base03_back StatusLineBroken
+hi -l=s_base1,s_base03_back StatusLineSecure
+hi -l=s_base1,s_base03_back StatusLineExtended
+hi -l=s_base1,s_base03_back StatusWarningMsg
 " Make sure the question output looks nice between each status color
 hi StatusQuestion -a color: inherit !important; background-color: inherit !important;
 
