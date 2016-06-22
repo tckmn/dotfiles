@@ -4,7 +4,7 @@ URxvt.scrollBar: false
 
 
 ! Perl plugins
-URxvt.perl-ext-common: keyboard-select,clipboard,url-select
+URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font
 
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
@@ -16,6 +16,9 @@ URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
 
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/firefox
+
+URxvt.resize-font.smaller: C-minus
+URxvt.resize-font.bigger: C-equal
 
 ! disable stupid behavior of bold text
 URxvt.intensityStyles: false
