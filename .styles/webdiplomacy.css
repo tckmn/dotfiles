@@ -1,0 +1,74 @@
+/* I wrote this! \o/ */
+/* TODO:
+ *  - variants
+ */
+
+@-moz-document domain("webdiplomacy.net") {
+    body, #header, #header-container {
+        background-color: #282828 !important;
+        color: #d8d8d8 !important;
+    }
+
+    #seperator, #seperator-fixed {
+        background-color: #181818 !important;
+    }
+
+    .bar, .content, .homeTable td, textarea {
+        background-color: #383838 !important;
+        color: #d8d8d8 !important;
+    }
+
+    #chatboxtabs>a {
+        background-color: #585858 !important;
+    }
+
+    .barAlt1, .replyalternate1, .memberAlternate1, .threadalternate1,
+            .homeForumPostAlt1, .homeMembersTable .barAlt1 {
+        background-color: #181818 !important;
+        color: #d8d8d8 !important;
+    }
+
+    .barAlt2, .replyalternate2, .memberAlternate2, .threadalternate2,
+            .homeForumPostAlt2, .homeMembersTable .barAlt2 {
+        background-color: #282828 !important;
+        color: #d8d8d8 !important;
+    }
+
+    .homeForumSubject, .homeForumLink {
+        background-color: #282828 !important;
+    }
+
+    .homeForumMessage {
+        color: #d8d8d8 !important;
+    }
+
+    select, input, .gamelistings-tabs a {
+        background-color: #383838 !important;
+        border: 1px solid #585858 !important;
+        color: #7cafc2 !important;
+    }
+
+    input:disabled {
+        background-color: #585858 !important;
+        border: #b8b8b8 !important;
+        color: #b8b8b8 !important;
+    }
+
+    .variantClassic .country0 { color: #dc9656 !important; }
+    .variantClassic .country1 { color: #f7cac2 !important; }
+    .variantClassic .country2 { color: #7cafc2 !important; }
+    .variantClassic .country3 { color: #a1b56c !important; }
+    .variantClassic .country4 { color: #a16946 !important; }
+    .variantClassic .country5 { color: #ab4642 !important; }
+    .variantClassic .country6 { color: #f7ca88 !important; }
+    .variantClassic .country7 { color: #ba8baf !important; }
+
+    .army { color: #a1b56c !important; }
+    .fleet { color: #7cafc2 !important; }
+
+    a { color: #7cafc2 !important; }
+    a.current { color: #d8d8d8 !important; }
+
+    img:not(#mapImage) { filter: invert(100%) hue-rotate(180deg); }
+    .uniticon img { filter: none !important; }
+}
