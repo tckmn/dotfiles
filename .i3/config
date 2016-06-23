@@ -90,7 +90,7 @@ bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3bl
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
-bindsym $mod+i exec i3lock
+bindsym $mod+i exec i3lock -c 181818
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -217,7 +217,7 @@ bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3bl
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
-bindsym $mod+i exec i3lock
+bindsym $mod+i exec i3lock -c 181818
 }
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
@@ -302,7 +302,7 @@ bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3bl
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
-bindsym $mod+i exec i3lock
+bindsym $mod+i exec i3lock -c 181818
 }
 bindsym $mod+c mode $screenshot
 ###############################################################################
