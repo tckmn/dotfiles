@@ -104,11 +104,14 @@ function xb() {
 }
 alias v='nvim'
 function xv() {
-    [ -e "$1" ] && echo File exists || ( touch "$1" && chmod +x "$1" && v "$1" )
+    [ -e "$1" ] && echo Warning: file exists && sleep 1
+    touch "$1" && chmod +x "$1" && v "$1"
 }
 alias vx=xv
 alias n='(cat;echo)'
 alias sc=systemctl
+
+eval "$(thefuck -a pls)"
 
 # licenses
 for license in mit gpl apache
