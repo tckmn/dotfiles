@@ -14,7 +14,7 @@
         border-color: #282828 !important;
     }
 
-    .bar, .content, .homeTable td, textarea {
+    .bar, .content, .homeTable td, textarea, .content-notice {
         background-color: #282828 !important;
         border-color: #585858 !important;
         color: #d8d8d8 !important;
