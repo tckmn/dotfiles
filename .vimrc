@@ -99,6 +99,9 @@ set hidden
 " fix Vim's brain-damaged Y-handling behavior
 nnoremap Y y$
 
+" fix Vim's brain-damaged pathname case-sensitivity
+set wildignorecase
+
 " convenience
 runtime macros/justify.vim
 unmap ,gq
