@@ -40,7 +40,7 @@
             .post-issue-display, .popup, .page-numbers, blockquote,
             .tag-container, kbd, .tab-page, #tag-menu, #wiki-excerpt,
             .welovestackoverflow, .revision td, .vote-revision td,
-            .review-bar,
+            .review-bar, .tag-suggestions,
             /*chat*/
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
@@ -66,7 +66,8 @@
             #mdhelp-tabs, .mdhelp-tabs, .wmd-help-button.active-help,
             .owner-revision td, a.action.selected, a.action:hover,
             /*chat*/
-            .reply-child, .reply-parent, .onebox, .onebox * {
+            .reply-child, .reply-parent, .onebox, .onebox *,
+            .flagged-message .content, .flagged-message .mod-text {
         background-color: #383838 !important;
         border-color: #585858 !important;
         color: #d8d8d8 !important;
