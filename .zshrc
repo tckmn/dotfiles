@@ -126,6 +126,15 @@ setopt interactivecomments
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
 
+if pgrep ssh-agent >/dev/null
+then
+    . ~/.ssh-agent >/dev/null
+else
+    ssh-agent > ~/.ssh-agent
+    . ~/.ssh-agent >/dev/null
+    ssh-add ~/.ssh/id_rsa
+fi
+
 # this is really awesome
 # what I'm doing here is arbitrarily preprocessing commands before executing
 # them---WAY more powerful than aliasing
