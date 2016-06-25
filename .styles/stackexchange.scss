@@ -1,0 +1,296 @@
+/* I made this! \o/ */
+
+$red:     #ab4642;
+$orange:  #dc9656;
+$yellow:  #f7ca88;
+$green:   #a1b56c;
+$cyan:    #86c1b9;
+$blue:    #7cafc2;
+$magenta: #ba8baf;
+$violet:  #a16946;
+
+$black:   #181818;
+$grey1:   #282828;
+$grey2:   #383838;
+$grey3:   #585858;
+$grey4:   #b8b8b8;
+$white:   #d8d8d8;
+
+@-moz-document domain("stackoverflow.com"),
+               domain("serverfault.com"),
+               domain("superuser.com"),
+               domain("stackapps.com"),
+               domain("mathoverflow.net"),
+               domain("askubuntu.com"),
+               domain("stackexchange.com") {
+
+    html, body, h1, h2, h3, h4, h5, h6, .heading,
+            #hlogo a, .topbar *, .nav ul li a, .navi-container, .mod-flair,
+            .votes, .votes strong, .excerpt, p, .reputation, .reputation-score,
+            .user-card .user-card-name, .user-card .user-stats .number,
+            #mainbar-full .name, .label, .rep, .body-summary,
+            .revision-comment,
+            /*chat*/
+            .username, .username a, #sidebar, .stars .times, .signature .flair,
+            .system-message-container .system-message, #my-rooms > li > a,
+            .general-room-access > form > div {
+        color: $white !important;
+    }
+
+    .topbar, .container, #content, #footer, /*chat*/ #container, .timestamp,
+            .btn-close {
+        background-color: $black !important;
+        color: $white !important;
+        box-shadow: none !important; /* .container */
+    }
+
+    input, textarea, .post-tag,
+            #sidebar .module#toc,
+            #sidebar .module.newuser, .module.newuser,
+            #sidebar .module.community-bulletin,
+            .new-post-activity, .topbar-dialog, .topbar-dialog .header,
+            #toc, pre, code, .question-status, .answer-votes, .row .card,
+            h2.bottom-notice, #sidebar #scroller > div, div.tag-editor,
+            .grippie, .wmd-button-bar, .topbar-dialog li, .ad502-room,
+            .topbar .topbar-icon-on, .topbar .topbar-icon-on:hover, .owner,
+            .post-issue-display, .popup, .page-numbers, blockquote,
+            .tag-container, kbd, .tab-page, #tag-menu, #wiki-excerpt,
+            .welovestackoverflow, .revision td, .vote-revision td,
+            .review-bar, .tag-suggestions,
+            /*chat*/
+            .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
+            .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
+            .nav:not(.mainnavs):not(.askquestion) li, .message-controls,
+            .conversation-info,
+            /*se.com*/
+            .hero-box, .user-about-me, .account-number, .date_brick,
+            .featured-site, .blogcontainer, .newsletter-category,
+            .newsletter-item, .newsletters-toggle, .filter-dashboard-summary,
+            .filter-show-more,
+            #sideBar .module.filters-sidebar,
+            #sideBar .module.emailsub {
+        background-color: $grey1 !important;
+        border-color:     $grey2 !important;
+        color:            $white !important;
+        text-shadow:      none   !important; /* kbd */
+        box-shadow:       none   !important; /* kbd, .roomcard, .usercard, etc. */
+    }
+
+    .topbar-dialog .unread-item, .badge-tag, .action-list .action-selected,
+            .close-as-duplicate-pane .item.hover,
+            .close-as-duplicate-pane .stats, .modal-footer,
+            #mdhelp-tabs, .mdhelp-tabs, .wmd-help-button.active-help,
+            .owner-revision td, a.action.selected, a.action:hover,
+            /*chat*/
+            .reply-child, .reply-parent, .onebox, .onebox *,
+            .flagged-message .content, .flagged-message .mod-text {
+        background-color: $grey2 !important;
+        border-color:     $grey3 !important;
+        color:            $white !important;
+    }
+
+    #content, .subheader, .question-summary, #question-header, .answer,
+            .comments, .comment td, .single-badge-row-question,
+            .badge-hierarchy, .row, .col, h3.title-section, .badges-wrapper,
+            #avatar-card, .progress-bar .bar, .badge-progress, .list-originals,
+            .item, .snippet-code, #wmd-preview, .wmd-preview, .tm-heading,
+            a.action,
+            /*chat*/
+            .catchup-marker, #starred-posts .collapsible > li,
+            /*se.com*/
+            .top-question-container, .top-answer-container, .account-container,
+            .question-container, .league-container, .history-table td {
+        border-color: $grey2 !important;
+        box-shadow:   none   !important; /* .question-container, .league-container */
+    }
+
+    hr, .stroke { background-color: $grey2 !important; }
+
+    #top-tags .tag-container.row .col {
+        border-color: $black !important;
+    }
+
+    .badge1-alternate, .badge-1 .percent {
+        background-color: mix($yellow, $black, 25%) !important;
+        border-color:     mix($yellow, $black, 25%) !important;
+    }
+    .badge2-alternate, .badge-2 .percent {
+        background-color: mix($white, $black, 25%)  !important;
+        border-color:     mix($white, $black, 25%)  !important;
+    }
+    .badge3-alternate, .badge-3 .percent {
+        background-color: mix($violet, $black, 25%) !important;
+        border-color:     mix($violet, $black, 25%) !important;
+    }
+    .badge1-alternate, .badge2-alternate, .badge3-alternate {
+        border-color: $grey2 !important;
+    }
+    .badge1-alternate .badgecount, .badge2-alternate .badgecount,
+            .badge3-alternate .badgecount {
+        color: $white !important;
+    }
+
+    .recommended {
+        background-color: mix($green, $black, 25%) !important;
+    }
+
+    .topbar-dialog .modal-content.current-site-container {
+        border-color: $blue !important;
+    }
+
+    .status.answered, .status.answered strong {
+        color: $green !important;
+    }
+
+    .answered-accepted {
+        background-color: $grey1 !important;
+        color:            $green !important;
+    }
+
+    .deleted-answer-info, .deleted-post, .general-error, .search-errors {
+        color: $red !important;
+    }
+
+    .deleted-post:hover, .deleted-answer .comment:hover {
+        background-color: $red   !important;
+        color:            $white !important;
+    }
+
+    .deleted-answer, .deleted-comment,
+            .deleted-event td, .deleted-event-details td {
+        background-color: mix($red, $black, 25%) !important;
+    }
+
+    .page-numbers.current, .page-numbers:hover, .message.message-error {
+        background-color: $red   !important;
+        color:            $white !important;
+    }
+
+    .bounty-indicator, .bounty-indicator-tab, .bounty-award {
+        background-color: $cyan  !important;
+        color:            $black !important;
+    }
+
+    .cool        {            color: $white  !important; }
+    .warm        {            color: $yellow !important; }
+    .hot         {            color: $orange !important; }
+    .hotbg       { background-color: $orange !important;
+                              color: $white  !important; }
+    .supernova   {            color: $red    !important; }
+    .supernovabg { background-color: $red    !important;
+                              color: $white  !important; }
+
+    .avatar-card { box-shadow: none !important; }
+
+    #top-cards div.graph, #top-cards div.graph svg#reputationGraph g path {
+        filter: invert(100%);
+    }
+
+    #tabs a.youarehere, .nav li.youarehere a {
+        color:        $red !important;
+        border-color: $red !important;
+    }
+
+    .badge-progress:hover {
+        background-color: $grey2 !important;
+    }
+    .badge-progress.completed {
+        background-color: mix($green, $black, 25%) !important;
+    }
+
+    #revisions .markdown-diff .full-diff .inserted > div {
+        background-color: mix($green, $black, 25%) !important;
+    }
+    #revisions .markdown-diff .full-diff .deleted > div {
+        background-color: mix($red, $black, 25%) !important;
+    }
+    #revisions .markdown-diff .full-diff td {
+        border-color: $black !important;
+    }
+    .diff-add    { background-color: $green !important; color: $black !important; }
+    .diff-delete { background-color: $red   !important; color: $black !important; }
+
+    /* search result highlighting */
+    .result-highlight {
+        color: $red !important;
+    }
+
+    .vote > a {
+        filter: invert(100%) hue-rotate(180deg);
+    }
+
+    a { color: $blue !important; }
+    a:visited { color: $magenta !important; }
+
+    input[type="submit"], input[type="button"], button, a.button, .btn {
+        background:  $violet !important;
+        color:       $white  !important;
+        text-shadow: none    !important;
+    }
+
+    input[type="submit"][disabled], input[type="button"][disabled],
+            button[disabled], a.button[disabled], .btn[disabled], ._disabled {
+        background:  $grey3 !important;
+        color:       $grey4 !important;
+        text-shadow: none   !important;
+    }
+
+    /* this is bad but seems necessary :/ */
+    #newsletter-ad, #newsletter-ad > * {
+        filter: invert(100%) hue-rotate(180deg);
+    }
+
+    /* prettify (syntax highlighting) */
+    .pln { color: $white  !important; }
+    .str { color: $green  !important; }
+    .kwd { color: $red    !important; }
+    .com { color: $grey3  !important; }
+    .typ { color: $yellow !important; }
+    .lit { color: $orange !important; }
+    .pun { color: $white  !important; }
+    .opn { color: $violet !important; }
+    .clo { color: $violet !important; }
+    .tag { color: $red    !important; }
+    .atn { color: $yellow !important; }
+    .atv { color: $green  !important; }
+    .dec { color: #ff0000 !important; }
+    .var { color: #00ff00 !important; }
+    .fun { color: #0000ff !important; }
+
+    /* CHAT-SPECIFIC STARTS HERE */
+
+    .username.moderator                    {            color: $blue       !important; }
+    .mention                               { background-color: $red        !important; }
+    .highlight, .mspbar, .message.selected { background-color: $grey3      !important; }
+    span.meta                              { background-color: transparent !important; }
+    #input-area, body.outside              {       background: $black      !important; }
+    .pending, .posted, .neworedit          {            color: $green      !important; }
+    .stars:not(.user-star) .img.vote       {           filter: invert(100%);           }
+
+    .btn-delete {
+        background:    $black;
+        color:         $white;
+        border-radius: 10px;
+        text-align:    center;
+    }
+    .btn-delete:after {
+        content: "×";
+    }
+
+    #my-rooms li.activity-0 { color: mix($white, $grey2, 100.00%) !important; }
+    #my-rooms li.activity-1 { color: mix($white, $grey2, 83.333%) !important; }
+    #my-rooms li.activity-2 { color: mix($white, $grey2, 66.666%) !important; }
+    #my-rooms li.activity-3 { color: mix($white, $grey2, 50.000%) !important; }
+    #my-rooms li.activity-4 { color: mix($white, $grey2, 33.333%) !important; }
+    #my-rooms li.activity-5 { color: mix($white, $grey2, 16.666%) !important; }
+    #my-rooms li.activity-6 { color: mix($white, $grey2, 0.0000%) !important; }
+
+    /* STACKEXCHANGE.COM-SPECIFIC STARTS HERE */
+
+    header        { background:       $black !important; }
+    .page-numbers { background-image: none   !important; }
+    .account-icon { border:           none   !important; }
+
+    #reputation-graph > #highcharts-0 > svg > rect { fill: $grey1; }
+
+}
