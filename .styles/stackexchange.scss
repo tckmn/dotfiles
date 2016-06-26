@@ -31,6 +31,8 @@ $white:   #d8d8d8;
             .user-card .user-card-name, .user-card .user-stats .number,
             #mainbar-full .name, .label, .rep, .body-summary,
             .revision-comment, .title-box .title, .group-name, .message-text,
+            .votes-cast-stats th, .votes-cast-stats td, .list-unstyled li,
+            .unanswered .mini-counts span,
             /*chat*/
             .username, .username a, #sidebar, .stars .times, .signature .flair,
             .system-message-container .system-message, #my-rooms > li > a,
@@ -66,6 +68,7 @@ $white:   #d8d8d8;
             .tag-filter-isany, .actual-edit-overlay, #side-menu a:hover,
             .val-info, .val-message, .title-box, .privilege-table-row:hover,
             .user-rep-chart-summary-tooltip:hover, .rep-col, .dateNavBox,
+            #herobox, #hero-content,
             /*chat*/
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
@@ -102,12 +105,14 @@ $white:   #d8d8d8;
     }
 
     /* override to proper border color */
-    #content, .subheader, .question-summary, #question-header, .answer,
+    h1, h2, h3, h4, h5, h6, .heading,
+            #content, .subheader, .question-summary, #question-header, .answer,
             .comments, .comment td, .single-badge-row-question,
             .badge-hierarchy, .row, .col, h3.title-section, .badges-wrapper,
             #avatar-card, .badge-progress, .list-originals,
             .item, .snippet-code, #wmd-preview, .wmd-preview, .tm-heading,
             a.action, .sorter, .sorter th, .flagged-post, .group-name,
+            .inner-container,
             /*chat*/
             .catchup-marker, #starred-posts .collapsible > li,
             /*se.com*/
@@ -117,7 +122,7 @@ $white:   #d8d8d8;
         color:        $white !important;
         box-shadow:   none   !important; /* .question-container, .league-container */
     }
-    hr, .stroke { background-color: $grey2 !important; }
+    hr, .stroke, .field-separator { background-color: $grey2 !important; }
 
     /* "delete"/"close" buttons */
     .delete-tag, /*chat*/ .btn-delete {
@@ -166,7 +171,7 @@ $white:   #d8d8d8;
     .status.answered, .status.answered strong {
         color: $green !important;
     }
-    .answered-accepted {
+    .vote.accepted, .answered-accepted {
         background-color: $grey1 !important;
         color:            $green !important;
     }
@@ -191,8 +196,9 @@ $white:   #d8d8d8;
         color:            $white !important;
     }
 
-    /* bounties */
-    .bounty-indicator, .bounty-indicator-tab, .bounty-award {
+    /* bounties (and weird top-X indicator kajigger) */
+    .bounty-indicator, .bounty-indicator-tab, .bounty-award, .top-badge,
+            .top-badge *, .top-badge a, .top-badge a:visited {
         background-color: $cyan  !important;
         color:            $black !important;
     }
@@ -218,10 +224,10 @@ $white:   #d8d8d8;
         border-color: $red !important;
     }
 
-    /* badge progress bars */
+    /* badge progress bars and other green (rep-related) stuff */
     .badge-progress.completed, .progress-bar .percent, .recommended,
-            .user-rep-chart-summary-bar {
-        background-color: mix($green, $black, 25%) !important;
+            .user-rep-chart-summary-bar, .rep-increase {
+        background-color: mix($green, $black, 50%) !important;
     }
     .progress-bar .bar, .badge-progress:hover {
         background-color: $grey2 !important;
@@ -293,6 +299,9 @@ $white:   #d8d8d8;
         background-color: $grey1 !important;
         box-shadow:       none   !important;
     }
+
+    /* spoilers */
+    blockquote.spoiler:not(:hover) * { color: #282828 !important; }
 
     /* prettify (syntax highlighting) */
     .pln { color: $white  !important; }
