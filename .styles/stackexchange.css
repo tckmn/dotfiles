@@ -15,7 +15,7 @@
   #mainbar-full .name, .label, .rep, .body-summary,
   .revision-comment, .title-box .title, .group-name, .message-text,
   .votes-cast-stats th, .votes-cast-stats td, .list-unstyled li,
-  .unanswered .mini-counts span,
+  .unanswered .mini-counts span, .label-key b, .label-key strong,
   .username, .username a, #sidebar, .stars .times, .signature .flair,
   .system-message-container .system-message, #my-rooms > li > a,
   .general-room-access > form > div {
@@ -48,7 +48,7 @@
   .tag-filter-isany, .actual-edit-overlay, #side-menu a:hover,
   .val-info, .val-message, .title-box, .privilege-table-row:hover,
   .user-rep-chart-summary-tooltip:hover, .rep-col, .dateNavBox,
-  #herobox, #hero-content,
+  #herobox, #hero-content, #badge-progress-menu,
   .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
   .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
   .nav:not(.mainnavs):not(.askquestion) li, .message-controls,
@@ -76,7 +76,8 @@
   .tag-suggestions > div:hover, .tag-suggestions .more-info,
   span.spaces, span.hi, .tagged-interesting, .actions,
   .reply-child, .reply-parent, .onebox, .onebox *,
-  .flagged-message .content, .flagged-message .mod-text {
+  .flagged-message .content, .flagged-message .mod-text,
+  .ob-post-tag, .monologue.mine .messages {
     background-color: #383838 !important;
     border-color: #585858 !important;
     color: #d8d8d8 !important; }
@@ -150,12 +151,15 @@
     background-color: #282828 !important;
     color: #a1b56c !important; }
 
-  /* deleted stuff (also errors) */
+  /* deleted stuff, errors, flags, pagination, search result highlights,
+     "you are here" markers--basically any red highlighting */
   .deleted-answer-info, .deleted-post, .general-error, .search-errors,
-  .flag-outcome.Declined {
+  .flag-outcome.Declined, .result-highlight, .private {
     color: #ab4642 !important; }
 
-  .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error {
+  .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error,
+  .bounty-indicator-tab.flagbg, .page-numbers.current,
+  .page-numbers:hover {
     background-color: #ab4642 !important;
     color: #d8d8d8 !important; }
 
@@ -163,10 +167,9 @@
   .deleted-event td, .deleted-event-details td {
     background-color: #3d2423 !important; }
 
-  /* pagination */
-  .page-numbers.current, .page-numbers:hover {
-    background-color: #ab4642 !important;
-    color: #d8d8d8 !important; }
+  #tabs a.youarehere, .nav li.youarehere a {
+    color: #ab4642 !important;
+    border-color: #ab4642 !important; }
 
   /* bounties (and weird top-X indicator kajigger) */
   .bounty-indicator, .bounty-indicator-tab, .bounty-award, .top-badge,
@@ -201,16 +204,13 @@
   #top-cards div.graph, #top-cards div.graph svg#reputationGraph g path {
     filter: invert(100%); }
 
-  #tabs a.youarehere, .nav li.youarehere a {
-    color: #ab4642 !important;
-    border-color: #ab4642 !important; }
-
-  /* badge progress bars and other green (rep-related) stuff */
-  .badge-progress.completed, .progress-bar .percent, .recommended,
-  .user-rep-chart-summary-bar, .rep-increase {
+  /* (badge) progress bars and other green (rep-related) stuff */
+  .badge-progress.completed, .progress-bar .percent, #badge-progress-bar,
+  div.meter div, .recommended, .user-rep-chart-summary-bar,
+  .rep-increase {
     background-color: #5d6742 !important; }
 
-  .progress-bar .bar, .badge-progress:hover {
+  .progress-bar .bar, .meter, .badge-progress:hover {
     background-color: #383838 !important;
     border-color: #383838 !important; }
 
@@ -235,10 +235,6 @@
   .diff-delete {
     background-color: #ab4642 !important;
     color: #181818 !important; }
-
-  /* search result highlighting */
-  .result-highlight {
-    color: #ab4642 !important; }
 
   /* vote/accept buttons */
   .vote > a {

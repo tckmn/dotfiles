@@ -32,7 +32,7 @@ $white:   #d8d8d8;
             #mainbar-full .name, .label, .rep, .body-summary,
             .revision-comment, .title-box .title, .group-name, .message-text,
             .votes-cast-stats th, .votes-cast-stats td, .list-unstyled li,
-            .unanswered .mini-counts span,
+            .unanswered .mini-counts span, .label-key b, .label-key strong,
             /*chat*/
             .username, .username a, #sidebar, .stars .times, .signature .flair,
             .system-message-container .system-message, #my-rooms > li > a,
@@ -68,7 +68,7 @@ $white:   #d8d8d8;
             .tag-filter-isany, .actual-edit-overlay, #side-menu a:hover,
             .val-info, .val-message, .title-box, .privilege-table-row:hover,
             .user-rep-chart-summary-tooltip:hover, .rep-col, .dateNavBox,
-            #herobox, #hero-content,
+            #herobox, #hero-content, #badge-progress-menu,
             /*chat*/
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
@@ -98,7 +98,8 @@ $white:   #d8d8d8;
             span.spaces, span.hi, .tagged-interesting, .actions,
             /*chat*/
             .reply-child, .reply-parent, .onebox, .onebox *,
-            .flagged-message .content, .flagged-message .mod-text {
+            .flagged-message .content, .flagged-message .mod-text,
+            .ob-post-tag, .monologue.mine .messages {
         background-color: $grey2 !important;
         border-color:     $grey3 !important;
         color:            $white !important;
@@ -176,12 +177,15 @@ $white:   #d8d8d8;
         color:            $green !important;
     }
 
-    /* deleted stuff (also errors) */
+    /* deleted stuff, errors, flags, pagination, search result highlights,
+       "you are here" markers--basically any red highlighting */
     .deleted-answer-info, .deleted-post, .general-error, .search-errors,
-            .flag-outcome.Declined {
+            .flag-outcome.Declined, .result-highlight, /*chat*/ .private {
         color: $red !important;
     }
-    .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error {
+    .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error,
+            .bounty-indicator-tab.flagbg, .page-numbers.current,
+            .page-numbers:hover {
         background-color: $red   !important;
         color:            $white !important;
     }
@@ -189,11 +193,9 @@ $white:   #d8d8d8;
             .deleted-event td, .deleted-event-details td {
         background-color: mix($red, $black, 25%) !important;
     }
-
-    /* pagination */
-    .page-numbers.current, .page-numbers:hover {
-        background-color: $red   !important;
-        color:            $white !important;
+    #tabs a.youarehere, .nav li.youarehere a {
+        color:        $red !important;
+        border-color: $red !important;
     }
 
     /* bounties (and weird top-X indicator kajigger) */
@@ -219,17 +221,13 @@ $white:   #d8d8d8;
         filter: invert(100%);
     }
 
-    #tabs a.youarehere, .nav li.youarehere a {
-        color:        $red !important;
-        border-color: $red !important;
-    }
-
-    /* badge progress bars and other green (rep-related) stuff */
-    .badge-progress.completed, .progress-bar .percent, .recommended,
-            .user-rep-chart-summary-bar, .rep-increase {
+    /* (badge) progress bars and other green (rep-related) stuff */
+    .badge-progress.completed, .progress-bar .percent, #badge-progress-bar,
+            div.meter div, .recommended, .user-rep-chart-summary-bar,
+            .rep-increase{
         background-color: mix($green, $black, 50%) !important;
     }
-    .progress-bar .bar, .badge-progress:hover {
+    .progress-bar .bar, .meter, .badge-progress:hover {
         background-color: $grey2 !important;
         border-color:     $grey2 !important;
     }
@@ -250,11 +248,6 @@ $white:   #d8d8d8;
     }
     .diff-add    { background-color: $green !important; color: $black !important; }
     .diff-delete { background-color: $red   !important; color: $black !important; }
-
-    /* search result highlighting */
-    .result-highlight {
-        color: $red !important;
-    }
 
     /* vote/accept buttons */
     .vote > a {
