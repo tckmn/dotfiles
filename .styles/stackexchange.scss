@@ -24,6 +24,7 @@ $white:   #d8d8d8;
                domain("askubuntu.com"),
                domain("stackexchange.com") {
 
+    /* override to proper white text color */
     html, body, h1, h2, h3, h4, h5, h6, .heading,
             #hlogo a, .topbar *, .nav ul li a, .navi-container, .mod-flair,
             .votes, .votes strong, .excerpt, p, .reputation, .reputation-score,
@@ -37,6 +38,7 @@ $white:   #d8d8d8;
         color: $white !important;
     }
 
+    /* darkest background--the background of the entire page */
     .topbar, .container, #content, #footer, body > div.wrapper,
             .snippet-holder, .CodeMirror, .CodeMirror-gutter, iframe,
             /*chat*/
@@ -46,20 +48,7 @@ $white:   #d8d8d8;
         box-shadow: none !important; /* .container */
     }
 
-    .delete-tag, /*chat*/ .btn-delete {
-        background:    $grey1;
-        color:         $white;
-        border:        1px solid $black;
-        border-radius: 10px;
-        text-align:    center;
-        line-height:   1em;
-    }
-    .delete-tag:after, /*chat*/ .btn-delete:after {
-        content: "×";
-    }
-
-    .message-close { line-height: 1em !important; }
-
+    /* second darkest background--most sections of the main page */
     input, textarea, .post-tag,
             #sidebar .module#toc,
             #sidebar .module.newuser, .module.newuser,
@@ -96,6 +85,7 @@ $white:   #d8d8d8;
         box-shadow:       none   !important; /* kbd, .roomcard, .usercard, etc. */
     }
 
+    /* third darkest background--generally for thins that are highlighted */
     .topbar-dialog .unread-item, .badge-tag, .action-list .action-selected,
             .close-as-duplicate-pane .item.hover,
             .close-as-duplicate-pane .stats, .modal-footer,
@@ -111,6 +101,7 @@ $white:   #d8d8d8;
         color:            $white !important;
     }
 
+    /* override to proper border color */
     #content, .subheader, .question-summary, #question-header, .answer,
             .comments, .comment td, .single-badge-row-question,
             .badge-hierarchy, .row, .col, h3.title-section, .badges-wrapper,
@@ -126,18 +117,27 @@ $white:   #d8d8d8;
         color:        $white !important;
         box-shadow:   none   !important; /* .question-container, .league-container */
     }
-
     hr, .stroke { background-color: $grey2 !important; }
 
-    .progress-bar .bar {
-        background-color: $grey2 !important;
-        border-color:     $grey2 !important;
+    /* "delete"/"close" buttons */
+    .delete-tag, /*chat*/ .btn-delete {
+        background:    $grey1;
+        color:         $white;
+        border:        1px solid $black;
+        border-radius: 10px;
+        text-align:    center;
+        line-height:   1em;
     }
+    .delete-tag:after, /*chat*/ .btn-delete:after {
+        content: "×";
+    }
+    .message-close { line-height: 1em !important; }
 
     #top-tags .tag-container.row .col {
         border-color: $black !important;
     }
 
+    /* dark backgrounds for badges (gold, silver, bronze) */
     .badge1-alternate, .badge-1 .percent {
         background-color: mix($yellow, $black, 25%) !important;
         border-color:     mix($yellow, $black, 25%) !important;
@@ -162,40 +162,42 @@ $white:   #d8d8d8;
         border-color: $blue !important;
     }
 
+    /* answer highlighting (e.g. boxes that say how many answers a question has */
     .status.answered, .status.answered strong {
         color: $green !important;
     }
-
     .answered-accepted {
         background-color: $grey1 !important;
         color:            $green !important;
     }
 
+    /* deleted stuff (also errors) */
     .deleted-answer-info, .deleted-post, .general-error, .search-errors,
             .flag-outcome.Declined {
         color: $red !important;
     }
-
-    .deleted-post:hover, .deleted-answer .comment:hover {
+    .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error {
         background-color: $red   !important;
         color:            $white !important;
     }
-
     .deleted-answer, .deleted-comment,
             .deleted-event td, .deleted-event-details td {
         background-color: mix($red, $black, 25%) !important;
     }
 
-    .page-numbers.current, .page-numbers:hover, .message.message-error {
+    /* pagination */
+    .page-numbers.current, .page-numbers:hover {
         background-color: $red   !important;
         color:            $white !important;
     }
 
+    /* bounties */
     .bounty-indicator, .bounty-indicator-tab, .bounty-award {
         background-color: $cyan  !important;
         color:            $black !important;
     }
 
+    /* varying shades of "hotness" */
     .cool        {            color: $white  !important; }
     .warm        {            color: $yellow !important; }
     .hot         {            color: $orange !important; }
@@ -216,14 +218,17 @@ $white:   #d8d8d8;
         border-color: $red !important;
     }
 
+    /* badge progress bars */
     .badge-progress.completed, .progress-bar .percent, .recommended,
             .user-rep-chart-summary-bar {
         background-color: mix($green, $black, 25%) !important;
     }
-    .badge-progress:hover {
+    .progress-bar .bar, .badge-progress:hover {
         background-color: $grey2 !important;
+        border-color:     $grey2 !important;
     }
 
+    /* diffs */
     .full-diff .inserted > div {
         background-color: mix($green, $black, 25%) !important;
     }
@@ -245,6 +250,7 @@ $white:   #d8d8d8;
         color: $red !important;
     }
 
+    /* vote/accept buttons */
     .vote > a {
         filter: invert(100%) hue-rotate(180deg);
     }
@@ -252,9 +258,11 @@ $white:   #d8d8d8;
         filter: invert(100%) hue-rotate(180deg) brightness(125%);
     }
 
+    /* links */
     a { color: $blue !important; }
     a:visited { color: $magenta !important; }
 
+    /* buttons */
     input[type="submit"], input[type="button"], button, a.button, .btn,
             .btn-secondary {
         background:   $violet !important;
@@ -264,6 +272,7 @@ $white:   #d8d8d8;
         box-shadow:   none    !important;
     }
 
+    /* disabled buttons */
     input[type="submit"][disabled], input[type="button"][disabled],
             button[disabled], a.button[disabled], .btn[disabled],
             .btn-secondary[disabled], ._disabled {
@@ -279,9 +288,10 @@ $white:   #d8d8d8;
         filter: invert(100%) hue-rotate(180deg);
     }
 
+    /* some random thing from SO's new nav */
     .menu-switcher {
         background-color: $grey1 !important;
-        box-shadow: none !important;
+        box-shadow:       none   !important;
     }
 
     /* prettify (syntax highlighting) */

@@ -7,6 +7,7 @@
                domain("mathoverflow.net"),
                domain("askubuntu.com"),
                domain("stackexchange.com") {
+  /* override to proper white text color */
   html, body, h1, h2, h3, h4, h5, h6, .heading,
   #hlogo a, .topbar *, .nav ul li a, .navi-container, .mod-flair,
   .votes, .votes strong, .excerpt, p, .reputation, .reputation-score,
@@ -18,6 +19,7 @@
   .general-room-access > form > div {
     color: #d8d8d8 !important; }
 
+  /* darkest background--the background of the entire page */
   .topbar, .container, #content, #footer, body > div.wrapper,
   .snippet-holder, .CodeMirror, .CodeMirror-gutter, iframe,
   #container, .timestamp, .btn-close {
@@ -26,20 +28,7 @@
     box-shadow: none !important;
     /* .container */ }
 
-  .delete-tag, .btn-delete {
-    background: #282828;
-    color: #d8d8d8;
-    border: 1px solid #181818;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 1em; }
-
-  .delete-tag:after, .btn-delete:after {
-    content: "×"; }
-
-  .message-close {
-    line-height: 1em !important; }
-
+  /* second darkest background--most sections of the main page */
   input, textarea, .post-tag,
   #sidebar .module#toc,
   #sidebar .module.newuser, .module.newuser,
@@ -75,6 +64,7 @@
     box-shadow: none   !important;
     /* kbd, .roomcard, .usercard, etc. */ }
 
+  /* third darkest background--generally for thins that are highlighted */
   .topbar-dialog .unread-item, .badge-tag, .action-list .action-selected,
   .close-as-duplicate-pane .item.hover,
   .close-as-duplicate-pane .stats, .modal-footer,
@@ -88,6 +78,7 @@
     border-color: #585858 !important;
     color: #d8d8d8 !important; }
 
+  /* override to proper border color */
   #content, .subheader, .question-summary, #question-header, .answer,
   .comments, .comment td, .single-badge-row-question,
   .badge-hierarchy, .row, .col, h3.title-section, .badges-wrapper,
@@ -105,13 +96,25 @@
   hr, .stroke {
     background-color: #383838 !important; }
 
-  .progress-bar .bar {
-    background-color: #383838 !important;
-    border-color: #383838 !important; }
+  /* "delete"/"close" buttons */
+  .delete-tag, .btn-delete {
+    background: #282828;
+    color: #d8d8d8;
+    border: 1px solid #181818;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 1em; }
+
+  .delete-tag:after, .btn-delete:after {
+    content: "×"; }
+
+  .message-close {
+    line-height: 1em !important; }
 
   #top-tags .tag-container.row .col {
     border-color: #181818 !important; }
 
+  /* dark backgrounds for badges (gold, silver, bronze) */
   .badge1-alternate, .badge-1 .percent {
     background-color: #504534 !important;
     border-color: #504534 !important; }
@@ -134,6 +137,7 @@
   .topbar-dialog .modal-content.current-site-container {
     border-color: #7cafc2 !important; }
 
+  /* answer highlighting (e.g. boxes that say how many answers a question has */
   .status.answered, .status.answered strong {
     color: #a1b56c !important; }
 
@@ -141,11 +145,12 @@
     background-color: #282828 !important;
     color: #a1b56c !important; }
 
+  /* deleted stuff (also errors) */
   .deleted-answer-info, .deleted-post, .general-error, .search-errors,
   .flag-outcome.Declined {
     color: #ab4642 !important; }
 
-  .deleted-post:hover, .deleted-answer .comment:hover {
+  .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error {
     background-color: #ab4642 !important;
     color: #d8d8d8 !important; }
 
@@ -153,14 +158,17 @@
   .deleted-event td, .deleted-event-details td {
     background-color: #3d2423 !important; }
 
-  .page-numbers.current, .page-numbers:hover, .message.message-error {
+  /* pagination */
+  .page-numbers.current, .page-numbers:hover {
     background-color: #ab4642 !important;
     color: #d8d8d8 !important; }
 
+  /* bounties */
   .bounty-indicator, .bounty-indicator-tab, .bounty-award {
     background-color: #86c1b9 !important;
     color: #181818 !important; }
 
+  /* varying shades of "hotness" */
   .cool {
     color: #d8d8d8 !important; }
 
@@ -191,13 +199,16 @@
     color: #ab4642 !important;
     border-color: #ab4642 !important; }
 
+  /* badge progress bars */
   .badge-progress.completed, .progress-bar .percent, .recommended,
   .user-rep-chart-summary-bar {
     background-color: #3a3f2d !important; }
 
-  .badge-progress:hover {
-    background-color: #383838 !important; }
+  .progress-bar .bar, .badge-progress:hover {
+    background-color: #383838 !important;
+    border-color: #383838 !important; }
 
+  /* diffs */
   .full-diff .inserted > div {
     background-color: #3a3f2d !important; }
 
@@ -223,18 +234,21 @@
   .result-highlight {
     color: #ab4642 !important; }
 
+  /* vote/accept buttons */
   .vote > a {
     filter: invert(100%) hue-rotate(180deg); }
 
   .vote-accepted-on {
     filter: invert(100%) hue-rotate(180deg) brightness(125%); }
 
+  /* links */
   a {
     color: #7cafc2 !important; }
 
   a:visited {
     color: #ba8baf !important; }
 
+  /* buttons */
   input[type="submit"], input[type="button"], button, a.button, .btn,
   .btn-secondary {
     background: #a16946 !important;
@@ -243,6 +257,7 @@
     text-shadow: none    !important;
     box-shadow: none    !important; }
 
+  /* disabled buttons */
   input[type="submit"][disabled], input[type="button"][disabled],
   button[disabled], a.button[disabled], .btn[disabled],
   .btn-secondary[disabled], ._disabled {
@@ -256,9 +271,10 @@
   #newsletter-ad, #newsletter-ad > * {
     filter: invert(100%) hue-rotate(180deg); }
 
+  /* some random thing from SO's new nav */
   .menu-switcher {
     background-color: #282828 !important;
-    box-shadow: none !important; }
+    box-shadow: none   !important; }
 
   /* prettify (syntax highlighting) */
   .pln {
