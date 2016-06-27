@@ -1,25 +1,32 @@
 [global]
-    font = Monospace 8
-    allow_markup = yes  # <b>, <i>, <s>, <u>
+    font = Monospace 10
+    # <b>, <i>, <s>, <u>
+    allow_markup = yes
     # [a]ppname, [s]ummary, [b]ody, [i]conname, [I]conname without path,
     # [p]rogress value (0-100%)
     format = "<b>%s</b>\n%b"  
-    sort = yes  # (by urgency)
+    # (by urgency)
+    sort = yes
     indicate_hidden = yes
     alignment = left
-    bounce_freq = 0  # (disabled)
-    show_age_threshold = 60  # -1 = disabled
+    # (disabled)
+    bounce_freq = 0 
+    # -1 = disabled
+    show_age_threshold = 60 
     word_wrap = yes
     ignore_newline = no
     geometry = "300x5-30+20"
-    shrink = no  # (if message is smaller than width)
+    # (if message is smaller than width)
+    shrink = no 
     transparency = 0
     idle_threshold = 120
     monitor = 0
     follow = keyboard
-    sticky_history = yes  # notifs from history don't time out
+    # notifs from history don't time out
+    sticky_history = yes
     history_length = 100
-    show_indicators = yes  # for URLs (U) and actions (A)
+    # for URLs (U) and actions (A)
+    show_indicators = yes
     line_height = 0
     separator_height = 2
     padding = 8
@@ -28,32 +35,39 @@
     startup_notification = false
     dmenu = /usr/bin/rofi -dmenu -p dunst:
     browser = /usr/bin/firefox
-    icon_position = off  # align left/right/off
-    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/  # NOTE: this don't exist (?)
+    # align left/right/off
+    icon_position = off
+    # NOTE: this don't exist (?)
+    icon_folders = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 
 [frame]
     width = 3
-    color = "#aaaaaa"
+    color = "#585858"
 
 [shortcuts]
     close = ctrl+space
     close_all = ctrl+shift+space
-    history = ctrl+grave  # redisplay last message
-    context = ctrl+shift+period  # context menu
+    # redisplay last message
+    history = ctrl+grave
+    # context menu
+    context = ctrl+shift+period 
 
 [urgency_low]
-    background = "#222222"
-    foreground = "#888888"
-    timeout = 10
+    # mix(#d8d8d8, #181818, 25%)
+    background = "#484848"
+    foreground = "#d8d8d8"
+    timeout = 20
 
 [urgency_normal]
-    background = "#285577"
-    foreground = "#ffffff"
-    timeout = 10
+    # mix(#7cafc2, #181818, 25%)
+    background = "#313e43"
+    foreground = "#7cafc2"
+    timeout = 20
 
 [urgency_critical]
-    background = "#900000"
-    foreground = "#ffffff"
+    # mix(#ab4642, #181818, 25%)
+    background = "#3d2423"
+    foreground = "#ab4642"
     timeout = 0
 
 # Every section that isn't one of the above is interpreted as a rules to
