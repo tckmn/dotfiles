@@ -126,6 +126,17 @@ setopt interactivecomments
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 #RPS1="%*"
 
+command_not_found_handler() {
+    echo "zsh: command not found: $1"
+    (
+        pkgname="$(pacman -Fo "usr/bin/$1")"
+        if [ -n "$pkgname" ]
+        then
+            notify-send 'zsh: pacman package available' "$pkgname"
+        fi
+    ) &
+}
+
 if pgrep ssh-agent >/dev/null
 then
     . ~/.ssh-agent >/dev/null
