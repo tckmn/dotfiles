@@ -1,7 +1,8 @@
 ! generic config
 URxvt.font: xft:SourceCodePro:pixelsize=14
 URxvt.scrollBar: false
-
+URxvt.keysym.C-Return: \033\015
+URxvt.keysym.C-Tab: \033\011
 
 ! Perl plugins
 URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font

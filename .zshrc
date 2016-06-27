@@ -51,16 +51,6 @@ zstyle -e ':completion::complete:-command-::executables' ignored-patterns '
     }
 '
 
-# http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
-fancy-ctrl-z () {
-    if [ $#BUFFER -eq 0 ]; then
-        BUFFER="fg"
-        zle accept-line
-    fi
-}
-zle -N fancy-ctrl-z
-bindkey '^Z' fancy-ctrl-z
-
 # some more ls aliases
 alias ll='ls -alF'
 alias la='ls -A'
@@ -146,15 +136,69 @@ else
     ssh-add ~/.ssh/id_rsa
 fi
 
-# this is really awesome
-# what I'm doing here is arbitrarily preprocessing commands before executing
-# them---WAY more powerful than aliasing
-if [ -f ~/.cmdline_intercept ]
-then
-    cmdline_intercept () {
-        BUFFER="$(~/.cmdline_intercept "$BUFFER")"
+for binding in $(bindkey | awk '{print $NF}' | sort -u \
+    | grep -v '^accept\|complete\|run-help')
+do
+    eval "$binding () {
+        POSTDISPLAY=
+        zle .$binding"'
+        [ -n "$DISABLE_AUTOSUGGEST" ] && return
+        if [ "$BUFFER" = "g " -o "$BUFFER" = "gi " ]
+        then
+            BUFFER="git "
+            zle .end-of-line
+        elif [[ "$BUFFER" == git\ ?* ]]
+        then
+            for cmd in "git add" "git branch" "git commit" "git checkout" \
+                "git clone" "git clean" "git diff" "git fetch" "git init" \
+                "git log" "git merge" "git push" "git pull" "git reset" \
+                "git revert" "git rebase" "git status" "git stash"
+            do
+                if [[ "$cmd" == $BUFFER* ]]
+                then
+                    POSTDISPLAY=${cmd#$BUFFER}
+                    break
+                fi
+            done
+        fi
+        region_highlight=("$#BUFFER $(($#BUFFER+$#POSTDISPLAY)) fg=8")
+    }'
+    zle -N $binding
+done
+
+accept-line() {
+    BUFFER="$BUFFER$POSTDISPLAY"
+    region_highlight=
+    POSTDISPLAY=
+    DISABLE_AUTOSUGGEST=
+    zle .accept-line
+}
+zle -N accept-line
+
+toggle-autosuggest() {
+    region_highlight=
+    POSTDISPLAY=
+    DISABLE_AUTOSUGGEST=1
+}
+zle -N toggle-autosuggest
+bindkey '^@' toggle-autosuggest
+
+accept-autosuggest() {
+    BUFFER="$BUFFER$POSTDISPLAY"
+    region_highlight=
+    POSTDISPLAY=
+    DISABLE_AUTOSUGGEST=
+    zle .end-of-line
+}
+zle -N accept-autosuggest
+bindkey '^[	' accept-autosuggest
+
+# http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
+fancy-ctrl-z() {
+    if [ $#BUFFER -eq 0 ]; then
+        BUFFER="fg"
         zle accept-line
-    }
-    zle -N cmdline_intercept
-    bindkey '^M' cmdline_intercept
-fi
+    fi
+}
+zle -N fancy-ctrl-z
+bindkey '^Z' fancy-ctrl-z
