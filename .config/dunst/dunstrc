@@ -56,13 +56,13 @@
     # mix(#d8d8d8, #181818, 25%)
     background = "#484848"
     foreground = "#d8d8d8"
-    timeout = 20
+    timeout = 0
 
 [urgency_normal]
     # mix(#7cafc2, #181818, 25%)
     background = "#313e43"
     foreground = "#7cafc2"
-    timeout = 20
+    timeout = 0
 
 [urgency_critical]
     # mix(#ab4642, #181818, 25%)
