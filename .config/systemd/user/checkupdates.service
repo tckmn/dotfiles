@@ -1,0 +1,6 @@
+[Unit]
+Description=Check for pacman and AUR updates
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'updates="$(checkupdates; pacaur -k | sed $'\''s/\e\\[[^m]*m//g'\'' | tr -s " " | cut -d" " -f3-)"; [ -n "$updates" ] && notify-send "updates available" "$updates"'
