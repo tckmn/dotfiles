@@ -1,0 +1,31 @@
+set folder = 'imaps://mail.gandi.net:993/'
+
+set spoolfile = +INBOX
+
+set imap_user = 'andy@keyboardfire.com'
+set imap_pass = "`cat ~/.mutt/password`"
+unset imap_passive
+set imap_keepalive = 300
+set imap_check_subscribed
+
+set header_cache = '~/.cache/mutt'
+set message_cachedir = '~/.cache/mutt'
+
+set mail_check = 20
+set timeout = 30
+
+set realname = 'KeyboardFire'
+set from = 'andy@keyboardfire.com'
+set use_from = yes
+
+set smtp_url = 'smtps://andy@keyboardfire.com@mail.gandi.net:465/'
+set smtp_pass = "`cat ~/.mutt/password`"
+
+set ssl_force_tls = yes
+
+bind index G imap-fetch-mail
+
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+set status_format = "/home/llama/.mutt/notify-script '%b' '%f' '%n' '%o' '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---'|"

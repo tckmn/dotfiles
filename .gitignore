@@ -5,3 +5,4 @@
 .vim/plugged
 .vim/autoload/plug.vim.old
 .i3/screenshot/imgur_authid
+.mutt/password
