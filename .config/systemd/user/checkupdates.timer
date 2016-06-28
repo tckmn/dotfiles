@@ -1,7 +1,6 @@
 [Unit]
-Description=Check for pacman and AUR updates daily
+Description=Check for pacman and AUR updates hourly
 
 [Timer]
-OnCalendar=daily
-AccuracySec=12h
+OnCalendar=hourly
 Persistent=true
