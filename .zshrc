@@ -168,6 +168,7 @@ done
 
 accept-line() {
     accept-autosuggest
+    zle -M ''  # clear the output of a tab completion that didn't take effect
     zle .accept-line
 }
 zle -N accept-line
