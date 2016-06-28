@@ -184,14 +184,19 @@ zle -N toggle-autosuggest
 bindkey '^@' toggle-autosuggest
 
 accept-autosuggest() {
-    BUFFER="$BUFFER$POSTDISPLAY"
-    region_highlight=
-    POSTDISPLAY=
-    DISABLE_AUTOSUGGEST=
-    zle .end-of-line
+    if [ -n "$POSTDISPLAY" ]
+    then
+        BUFFER="$BUFFER$POSTDISPLAY"
+        region_highlight=
+        POSTDISPLAY=
+        DISABLE_AUTOSUGGEST=
+        zle .end-of-line
+    else
+        zle expand-or-complete
+    fi
 }
 zle -N accept-autosuggest
-bindkey '^[	' accept-autosuggest
+bindkey '^I' accept-autosuggest
 
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 fancy-ctrl-z() {
