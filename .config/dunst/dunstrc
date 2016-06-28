@@ -4,20 +4,20 @@
     allow_markup = yes
     # [a]ppname, [s]ummary, [b]ody, [i]conname, [I]conname without path,
     # [p]rogress value (0-100%)
-    format = "<b>%s</b>\n%b"  
+    format = "<b>%s</b>\n%b"
     # (by urgency)
     sort = yes
     indicate_hidden = yes
     alignment = left
     # (disabled)
-    bounce_freq = 0 
+    bounce_freq = 0
     # -1 = disabled
-    show_age_threshold = 60 
+    show_age_threshold = 60
     word_wrap = yes
     ignore_newline = no
     geometry = "300x5-30+20"
     # (if message is smaller than width)
-    shrink = no 
+    shrink = no
     transparency = 0
     idle_threshold = 120
     monitor = 0
@@ -50,7 +50,7 @@
     # redisplay last message
     history = ctrl+grave
     # context menu
-    context = ctrl+shift+period 
+    context = ctrl+shift+period
 
 [urgency_low]
     # mix(#d8d8d8, #181818, 25%)
