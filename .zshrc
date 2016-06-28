@@ -194,6 +194,10 @@ accept-autosuggest() {
         POSTDISPLAY=
         DISABLE_AUTOSUGGEST=
         zle .end-of-line
+    elif [[ $BUFFER =~ [.]{1,}$ ]]
+    then
+        BUFFER="$(perl -pe 's| ?(\.+)$|" "."../"x(length$1)|e'<<<"$BUFFER")"
+        zle .end-of-line
     else
         zle expand-or-complete
     fi
