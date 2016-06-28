@@ -6,8 +6,10 @@
 [core]
 	editor = nvim
 [diff]
-	tool = vimdiff
+	tool = nvimdiff
 [difftool]
 	prompt = false
+[difftool "nvimdiff"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
 [credential]
 	helper = cache
