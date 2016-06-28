@@ -167,13 +167,16 @@ do
 done
 
 accept-line() {
-    BUFFER="$BUFFER$POSTDISPLAY"
-    region_highlight=
-    POSTDISPLAY=
-    DISABLE_AUTOSUGGEST=
+    accept-autosuggest
     zle .accept-line
 }
 zle -N accept-line
+
+accept-line-raw() {
+    zle .accept-line
+}
+zle -N accept-line-raw
+bindkey '^[^M' accept-line-raw
 
 toggle-autosuggest() {
     region_highlight=
