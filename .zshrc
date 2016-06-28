@@ -119,7 +119,7 @@ PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 command_not_found_handler() {
     echo "zsh: command not found: $1"
     (
-        pkgname="$(pacman -Fo "usr/bin/$1")"
+        pkgname="$(pacaur -Fo "usr/bin/$1")"
         if [ -n "$pkgname" ]
         then
             notify-send 'zsh: pacman package available' "$pkgname"
