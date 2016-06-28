@@ -100,6 +100,7 @@ function xv() {
 alias vx=xv
 alias n='(cat;echo)'
 alias sc=systemctl
+alias scu='systemctl --user'
 
 eval "$(thefuck -a pls)"
 
