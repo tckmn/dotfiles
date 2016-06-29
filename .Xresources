@@ -5,15 +5,12 @@ URxvt.keysym.C-Return: \033\015
 URxvt.keysym.C-Tab: \033\011
 
 ! Perl plugins
-URxvt.perl-ext-common: keyboard-select,clipboard,url-select,resize-font
+URxvt.perl-ext-common: keyboard-select,url-select,resize-font
 
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
 
 URxvt.iso14755: false
 URxvt.iso14755_52: false
-URxvt.keysym.C-C: perl:clipboard:copy
-URxvt.keysym.C-V: perl:clipboard:paste
-URxvt.keysym.M-C-V: perl:clipboard:paste_escaped
 
 URxvt.keysym.M-u: perl:url-select:select_next
 URxvt.url-select.launcher: /usr/bin/firefox
