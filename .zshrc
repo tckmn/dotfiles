@@ -112,6 +112,8 @@ done
 
 # allow use of comments in shell
 setopt interactivecomments
+# cd by trying to "execute" a directory
+setopt autocd
 
 # prompts
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
@@ -168,13 +170,18 @@ do
 done
 
 accept-line() {
-    accept-autosuggest
-    zle -M ''  # clear the output of a tab completion that didn't take effect
+    BUFFER="$BUFFER$POSTDISPLAY"
+    region_highlight=
+    POSTDISPLAY=
+    DISABLE_AUTOSUGGEST=
     zle .accept-line
 }
 zle -N accept-line
 
 accept-line-raw() {
+    region_highlight=
+    POSTDISPLAY=
+    DISABLE_AUTOSUGGEST=
     zle .accept-line
 }
 zle -N accept-line-raw
@@ -191,14 +198,14 @@ bindkey '^@' toggle-autosuggest
 accept-autosuggest() {
     if [ -n "$POSTDISPLAY" ]
     then
-        BUFFER="$BUFFER$POSTDISPLAY"
+        BUFFER="$BUFFER$POSTDISPLAY "
         region_highlight=
         POSTDISPLAY=
         DISABLE_AUTOSUGGEST=
         zle .end-of-line
-    elif [[ $BUFFER =~ [.]{1,}$ ]]
+    elif [[ $BUFFER =~ ^[.]{1,}$ ]]
     then
-        BUFFER="$(perl -pe 's| ?(\.+)$|" "."../"x(length$1)|e'<<<"$BUFFER")"
+        BUFFER="$(perl -pe 's| ?(\.+)$|"../"x(length$1)|e'<<<"$BUFFER")"
         zle .end-of-line
     else
         zle expand-or-complete
