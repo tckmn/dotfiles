@@ -95,6 +95,8 @@ bindsym $mod+i exec i3lock -c 181818
 mode "resize" {
         bindsym !!h,j,k,l,Left,Down,Up,Right resize \
           !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
+        bindsym Shift+!!h,j,k,l,Left,Down,Up,Right resize \
+          !!<shrink width,grow height,shrink height,grow width> 1px or 1ppt
 
         bindsym !!Return,Escape,space,$mod+r mode "default"
 }

@@ -102,6 +102,14 @@ mode "resize" {
         bindsym Down resize grow height $mv or $mvppt
         bindsym Up resize shrink height $mv or $mvppt
         bindsym Right resize grow width $mv or $mvppt
+        bindsym Shift+h resize shrink width 1px or 1ppt
+        bindsym Shift+j resize grow height 1px or 1ppt
+        bindsym Shift+k resize shrink height 1px or 1ppt
+        bindsym Shift+l resize grow width 1px or 1ppt
+        bindsym Shift+Left resize shrink width 1px or 1ppt
+        bindsym Shift+Down resize grow height 1px or 1ppt
+        bindsym Shift+Up resize shrink height 1px or 1ppt
+        bindsym Shift+Right resize grow width 1px or 1ppt
         bindsym Return mode "default"
         bindsym Escape mode "default"
         bindsym space mode "default"
