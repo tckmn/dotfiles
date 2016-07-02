@@ -85,7 +85,7 @@ bindsym XF86MonBrightness!!Up,Down \        # brightness keys
   exec xbacklight !!<+,->10%
 bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
 bindsym $mod+i exec i3lock -c 181818
-bindsym $mod+n exec urxvt -name NETHACK --color0 '#383838'
+bindsym $mod+n exec urxvt -name NETHACK --color0 '#383838' -e ssh nethack@nethack.alt.org
 >
 
 for_window [class="^URxvt$" instance="^NETHACK$"] floating enable
