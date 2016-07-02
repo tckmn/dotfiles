@@ -1,17 +1,24 @@
 " plugins
 call plug#begin()
+" motions/commands
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-endwise'
+Plug 'wellle/targets.vim'
+Plug 'justinmk/vim-sneak'
+" language-specific
 Plug 'rust-lang/rust.vim'
 Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
 Plug 'vim-scripts/a.vim'
+" appearance
 Plug 'chriskempson/base16-vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
+" autocompletion
+Plug 'tpope/vim-endwise'
+Plug 'KeyboardFire/vim-minisnip'
+" integration
+Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+" magic
 Plug 'junegunn/vim-easy-align'
 call plug#end()
 
@@ -30,6 +37,15 @@ let g:Tex_ViewRule_pdf='gv 2>/dev/null'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nnoremap gA ga
+" vimwiki
+let g:vimwiki_list = [
+\   {
+\       'path': '~/documents/vimwiki/',
+\       'auto_export': 1,
+\       'auto_toc': 1
+\   }
+\]
+let g:vimwiki_folding='list'
 
 " language-specific
 " HTML
@@ -66,7 +82,6 @@ vnoremap gk k
 " easier buffer navigation
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
-nnoremap <bs> :b#<cr>
 if has('nvim')
     tnoremap <Nul> <C-\><C-n>
 endif
@@ -87,7 +102,7 @@ set undofile
 " leader mappings
 nnoremap <Leader>a :A<cr><C-g>
 nnoremap <Leader>m :make<cr>
-nnoremap <Leader>w :w<cr>
+nnoremap <Leader>s :w<cr>
 nnoremap <Leader>y mygg"+yG`y
 nnoremap <Leader>z :w<cr><C-z>
 

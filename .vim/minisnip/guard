@@ -1,0 +1,6 @@
+#ifndef {{+~'__' . toupper(substitute(expand('%:r'), '\(\l\)\(\u\)', '\1\_\2', 'g')) . '_H__'+}}
+#define {{+~\~1+}}
+
+{{++}}
+
+#endif
