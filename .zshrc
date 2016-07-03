@@ -132,10 +132,10 @@ command_not_found_handler() {
 
 if pgrep ssh-agent >/dev/null
 then
-    . ~/.ssh-agent >/dev/null
+    . ~/.cache/.ssh-agent >/dev/null
 else
-    ssh-agent > ~/.ssh-agent
-    . ~/.ssh-agent >/dev/null
+    ssh-agent > ~/.cache/.ssh-agent
+    . ~/.cache/.ssh-agent >/dev/null
     ssh-add ~/.ssh/id_rsa
 fi
 
