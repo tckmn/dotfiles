@@ -8,7 +8,7 @@ Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
 " language-specific
 Plug 'rust-lang/rust.vim'
-Plug 'vim-scripts/LaTeX-Suite-aka-Vim-LaTeX'
+Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
 " appearance
 Plug 'chriskempson/base16-vim'
@@ -25,6 +25,7 @@ call plug#end()
 syntax on
 filetype plugin indent on
 let mapleader=' '
+let maplocalleader=' '
 set mouse=
 set encoding=utf-8
 
