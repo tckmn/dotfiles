@@ -89,7 +89,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name NETHACK --color0 '#383838' -e ssh nethack@nethack.alt.org
 for_window [class="^URxvt$" instance="^NETHACK$"] floating enable
@@ -226,7 +226,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name NETHACK --color0 '#383838' -e ssh nethack@nethack.alt.org
 }
@@ -312,7 +312,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name NETHACK --color0 '#383838' -e ssh nethack@nethack.alt.org
 }
