@@ -9,12 +9,10 @@ HISTFILE=~/misc/ZSH_HISTORY
 
 # colors!
 test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-alias ls='ls --color=auto'
-alias dir='dir --color=auto'
-alias vdir='vdir --color=auto'
-alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
+for cmd in ls dir vdir grep fgrep egrep
+do
+    alias $cmd="$cmd --color=auto"
+done
 
 # use modern completion system
 autoload -Uz compinit
@@ -74,10 +72,8 @@ function preexec {
 }
 
 # fun
-alias cmatrix="cmatrix -b -u 9"
+alias cmatrix="cmatrix -b"
 alias xcowsay="xcowsay -f monospace"
-alias nao="ssh nethack@nethack.alt.org"
-alias sl="sl -e"
 function atcrec() {
     ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
 }
@@ -117,7 +113,6 @@ setopt autocd
 
 # prompts
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
-#RPS1="%*"
 
 command_not_found_handler() {
     echo "zsh: command not found: $1"
