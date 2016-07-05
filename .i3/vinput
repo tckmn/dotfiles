@@ -1,0 +1,14 @@
+#!/bin/bash
+# vim: ft=sh
+
+export tmpfile="$(mktemp)"
+echo "$@" >"$tmpfile"
+
+urxvt -bd '#d8d8d8' -name FLOAT_NOBORDER -g 40x3 -e \
+    nvim +'set nonu nornu notitle laststatus=0' \
+         +'startinsert' \
+         +'inoremap <cr> <esc>ZZ' \
+         "$tmpfile"
+
+cat "$tmpfile"
+rm "$tmpfile"

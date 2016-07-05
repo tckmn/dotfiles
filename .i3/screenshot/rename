@@ -1,2 +1,2 @@
 #!/bin/bash
-i3-input -F 'exec mv "$(~/.i3/screenshot/last)" "$(dirname "$(.i3/screenshot/last)")/%s"' -P 'rename to: '
+mv "$(~/.i3/screenshot/last)" "$(dirname "$(~/.i3/screenshot/last)")/$(~/.i3/vinput .png)"
