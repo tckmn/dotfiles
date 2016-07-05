@@ -70,6 +70,7 @@ $white:   #d8d8d8;
             .user-rep-chart-summary-tooltip:hover, .rep-col, .dateNavBox,
             #herobox, #hero-content, #badge-progress-menu,
             .realtime-post-deleted-notification p, #postflag-bar,
+            #system-message, .user-panel-mod-info, .ip-address-popup,
             /*chat*/
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
@@ -181,7 +182,10 @@ $white:   #d8d8d8;
     /* deleted stuff, errors, flags, pagination, search result highlights,
        "you are here" markers--basically any red highlighting */
     .deleted-answer-info, .deleted-post, .general-error, .search-errors,
-            .flag-outcome.Declined, .result-highlight, /*chat*/ .private {
+            .flag-outcome.Declined, .result-highlight, .blocked-yes,
+            .user-show-new .user-rep .rep-down,
+            /*chat*/
+            .private {
         color: $red !important;
     }
     .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error,
@@ -197,6 +201,14 @@ $white:   #d8d8d8;
     #tabs a.youarehere, .nav li.youarehere a {
         color:        $red !important;
         border-color: $red !important;
+    }
+    .system-alert {
+        border-color: $red !important;
+    }
+
+    /* and green highlighting */
+    .user-show-new .user-rep .rep-up {
+        color: $green !important;
     }
 
     /* bounties (and weird top-X indicator kajigger) */
