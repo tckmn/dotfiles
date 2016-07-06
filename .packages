@@ -1,0 +1,105 @@
+acpi Access information about battery, power, etc.
+acpi_call Interface to acpi, used by i3blocks and tlp.
+adobe-source-code-pro-fonts Source Code Pro, the monospaced font that I use.
+alsa-oss For playing sound.
+alsa-utils Provides aplay, arecord, alsamixer, speaker-test, etc.
+audacity Audio editor.
+bc Provides bc and dc, arbitrary precision calculator languages.
+blender 3D modeling software.
+bsd-games All the standard BSD command line games and tools.
+chromium Rarely used for when I can't do something in Firefox (or if I want to hop out of Pentadactyl for a few moments).
+cmake For compiling things with CMake.
+cmark CommonMark, a standard implementation of Markdown.
+cowsay Talking/thinking ASCII art cows... or other things.
+cups Print server, for printing things.
+dialog Dialog boxes on the terminal using ncurses.
+dosfstools Provides mkfs, fsck, etc. for the FAT and VFAT file systems.
+dunst Simple, customizable notification daemon.
+dwarffortress A very !!FUN!! simulation-based game.
+dzen2 General purpose program for messages, menus, etc. Used by xscast.
+espeak Speech synthesis tool.
+ethtool Used by tlp to disable Wake on LAN.
+feh Image viewer, also sets my wallpaper.
+figlet Fancy block fonts.
+firefox My web browser of choice.
+fortune-mod Print random adages.
+gimp Raster graphics editor, for image editing tasks.
+git Version control.
+gnu-netcat Network (TCP/UDP) connection tool.
+grub Bootloader.
+gvim Provides regular vim with clipboard support.
+hollywood Hack the mainframe!
+hplip Drivers for my HP printer.
+i3blocks An improved status bar for i3.
+i3lock Basic screen locker.
+i3-wm My window manager of choice. A configurable tiling WM that I can operate using only the keyboard.
+imagemagick Powerful command line tool for working with images.
+inkscape SVG / vector graphics editor.
+irssi IRC client.
+jq For working with JSON on the command line.
+keepass Password manager.
+lib32-mesa-libgl Multilib version of the Mesa open source implementation of OpenGL.
+libnotify Library for sending desktop notifications (notify-send).
+libreoffice-fresh A necessary evil when I have to open a .docx or .pptx file.
+lolcat Like cat, but with more memes.
+maim Excellent lightweight screenshot tool.
+mesa-libgl The Mesa open source implementation of OpenGL.
+mlocate Provides locate and updatedb, for finding files by name.
+moreutils Things that should have been in coreutils.
+mupdf PDF viewer.
+musescore Sheet music editor.
+mutt Terminal-based email client.
+neovim Neovim, my text editor of choice.
+nethack The greatest game you will ever play.
+nodejs The JavaScript (Node) programming language.
+noto-fonts Google's Noto font family.
+noto-fonts-cjk Chinese/Japanese/Korean characters for Google's Noto font family.
+noto-fonts-emoji Emoji for Google's Noto font family.
+npm NodeJS package manager.
+numix-themes A good dark theme for GTK.
+os-prober Finds other OSs on disk (with grub). Installed during the Arch installation process.
+pacaur For installing packages from the AUR.
+pentadactyl-git Vim-like keybindings for Firefox. Allows me to navigate webpages without touching the keyboard.
+powertop Power consumption diagnostic and tuning tool.
+puzzles Simon Tatham's portable puzzle collection.
+python The Python (3) programming language.
+python2 Python 2, for projects that still use it.
+python2-setuptools Setuptools for Python 2 (setup.py).
+python-pip Pip, Python's package manager.
+rofi Replacement for dmenu, which I use for application launching, etc.
+ruby The Ruby programming language.
+ruby-sass SASS/SCSS, CSS preprocessors.
+rustup The Rust programming language (rustup manages the nightly, beta, and stable versions).
+rxvt-unicode urxvt, my terminal emulator of choice.
+sl Steam locomotive! For typos of ls.
+slop For selecting areas of the screen. Used by main to select areas to screenshot.
+sysstat Used by i3blocks to display CPU usage.
+telegram-desktop-bin The Telegram instant messaging client.
+texlive-core Core distribution of TeX Live (LaTeX).
+thefuck Brilliant program for correcting errors on the shell. (I have it mapped to "pls".)
+thunderbird GUI email client, just in case I can't figure out how to do something with mutt. Will probably be uninstalled soon.
+timidity++ MIDI player.
+timidity-freepats Instrument patches for timidity++.
+tlp Power consumption management. Integrates with Thinkpad functionality (ex. charge thresholds).
+tmux Terminal multiplexer and server.
+tor-browser-en The Tor browser, for anonymous browsing.
+unity-editor 3D game engine.
+unzip For unzipping .zip files.
+urxvt-perls-git Useful Perl extensions for urxvt.
+urxvt-resize-font-git Another Perl extension for urxvt, to dynamically resize the font.
+vlc Media player (audio and video).
+w3m Terminal web browser. I use this to dump HTML attachments for viewing directly in mutt.
+wpa_supplicant For connecting to wifi using WPA.
+xcape Allows me to make caps act as esc when tapped and ctrl when pressed with another key.
+xcowsay Like cowsay, but graphical!
+xdotool Scriptable keyboard/mouse control.
+xf86-input-libinput X input driver.
+xf86-video-intel X video driver for Intel graphics.
+xorg-server Xorg, the X window system.
+xorg-server-utils Provides essential X utilities such as xinput, xmodmap, xrandr, xrdb, xset, etc.
+xorg-utils Provides useful X utilities such as xprop, xev, etc.
+xorg-xinit Provides startx and runs the .xinitrc file.
+xsel For working with the clipboard(s).
+xss-lock So I can lock my screen with i3lock after a period of inactivity or when I close the laptop lid.
+zip For creating .zip files.
+zsh My shell of choice.
