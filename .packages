@@ -17,6 +17,7 @@ dosfstools Provides mkfs, fsck, etc. for the FAT and VFAT file systems.
 dunst Simple, customizable notification daemon.
 dwarffortress A very !!FUN!! simulation-based game.
 dzen2 General purpose program for messages, menus, etc. Used by xscast.
+ed Ed is the standard Unix text editor.
 espeak Speech synthesis tool.
 ethtool Used by tlp to disable Wake on LAN.
 feh Image viewer, also sets my wallpaper.
