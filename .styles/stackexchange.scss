@@ -46,8 +46,8 @@ $white:   #d8d8d8;
             /*chat*/
             #container, .timestamp, .btn-close {
         background-color: $black !important;
-        color: $white !important;
-        box-shadow: none !important; /* .container */
+        color:            $white !important;
+        box-shadow:       none   !important; /* .container */
     }
 
     /* second darkest background--most sections of the main page */
@@ -63,7 +63,7 @@ $white:   #d8d8d8;
             .post-issue-display, .popup, .page-numbers, blockquote,
             .tag-container, kbd, .tab-page, #tag-menu, #wiki-excerpt,
             .welovestackoverflow, .revision td, .vote-revision td,
-            .review-bar, .tag-suggestions, .sorter tr.even td,
+            .review-bar, .tag-suggestions, .sorter tr td,
             .message.message-config, .dropdown, .dropdown li,
             .tag-filter-isany, .actual-edit-overlay, #side-menu a:hover,
             .val-info, .val-message, .title-box, .privilege-table-row:hover,
@@ -92,7 +92,7 @@ $white:   #d8d8d8;
 
     /* third darkest background--generally for thins that are highlighted */
     .topbar-dialog .unread-item, .badge-tag, .action-list .action-selected,
-            .close-as-duplicate-pane .item.hover,
+            .close-as-duplicate-pane .item.hover, .sorter tr.even td,
             .close-as-duplicate-pane .stats, .modal-footer,
             #mdhelp-tabs, .mdhelp-tabs, .wmd-help-button.active-help,
             .owner-revision td, a.action.selected, a.action:hover,
@@ -206,9 +206,13 @@ $white:   #d8d8d8;
         border-color: $red !important;
     }
 
-    /* and green highlighting */
+    /* other color highlighting */
     .user-show-new .user-rep .rep-up {
         color: $green !important;
+    }
+    a.account-toggle.active {
+        color: $black !important;
+        background-color: $blue !important;
     }
 
     /* bounties (and weird top-X indicator kajigger) */
@@ -219,14 +223,12 @@ $white:   #d8d8d8;
     }
 
     /* varying shades of "hotness" */
-    .cool        {            color: $white  !important; }
-    .warm        {            color: $yellow !important; }
-    .hot         {            color: $orange !important; }
-    .hotbg       { background-color: $orange !important;
-                              color: $white  !important; }
-    .supernova   {            color: $red    !important; }
-    .supernovabg { background-color: $red    !important;
-                              color: $white  !important; }
+    .cool { color: $white !important; }
+    .warm { color: $yellow !important; }
+    .hot, .sorter tr td.hot { color: $orange !important; }
+    .hotbg { background-color: $orange !important; color: $white !important; }
+    .supernova, .sorter tr td.supernova { color: $red !important; }
+    .supernovabg { background-color: $red !important; color: $white !important; }
 
     .avatar-card { box-shadow: none !important; }
 
