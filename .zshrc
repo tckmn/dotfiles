@@ -103,7 +103,7 @@ eval "$(thefuck -a pls)"
 # licenses
 for license in mit gpl apache
 do
-    alias $license="cat ~/.license/$license > LICENSE"
+    alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || cat ~/.license/$license > LICENSE"
 done
 
 # allow use of comments in shell
