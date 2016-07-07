@@ -237,12 +237,12 @@ bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
-        bindsym i exec ~/.i3/screenshot/imgur; exec xdotool key q; mode default
-        bindsym r exec ~/.i3/screenshot/rename; exec xdotool key q; mode default
-        bindsym --release q exec xdotool key q; mode default
-        bindsym --release Escape exec xdotool key q; mode default
+        bindsym i exec ~/.i3/screenshot/imgur; exec kill $(cat /tmp/feh-pid); mode default
+        bindsym r exec ~/.i3/screenshot/rename; exec kill $(cat /tmp/feh-pid); mode default
+        bindsym q exec kill $(cat /tmp/feh-pid); mode default
+        bindsym Escape exec kill $(cat /tmp/feh-pid); mode default
 }
-bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)"; mode $screenshot
+bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & echo $! > /tmp/feh-pid; mode $screenshot
 ###############################################################################
 ###############################################################################
 bar {
