@@ -64,7 +64,7 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
 set showmode showcmd ruler relativenumber scrolloff=3
 
 " better searching
-set ignorecase smartcase incsearch showmatch hlsearch
+set ignorecase smartcase incsearch hlsearch
 nnoremap <C-l> :noh<cr><C-l>
 
 " wrapping
