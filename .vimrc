@@ -68,7 +68,7 @@ nnoremap <C-l> :noh<cr><C-l>
 
 " wrapping
 set wrap display=lastline colorcolumn=80
-highlight ColorColumn ctermbg=1
+highlight ColorColumn ctermbg=8
 nnoremap j gj
 vnoremap j gj
 nnoremap gj j
