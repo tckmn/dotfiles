@@ -112,3 +112,4 @@ set title titlestring=]2;vim\ [%F]
 " annoyances
 imap <Nul> <Esc><Leader>
 set noesckeys
+set shortmess+=I
