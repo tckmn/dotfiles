@@ -6,6 +6,7 @@ Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
 Plug 'justinmk/vim-sneak'
+Plug 'junegunn/vim-easy-align'
 " language-specific
 Plug 'rust-lang/rust.vim'
 Plug 'lervag/vimtex'
@@ -18,8 +19,6 @@ Plug 'KeyboardFire/vim-minisnip'
 " integration
 Plug 'tpope/vim-fugitive'
 Plug 'vimwiki/vimwiki'
-" magic
-Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 syntax on
