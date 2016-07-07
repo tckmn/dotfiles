@@ -1,0 +1,10 @@
+#!/bin/bash
+# vim: ft=sh
+
+setxkbmap -layout "$((\
+        echo 'us';\
+        echo 'us,ru';\
+        ls /usr/share/X11/xkb/symbols | grep '^..$';\
+    ) | rofi -dmenu -p layout)"
+xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'
+pkill -RTMIN+10 i3blocks

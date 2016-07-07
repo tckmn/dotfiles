@@ -17,7 +17,6 @@ bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe exec firefox
-bindsym $mod+d kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -44,6 +43,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
+bindsym $mod+d kill
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -66,14 +66,14 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
-bindsym $mod+Tab focus output right
-bindsym $mod+Shift+Tab move output right
 bindsym $mod+comma workspace prev
 bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+period workspace next
 bindsym $mod+Shift+period move container to workspace next
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
+bindsym $mod+Tab focus output right
+bindsym $mod+Shift+Tab move output right
 bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
@@ -89,7 +89,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 for_window [instance="FLOAT"] floating enable
@@ -155,7 +155,6 @@ bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe exec firefox
-bindsym $mod+d kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -182,6 +181,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
+bindsym $mod+d kill
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -204,14 +204,14 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
-bindsym $mod+Tab focus output right
-bindsym $mod+Shift+Tab move output right
 bindsym $mod+comma workspace prev
 bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+period workspace next
 bindsym $mod+Shift+period move container to workspace next
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
+bindsym $mod+Tab focus output right
+bindsym $mod+Shift+Tab move output right
 bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
@@ -227,7 +227,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 }
@@ -241,7 +241,6 @@ bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
 bindsym $mod+Shift+apostrophe exec firefox
-bindsym $mod+d kill
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
@@ -268,6 +267,7 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+Shift+space floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
+bindsym $mod+d kill
 bindsym $mod+1 workspace number 1
 bindsym $mod+2 workspace number 2
 bindsym $mod+3 workspace number 3
@@ -290,14 +290,14 @@ bindsym $mod+Shift+9 move container to workspace number 9
 bindsym $mod+Shift+0 move container to workspace number 10
 bindsym $mod+grave workspace back_and_forth
 bindsym $mod+Shift+grave move container to workspace back_and_forth
-bindsym $mod+Tab focus output right
-bindsym $mod+Shift+Tab move output right
 bindsym $mod+comma workspace prev
 bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+period workspace next
 bindsym $mod+Shift+period move container to workspace next
 bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
 bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
+bindsym $mod+Tab focus output right
+bindsym $mod+Shift+Tab move output right
 bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
@@ -313,7 +313,7 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
+bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 }

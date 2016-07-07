@@ -17,35 +17,45 @@ floating_modifier $mod     # mouse+$mod for manipulating floating windows
 ###############################################################################
 
 !@<+default_bindings
+
+# launching
 bindsym $mod!!<,+Shift>+Return exec rofi \  # rofi (dropin dmenu replacement)
   -show !!<run,window>
 bindsym $mod!!<,+Shift>+apostrophe exec \   # most commonly launched programs
   !!<i3-sensible-terminal,firefox>
-bindsym $mod+d kill                         # delete focused window
+
+# window management
 bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
   Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
   !!<1!left,down,up,right>!!<2!, $mv>
+
 bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
 bindsym $mod+f fullscreen toggle            # fullscreen
 bindsym $mod+!!q,w,e \                      # change container layout
   layout !!<stacking,tabbed,toggle split>
 bindsym $mod!!<,+Shift>+space \             # manage floating windows with
   !!<focus mode_,floating >toggle           #   keyboard
+
 bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
+bindsym $mod+d kill                         # delete focused window
+
+# workspaces
 bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
   !!<2!,move container to >\
   workspace number !!1!1..10
+
 bindsym $mod!!<,+Shift>+grave \             # last used workspace
   !!<,move container to >\
   workspace back_and_forth
-bindsym $mod!!<,+Shift>+Tab !!focus,move \  # other monitor
-  output right
+
 bindsym $mod!!<,+Shift>+comma \             # next/prev workspace
   !!<,move container to >\
   workspace prev
 bindsym $mod!!<,+Shift>+period \
   !!<,move container to >\
   workspace next
+
+# workspace names
 bindsym $mod+x exec i3-input -F \           # rename workspace
   "rename workspace to \
   "'"'"$(~/.i3/cur_wksp.sh):%s"'"' \
@@ -53,25 +63,36 @@ bindsym $mod+x exec i3-input -F \           # rename workspace
 bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
   "rename workspace to \
   $(~/.i3/cur_wksp.sh)"
+
+# dual-monitor setup
+bindsym $mod!!<,+Shift>+Tab !!focus,move \  # other monitor
+  output right
 bindsym $mod+Shift+equal !!<\>              # shoot all workspaces over to my
   workspace number !!<1!2..10>; move \      #   large monitor except 1
     workspace to output HDMI2; !!<\>
   nop
-bindsym $mod+equal move workspace to \      # toggle monitors
+bindsym $mod+equal move workspace to \      # toggle workspace between monitors
   output left
+
+# scratchpad
 bindsym $mod!!<,+Shift>+z \                 # scratchpad
   !!<,move >scratchpad!!< show,>
-bindsym $mod+Shift+c \
-  exec ~/.i3/i3bang.rb; reload              # reload config file, rerun i3bang
+
+# restarting/exiting
+bindsym $mod+Shift+c \                      # reload config file, rerun i3bang
+  exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart                # restart i3 inplace
 bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   -t warning -m 'You pressed the exit \
   shortcut. Do you really want to exit \
   i3? This will end your X session.' \
   -b 'Yes, exit i3' 'i3-msg exit'
+
+# function keys
 bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
   maim!!<1!, -s> $(date +'pictures/\
   screenshot_%F_%T.png')
+
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer sset Master 5%!!+,- \
   && pkill -RTMIN+10 i3blocks
@@ -81,11 +102,19 @@ bindsym XF86AudioMute \                     # mute volume key
 bindsym XF86AudioMicMute \                  # mute mic key
   exec amixer sset Capture toggle \
   && pkill -RTMIN+10 i3blocks
+
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
   exec xbacklight !!<+,->10%
-bindsym XF86Explorer exec "setxkbmap -layout `( ls /usr/share/X11/xkb/symbols | grep '^..$'; ruby -e 'a = %w[us ru vn]; puts 2.upto(a.size).flat_map{|n| a.combination(n).map{|x| x.join ?, }}' ) | rofi -dmenu -p layout`; xmodmap -e 'keycode 108 = ISO_Next_Group Meta_R ISO_Next_Group Meta_R'; pkill -RTMIN+10 i3blocks"
-bindsym $mod+i exec i3lock -c 181818
-bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
+
+bindsym XF86Explorer \                      # switch keyboard layouts
+  exec ~/.i3/layout-switcher
+
+# misc.
+bindsym $mod+i exec i3lock -c 181818        # lock screen
+bindsym $mod+n exec urxvt -name FLOAT \     # start a terminal with nethack
+  --color0 '#383838' \
+  -e ssh nethack@nethack.alt.org
+
 >
 
 for_window [instance="FLOAT"] floating enable
