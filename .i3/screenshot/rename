@@ -1,2 +1,2 @@
 #!/bin/bash
-mv "$(~/.i3/screenshot/last)" "$(dirname "$(~/.i3/screenshot/last)")/$(~/.i3/vinput .png)"
+mv "$(~/.i3/screenshot/last)" "$(dirname "$(~/.i3/screenshot/last)")/$(~/.i3/vinput .png +'inoremap <space> _')"
