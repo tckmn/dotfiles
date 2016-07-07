@@ -100,60 +100,60 @@ for_window [title="NOBORDER"] border none
 ###############################################################################
 ###############################################################################
 mode "resize" {
-        bindsym h resize shrink width $mv or $mvppt
-        bindsym j resize grow height $mv or $mvppt
-        bindsym k resize shrink height $mv or $mvppt
-        bindsym l resize grow width $mv or $mvppt
-        bindsym Left resize shrink width $mv or $mvppt
-        bindsym Down resize grow height $mv or $mvppt
-        bindsym Up resize shrink height $mv or $mvppt
-        bindsym Right resize grow width $mv or $mvppt
-        bindsym Shift+h resize shrink width 1px or 1ppt
-        bindsym Shift+j resize grow height 1px or 1ppt
-        bindsym Shift+k resize shrink height 1px or 1ppt
-        bindsym Shift+l resize grow width 1px or 1ppt
-        bindsym Shift+Left resize shrink width 1px or 1ppt
-        bindsym Shift+Down resize grow height 1px or 1ppt
-        bindsym Shift+Up resize shrink height 1px or 1ppt
-        bindsym Shift+Right resize grow width 1px or 1ppt
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym space mode "default"
-        bindsym $mod+r mode "default"
+    bindsym h resize shrink width $mv or $mvppt
+    bindsym j resize grow height $mv or $mvppt
+    bindsym k resize shrink height $mv or $mvppt
+    bindsym l resize grow width $mv or $mvppt
+    bindsym Left resize shrink width $mv or $mvppt
+    bindsym Down resize grow height $mv or $mvppt
+    bindsym Up resize shrink height $mv or $mvppt
+    bindsym Right resize grow width $mv or $mvppt
+    bindsym Shift+h resize shrink width 1px or 1ppt
+    bindsym Shift+j resize grow height 1px or 1ppt
+    bindsym Shift+k resize shrink height 1px or 1ppt
+    bindsym Shift+l resize grow width 1px or 1ppt
+    bindsym Shift+Left resize shrink width 1px or 1ppt
+    bindsym Shift+Down resize grow height 1px or 1ppt
+    bindsym Shift+Up resize shrink height 1px or 1ppt
+    bindsym Shift+Right resize grow width 1px or 1ppt
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+    bindsym space mode "default"
+    bindsym $mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 mode "mouse" {
-        bindsym h exec xdotool mousemove_relative -- -30 0
-        bindsym j exec xdotool mousemove_relative -- 0 30
-        bindsym k exec xdotool mousemove_relative -- 0 -30
-        bindsym l exec xdotool mousemove_relative -- 30 0
-        bindsym y exec xdotool mousemove_relative -- -30 -30
-        bindsym u exec xdotool mousemove_relative -- 30 -30
-        bindsym b exec xdotool mousemove_relative -- -30 30
-        bindsym n exec xdotool mousemove_relative -- 30 30
-        bindsym KP_4 exec xdotool mousemove_relative -- -10 0
-        bindsym KP_2 exec xdotool mousemove_relative -- 0 10
-        bindsym KP_8 exec xdotool mousemove_relative -- 0 -10
-        bindsym KP_6 exec xdotool mousemove_relative -- 10 0
-        bindsym KP_7 exec xdotool mousemove_relative -- -10 -10
-        bindsym KP_9 exec xdotool mousemove_relative -- 10 -10
-        bindsym KP_1 exec xdotool mousemove_relative -- -10 10
-        bindsym KP_3 exec xdotool mousemove_relative -- 10 10
-        bindsym Left exec xdotool mousemove_relative -- -1 0
-        bindsym Down exec xdotool mousemove_relative -- 0 1
-        bindsym Up exec xdotool mousemove_relative -- 0 -1
-        bindsym Right exec xdotool mousemove_relative -- 1 0
-        bindsym Return exec xdotool click 1
-        bindsym Shift+Return exec xdotool click 3
-        bindsym period exec xdotool mousedown 1
-        bindsym comma exec xdotool mouseup 1
-        bindsym Escape mode "default"
-        bindsym space mode "default"
-        bindsym $mod+m mode "default"
+    bindsym h exec xdotool mousemove_relative -- -30 0
+    bindsym j exec xdotool mousemove_relative -- 0 30
+    bindsym k exec xdotool mousemove_relative -- 0 -30
+    bindsym l exec xdotool mousemove_relative -- 30 0
+    bindsym y exec xdotool mousemove_relative -- -30 -30
+    bindsym u exec xdotool mousemove_relative -- 30 -30
+    bindsym b exec xdotool mousemove_relative -- -30 30
+    bindsym n exec xdotool mousemove_relative -- 30 30
+    bindsym KP_4 exec xdotool mousemove_relative -- -10 0
+    bindsym KP_2 exec xdotool mousemove_relative -- 0 10
+    bindsym KP_8 exec xdotool mousemove_relative -- 0 -10
+    bindsym KP_6 exec xdotool mousemove_relative -- 10 0
+    bindsym KP_7 exec xdotool mousemove_relative -- -10 -10
+    bindsym KP_9 exec xdotool mousemove_relative -- 10 -10
+    bindsym KP_1 exec xdotool mousemove_relative -- -10 10
+    bindsym KP_3 exec xdotool mousemove_relative -- 10 10
+    bindsym Left exec xdotool mousemove_relative -- -1 0
+    bindsym Down exec xdotool mousemove_relative -- 0 1
+    bindsym Up exec xdotool mousemove_relative -- 0 -1
+    bindsym Right exec xdotool mousemove_relative -- 1 0
+    bindsym Return exec xdotool click 1
+    bindsym Shift+Return exec xdotool click 3
+    bindsym period exec xdotool mousedown 1
+    bindsym comma exec xdotool mouseup 1
+    bindsym Escape mode "default"
+    bindsym space mode "default"
+    bindsym $mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
 mode "numpad" {
-        bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
+    bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
@@ -237,10 +237,10 @@ bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
-        bindsym i exec ~/.i3/screenshot/imgur; exec kill $(cat /tmp/feh-pid); mode default
-        bindsym r exec ~/.i3/screenshot/rename; exec kill $(cat /tmp/feh-pid); mode default
-        bindsym q exec kill $(cat /tmp/feh-pid); mode default
-        bindsym Escape exec kill $(cat /tmp/feh-pid); mode default
+    bindsym i exec ~/.i3/screenshot/imgur; exec kill $(cat /tmp/feh-pid); mode default
+    bindsym r exec ~/.i3/screenshot/rename; exec kill $(cat /tmp/feh-pid); mode default
+    bindsym q exec ~/.i3/screenshot/; exec kill $(cat /tmp/feh-pid); mode default
+    bindsym Escape exec ~/.i3/screenshot/; exec kill $(cat /tmp/feh-pid); mode default
 }
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & echo $! > /tmp/feh-pid; mode $screenshot
 ###############################################################################

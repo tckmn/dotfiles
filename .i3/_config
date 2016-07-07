@@ -130,12 +130,12 @@ for_window [title="NOBORDER"] border none
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
-        bindsym !!h,j,k,l,Left,Down,Up,Right resize \
-          !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
-        bindsym Shift+!!h,j,k,l,Left,Down,Up,Right resize \
-          !!<shrink width,grow height,shrink height,grow width> 1px or 1ppt
+    bindsym !!h,j,k,l,Left,Down,Up,Right resize \
+        !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
+    bindsym Shift+!!h,j,k,l,Left,Down,Up,Right resize \
+        !!<shrink width,grow height,shrink height,grow width> 1px or 1ppt
 
-        bindsym !!Return,Escape,space,$mod+r mode "default"
+    bindsym !!Return,Escape,space,$mod+r mode "default"
 }
 bindsym $mod+r mode "resize"
 
@@ -144,34 +144,33 @@ bindsym $mod+r mode "resize"
 exec xdotool mousemove_relative -- !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
                                    !!1!0,!s,-!s,0,-!s,-!s,!s,!s>
 mode "mouse" {
-        !s = 30  # hjkl speed
-        bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
-        !s = 10  # numpad speed
-        bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
-        # arrow keys: precise, 1-pixel movements
-        bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- \
-          !!<-1 0,0 1,0 -1,1 0>
-        # clicking and such
-        bindsym !!Return,Shift+Return,period,comma exec xdotool \
-          !!<click 1,click 3,mousedown 1,mouseup 1>
-        # return to normal
-        bindsym !!Escape,space,$mod+m mode "default"
+    !s = 30  # hjkl speed
+    bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
+    !s = 10  # numpad speed
+    bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
+    # arrow keys: precise, 1-pixel movements
+    bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- \
+        !!<-1 0,0 1,0 -1,1 0>
+    # clicking and such
+    bindsym !!Return,Shift+Return,period,comma exec xdotool \
+        !!<click 1,click 3,mousedown 1,mouseup 1>
+    # return to normal
+    bindsym !!Escape,space,$mod+m mode "default"
 }
 bindsym $mod+m mode "mouse"
 
 # numpad mode, for using Blender .-.
 mode "numpad" {
-        bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
-        !@default_bindings
+    bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
+    !@default_bindings
 }
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 
 # useful actions on screenshots
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
-        bindsym i exec ~/.i3/screenshot/imgur; exec kill $(cat /tmp/feh-pid); mode default
-        bindsym r exec ~/.i3/screenshot/rename; exec kill $(cat /tmp/feh-pid); mode default
-        bindsym !!q,Escape exec kill $(cat /tmp/feh-pid); mode default
+    bindsym !!i,r,q,Escape exec ~/.i3/screenshot/!!<imgur,rename,,>; \
+        exec kill $(cat /tmp/feh-pid); mode default
 }
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & \
     echo $! > /tmp/feh-pid; mode $screenshot
