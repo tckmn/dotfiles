@@ -11,6 +11,7 @@ new_window normal 0 px
 set $mv 20px
 set $mvppt 2ppt
 floating_modifier $mod
+focus_follows_mouse no
 ###############################################################################
 ###############################################################################
 bindsym $mod+Return exec rofi -show run
@@ -93,7 +94,9 @@ bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 for_window [instance="FLOAT"] floating enable
+for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
+for_window [title="NOBORDER"] border none
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -234,90 +237,12 @@ bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.
 bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
-        bindsym i exec ~/.i3/screenshot/imgur; mode default
-        bindsym r exec ~/.i3/screenshot/rename; mode default
-        bindsym Escape mode default
-bindsym $mod+Return exec rofi -show run
-bindsym $mod+Shift+Return exec rofi -show window
-bindsym $mod+apostrophe exec i3-sensible-terminal
-bindsym $mod+Shift+apostrophe exec firefox
-bindsym $mod+h focus left
-bindsym $mod+j focus down
-bindsym $mod+k focus up
-bindsym $mod+l focus right
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-bindsym $mod+Shift+h move left $mv
-bindsym $mod+Shift+j move down $mv
-bindsym $mod+Shift+k move up $mv
-bindsym $mod+Shift+l move right $mv
-bindsym $mod+Shift+Left move left $mv
-bindsym $mod+Shift+Down move down $mv
-bindsym $mod+Shift+Up move up $mv
-bindsym $mod+Shift+Right move right $mv
-bindsym $mod+backslash split h
-bindsym $mod+minus split v
-bindsym $mod+f fullscreen toggle
-bindsym $mod+q layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-bindsym $mod+space focus mode_toggle
-bindsym $mod+Shift+space floating toggle
-bindsym $mod+a focus parent
-bindsym $mod+s focus child
-bindsym $mod+d kill
-bindsym $mod+1 workspace number 1
-bindsym $mod+2 workspace number 2
-bindsym $mod+3 workspace number 3
-bindsym $mod+4 workspace number 4
-bindsym $mod+5 workspace number 5
-bindsym $mod+6 workspace number 6
-bindsym $mod+7 workspace number 7
-bindsym $mod+8 workspace number 8
-bindsym $mod+9 workspace number 9
-bindsym $mod+0 workspace number 10
-bindsym $mod+Shift+1 move container to workspace number 1
-bindsym $mod+Shift+2 move container to workspace number 2
-bindsym $mod+Shift+3 move container to workspace number 3
-bindsym $mod+Shift+4 move container to workspace number 4
-bindsym $mod+Shift+5 move container to workspace number 5
-bindsym $mod+Shift+6 move container to workspace number 6
-bindsym $mod+Shift+7 move container to workspace number 7
-bindsym $mod+Shift+8 move container to workspace number 8
-bindsym $mod+Shift+9 move container to workspace number 9
-bindsym $mod+Shift+0 move container to workspace number 10
-bindsym $mod+grave workspace back_and_forth
-bindsym $mod+Shift+grave move container to workspace back_and_forth
-bindsym $mod+comma workspace prev
-bindsym $mod+Shift+comma move container to workspace prev
-bindsym $mod+period workspace next
-bindsym $mod+Shift+period move container to workspace next
-bindsym $mod+x exec i3-input -F "rename workspace to "'"'"$(~/.i3/cur_wksp.sh):%s"'"' -P 'Rename: '
-bindsym $mod+Shift+x exec i3-msg "rename workspace to $(~/.i3/cur_wksp.sh)"
-bindsym $mod+Tab focus output right
-bindsym $mod+Shift+Tab move output right
-bindsym $mod+Shift+equal workspace number 2; move workspace to output HDMI2; workspace number 3; move workspace to output HDMI2; workspace number 4; move workspace to output HDMI2; workspace number 5; move workspace to output HDMI2; workspace number 6; move workspace to output HDMI2; workspace number 7; move workspace to output HDMI2; workspace number 8; move workspace to output HDMI2; workspace number 9; move workspace to output HDMI2; workspace number 10; move workspace to output HDMI2; nop
-bindsym $mod+equal move workspace to output left
-bindsym $mod+z scratchpad show
-bindsym $mod+Shift+z move scratchpad
-bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
-bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim $(date +'pictures/screenshot_%F_%T.png')
-bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshot_%F_%T.png')
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight +10%
-bindsym XF86MonBrightnessDown exec xbacklight -10%
-bindsym XF86Explorer exec ~/.i3/layout-switcher
-bindsym $mod+i exec i3lock -c 181818
-bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
+        bindsym i exec ~/.i3/screenshot/imgur; exec xdotool key q; mode default
+        bindsym r exec ~/.i3/screenshot/rename; exec xdotool key q; mode default
+        bindsym --release q exec xdotool key q; mode default
+        bindsym --release Escape exec xdotool key q; mode default
 }
-bindsym $mod+c mode $screenshot
+bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)"; mode $screenshot
 ###############################################################################
 ###############################################################################
 bar {
