@@ -5,7 +5,6 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
 Plug 'wellle/targets.vim'
-Plug 'justinmk/vim-sneak'
 Plug 'junegunn/vim-easy-align'
 " language-specific
 Plug 'rust-lang/rust.vim'
