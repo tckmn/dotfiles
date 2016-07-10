@@ -1,14 +1,13 @@
 # identify ourselves
 export TERM=screen-256color
 
-# keep lots of lines of history within the shell and save it to
-# ~/misc/ZSH_HISTORY
+# keep lots of history within the shell and save it to ~/misc/ZSH_HISTORY
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/misc/ZSH_HISTORY
 
 # colors!
-test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
 for cmd in ls dir vdir grep fgrep egrep
 do
     alias $cmd="$cmd --color=auto"
@@ -103,7 +102,8 @@ eval "$(thefuck -a pls)"
 # licenses
 for license in mit gpl apache
 do
-    alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || cat ~/.license/$license > LICENSE"
+    alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || \
+        cat ~/.license/$license > LICENSE"
 done
 
 # allow use of comments in shell
