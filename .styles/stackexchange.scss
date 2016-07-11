@@ -332,6 +332,7 @@ $white:   #d8d8d8;
     /* CHAT-SPECIFIC STARTS HERE */
 
     .username.moderator                    {            color: $blue       !important; }
+    .username.owner                        { background-color: transparent !important; }
     .mention                               { background-color: $red        !important; }
     .highlight, .mspbar, .message.selected { background-color: $grey3      !important; }
     span.meta                              { background-color: transparent !important; }
