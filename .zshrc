@@ -132,6 +132,7 @@ else
     ssh-agent > ~/.cache/ssh-agent
     . ~/.cache/ssh-agent >/dev/null
     ssh-add ~/.ssh/id_rsa
+    ssh-add ~/.ssh/aur
 fi
 
 for binding in $(bindkey | awk '{print $NF}' | sort -u \
