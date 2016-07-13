@@ -359,15 +359,15 @@ $white:   #d8d8d8;
 
     /* CHAT-SPECIFIC STARTS HERE */
 
-    .username.moderator                    {            color: $blue       !important; }
-    .username.owner                        { background-color: transparent !important; }
-    .mention                               { background-color: $red        !important; }
-    .highlight, .mspbar, .message.selected { background-color: $grey3      !important; }
-    span.meta                              { background-color: transparent !important; }
-    #input-area, body.outside              {       background: $black      !important; }
-    .pending, .posted, .neworedit          {            color: $green      !important; }
-    .stars:not(.user-star) .img.vote       {           filter: invert(100%);           }
-    .deleted                               {            color: $grey3      !important; }
+    .username.moderator { color: $blue !important; }
+    .username.owner { background-color: transparent !important; }
+    .mention { background-color: $red !important; }
+    .highlight, .mspbar, .message.selected { background-color: $grey3 !important; }
+    span.meta { background-color: transparent !important; }
+    #input-area, body.outside { background: $black !important; }
+    .pending, .posted, .neworedit { color: $green !important; }
+    .stars:not(.user-star) .img.vote { filter: invert(100%); }
+    .deleted { color: $grey3 !important; }
 
     #my-rooms li.activity-0 { color: mix($white, $grey2, 100.00%) !important; }
     #my-rooms li.activity-1 { color: mix($white, $grey2, 83.333%) !important; }
@@ -379,9 +379,9 @@ $white:   #d8d8d8;
 
     /* STACKEXCHANGE.COM-SPECIFIC STARTS HERE */
 
-    header        { background:       $black !important; }
-    .page-numbers { background-image: none   !important; }
-    .account-icon { border:           none   !important; }
+    header { background: $black !important; }
+    .page-numbers { background-image: none !important; }
+    .account-icon { border: none !important; }
 
     #reputation-graph > #highcharts-0 > svg > rect { fill: $grey1; }
 
