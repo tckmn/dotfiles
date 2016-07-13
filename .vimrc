@@ -113,3 +113,4 @@ set title titlestring=]2;vim\ [%F]
 imap <Nul> <Esc><Leader>
 set noesckeys
 set shortmess+=I
+let g:netrw_dirhistmax=0
