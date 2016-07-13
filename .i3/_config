@@ -170,7 +170,7 @@ bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
     bindsym !!i,r,q,Escape exec ~/.i3/screenshot/!!<imgur,rename,,>; \
-        exec kill $(cat /tmp/feh-pid); mode default
+        exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
 }
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & \
     echo $! > /tmp/feh-pid; mode $screenshot
