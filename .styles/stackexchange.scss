@@ -76,7 +76,7 @@ $white:   #d8d8d8;
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
             .nav:not(.mainnavs):not(.askquestion) li, .message-controls,
-            .conversation-info,
+            .conversation-info, .annot,
             /*se.com*/
             .hero-box, .user-about-me, .account-number, .date_brick,
             .featured-site, .blogcontainer, .newsletter-category,
@@ -339,6 +339,7 @@ $white:   #d8d8d8;
     #input-area, body.outside              {       background: $black      !important; }
     .pending, .posted, .neworedit          {            color: $green      !important; }
     .stars:not(.user-star) .img.vote       {           filter: invert(100%);           }
+    .deleted                               {            color: $grey3      !important; }
 
     #my-rooms li.activity-0 { color: mix($white, $grey2, 100.00%) !important; }
     #my-rooms li.activity-1 { color: mix($white, $grey2, 83.333%) !important; }
