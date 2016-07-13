@@ -159,6 +159,17 @@ $white:   #d8d8d8;
     }
     hr, .stroke, .field-separator { background-color: $grey2 !important; }
 
+    /* override to transparent background; some of these are to prevent the
+       "flash" effect when loading a page that jumps to a specific comment
+       or answer; some are just to get rid of backgrounds */
+    div.answer, tr.comment,
+        /*chat*/
+        .username.owner, span.meta,
+        /*a51*/
+        .answered-accepted .mini-counts, .proposal-page #content {
+        background-color: transparent !important;
+    }
+
     /* "delete"/"close" buttons */
     .delete-tag, /*chat*/ .btn-delete {
         background:    $grey1;
@@ -364,10 +375,8 @@ $white:   #d8d8d8;
     /* CHAT-SPECIFIC STARTS HERE */
 
     .username.moderator { color: $blue !important; }
-    .username.owner { background-color: transparent !important; }
     .mention { background-color: $red !important; }
     .highlight, .mspbar, .message.selected { background-color: $grey3 !important; }
-    span.meta { background-color: transparent !important; }
     #input-area, body.outside { background: $black !important; }
     .pending, .posted, .neworedit { color: $green !important; }
     .stars:not(.user-star) .img.vote { filter: invert(100%); }
@@ -394,7 +403,5 @@ $white:   #d8d8d8;
     #search-bar, .footer { filter: saturate(0%); }
     .content-container { background: $black !important; }
     .module.phase { background: $grey1 !important; }
-    .answered-accepted .mini-counts { background-color: transparent !important; }
-    .proposal-page #content { background-color: transparent !important; }
 
 }
