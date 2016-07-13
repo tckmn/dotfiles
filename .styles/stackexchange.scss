@@ -236,7 +236,7 @@ $white:   #d8d8d8;
         background-color: $red   !important;
         color:            $white !important;
     }
-    div.answer.deleted-answer, .deleted-comment,
+    .deleted-answer, div.answer.deleted-answer, tr.comment.deleted-comment,
             .deleted-event td, .deleted-event-details td {
         background-color: mix($red, $black, 25%) !important;
     }
