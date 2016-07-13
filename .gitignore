@@ -8,3 +8,7 @@
 .mutt/password
 .ssh/id_rsa
 .ssh/aur
+.weechat/logs
+.weechat/weechat.log
+.weechat/sec.conf
+.weechat/ecdsa.pem
