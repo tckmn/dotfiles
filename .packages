@@ -36,9 +36,8 @@ i3lock Basic screen locker.
 i3-wm My window manager of choice. A configurable tiling WM that I can operate using only the keyboard.
 imagemagick Powerful command line tool for working with images.
 inkscape SVG / vector graphics editor.
-irssi IRC client.
+ipbt ttyrec playback tool that has way more features than ttyplay (mostly useful for Nethack).
 jq For working with JSON on the command line.
-keepass Password manager.
 lib32-mesa-libgl Multilib version of the Mesa open source implementation of OpenGL.
 libnotify Library for sending desktop notifications (notify-send).
 libreoffice-fresh A necessary evil when I have to open a .docx or .pptx file.
@@ -50,6 +49,7 @@ moreutils Things that should have been in coreutils.
 mupdf PDF viewer.
 musescore Sheet music editor.
 mutt Terminal-based email client.
+namcap Pacman package analyzer, for sanity-checking packages before uploading them to AUR.
 neovim Neovim, my text editor of choice.
 nethack The greatest game you will ever play.
 nodejs The JavaScript (Node) programming language.
@@ -60,6 +60,8 @@ npm NodeJS package manager.
 numix-themes A good dark theme for GTK.
 os-prober Finds other OSs on disk (with grub). Installed during the Arch installation process.
 pacaur For installing packages from the AUR.
+pass Lightweight CLI password manager.
+pbpst Featureful pastebin client that works with https://ptpb.pw/.
 pentadactyl-git Vim-like keybindings for Firefox. Allows me to navigate webpages without touching the keyboard.
 powertop Power consumption diagnostic and tuning tool.
 puzzles Simon Tatham's portable puzzle collection.
@@ -90,6 +92,7 @@ urxvt-perls-git Useful Perl extensions for urxvt.
 urxvt-resize-font-git Another Perl extension for urxvt, to dynamically resize the font.
 vlc Media player (audio and video).
 w3m Terminal web browser. I use this to dump HTML attachments for viewing directly in mutt.
+weechat A highly customizable ncurses IRC client that has lots of useful features (like split windows and merged buffers).
 wpa_supplicant For connecting to wifi using WPA.
 xcape Allows me to make caps act as esc when tapped and ctrl when pressed with another key.
 xcowsay Like cowsay, but graphical!
@@ -100,6 +103,7 @@ xorg-server Xorg, the X window system.
 xorg-server-utils Provides essential X utilities such as xinput, xmodmap, xrandr, xrdb, xset, etc.
 xorg-utils Provides useful X utilities such as xprop, xev, etc.
 xorg-xinit Provides startx and runs the .xinitrc file.
+xscast-git I made this! \o/ Records GIF mini-screencasts of windows and overlays a list of keystrokes.
 xsel For working with the clipboard(s).
 xss-lock So I can lock my screen with i3lock after a period of inactivity or when I close the laptop lid.
 zip For creating .zip files.
