@@ -110,7 +110,8 @@ $white:   #d8d8d8;
             #sideBar .module.emailsub,
             /*a51*/
             .welcome, .list-header, .category-tab, .inner-tabs-content,
-            .inner-tabs a, .tabs a, .proposal-status, .subheader h2 {
+            .inner-tabs a, .proposal-page .tabs a, .proposal-status,
+            .subheader h2 {
         background-color: $grey1 !important;
         border-color:     $grey2 !important;
         color:            $white !important;
@@ -402,5 +403,6 @@ $white:   #d8d8d8;
     #search-bar, .footer { filter: saturate(0%); }
     .content-container { background: $black !important; }
     .module.phase { background: $grey1 !important; }
+    .category-content { border: none; }
 
 }
