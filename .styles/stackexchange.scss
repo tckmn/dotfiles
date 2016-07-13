@@ -36,13 +36,13 @@ $grey3:   #585858;
 $grey4:   #b8b8b8;
 $white:   #d8d8d8;
 
-@-moz-document domain("stackapps.com"),
+@-moz-document domain("stackexchange.com"),
+               domain("stackapps.com"),
                domain("mathoverflow.net"),
                domain("askubuntu.com"),
                regexp("https?://((?!blog|business)[^.]+\\.)*stackoverflow\\.com.*"),
                regexp("https?://((?!blog)[^.]+\\.)*serverfault\\.com.*"),
-               regexp("https?://((?!blog)[^.]+\\.)*superuser\\.com.*"),
-               regexp("https?://((?!area51)[^.]+\\.)*stackexchange\\.com.*") {
+               regexp("https?://((?!blog)[^.]+\\.)*superuser\\.com.*") {
 
     /* override to proper white text color */
     html, body, h1, h2, h3, h4, h5, h6, .heading,
@@ -56,7 +56,9 @@ $white:   #d8d8d8;
             /*chat*/
             .username, .username a, #sidebar, .stars .times, .signature .flair,
             .system-message-container .system-message, #my-rooms > li > a,
-            .general-room-access > form > div {
+            .general-room-access > form > div,
+            /*a51*/
+            .category-title {
         color: $white !important;
     }
 
@@ -64,7 +66,9 @@ $white:   #d8d8d8;
     .topbar, .container, #content, #footer, body > div.wrapper,
             .snippet-holder, .CodeMirror, .CodeMirror-gutter, iframe,
             /*chat*/
-            #container, .timestamp, .btn-close {
+            #container, .timestamp, .btn-close,
+            /*a51*/
+            .category-content {
         background-color: $black !important;
         color:            $white !important;
         box-shadow:       none   !important; /* .container */
@@ -103,7 +107,9 @@ $white:   #d8d8d8;
             .newsletter-item, .newsletters-toggle, .filter-dashboard-summary,
             .filter-show-more,
             #sideBar .module.filters-sidebar,
-            #sideBar .module.emailsub {
+            #sideBar .module.emailsub,
+            /*a51*/
+            .welcome, .list-header, .category-tab, .inner-tabs-content {
         background-color: $grey1 !important;
         border-color:     $grey2 !important;
         color:            $white !important;
@@ -122,7 +128,9 @@ $white:   #d8d8d8;
             /*chat*/
             .reply-child, .reply-parent, .onebox, .onebox *,
             .flagged-message .content, .flagged-message .mod-text,
-            .ob-post-tag, .monologue.mine .messages {
+            .ob-post-tag, .monologue.mine .messages,
+            /*a51*/
+            .category-tab-current, .category-tab:hover {
         background-color: $grey2 !important;
         border-color:     $grey3 !important;
         color:            $white !important;
@@ -376,5 +384,11 @@ $white:   #d8d8d8;
     .account-icon { border:           none   !important; }
 
     #reputation-graph > #highcharts-0 > svg > rect { fill: $grey1; }
+
+    /* AREA51-SPECIFIC STARTS HERE */
+
+    #search-bar, .footer { filter: saturate(0%); }
+    .content-container { background: $black !important; }
+    .module.phase { background: $grey1 !important; }
 
 }
