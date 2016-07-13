@@ -1,5 +1,4 @@
 .sass-cache
-.*.sw?
 .i3/i3bang.rb
 .vim/plugged
 .vim/autoload/plug.vim.old
