@@ -112,7 +112,8 @@ bindsym XF86Explorer \                      # switch keyboard layouts
 
 # misc.
 bindsym $mod+i exec i3lock -c 181818        # lock screen
-bindsym $mod+n exec urxvt -name FLOAT \     # start a terminal with nethack
+bindsym $mod+shift+n exec urxvt \           # start a terminal with nethack
+  -name FLOAT \
   --color0 '#383838' \
   -e ssh nethack@nethack.alt.org
 
@@ -161,10 +162,10 @@ bindsym $mod+m mode "mouse"
 
 # numpad mode, for using Blender .-.
 mode "numpad" {
-    bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
+    bindsym $mod+n exec ~/.i3/numpad no; mode "default"
     !@default_bindings
 }
-bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
+bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"
 
 # useful actions on screenshots
 set $screenshot "screenshot » [i]mgur [r]ename"

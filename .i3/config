@@ -92,7 +92,7 @@ bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
-bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
+bindsym $mod+shift+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
@@ -153,7 +153,7 @@ mode "mouse" {
 }
 bindsym $mod+m mode "mouse"
 mode "numpad" {
-    bindsym XF86LaunchA exec ~/.i3/numpad no; mode "default"
+    bindsym $mod+n exec ~/.i3/numpad no; mode "default"
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
@@ -232,9 +232,9 @@ bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
-bindsym $mod+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
+bindsym $mod+shift+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 }
-bindsym XF86LaunchA exec ~/.i3/numpad yes; mode "numpad"
+bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
     bindsym i exec ~/.i3/screenshot/imgur; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
