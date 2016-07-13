@@ -1,4 +1,24 @@
-/* I made this! \o/ */
+/*
+
+TODO
+
+LARGE TASKS
+* area51.stackexchange.com
+* *.blogoverflow.com
+* blog.(serverfault|superuser).com (much easier)
+* all the insanely complicated SO-specific features
+    * blog.stackoverflow.com
+    * business.stackoverflow.com
+    * stackoverflow.com in general (special features)
+
+MINOR TASKS
+* fix the freaking user arrival animation in chat, can't firebug it since it
+  disappears after a few seconds >:(
+* fix fade-in animations for links to specific posts/comments, seems to be done
+  via JS, ugh
+* fix SE 404 page (asdf.stackexchange.com)
+
+*/
 
 $red:     #ab4642;
 $orange:  #dc9656;
@@ -16,13 +36,13 @@ $grey3:   #585858;
 $grey4:   #b8b8b8;
 $white:   #d8d8d8;
 
-@-moz-document domain("stackoverflow.com"),
-               domain("serverfault.com"),
-               domain("superuser.com"),
-               domain("stackapps.com"),
+@-moz-document domain("stackapps.com"),
                domain("mathoverflow.net"),
                domain("askubuntu.com"),
-               domain("stackexchange.com") {
+               regexp("https?://((?!blog|business)[^.]+\\.)*stackoverflow\\.com.*"),
+               regexp("https?://((?!blog)[^.]+\\.)*serverfault\\.com.*"),
+               regexp("https?://((?!blog)[^.]+\\.)*superuser\\.com.*"),
+               regexp("https?://((?!area51)[^.]+\\.)*stackexchange\\.com.*") {
 
     /* override to proper white text color */
     html, body, h1, h2, h3, h4, h5, h6, .heading,
