@@ -45,7 +45,7 @@ $white:   #d8d8d8;
                regexp("https?://((?!blog)[^.]+\\.)*superuser\\.com.*") {
 
     /* override to proper white text color */
-    html, body, h1, h2, h3, h4, h5, h6, .heading,
+    html, body, h1, h2, h3, h4, h5, h6, .heading, li,
             #hlogo a, .topbar *, .nav ul li a, .navi-container, .mod-flair,
             .votes, .votes strong, .excerpt, p, .reputation, .reputation-score,
             .user-card .user-card-name, .user-card .user-stats .number,
