@@ -58,7 +58,8 @@ $white:   #d8d8d8;
             .system-message-container .system-message, #my-rooms > li > a,
             .general-room-access > form > div,
             /*a51*/
-            .category-title {
+            .category-title, .post-text, .example-question-hyperlink,
+            .commit-overlap {
         color: $white !important;
     }
 
@@ -109,7 +110,8 @@ $white:   #d8d8d8;
             #sideBar .module.filters-sidebar,
             #sideBar .module.emailsub,
             /*a51*/
-            .welcome, .list-header, .category-tab, .inner-tabs-content {
+            .welcome, .list-header, .category-tab, .inner-tabs-content,
+            .inner-tabs a, .tabs a, .proposal-status, .subheader h2 {
         background-color: $grey1 !important;
         border-color:     $grey2 !important;
         color:            $white !important;
@@ -130,7 +132,8 @@ $white:   #d8d8d8;
             .flagged-message .content, .flagged-message .mod-text,
             .ob-post-tag, .monologue.mine .messages,
             /*a51*/
-            .category-tab-current, .category-tab:hover {
+            .category-tab-current, .category-tab:hover, .a51-stats, .a51-votes,
+            .top-example-question-score {
         background-color: $grey2 !important;
         border-color:     $grey3 !important;
         color:            $white !important;
@@ -252,11 +255,12 @@ $white:   #d8d8d8;
     }
 
     /* varying shades of "hotness" */
-    .cool { color: $white !important; }
-    .warm { color: $yellow !important; }
-    .hot, .sorter tr td.hot { color: $orange !important; }
+    /* (note: .commiter .foo is a51) */
+    .cool, .committer .cool { color: $white !important; }
+    .warm, .committer .warm { color: $yellow !important; }
+    .hot, .committer .hot, .sorter tr td.hot { color: $orange !important; }
     .hotbg { background-color: $orange !important; color: $white !important; }
-    .supernova, .sorter tr td.supernova { color: $red !important; }
+    .supernova, .committer .supernova, .sorter tr td.supernova { color: $red !important; }
     .supernovabg { background-color: $red !important; color: $white !important; }
 
     .avatar-card { box-shadow: none !important; }
@@ -390,5 +394,7 @@ $white:   #d8d8d8;
     #search-bar, .footer { filter: saturate(0%); }
     .content-container { background: $black !important; }
     .module.phase { background: $grey1 !important; }
+    .answered-accepted .mini-counts { background-color: transparent !important; }
+    .proposal-page #content { background-color: transparent !important; }
 
 }
