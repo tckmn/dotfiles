@@ -1,0 +1,128 @@
+clear shift
+clear lock
+clear control
+clear mod1
+clear mod2
+clear mod3
+clear mod4
+clear mod5
+
+keycode 10 = q Q 1 exclam
+keycode 11 = w W 2 at
+keycode 12 = e E 3 numbersign
+keycode 13 = r R 4 dollar
+keycode 14 = t T 5 percent
+keycode 15 = y Y 6 asciicircum
+keycode 16 = u U 7 ampersand
+keycode 17 = i I 8 asterisk
+keycode 18 = o O 9 parenleft
+keycode 19 = p P 0 parenright
+
+keycode 24 = a A grave asciitilde
+keycode 25 = s S bracketleft braceleft
+keycode 26 = d D bracketright braceright
+keycode 27 = f F apostrophe quotedbl
+keycode 28 = g G minus underscore
+keycode 29 = h H equal plus
+keycode 30 = j J comma less
+keycode 31 = k K period greater
+keycode 32 = l L semicolon colon
+
+keycode 38 = z Z Print Print
+keycode 39 = x X Home Home
+keycode 40 = c C Prior Prior
+keycode 41 = v V Next Next
+keycode 42 = b B End End
+keycode 43 = n N Left Left
+keycode 44 = m M Down Down
+
+keycode 33 = Return Return backslash bar
+keycode 45 = Escape Escape Up Up
+keycode 46 = Tab ISO_Left_Tab Right Right
+keycode 47 = BackSpace Delete slash question
+keycode 54 = Super_L Super_R
+keycode 55 = Alt_L Alt_R
+keycode 56 = space space
+keycode 57 = Shift_L Shift_R
+keycode 58 = Control_L Control_R
+keycode 65 = Mode_switch Mode_switch
+
+! esc
+keycode   9 = NoSymbol
+! backtick
+keycode  49 = NoSymbol
+! tab
+keycode  23 = NoSymbol
+! caps
+keycode  66 = NoSymbol
+! left shift
+keycode  50 = NoSymbol
+! left ctrl
+keycode  37 = NoSymbol
+! left super
+keycode 133 = NoSymbol
+! left alt
+keycode  64 = NoSymbol
+! right alt
+keycode 108 = NoSymbol
+! prtsc
+keycode 107 = NoSymbol
+! right ctrl
+keycode 105 = NoSymbol
+! up
+keycode 111 = NoSymbol
+! left
+keycode 113 = NoSymbol
+! right
+keycode 114 = NoSymbol
+! down
+keycode 116 = NoSymbol
+! pgup
+keycode 112 = NoSymbol
+! pgdn
+keycode 117 = NoSymbol
+! right shift
+keycode  62 = NoSymbol
+! return
+keycode  36 = NoSymbol
+! backslash
+keycode  51 = NoSymbol
+! bksp
+keycode  22 = NoSymbol
+! delete
+keycode 119 = NoSymbol
+! insert
+keycode 118 = NoSymbol
+! end
+keycode 115 = NoSymbol
+! home
+keycode 110 = NoSymbol
+! dash
+keycode  20 = NoSymbol
+! equals
+keycode  21 = NoSymbol
+! left bracket
+keycode  34 = NoSymbol
+! right bracket
+keycode  35 = NoSymbol
+! apostrophe
+keycode  48 = NoSymbol
+! slash
+keycode  61 = NoSymbol
+! period
+keycode  60 = NoSymbol
+! comma
+keycode  59 = NoSymbol
+! x
+keycode  53 = NoSymbol
+! z
+keycode  52 = NoSymbol
+
+add shift   = Shift_L Shift_R
+add lock    = Caps_Lock Caps_Lock
+add control = Control_L Control_R
+add mod1    = Alt_L Alt_R
+add mod2    = Mode_switch Mode_switch
+add mod3    = ISO_Level3_Shift ISO_Level3_Shift
+add mod4    = Super_L Super_R
+add mod5    = Hyper_L Hyper_R
