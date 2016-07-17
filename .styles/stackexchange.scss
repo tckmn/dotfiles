@@ -16,6 +16,8 @@ MINOR TASKS
 * fix the freaking user arrival animation in chat, can't firebug it since it
   disappears after a few seconds >:(
 * fix SE 404 page (asdf.stackexchange.com)
+* fix logos in various places (flip black/white)
+* fix /reputation
 
 */
 
@@ -52,6 +54,7 @@ $white:   #d8d8d8;
             .revision-comment, .title-box .title, .group-name, .message-text,
             .votes-cast-stats th, .votes-cast-stats td, .list-unstyled li,
             .unanswered .mini-counts span, .label-key b, .label-key strong,
+            #mainbar-full .about-content-page h2,
             /*chat*/
             .username, .username a, #sidebar, .stars .times, .signature .flair,
             .system-message-container .system-message, #my-rooms > li > a,
@@ -59,7 +62,8 @@ $white:   #d8d8d8;
             /*a51*/
             .category-title, .post-text, .example-question-hyperlink,
             .commit-overlap {
-        color: $white !important;
+        color:       $white !important;
+        text-shadow: none   !important; /* about/tour page h2s */
     }
 
     /* darkest background--the background of the entire page */
@@ -96,6 +100,8 @@ $white:   #d8d8d8;
             #herobox, #hero-content, #badge-progress-menu,
             .realtime-post-deleted-notification p, #postflag-bar,
             #system-message, .user-panel-mod-info, .ip-address-popup,
+            .newsletter-anon, .new-login-right > .form-item, .preferred-login,
+            .congrats, .qa-block, .content-block, .user-info-rep,
             /*chat*/
             .messages, .notification, .wmd-prompt-dialog, .tag, .room-mini,
             .roomcard, .roomcard-xxl, .usercard, .usercard-xxl, .event-banner,
@@ -111,7 +117,7 @@ $white:   #d8d8d8;
             /*a51*/
             .welcome, .list-header, .category-tab, .inner-tabs-content,
             .inner-tabs a, .proposal-page .tabs a, .proposal-status,
-            .subheader h2 {
+            .inner-tabs-header .subheader h2 {
         background-color: $grey1 !important;
         border-color:     $grey2 !important;
         color:            $white !important;
@@ -130,10 +136,11 @@ $white:   #d8d8d8;
             /*chat*/
             .reply-child, .reply-parent, .onebox, .onebox *,
             .flagged-message .content, .flagged-message .mod-text,
-            .ob-post-tag, .monologue.mine .messages,
+            .ob-post-tag, .monologue.mine .messages, .wmd-mini-button.selected,
+            .wmd-mini-button:hover,
             /*a51*/
             .category-tab-current, .category-tab:hover, .a51-stats, .a51-votes,
-            .top-example-question-score {
+            .top-example-question-score, .subtabs a.youarehere {
         background-color: $grey2 !important;
         border-color:     $grey3 !important;
         color:            $white !important;
@@ -163,21 +170,21 @@ $white:   #d8d8d8;
        "flash" effect when loading a page that jumps to a specific comment
        or answer; some are just to get rid of backgrounds */
     div.answer, tr.comment,
-        /*chat*/
-        .username.owner, span.meta,
-        /*a51*/
-        .answered-accepted .mini-counts, .proposal-page #content {
+            /*chat*/
+            .username.owner, span.meta,
+            /*a51*/
+            .answered-accepted .mini-counts, .proposal-page #content {
         background-color: transparent !important;
     }
 
     /* "delete"/"close" buttons */
     .delete-tag, /*chat*/ .btn-delete {
-        background:    $grey1;
-        color:         $white;
-        border:        1px solid $black;
+        background: $grey1;
+        color: $white;
+        border: 1px solid $black;
         border-radius: 10px;
-        text-align:    center;
-        line-height:   1em;
+        text-align: center;
+        line-height: 1em;
     }
     .delete-tag:after, /*chat*/ .btn-delete:after {
         content: "×";
@@ -194,8 +201,8 @@ $white:   #d8d8d8;
         border-color:     mix($yellow, $black, 25%) !important;
     }
     .badge2-alternate, .badge-2 .percent {
-        background-color: mix($white, $black, 25%)  !important;
-        border-color:     mix($white, $black, 25%)  !important;
+        background-color: mix($white,  $black, 25%) !important;
+        border-color:     mix($white,  $black, 25%) !important;
     }
     .badge3-alternate, .badge-3 .percent {
         background-color: mix($violet, $black, 25%) !important;
@@ -219,7 +226,7 @@ $white:   #d8d8d8;
     }
     .vote.accepted, .answered-accepted {
         background-color: $grey1 !important;
-        color:            $green !important;
+        color: $green !important;
     }
 
     /* deleted stuff, errors, flags, pagination, search result highlights,
@@ -234,8 +241,8 @@ $white:   #d8d8d8;
     .deleted-post:hover, .deleted-answer .comment:hover, .message.message-error,
             .bounty-indicator-tab.flagbg, .page-numbers.current,
             .page-numbers:hover {
-        background-color: $red   !important;
-        color:            $white !important;
+        background-color: $red !important;
+        color: $white !important;
     }
     .deleted-answer, div.answer.deleted-answer, tr.comment.deleted-comment,
             .deleted-event td, .deleted-event-details td {
@@ -261,8 +268,8 @@ $white:   #d8d8d8;
     /* bounties (and weird top-X indicator kajigger) */
     .bounty-indicator, .bounty-indicator-tab, .bounty-award, .top-badge,
             .top-badge *, .top-badge a, .top-badge a:visited {
-        background-color: $cyan  !important;
-        color:            $black !important;
+        background-color: $cyan !important;
+        color: $black !important;
     }
 
     /* varying shades of "hotness" */
@@ -283,7 +290,9 @@ $white:   #d8d8d8;
     /* (badge) progress bars and other green (rep-related) stuff */
     .badge-progress.completed, .progress-bar .percent, #badge-progress-bar,
             div.meter div, .recommended, .user-rep-chart-summary-bar,
-            .rep-increase{
+            .rep-increase,
+            /*a51*/
+            .committed {
         background-color: mix($green, $black, 50%) !important;
     }
     .progress-bar .bar, .meter, .badge-progress:hover {
@@ -303,7 +312,7 @@ $white:   #d8d8d8;
     }
     .full-diff .skip {
         background-color: $grey2 !important;
-        color:            $white !important;
+        color: $white !important;
     }
     .diff-add    { background-color: $green !important; color: $black !important; }
     .diff-delete { background-color: $red   !important; color: $black !important; }
@@ -349,7 +358,12 @@ $white:   #d8d8d8;
     /* some random thing from SO's new nav */
     .menu-switcher {
         background-color: $grey1 !important;
-        box-shadow:       none   !important;
+        box-shadow: none !important;
+    }
+
+    /* thing on so.com/company/about */
+    .section-about-us > .hero-image-container > img {
+        filter: invert(100%) hue-rotate(180deg);
     }
 
     /* spoilers */
@@ -379,8 +393,9 @@ $white:   #d8d8d8;
     .highlight, .mspbar, .message.selected { background-color: $grey3 !important; }
     #input-area, body.outside { background: $black !important; }
     .pending, .posted, .neworedit { color: $green !important; }
-    .stars:not(.user-star) .img.vote { filter: invert(100%); }
+    .stars:not(.user-star) .img { filter: invert(100%); }
     .deleted { color: $grey3 !important; }
+    #shadow-filename, #upload-url-input > input { border: 1px solid $white !important; }
 
     #my-rooms li.activity-0 { color: mix($white, $grey2, 100.00%) !important; }
     #my-rooms li.activity-1 { color: mix($white, $grey2, 83.333%) !important; }
@@ -404,5 +419,7 @@ $white:   #d8d8d8;
     .content-container { background: $black !important; }
     .module.phase { background: $grey1 !important; }
     .category-content { border: none; }
+    .followed { background-color: mix($orange, $black, 25%) !important; }
+
 
 }
