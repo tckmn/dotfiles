@@ -10,6 +10,7 @@
 
 .ssh/id_rsa
 .ssh/aur
+.ssh/alpaca
 
 .weechat/logs
 .weechat/weechat.log
