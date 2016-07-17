@@ -142,6 +142,7 @@ then
         . ~/.cache/ssh-agent >/dev/null
         ssh-add ~/.ssh/id_rsa
         ssh-add ~/.ssh/aur
+        ssh-add ~/.ssh/alpaca
     fi
 fi
 
