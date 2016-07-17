@@ -97,14 +97,18 @@ alias n='(cat;echo)'
 alias sc=systemctl
 alias scu='systemctl --user'
 
-eval "$(thefuck -a pls)"
+which thefuck >/dev/null && eval "$(thefuck -a pls)"
 
 # licenses
-for license in mit gpl apache
-do
-    alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || \
-        cat ~/.license/$license > LICENSE"
-done
+if [ -d ~/.license ]
+then
+    < <(find ~/.license/ -type f) while read license
+    do
+        license="$(basename $license)"
+        alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || \
+            cat ~/.license/$license > LICENSE"
+    done
+fi
 
 # allow use of comments in shell
 setopt interactivecomments
@@ -116,23 +120,29 @@ PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
 command_not_found_handler() {
     echo "zsh: command not found: $1"
-    (
-        pkgname="$(pacaur -Fo "usr/bin/$1")"
-        if [ -n "$pkgname" ]
-        then
-            notify-send 'zsh: pacman package available' "$pkgname"
-        fi
-    ) &
+    if which notify-send >/dev/null
+    then
+        (
+            pkgname="$(pacman -Fo "usr/bin/$1")"
+            if [ -n "$pkgname" ]
+            then
+                notify-send 'zsh: pacman package available' "$pkgname"
+            fi
+        ) &
+    fi
 }
 
-if pgrep ssh-agent >/dev/null
+if which ssh-agent >/dev/null
 then
-    . ~/.cache/ssh-agent >/dev/null
-else
-    ssh-agent > ~/.cache/ssh-agent
-    . ~/.cache/ssh-agent >/dev/null
-    ssh-add ~/.ssh/id_rsa
-    ssh-add ~/.ssh/aur
+    if pgrep ssh-agent >/dev/null
+    then
+        . ~/.cache/ssh-agent >/dev/null
+    else
+        ssh-agent > ~/.cache/ssh-agent
+        . ~/.cache/ssh-agent >/dev/null
+        ssh-add ~/.ssh/id_rsa
+        ssh-add ~/.ssh/aur
+    fi
 fi
 
 for binding in $(bindkey | awk '{print $NF}' | sort -u \
