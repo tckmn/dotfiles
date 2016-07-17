@@ -140,9 +140,8 @@ then
     else
         ssh-agent > ~/.cache/ssh-agent
         . ~/.cache/ssh-agent >/dev/null
-        ssh-add ~/.ssh/id_rsa
-        ssh-add ~/.ssh/aur
-        ssh-add ~/.ssh/alpaca
+        find ~/.ssh/ -iname '*.pub' -exec bash -c \
+            'ssh-add ~/.ssh/"$(basename {} | head -c -5)"' \;
     fi
 fi
 
