@@ -4,6 +4,7 @@ call plug#begin()
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-commentary'
 Plug 'wellle/targets.vim'
 Plug 'junegunn/vim-easy-align'
 " language-specific
