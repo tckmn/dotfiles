@@ -46,7 +46,7 @@ $white:   #d8d8d8;
                regexp("https?://((?!blog|business)[^.]+\\.)*stackoverflow\\.com.*") {
 
     /* override to proper white text color */
-    html, body, h1, h2, h3, h4, h5, h6, .heading, li,
+    body, h1, h2, h3, h4, h5, h6, .heading, li,
             #hlogo a, .topbar *, .nav ul li a, .navi-container, .mod-flair,
             .votes, .votes strong, .excerpt, p, .reputation, .reputation-score,
             .user-card .user-card-name, .user-card .user-stats .number,
@@ -67,7 +67,7 @@ $white:   #d8d8d8;
     }
 
     /* darkest background--the background of the entire page */
-    .topbar, .container, #content, #footer, body > div.wrapper,
+    html, .topbar, .container, #content, #footer, body > div.wrapper,
             .snippet-holder, .CodeMirror, .CodeMirror-gutter, iframe,
             /*chat*/
             #container, .timestamp, .btn-close,
@@ -133,6 +133,7 @@ $white:   #d8d8d8;
             .owner-revision td, a.action.selected, a.action:hover,
             .tag-suggestions > div:hover, .tag-suggestions .more-info,
             span.spaces, span.hi, .tagged-interesting, .actions,
+            #tabcomplete > li,
             /*chat*/
             .reply-child, .reply-parent, .onebox, .onebox *,
             .flagged-message .content, .flagged-message .mod-text,
@@ -290,7 +291,7 @@ $white:   #d8d8d8;
     /* (badge) progress bars and other green (rep-related) stuff */
     .badge-progress.completed, .progress-bar .percent, #badge-progress-bar,
             div.meter div, .recommended, .user-rep-chart-summary-bar,
-            .rep-increase,
+            .rep-increase, .special-rep,
             /*a51*/
             .committed {
         background-color: mix($green, $black, 50%) !important;
