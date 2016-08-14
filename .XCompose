@@ -6126,5 +6126,8 @@
 <Multi_key> <period> <l> : "ŀ" U0140
 
 ## ETC ##
-<Multi_key> <equal> <equal> : "≈"
+<Multi_key> <equal> <equal> : "≡"
+<Multi_key> <asciitilde> <equal> : "≈"
+<Multi_key> <equal> <asciitilde> : "≈"
+<Multi_key> <asciitilde> <asciitilde> : "≈"
 <Multi_key> <less> <greater> : "♦"
