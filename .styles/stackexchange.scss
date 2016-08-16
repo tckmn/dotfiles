@@ -351,6 +351,10 @@ $white:   #d8d8d8;
         box-shadow:   none   !important;
     }
 
+    .revision-comment.blur {
+        color: $grey3 !important;
+    }
+
     /* this is bad but seems necessary :/ */
     #newsletter-ad, #newsletter-ad > * {
         filter: invert(100%) hue-rotate(180deg);
