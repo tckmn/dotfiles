@@ -97,6 +97,8 @@ alias n='(cat;echo)'
 alias sc=systemctl
 alias scu='systemctl --user'
 
+да(){yes ${@:-да}}
+
 which thefuck >/dev/null && eval "$(thefuck -a pls)"
 
 # licenses
