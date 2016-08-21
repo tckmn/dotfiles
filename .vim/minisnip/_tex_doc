@@ -1,0 +1,9 @@
+\documentclass{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{microtype}
+
+\begin{document}
+
+{{++}}
+
+\end{document}
