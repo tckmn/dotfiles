@@ -71,13 +71,13 @@ nnoremap <C-l> :noh<cr><C-l>
 set wrap display=lastline colorcolumn=80
 highlight ColorColumn ctermbg=8
 nnoremap j gj
-vnoremap j gj
+xnoremap j gj
 nnoremap gj j
-vnoremap gj j
+xnoremap gj j
 nnoremap k gk
-vnoremap k gk
+xnoremap k gk
 nnoremap gk k
-vnoremap gk k
+xnoremap gk k
 
 " easier buffer navigation
 nnoremap <C-n> :bn<cr>
