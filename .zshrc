@@ -135,9 +135,9 @@ command_not_found_handler() {
     fi
 }
 
-if which ssh-agent >/dev/null
+if [[ "$USERNAME" =~ ^llama$ ]] && which ssh-agent >/dev/null
 then
-    if pgrep ssh-agent >/dev/null
+    if pgrep -u $UID ssh-agent >/dev/null
     then
         . ~/.cache/ssh-agent >/dev/null
     else
