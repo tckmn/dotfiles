@@ -1,12 +1,6 @@
-set folder = 'imaps://mail.gandi.net:993/'
-
-set spoolfile = +INBOX
-
-set imap_user = 'andy@keyboardfire.com'
-set imap_pass = "`cat ~/.mutt/password`"
-unset imap_passive
-set imap_keepalive = 300
-set imap_check_subscribed
+set mbox_type = 'Maildir'
+set folder = '~/.mail/keyboardfire'
+set spoolfile = '+Inbox'
 
 set header_cache = '~/.cache/mutt'
 set message_cachedir = '~/.cache/mutt'
@@ -22,8 +16,6 @@ set smtp_url = 'smtps://andy@keyboardfire.com@mail.gandi.net:465/'
 set smtp_pass = "`cat ~/.mutt/password`"
 
 set ssl_force_tls = yes
-
-bind index G imap-fetch-mail
 
 auto_view text/html
 alternative_order text/plain text/enriched text/html

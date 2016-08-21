@@ -1,0 +1,19 @@
+IMAPAccount keyboardfire
+Host mail.gandi.net
+User andy@keyboardfire.com
+PassCmd "cat ~/.mutt/password"
+SSLType IMAPS
+
+IMAPStore keyboardfire-remote
+Account keyboardfire
+
+MaildirStore keyboardfire-local
+Path ~/.mail/keyboardfire/
+Inbox ~/.mail/keyboardfire/Inbox
+
+Channel keyboardfire
+Master :keyboardfire-remote:
+Slave :keyboardfire-local:
+Patterns *
+Create Both
+SyncState *
