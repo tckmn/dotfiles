@@ -2,8 +2,6 @@ set mbox_type = 'Maildir'
 set folder = '~/.mail/keyboardfire'
 set spoolfile = '+Inbox'
 
-mailboxes `find ~/.mail/keyboardfire -mindepth 1 -maxdepth 1 -type d -printf "+'%f' "`
-
 set header_cache = '~/.cache/mutt'
 set message_cachedir = '~/.cache/mutt'
 
