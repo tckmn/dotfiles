@@ -92,7 +92,7 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
 # function keys
 bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
   maim!!<1!, -s> $(date +'pictures/\
-  screenshot_%F_%T.png')
+  screenshots/screenshot_%F_%T.png')
 
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer sset Master 5%!!+,- \

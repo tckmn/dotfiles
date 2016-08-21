@@ -1,3 +1,3 @@
 #!/bin/bash
-pictures_dir="$HOME/pictures"
+pictures_dir="$HOME/pictures/screenshots"
 readlink -f "$pictures_dir/$(ls -t "$pictures_dir" | head -1)"
