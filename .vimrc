@@ -70,14 +70,14 @@ nnoremap <C-l> :noh<cr><C-l>
 " wrapping
 set wrap display=lastline colorcolumn=80
 highlight ColorColumn ctermbg=8
-nnoremap j gj
-xnoremap j gj
+nnoremap j  gj
 nnoremap gj j
-xnoremap gj j
-nnoremap k gk
-xnoremap k gk
+nnoremap k  gk
 nnoremap gk k
-xnoremap gk k
+xnoremap <expr> j  mode() ==# 'v' ? 'gj' : 'j'
+xnoremap <expr> gj mode() ==# 'v' ? 'j'  : 'gj'
+xnoremap <expr> k  mode() ==# 'v' ? 'gk' : 'k'
+xnoremap <expr> gk mode() ==# 'v' ? 'k'  : 'gk'
 
 " easier buffer navigation
 nnoremap <C-n> :bn<cr>
