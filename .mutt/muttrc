@@ -1,6 +1,8 @@
 set mbox_type = 'Maildir'
 set folder = '~/.mail/keyboardfire'
 set spoolfile = '+Inbox'
+set record = '+Sent'
+set postponed = '+Drafts'
 
 set header_cache = '~/.cache/mutt'
 set message_cachedir = '~/.cache/mutt'
