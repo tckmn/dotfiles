@@ -18,7 +18,6 @@ Plug 'tpope/vim-endwise'
 Plug 'KeyboardFire/vim-minisnip'
 " integration
 Plug 'tpope/vim-fugitive'
-Plug 'vimwiki/vimwiki'
 call plug#end()
 
 syntax on
@@ -37,15 +36,6 @@ let g:Tex_ViewRule_pdf='gv 2>/dev/null'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nnoremap gA ga
-" vimwiki
-let g:vimwiki_list = [
-\   {
-\       'path': '~/documents/vimwiki/',
-\       'auto_export': 1,
-\       'auto_toc': 1
-\   }
-\]
-let g:vimwiki_folding='list'
 
 " language-specific
 " HTML
@@ -83,6 +73,7 @@ xnoremap <expr> gk mode() ==# 'v' ? 'k'  : 'gk'
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
+nnoremap <cr> gf
 if has('nvim')
     tnoremap <Nul> <C-\><C-n>
 endif

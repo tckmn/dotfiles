@@ -92,6 +92,7 @@ bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
+bindsym $mod+n exec urxvt -name FLOAT -e n
 bindsym $mod+shift+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
@@ -232,6 +233,7 @@ bindsym XF86MonBrightnessUp exec xbacklight +10%
 bindsym XF86MonBrightnessDown exec xbacklight -10%
 bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
+bindsym $mod+n exec urxvt -name FLOAT -e n
 bindsym $mod+shift+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 }
 bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"

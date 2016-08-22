@@ -112,6 +112,8 @@ bindsym XF86Explorer \                      # switch keyboard layouts
 
 # misc.
 bindsym $mod+i exec i3lock -c 181818        # lock screen
+bindsym $mod+n exec urxvt \
+  -name FLOAT -e n
 bindsym $mod+shift+n exec urxvt \           # start a terminal with nethack
   -name FLOAT \
   --color0 '#383838' \

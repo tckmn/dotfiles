@@ -87,13 +87,14 @@ alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 function xb() {
     [ -n "$1" ] && xbacklight -set "$1" || xbacklight
 }
+
 alias v='nvim'
 function xv() {
     [ -e "$1" ] && echo Warning: file exists && sleep 1
     touch "$1" && chmod +x "$1" && v "$1"
 }
 alias vx=xv
-alias n='(cat;echo)'
+
 alias sc=systemctl
 alias scu='systemctl --user'
 
