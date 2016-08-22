@@ -82,8 +82,8 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim $(date +'pictures/screenshot_%F_%T.png')
-bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshot_%F_%T.png')
+bindsym Print exec maim $(date +'pictures/screenshots/screenshot_%F_%T.png')
+bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshots/screenshot_%F_%T.png')
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
@@ -222,8 +222,8 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim $(date +'pictures/screenshot_%F_%T.png')
-bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshot_%F_%T.png')
+bindsym Print exec maim $(date +'pictures/screenshots/screenshot_%F_%T.png')
+bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshots/screenshot_%F_%T.png')
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
