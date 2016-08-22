@@ -4,7 +4,7 @@ export TERM=screen-256color
 # keep lots of history within the shell and save it to ~/misc/ZSH_HISTORY
 HISTSIZE=10000000
 SAVEHIST=10000000
-HISTFILE=~/misc/ZSH_HISTORY
+HISTFILE=~/.zsh_history
 
 # colors!
 eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
