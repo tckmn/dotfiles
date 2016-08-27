@@ -79,7 +79,7 @@ function atcrec() {
 
 # 1 or 2 screens
 alias 1s="xrandr --auto"
-alias 2s="xrandr --auto && xrandr --output HDMI2 --right-of eDP1"
+alias 2s="xrandr --auto && xrandr --output HDMI1 --right-of eDP1"
 
 # etc aliases
 alias printer='lp -d home_printer'
@@ -123,7 +123,7 @@ setopt autocd
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
 command_not_found_handler() {
-    echo "zsh: command not found: $1"
+    echo >&2 "zsh: command not found: $1"
     if which notify-send >/dev/null
     then
         (
