@@ -4,7 +4,7 @@
 setxkbmap -layout $((\
         echo 'us';\
         echo 'us,ru';\
-        echo 'us,us,ru -variant ,colemak,';\
+        echo 'us,workman,ru';\
         ls /usr/share/X11/xkb/symbols | grep '^..$';\
     ) | rofi -dmenu -p layout)
 xmodmap -e "$(xmodmap -pke | grep 'keycode 108' | sed 's/ISO_Level3_Shift/ISO_Next_Group/g')"
