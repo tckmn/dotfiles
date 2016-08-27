@@ -118,6 +118,12 @@ bindsym $mod+shift+n exec urxvt \           # start a terminal with nethack
   -name FLOAT \
   --color0 '#383838' \
   -e ssh nethack@nethack.alt.org
+bindsym $mod+shift+m exec urxvt \           # start a terminal with dcss
+  -is \
+  -name FLOAT \
+  -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org
+
+bindsym XF86PowerOff exec espeak -a 2000 meems
 
 >
 
@@ -162,12 +168,12 @@ mode "mouse" {
 }
 bindsym $mod+m mode "mouse"
 
-# numpad mode, for using Blender .-.
-mode "numpad" {
-    bindsym $mod+n exec ~/.i3/numpad no; mode "default"
-    !@default_bindings
-}
-bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"
+## numpad mode, for using Blender .-.
+#mode "numpad" {
+#    bindsym $mod+n exec ~/.i3/numpad no; mode "default"
+#    !@default_bindings
+#}
+#bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"
 
 # useful actions on screenshots
 set $screenshot "screenshot » [i]mgur [r]ename"
