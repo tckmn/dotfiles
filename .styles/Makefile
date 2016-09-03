@@ -1,7 +1,8 @@
 .PHONY: all default
 
-all: stackexchange.scss
+all: stackexchange.scss myschoolapp.scss
 	scss stackexchange.scss stackexchange.css --style compressed
+	scss myschoolapp.scss myschoolapp.css --style compressed
 
 default:
 	echo '@-moz-document regexp("https?://(discuss\\.area51\\.|((?!chat|area51|blog|business)[^.]+\\.)*)((stackoverflow|serverfault|superuser|stackapps|askubuntu|stackexchange)\\.com|mathoverflow\\.net).*") {' > stackexchange-all-default.css

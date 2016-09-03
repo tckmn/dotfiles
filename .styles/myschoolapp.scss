@@ -1,0 +1,134 @@
+$red:     #ab4642;
+$orange:  #dc9656;
+$yellow:  #f7ca88;
+$green:   #a1b56c;
+$cyan:    #86c1b9;
+$blue:    #7cafc2;
+$magenta: #ba8baf;
+$violet:  #a16946;
+
+$black:   #181818;
+$grey1:   #282828;
+$grey2:   #383838;
+$grey3:   #585858;
+$grey4:   #b8b8b8;
+$white:   #d8d8d8;
+
+@-moz-document domain("myschoolapp.com") {
+
+select, h1, h2, h3, h4, h5, h6, .black-fgc, .pri-100-fgc,
+        .subnavbar .nav > li > a:hover, .sort-active, .filter-button,
+        #site-nav ul.topnav li a.active span.title, .facet-item > h5 > div,
+        .score-container .containerFull .popContainerStraight h6 a {
+    color: $white !important;
+}
+
+.table th, .table td, .thumbnail {
+    border-color: $grey1;
+}
+
+.modal-header {
+    border-color: $grey2;
+}
+
+html, body, #app > div, .add-existing-items-header {
+    color: $white;
+    background: $black;
+    border-color: $grey1;
+}
+
+#site-nav-container, #site-nav-lower, .subnavbar {
+    color: $white !important;
+    background: $black !important;
+    border-color: $grey1 !important;
+}
+
+.teaserBox, .btn, .grayContainerDark, .notificationGrayContainerDark,
+        .table-striped tbody tr:nth-child(2n+1) td,
+        .table-striped tbody tr:nth-child(2n+1) th,
+        .subnavbar .nav > .active > a,
+        .subnavbar .nav > .active > a:hover,
+        #schedule-header,
+        .chCal-state-default,
+        .chCal-state-default .chCal-button-inner,
+        .well, .datelabel, .nav-filter, #contact-col-left,
+        .rosterHeader, .contactWell, .contactHeader, .profileWell,
+        .assignment-filter-item, .assignment-date-range-filter, .filterTop,
+        .modal-body, .modal-footer, .breadcrumb, .mediaContainer, #site-login,
+        .cal-layout .sidebar-nav-fixed, #fullCalView, .conDefault,
+        .nav-tabs.nav-stacked > li > a, .ui-tooltip-left,
+        .defaultSkin td.mceToolbar, .file-attachment-modal .modal-body,
+        .pager a {
+    color: $white;
+    background: $grey1;
+    border-color: $grey2;
+}
+
+#site-nav ul.topnav > li > a.active, .white-bgc, .grayContainer,
+        #assignment-center-header-view div.container, .bg-f7f7f7, .sec-15-bgc,
+        .score-container .containerFull > div > div:nth-child(2) {
+    color: $white !important;
+    background: $grey1 !important;
+    border-color: $grey2 !important;
+}
+
+.containerFull.whiteContainer1, .popContainerStraight, .btn:hover, .btn.active,
+        .table tbody tr:hover td, .subnav .divider-label h6, .sec-25-bgc,
+        .nav > li > a:hover, .nav-tabs.nav-stacked > li > a:hover,
+        .eventBackMini, div.token-input-dropdown, .activity-footer,
+        .btn.disabled, .dragRegion, .pager a:hover {
+    color: $white;
+    background: $grey2;
+    border-color: $grey3;
+}
+
+.sec-25-bgc-hover:hover, #site-nav div.subnav ul > li > a.active, input,
+        .eventBack, .fs-cloud-select-area1 {
+    color: $white !important;
+    background: $grey2 !important;
+    border-color: $grey3 !important;
+}
+
+.badge { background-color: $grey3; }
+.badge-error { background-color: $red; }
+.btn-warning { background-color: $yellow; color: $black; }
+.btn-success, .label-success { background-color: $green; color: $black; }
+.btn-info, .alert-info { background-color: $blue; color: $black; }
+
+.caret { border-top-color: #fff; }
+.subnavtop {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+}
+
+a { color: $blue; }
+hr { border-color: $grey3; }
+
+.modal { background-color: $grey2; }
+
+.active-filter { color: $green; }
+
+.isotope-item[data-sort='14'] > .containerFull {
+    background: mix($yellow, $black, 25%) !important;
+}
+
+ul.token-input-list {
+    background: none;
+    border: none;
+}
+
+.assignment-detail-header.todo, .assignment-file-attach-box {
+    background-color: mix($blue, $black, 50%);
+}
+
+.btn.disabled {
+    opacity: 1;
+    color: $grey4;
+}
+
+#assignment-detail-assignment .jumbotron.subhead > .btn-group > .btn.disabled >
+    strong { color: $red !important; }
+
+* { box-shadow: none !important; text-shadow: none !important; }
+
+}
