@@ -6,6 +6,9 @@ HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 
+# sane alt+f / alt+b / ctrl+w behavior
+WORDCHARS=${WORDCHARS/\/}
+
 # colors!
 eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
 for cmd in ls dir vdir grep fgrep egrep
@@ -76,10 +79,6 @@ alias xcowsay="xcowsay -f monospace"
 function atcrec() {
     ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
 }
-
-# 1 or 2 screens
-alias 1s="xrandr --auto"
-alias 2s="xrandr --auto && xrandr --output HDMI1 --right-of eDP1"
 
 # etc aliases
 alias printer='lp -d home_printer'
