@@ -2,7 +2,7 @@ for pathdir in "$HOME/bin" "$HOME/.gem/ruby/2.3.0/bin"
 do
     if [ -d "$pathdir" ]
     then
-        export PATH="$PATH:$pathdir"
+        export PATH="$pathdir:$PATH"
     fi
 done
 
