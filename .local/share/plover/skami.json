@@ -1,6 +1,5 @@
 {
 "A*UR": "AUR",
-"AO/PWAOPB/TAO": "Ubuntu",
 "AOU/KPR-FT": "urxvt",
 "HRAOE/KHES": "Lichess",
 "KP-G": "PPCG",
@@ -14,6 +13,7 @@
 "KWRAOURT": "yaourt",
 "P-RL": "Perl",
 "PR-L": "perl",
+"PWAOUPBT": "Ubuntu",
 "R-PL": "rm",
 "S*E": "SE",
 "S*E/S*E": "Stack Exchange",
