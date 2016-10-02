@@ -6131,3 +6131,4 @@
 <Multi_key> <equal> <asciitilde> : "≈"
 <Multi_key> <asciitilde> <asciitilde> : "≈"
 <Multi_key> <less> <greater> : "♦"
+<Multi_key> <E> <E> : "∈"
