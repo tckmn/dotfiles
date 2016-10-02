@@ -9,14 +9,18 @@
 "KPHAPB": "pacman",
 "KPWR*FR": "KeyboardFire",
 "KPWR-FR": "keyboardfire",
+"KWA*": "awk",
 "KWEUBG/SORT": "quicksort",
 "KWRAOURT": "yaourt",
 "P-RL": "Perl",
 "PR-L": "perl",
 "R-PL": "rm",
+"S*E": "SE",
+"S*E/S*E": "Stack Exchange",
 "S*RB": "zsh",
 "TKPWHU": "GNU",
 "TP*EF": "feh",
+"TP-F": "Firefox",
 "TPH*/SR*EUPL": "nvim",
 "TPHET/HABG": "NetHack"
 }
