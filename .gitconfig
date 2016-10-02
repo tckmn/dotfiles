@@ -1,6 +1,7 @@
 [user]
 	name = KeyboardFire
 	email = andy@keyboardfire.com
+	signingkey = andy@keyboardfire.com
 [push]
 	default = simple
 [core]
