@@ -24,3 +24,8 @@
 .gnupg/pubring.kbx~
 .gnupg/random_seed
 .gnupg/trustdb.gpg
+
+.local/share/plover/commands.json
+.local/share/plover/main.json
+.local/share/plover/plover.log
+.local/share/plover/strokes.log
