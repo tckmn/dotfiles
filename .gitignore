@@ -29,3 +29,6 @@
 .local/share/plover/main.json
 .local/share/plover/plover.log
 .local/share/plover/strokes.log
+
+.newsbeuter/cache.db*
+.newsbeuter/history.*

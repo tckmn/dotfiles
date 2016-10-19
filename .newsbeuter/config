@@ -1,0 +1,13 @@
+color   background          white   black
+color   listnormal          white   black
+color   listfocus           black   white  bold
+color   listnormal_unread   green   black  bold
+color   listfocus_unread    green   white  bold
+color   info                black   white  bold
+color   article             white   black
+
+bind-key SPACE open
+bind-key j next
+bind-key k prev
+bind-key J next-feed
+bind-key K prev-feed
