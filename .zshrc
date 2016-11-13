@@ -99,9 +99,6 @@ alias scu='systemctl --user'
 
 да(){yes ${@:-да}}
 
-tf=$(base64 -d <<<dGhlZnVjaw==)
-which $tf >/dev/null && eval "$($tf -a pls)"
-
 # licenses
 if [ -d ~/.license ]
 then
