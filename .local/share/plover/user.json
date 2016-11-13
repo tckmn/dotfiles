@@ -1,7 +1,9 @@
 {
+"-PLT": "{^ment}",
 "AL/RAOEUT": "alright",
 "KOPB/HRAPBG": "conlang",
 "KOPB/TPEUG": "config",
+"KPAPBD": "expand",
 "KPR-D": "xkcd",
 "KW*PL": "{¿^}",
 "KWROED": "yesterday",
@@ -40,6 +42,7 @@
 "TKPW-F": "give",
 "TKPW-PBLG": "{^‽}",
 "TKREUPT": "descriptive",
+"TKUP": "duplicate",
 "TP*BG": "{¡^}",
 "TP-BG": "{!}",
 "TP/TP": "iff",
@@ -49,7 +52,9 @@
 "TPH-RB": "{^–^}",
 "TPHEPBL": "fundamental",
 "TPHEPBLT": "fundamental",
+"TPHERPBL": "internal",
 "TPOFRPB": "fortune",
 "TPOFRPBT": "fortunate",
+"TPRAPBLG": "fragile",
 "TPUPBD/PHEPBT/-L": "fundamental"
 }
