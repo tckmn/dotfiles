@@ -91,8 +91,9 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
 
 # function keys
 bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
-  maim!!<1!, -s> $(date +'pictures/\
-  screenshots/screenshot_%F_%T.png')
+  maim!!<1!, -s> $(date \
+  +"$(xdg-user-dir PICTURES)\
+  screenshots/screenshot_%F_%T.png")
 
 bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
   exec amixer sset Master 5%!!+,- \
@@ -123,7 +124,7 @@ bindsym $mod+shift+m exec urxvt \           # start a terminal with dcss
   -name FLOAT \
   -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org
 
-bindsym XF86PowerOff exec espeak -a 2000 meems
+bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 
 >
 
@@ -132,6 +133,8 @@ for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
 for_window [title="NOBORDER"] border none
+
+for_window [title="Jexx"] floating enable
 
 ###############################################################################
 #                                    MODES                                    #
@@ -201,7 +204,6 @@ bar {
         binding_mode       #dc9656 #ab4642 #d8d8d8
     }
 }
-bindsym ISO_Next_Group exec pkill -RTMIN+10 i3blocks
 
 ###############################################################################
 #                                    COLORS                                   #

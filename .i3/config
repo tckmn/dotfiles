@@ -82,8 +82,8 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ~/.i3/i3bang.rb; reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim $(date +'pictures/screenshots/screenshot_%F_%T.png')
-bindsym Mod1+Sys_Req exec maim -s $(date +'pictures/screenshots/screenshot_%F_%T.png')
+bindsym Print exec maim $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
+bindsym Mod1+Sys_Req exec maim -s $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
@@ -95,11 +95,12 @@ bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT -e n
 bindsym $mod+shift+n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org
 bindsym $mod+shift+m exec urxvt -is -name FLOAT -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org
-bindsym XF86PowerOff exec espeak -a 2000 meems
+bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
 for_window [title="NOBORDER"] border none
+for_window [title="Jexx"] floating enable
 ###############################################################################
 ###############################################################################
 mode "resize" {
@@ -181,7 +182,6 @@ bar {
         binding_mode       #dc9656 #ab4642 #d8d8d8
     }
 }
-bindsym ISO_Next_Group exec pkill -RTMIN+10 i3blocks
 ###############################################################################
 ###############################################################################
 client.focused          #383838 #181818 #d8d8d8 #000000   #000000
