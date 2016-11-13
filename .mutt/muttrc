@@ -15,7 +15,7 @@ set from = 'andy@keyboardfire.com'
 set use_from = yes
 
 set smtp_url = 'smtps://andy@keyboardfire.com@mail.gandi.net:465/'
-set smtp_pass = "`cat ~/.mutt/password`"
+#set smtp_pass = "`cat ~/.mutt/password`"
 
 set ssl_force_tls = yes
 
@@ -25,3 +25,12 @@ alternative_order text/plain text/enriched text/html
 set status_format = "/home/llama/.mutt/notify-script '%b' '%f' '%n' '%o' '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]---(%s/%S)-%>-(%P)---'|"
 
 set ts_enabled = yes
+
+macro index n \
+"<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
+<shell-escape>notmuch-mutt -r --prompt search<enter>\
+<change-folder-readonly>`echo ${XDG_CACHE_HOME:-$HOME/.cache}/notmuch/mutt/results`<enter>\
+<enter-command>set pipe_decode=\$my_old_pipe_decode wait_key=\$my_old_wait_key<enter>" \
+      "notmuch: search mail"
+
+source ~/.mutt/private

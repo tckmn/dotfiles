@@ -6,7 +6,7 @@
 .i3/i3bang.rb
 .i3/screenshot/imgur_authid
 
-.mutt/password
+.mutt/private
 
 .ssh/id_rsa
 .ssh/aur
