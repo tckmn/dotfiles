@@ -1,7 +1,7 @@
 IMAPAccount keyboardfire
 Host mail.gandi.net
 User andy@keyboardfire.com
-PassCmd "cat ~/.mutt/password"
+PassCmd "head -1 ~/.mutt/private | cut -c 18- | rev | cut -c 2- | rev"
 SSLType IMAPS
 
 IMAPStore keyboardfire-remote
