@@ -124,6 +124,7 @@ bindsym $mod+shift+m exec urxvt \           # start a terminal with dcss
   -name FLOAT \
   -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org
 
+bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 
 >
