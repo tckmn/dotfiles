@@ -1,10 +1,5 @@
 xrdb /home/llama/.Xresources
 
-setxkbmap -layout us
-setxkbmap -option ctrl:nocaps -option compose:rctrl -option grp:toggle
-xmodmap -e "$(xmodmap -pke | grep 108 | sed 's/ISO_Level3_Shift/ISO_Next_Group/g')"
-xcape
-
 export GTK_IM_MODULE=uim
 export QT_IM_MODULE=uim
 uim-xim &
