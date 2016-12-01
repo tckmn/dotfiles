@@ -34,7 +34,7 @@ bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
 bindsym $mod+f fullscreen toggle            # fullscreen
 bindsym $mod+!!q,w,e \                      # change container layout
   layout !!<stacking,tabbed,toggle split>
-bindsym $mod!!<,+Shift>+space \             # manage floating windows with
+bindsym $mod!!<,+Shift>+semicolon \         # manage floating windows with
   !!<focus mode_,floating >toggle           #   keyboard
 
 bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
@@ -106,7 +106,7 @@ bindsym XF86AudioMicMute \                  # mute mic key
   && pkill -RTMIN+10 i3blocks
 
 bindsym XF86MonBrightness!!Up,Down \        # brightness keys
-  exec xbacklight !!<+,->10%
+  exec xbacklight !!<+,->5%
 
 bindsym XF86Explorer \                      # switch keyboard layouts
   exec ~/.i3/layout-switcher

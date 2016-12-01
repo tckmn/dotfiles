@@ -40,8 +40,8 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
-bindsym $mod+space focus mode_toggle
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+semicolon focus mode_toggle
+bindsym $mod+Shift+semicolon floating toggle
 bindsym $mod+a focus parent
 bindsym $mod+s focus child
 bindsym $mod+d kill
@@ -88,8 +88,8 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3bl
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight +10%
-bindsym XF86MonBrightnessDown exec xbacklight -10%
+bindsym XF86MonBrightnessUp exec xbacklight +5%
+bindsym XF86MonBrightnessDown exec xbacklight -5%
 bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT -e n
