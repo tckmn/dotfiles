@@ -73,16 +73,18 @@ function preexec {
     title "$TITLE_PREFIX$1 [$(pwd)]"
 }
 
-# fun
+# aliases / functions
+
 alias cmatrix="cmatrix -b"
 alias xcowsay="xcowsay -f monospace"
 function atcrec() {
     ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
 }
 
-# etc aliases
 alias printer='lp -d home_printer'
+
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
+
 function xb() {
     [ -n "$1" ] && xbacklight -set "$1" || xbacklight
 }
@@ -96,6 +98,9 @@ alias vx=xv
 
 alias sc=systemctl
 alias scu='systemctl --user'
+alias cku=checkupdates
+
+alias sudo='sudo '
 
 да(){yes ${@:-да}}
 
