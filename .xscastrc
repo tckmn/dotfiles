@@ -9,6 +9,6 @@ dfg='#ffffff'
 dbg='#000000'
 dbar=yes
 # keybindings (in the same format as xscast output)
-kfinish=XF86Search
-kclear=XF86Tools
+kfinish=F12
+kclear=F11
 # other examples: C-S-F1, A-n, C-R, F11
