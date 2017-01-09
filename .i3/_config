@@ -1,5 +1,5 @@
-# i3 config file (with i3bang)
-#!nobracket
+# i3 config file (with ppi3)
+# vim: ft=config
 
 ###############################################################################
 #                                  VARIABLES                                  #
@@ -7,81 +7,78 @@
 
 set $mod Mod4              # super / "windows key"
 font pango:monospace 8     # window titles, status bar
-new_window normal 0 px     # no borders
+new_window normal 0        # no borders
 set $mv 20px               # amount to resize windows (also used for how far to
 set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
 focus_follows_mouse no     # this is annoying
+force_focus_wrapping yes   # always wrap focus instead of switching containers
 
 ###############################################################################
 #                                 KEY BINDINGS                                #
 ###############################################################################
 
-!@<+default_bindings
+group "default" {
 
 # launching
-bindsym $mod!!<,+Shift>+Return exec rofi \  # rofi (dropin dmenu replacement)
-  -show !!<run,window>
-bindsym $mod!!<,+Shift>+apostrophe exec \   # most commonly launched programs
-  !!<i3-sensible-terminal,firefox>
+bindsym $mod{,+Shift}+Return exec rofi \    # rofi (dropin dmenu replacement)
+  -show {run,window}
+bindsym $mod{,+Shift}+apostrophe exec \     # most commonly launched programs
+  {i3-sensible-terminal,firefox}
 
 # window management
-bindsym $mod!!<2!,+Shift>+!!1!h,j,k,l,\     # focused window manipulation,
-  Left,Down,Up,Right !!2!focus,move \       #   vikeys and arrow key support
-  !!<1!left,down,up,right>!!<2!, $mv>
+bindsym $mod{2|,+Shift}+{1|h,j,k,l,\        # focused window manipulation,
+  Left,Down,Up,Right} {2|focus,move} \      #   vikeys and arrow key support
+  {1|left,down,up,right}{2|, $mv}
 
-bindsym $mod+!!backslash,minus split !!h,v  # split (| = shift+\)
+bindsym $mod+{backslash,minus} split {h,v}  # split (| = shift+\)
 bindsym $mod+f fullscreen toggle            # fullscreen
-bindsym $mod+!!q,w,e \                      # change container layout
-  layout !!<stacking,tabbed,toggle split>
-bindsym $mod!!<,+Shift>+semicolon \         # manage floating windows with
-  !!<focus mode_,floating >toggle           #   keyboard
+bindsym $mod+{q,w,e} \                      # change container layout
+  layout {stacking,tabbed,toggle split}
+bindsym $mod{,+Shift}+semicolon \           # manage floating windows with
+  {focus mode_,floating }toggle             #   keyboard
 
-bindsym $mod+!!a,s focus !!parent,child     # focus parent/child
+bindsym $mod+{a,s} focus {parent,child}     # focus parent/child
 bindsym $mod+d kill                         # delete focused window
 
 # workspaces
-bindsym $mod!!<2!,+Shift>+!!1!1..9,0 \      # workspaces!
-  !!<2!,move container to >\
-  workspace number !!1!1..10
+bindsym $mod{2|,+Shift}+{1|1..9,0} \        # workspaces!
+  {2|,move container to }\
+  workspace number {1|1..10}
 
-bindsym $mod!!<,+Shift>+grave \             # last used workspace
-  !!<,move container to >\
+bindsym $mod{,+Shift}+grave \               # last used workspace
+  {,move container to }\
   workspace back_and_forth
 
-bindsym $mod!!<,+Shift>+comma \             # next/prev workspace
-  !!<,move container to >\
+bindsym $mod{,+Shift}+comma \               # next/prev workspace
+  {,move container to }\
   workspace prev
-bindsym $mod!!<,+Shift>+period \
-  !!<,move container to >\
+bindsym $mod{,+Shift}+period \
+  {,move container to }\
   workspace next
 
 # workspace names
-bindsym $mod+x exec i3-input -F \           # rename workspace
-  "rename workspace to \
-  "'"'"$(~/.i3/cur_wksp.sh):%s"'"' \
-  -P 'Rename: '
-bindsym $mod+Shift+x exec i3-msg \          # clear workspace name
-  "rename workspace to \
-  $(~/.i3/cur_wksp.sh)"
+bindsym $mod+x exec ~/.i3/rename-wksp       # rename workspace or clear name
 
 # dual-monitor setup
-bindsym $mod!!<,+Shift>+Tab !!focus,move \  # other monitor
+bindsym $mod{,+Shift}+Tab {focus,move} \    # other monitor
   output right
-bindsym $mod+Shift+equal !!<\>              # shoot all workspaces over to my
-  workspace number !!<1!2..10>; move \      #   large monitor except 1
-    workspace to output HDMI2; !!<\>
+bindsym $mod+Shift+equal {{?\\}}            # shoot all workspaces over to my
+  workspace number {2..10}; move \          #   large monitor except 1
+    workspace to output HDMI2; {{?\\}}
   nop
 bindsym $mod+equal move workspace to \      # toggle workspace between monitors
   output left
 
 # scratchpad
-bindsym $mod!!<,+Shift>+z \                 # scratchpad
-  !!<,move >scratchpad!!< show,>
+bindsym $mod{,+Shift}+z \                   # scratchpad
+  {,move }scratchpad{ show,}
 
 # restarting/exiting
 bindsym $mod+Shift+c \                      # reload config file, rerun i3bang
-  exec ~/.i3/i3bang.rb; reload
+  exec ~/code/rb/ppi3/ppi3.rb \
+  <~/.i3/_config >~/.i3/config && \
+  i3-msg reload
 bindsym $mod+Shift+r restart                # restart i3 inplace
 bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   -t warning -m 'You pressed the exit \
@@ -90,13 +87,13 @@ bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   -b 'Yes, exit i3' 'i3-msg exit'
 
 # function keys
-bindsym !!<1!Print,Mod1+Sys_Req> exec \     # screenshot keys
-  maim!!<1!, -s> $(date \
+bindsym {1|Print,Mod1+Sys_Req} exec \       # screenshot keys
+  maim{1|, -s} $(date \
   +"$(xdg-user-dir PICTURES)\
   screenshots/screenshot_%F_%T.png")
 
-bindsym XF86Audio!!<Raise,Lower>Volume \    # volume keys
-  exec amixer sset Master 5%!!+,- \
+bindsym XF86Audio{Raise,Lower}Volume \      # volume keys
+  exec amixer sset Master 5%{+,-} \
   && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute \                     # mute volume key
   exec amixer sset Master toggle \
@@ -105,8 +102,8 @@ bindsym XF86AudioMicMute \                  # mute mic key
   exec amixer sset Capture toggle \
   && pkill -RTMIN+10 i3blocks
 
-bindsym XF86MonBrightness!!Up,Down \        # brightness keys
-  exec xbacklight !!<+,->5%
+bindsym XF86MonBrightness{Up,Down} \        # brightness keys
+  exec xbacklight {+,-}5%
 
 bindsym XF86Explorer \                      # switch keyboard layouts
   exec ~/.i3/layout-switcher
@@ -115,19 +112,11 @@ bindsym XF86Explorer \                      # switch keyboard layouts
 bindsym $mod+i exec i3lock -c 181818        # lock screen
 bindsym $mod+n exec urxvt \
   -name FLOAT -e n
-bindsym $mod+shift+n exec urxvt \           # start a terminal with nethack
-  -name FLOAT \
-  --color0 '#383838' \
-  -e ssh nethack@nethack.alt.org
-bindsym $mod+shift+m exec urxvt \           # start a terminal with dcss
-  -is \
-  -name FLOAT \
-  -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org
 
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 
->
+}
 
 # useful for_window mappings, so that I can activate i3 functionality
 for_window [instance="FLOAT"] floating enable
@@ -135,58 +124,86 @@ for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
 for_window [title="NOBORDER"] border none
 
-for_window [title="Jexx"] floating enable
-
 ###############################################################################
 #                                    MODES                                    #
 ###############################################################################
 
 # resize mode (can also resize things via mouse)
 mode "resize" {
-    bindsym !!h,j,k,l,Left,Down,Up,Right resize \
-        !!<shrink width,grow height,shrink height,grow width> $mv or $mvppt
-    bindsym Shift+!!h,j,k,l,Left,Down,Up,Right resize \
-        !!<shrink width,grow height,shrink height,grow width> 1px or 1ppt
+    bindsym {h,j,k,l,Left,Down,Up,Right} resize \
+        {shrink width,grow height,shrink height,grow width} $mv or $mvppt
+    bindsym Shift+{h,j,k,l,Left,Down,Up,Right} resize \
+        {shrink width,grow height,shrink height,grow width} 1px or 1ppt
 
-    bindsym !!Return,Escape,space,$mod+r mode "default"
+    bindsym {Return,Escape,space,$mod+r} mode "default"
 }
 bindsym $mod+r mode "resize"
 
 # mouse mode (moving the cursor and clicking)
-!@<*mousemove
-exec xdotool mousemove_relative -- !!1!-!s,0,0,!s,-!s,!s,-!s,!s \
-                                   !!1!0,!s,-!s,0,-!s,-!s,!s,!s>
+{{
+    def mousemove s
+        ("exec xdotool mousemove_relative -- {1|-X,0,0,X,-X,X,-X,X} " +
+            "{1|0,X,-X,0,-X,-X,X,X}").gsub ?X, s.to_s
+    end
+    nil
+}}
 mode "mouse" {
-    !s = 30  # hjkl speed
-    bindsym !!1!h,j,k,l,y,u,b,n !@mousemove
-    !s = 10  # numpad speed
-    bindsym KP_!!1!4,2,8,6,7,9,1,3 !@mousemove
+    bindsym {1|h,j,k,l,y,u,b,n} {{ mousemove 30 }}
+    bindsym KP_{1|4,2,8,6,7,9,1,3} {{ mousemove 10 }}
     # arrow keys: precise, 1-pixel movements
-    bindsym !!Left,Down,Up,Right exec xdotool mousemove_relative -- \
-        !!<-1 0,0 1,0 -1,1 0>
+    bindsym {Left,Down,Up,Right} exec xdotool mousemove_relative -- \
+        {-1 0,0 1,0 -1,1 0}
     # clicking and such
-    bindsym !!Return,Shift+Return,period,comma exec xdotool \
-        !!<click 1,click 3,mousedown 1,mouseup 1>
+    bindsym {Return,Shift+Return,period,comma} exec xdotool \
+        {click 1,click 3,mousedown 1,mouseup 1}
     # return to normal
-    bindsym !!Escape,space,$mod+m mode "default"
+    bindsym {Escape,space,q,$mod+m} mode "default"
 }
-bindsym $mod+m mode "mouse"
-
-## numpad mode, for using Blender .-.
-#mode "numpad" {
-#    bindsym $mod+n exec ~/.i3/numpad no; mode "default"
-#    !@default_bindings
-#}
-#bindsym $mod+n exec ~/.i3/numpad yes; mode "numpad"
+bindsym $mod+Shift+m mode "mouse"
 
 # useful actions on screenshots
 set $screenshot "screenshot » [i]mgur [r]ename"
 mode $screenshot {
-    bindsym !!i,r,q,Escape exec ~/.i3/screenshot/!!<imgur,rename,,>; \
+    bindsym {i,r,q,Escape} exec ~/.i3/screenshot/{imgur,rename,,}; \
         exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
 }
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & \
     echo $! > /tmp/feh-pid; mode $screenshot
+
+set $games "games » [n]ethack [d]css"
+mode $games {
+    bindsym n exec urxvt \
+        -name FLOAT \
+        --color0 '#383838' \
+        -e ssh nethack@nethack.alt.org; \
+        mode "default"
+    bindsym m exec urxvt \
+        -is \
+        -name FLOAT \
+        -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; \
+        mode "default"
+    bindsym {Escape,space,q,$mod+g} mode "default"
+}
+bindsym $mod+g mode $games
+
+mode "mark" {
+    bindsym {1|a..z} mark {1|a..z}; mode "default"
+    bindsym BackSpace mark DEL; unmark DEL; mode "default"
+    bindsym {Escape,space,$mod+m} mode "default"
+}
+bindsym $mod+m mode "mark"
+
+mode "focus mark" {
+    bindsym {1|a..z} [con_mark="{1|a..z}"] focus; mode "default"
+    bindsym {Escape,space,$mod+slash} mode "default"
+}
+bindsym $mod+slash mode "focus mark"
+
+mode "move to mark" {
+    bindsym {1|a..z} move window to mark {1|a..z}; mode "default"
+    bindsym {Escape,space,$mod+Shift+slash} mode "default"
+}
+bindsym $mod+Shift+slash mode "move to mark"
 
 ###############################################################################
 #                                  STATUS BAR                                 #

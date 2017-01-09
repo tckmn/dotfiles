@@ -5,12 +5,24 @@ export tmpfile="$(mktemp)"
 echo "$1" >"$tmpfile"
 shift
 
+starttime="$(stat -c%y "$tmpfile")"
+
 urxvt -bd '#d8d8d8' -name FLOAT_NOBORDER -g 40x3 -e \
     nvim +'set nonu nornu notitle laststatus=0' \
          +'startinsert' \
          +'inoremap <cr> <esc>ZZ' \
+         +'noremap <C-c> <esc>:cq<cr>' \
+         +'inoremap <C-c> <esc>:cq<cr>' \
          "$@" \
          "$tmpfile"
 
-cat "$tmpfile"
-rm "$tmpfile"
+endtime="$(stat -c%y "$tmpfile")"
+
+if [ "$starttime" = "$endtime" ]
+then
+    exit 1
+else
+    cat "$tmpfile"
+    rm "$tmpfile"
+    exit 0
+fi
