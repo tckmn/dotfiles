@@ -1,5 +1,6 @@
 ! generic config
-URxvt.font: xft:SourceCodePro:pixelsize=14
+URxvt.font: xft:DejaVuSansMono:pixelsize=13
+URxvt.lineSpace: 1
 URxvt.scrollBar: false
 URxvt.keysym.C-Return: \033\015
 URxvt.keysym.C-Tab: \033\011
