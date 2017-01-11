@@ -80,7 +80,7 @@ nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
-bindsym $mod+Shift+c exec ~/code/rb/ppi3/ppi3.rb <~/.i3/_config >~/.i3/config && i3-msg reload
+bindsym $mod+Shift+c exec ppi3 ~/.i3/_config ~/.i3/config && i3-msg reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
 bindsym Print exec maim $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
@@ -91,10 +91,10 @@ bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +5%
 bindsym XF86MonBrightnessDown exec xbacklight -5%
-bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT -e n
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
+bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable

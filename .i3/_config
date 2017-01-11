@@ -76,9 +76,8 @@ bindsym $mod{,+Shift}+z \                   # scratchpad
 
 # restarting/exiting
 bindsym $mod+Shift+c \                      # reload config file, rerun i3bang
-  exec ~/code/rb/ppi3/ppi3.rb \
-  <~/.i3/_config >~/.i3/config && \
-  i3-msg reload
+  exec ppi3 ~/.i3/_config ~/.i3/config \
+  && i3-msg reload
 bindsym $mod+Shift+r restart                # restart i3 inplace
 bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
   -t warning -m 'You pressed the exit \
@@ -105,15 +104,12 @@ bindsym XF86AudioMicMute \                  # mute mic key
 bindsym XF86MonBrightness{Up,Down} \        # brightness keys
   exec xbacklight {+,-}5%
 
-bindsym XF86Explorer \                      # switch keyboard layouts
-  exec ~/.i3/layout-switcher
-
 # misc.
 bindsym $mod+i exec i3lock -c 181818        # lock screen
-bindsym $mod+n exec urxvt \
-  -name FLOAT -e n
+bindsym $mod+n exec urxvt -name FLOAT -e n  # notes
 
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
+bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 
 }
@@ -142,14 +138,14 @@ bindsym $mod+r mode "resize"
 # mouse mode (moving the cursor and clicking)
 {{
     def mousemove s
-        ("exec xdotool mousemove_relative -- {1|-X,0,0,X,-X,X,-X,X} " +
-            "{1|0,X,-X,0,-X,-X,X,X}").gsub ?X, s.to_s
+        ("exec xdotool mousemove_relative -- {-X,0,0,X,-X,X,-X,X} " +
+            "{0,X,-X,0,-X,-X,X,X}").gsub ?X, s.to_s
     end
     nil
 }}
 mode "mouse" {
-    bindsym {1|h,j,k,l,y,u,b,n} {{ mousemove 30 }}
-    bindsym KP_{1|4,2,8,6,7,9,1,3} {{ mousemove 10 }}
+    bindsym {h,j,k,l,y,u,b,n} {{ mousemove 30 }}
+    bindsym KP_{4,2,8,6,7,9,1,3} {{ mousemove 10 }}
     # arrow keys: precise, 1-pixel movements
     bindsym {Left,Down,Up,Right} exec xdotool mousemove_relative -- \
         {-1 0,0 1,0 -1,1 0}
@@ -187,20 +183,20 @@ mode $games {
 bindsym $mod+g mode $games
 
 mode "mark" {
-    bindsym {1|a..z} mark {1|a..z}; mode "default"
+    bindsym {a..z} mark {a..z}; mode "default"
     bindsym BackSpace mark DEL; unmark DEL; mode "default"
     bindsym {Escape,space,$mod+m} mode "default"
 }
 bindsym $mod+m mode "mark"
 
 mode "focus mark" {
-    bindsym {1|a..z} [con_mark="{1|a..z}"] focus; mode "default"
+    bindsym {a..z} [con_mark="{a..z}"] focus; mode "default"
     bindsym {Escape,space,$mod+slash} mode "default"
 }
 bindsym $mod+slash mode "focus mark"
 
 mode "move to mark" {
-    bindsym {1|a..z} move window to mark {1|a..z}; mode "default"
+    bindsym {a..z} move window to mark {a..z}; mode "default"
     bindsym {Escape,space,$mod+Shift+slash} mode "default"
 }
 bindsym $mod+Shift+slash mode "move to mark"
