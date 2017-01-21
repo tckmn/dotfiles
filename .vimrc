@@ -57,6 +57,20 @@ set showmode showcmd ruler relativenumber scrolloff=3
 set ignorecase smartcase incsearch hlsearch
 nnoremap <C-l> :noh<cr><C-l>
 
+" helpful for recording recursive macros
+let g:recording = 0
+function! BigQ()
+    let g:recording = !g:recording
+    if g:recording
+        nnoremap q <nop>
+        return "qqqqq"
+    else
+        nunmap q
+        call feedkeys("q:let @q=@q[:-2].'@q'|echo\<cr>@q", "t")
+    endif
+endfunction
+nnoremap <expr> Q BigQ()
+
 " wrapping
 set wrap display=lastline colorcolumn=80
 highlight ColorColumn ctermbg=8
