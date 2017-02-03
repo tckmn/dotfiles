@@ -105,6 +105,17 @@ alias sudo='sudo '
 
 да(){yes ${@:-да}}
 
+un() {
+    mkdir $1
+    cp ~/misc/usacotemplate.cpp $1/$1.cpp
+    sed -i "s/MEEMS/$1/;" $1/$1.cpp
+}
+uc() {
+    g++ -std=c++11 -O3 *.cpp -o a
+    ./a
+    cat *.out
+}
+
 # licenses
 if [ -d ~/.license ]
 then
