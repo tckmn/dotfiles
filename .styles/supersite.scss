@@ -1,0 +1,63 @@
+$red:     #ab4642;
+$orange:  #dc9656;
+$yellow:  #f7ca88;
+$green:   #a1b56c;
+$cyan:    #86c1b9;
+$blue:    #7cafc2;
+$magenta: #ba8baf;
+$violet:  #a16946;
+
+$black:   #181818;
+$grey1:   #282828;
+$grey2:   #383838;
+$grey3:   #585858;
+$grey4:   #b8b8b8;
+$white:   #d8d8d8;
+
+$ss: ".ns-newcsslib.t-supersites";
+
+@-moz-document domain("vhlcentral.com") {
+
+.lesson_link, #navigation li span, #navigation li a,
+        #{$ss} .c-dash-widget.c-dash-widget--secondary .c-dash-widget__title-bar,
+        #{$ss} .c-dash-widget .c-heading-body-text,
+        ul.auto_graded_question, ol.items, ol.answers, ol.do_not_show_nums {
+    color: $white;
+}
+
+body, #page_container, #column_wrapper, #activity_wrapper {
+    background-color: $black;
+    color: $white;
+}
+
+#activityFooterWrap {
+    background-color: $grey1;
+}
+
+.c-dash-widget, .activity-info {
+    background-color: $grey1;
+    background-image: none !important;
+    color: $white;
+}
+
+.page_title {
+    background-color: transparent;
+    color: $white;
+}
+
+#{$ss} .c-dash-widget .c-dash-widget__title-bar {
+    background-color: mix($red, $black, 50%);
+}
+
+#navigation li.current a, #navigation li:hover a {
+    color: $red !important;
+}
+
+.program_logo { filter: invert(90%) hue-rotate(180deg); }
+.selectboxit-btn { background: $grey2; }
+#accent_bar { display: none; }
+
+* { box-shadow: none !important; }
+a, a:link, #{$ss} .c-link:link { color: $blue; }
+
+}

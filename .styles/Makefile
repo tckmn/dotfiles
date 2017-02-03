@@ -3,6 +3,9 @@
 all: stackexchange.scss myschoolapp.scss
 	scss stackexchange.scss stackexchange.css --style compressed
 	scss myschoolapp.scss myschoolapp.css --style compressed
+	scss supersite.scss supersite.css --style compressed
+	scss cardcastgame.scss cardcastgame.css --style compressed
+	scss pretendyourexyzzy.scss pretendyourexyzzy.css --style compressed
 
 default:
 	echo '@-moz-document regexp("https?://(discuss\\.area51\\.|((?!chat|area51|blog|business)[^.]+\\.)*)((stackoverflow|serverfault|superuser|stackapps|askubuntu|stackexchange)\\.com|mathoverflow\\.net).*") {' > stackexchange-all-default.css

@@ -1,0 +1,110 @@
+$red:     #ab4642;
+$orange:  #dc9656;
+$yellow:  #f7ca88;
+$green:   #a1b56c;
+$cyan:    #86c1b9;
+$blue:    #7cafc2;
+$magenta: #ba8baf;
+$violet:  #a16946;
+
+$black:   #181818;
+$grey1:   #282828;
+$grey2:   #383838;
+$grey3:   #585858;
+$grey4:   #b8b8b8;
+$white:   #d8d8d8;
+
+@-moz-document domain("pretendyoure.xyz") {
+
+body {
+    background-color: $black;
+    color: $white;
+}
+
+.gamelist_lobby {
+    background: $grey1;
+    border-color: $grey3;
+}
+
+.gamelist_lobby_join, .gamelist_lobby_spectate {
+    background: $grey2;
+    border-color: $grey3;
+}
+
+.game_options {
+    background: none;
+}
+
+#info_area {
+    background: $black;
+    border-color: $grey3;
+}
+
+.scorecard {
+    background: $grey1;
+    border-color: $grey3;
+}
+
+.scorecard:nth-child(2n) {
+    background: $grey2;
+}
+
+.whitecard {
+    background: $grey4;
+    color: $black;
+    border-color: $grey3;
+}
+
+.blackcard {
+    background: $grey1;
+    color: $white;
+    border-color: $grey3;
+}
+
+.selected {
+    background: $blue;
+    border-color: mix($blue, $black, 50%);
+}
+
+.game_hand_filter {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.game_hand_filter_text {
+    background: $black;
+    color: $white;
+}
+
+.ui-widget-content {
+    background: $grey1;
+    color: $white;
+}
+
+.ui-widget-header {
+    background: $grey1;
+    border-color: $grey3;
+    border-bottom: none;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default,
+        .ui-widget-header .ui-state-default {
+    background: $grey2;
+    border-color: $grey3;
+}
+
+.ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
+    color: $grey4;
+}
+
+.ui-state-active a, .ui-state-active a:link, .ui-state-active a:visited {
+    color: $white;
+}
+
+span.debug, span.admin { color: $red; }
+
+a { color: $blue; }
+a:visited { color: $magenta; }
+
+}
