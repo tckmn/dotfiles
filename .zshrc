@@ -70,7 +70,8 @@ function precmd {
     title "${TITLE_PREFIX}zsh [$(pwd)]"
 }
 function preexec {
-    title "$TITLE_PREFIX$1 [$(pwd)]"
+    title "$TITLE_PREFIX${1//
+/} [$(pwd)]"
 }
 
 # aliases / functions
