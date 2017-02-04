@@ -75,7 +75,7 @@ bindsym $mod{,+Shift}+z \                   # scratchpad
   {,move }scratchpad{ show,}
 
 # restarting/exiting
-bindsym $mod+Shift+c \                      # reload config file, rerun i3bang
+bindsym $mod+Shift+c \                      # reload config file, rerun ppi3
   exec ppi3 ~/.i3/_config ~/.i3/config \
   && i3-msg reload
 bindsym $mod+Shift+r restart                # restart i3 inplace

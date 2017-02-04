@@ -3,7 +3,6 @@
 .vim/plugged
 .vim/autoload/plug.vim.old
 
-.i3/i3bang.rb
 .i3/screenshot/imgur_authid
 
 .mutt/private
