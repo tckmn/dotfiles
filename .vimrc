@@ -87,7 +87,6 @@ xnoremap <expr> gk mode() ==# 'v' ? 'k'  : 'gk'
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
-nnoremap <cr> :e <cfile><cr>
 if has('nvim')
     tnoremap <Nul> <C-\><C-n>
 endif
