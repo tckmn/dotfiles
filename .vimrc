@@ -112,8 +112,13 @@ nnoremap <Leader>s :w<cr>
 nnoremap <Leader>y mygg"+yG`y
 nnoremap <Leader>z :w<cr><C-z>
 
-" title (urxvt)
-set title titlestring=]2;vim\ [%F]
+" title (urxvt/gvim)
+set title
+if has('gui_running')
+    set titlestring=gvim\ [%F]
+else
+    set titlestring=]2;vim\ [%F]
+endif
 
 " annoyances
 imap <Nul> <Esc><Leader>
