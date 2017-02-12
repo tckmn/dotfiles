@@ -1,5 +1,7 @@
 text/html; firefox %s &; test=test -n "$DISPLAY"; needsterminal;
 text/html; w3m -dump %s; nametemplate=%s.html; copiousoutput;
-image/*; feh %s &; test=test -n "$DISPLAY";
-video/*; mpv %s &; test=test -n "$DISPLAY";
-application/pdf; mupdf %s &; test=test -n "$DISPLAY";
+image/*; feh %s &; test=test -n "$DISPLAY"; needsterminal;
+video/*; mpv %s &; test=test -n "$DISPLAY"; needsterminal;
+application/pdf; mupdf %s &; test=test -n "$DISPLAY"; needsterminal;
+application/vnd.openxmlformats-officedocument.wordprocessingml.document; lowriter %s &; test=test -n "$DISPLAY"; needsterminal;
+application/vnd.ms-excel; localc %s &; test=test -n "$DISPLAY"; needsterminal;
