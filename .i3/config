@@ -166,7 +166,7 @@ bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & echo
 set $games "games » [n]ethack [d]css"
 mode $games {
 bindsym n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org; mode "default"
-bindsym m exec urxvt -is -name FLOAT -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; mode "default"
+bindsym d exec urxvt -is -name FLOAT -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; mode "default"
 bindsym Escape mode "default"
 bindsym space mode "default"
 bindsym q mode "default"

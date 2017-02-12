@@ -173,7 +173,7 @@ mode $games {
         --color0 '#383838' \
         -e ssh nethack@nethack.alt.org; \
         mode "default"
-    bindsym m exec urxvt \
+    bindsym d exec urxvt \
         -is \
         -name FLOAT \
         -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; \
