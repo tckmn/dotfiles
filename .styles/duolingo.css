@@ -1,6 +1,12 @@
-/* SOURCE: https://userstyles.org/styles/90750/duolingo-dark-2-customizable */
 /*
-This work is licensed under the Creative Commons Attribution 
+ * SOURCE: https://userstyles.org/styles/90750/duolingo-dark-2-customizable
+ * page background color #282828
+ * content backgroud color #181818
+ * text color #d8d8d8
+ * last updated: 2017-02-12
+ */
+/*
+This work is licensed under the Creative Commons Attribution
 4.0 International License. To view a copy of this license,
 visit http://creativecommons.org/licenses/by/4.0/.
 */
@@ -28,7 +34,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .hint-popover .inner:before, .hint-popover .inner:after,
     .player-container,
     .speech-bubble .inner,
-    .speech-bubble .arrow, 
+    .speech-bubble .arrow,
     .popover .arrow,
     .carousel-dot,
     .btn-standard.btn-store,
@@ -78,7 +84,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .splash-2014 .section-inner .btn.sign-up.bottom-signup-btn {
         color: white !important;
     }
-    
+
     /* text colors */
     body {
         color: #D8D8D8 /* GRP: grt1 REP: rgb(204, 204, 204) */ !important; /* rgb(51, 51, 51) */
@@ -131,7 +137,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .profile-header-bio,
     .list-lesson-item p,
     .tips-notes-panel p,
-    .player-quit, 
+    .player-quit,
     .tips-and-notes,
     .speech-bubble .inner,
     .stream-item-content .blurb,
@@ -144,9 +150,9 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .tips-notes-panel p,
     .tips-notes-panel li,
     .upload-panel select option:first-child {
-        color: #585858 /* GRP: grt3 REP: rgb(102, 102, 102) */ !important; /* rgb(153, 153, 153) */
+        color: #D8D8D8 /* GRP: grt3 REP: rgb(102, 102, 102) */ !important; /* rgb(153, 153, 153) */
     }
-    
+
     .translation-footer,
     .upload-panel select option {
         color: rgb(191, 191, 191) !important; /* rgb(64, 64, 64) */
@@ -155,24 +161,24 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .list-document-item-right {
         color: rgb(70, 70, 70) !important; /* rgb(185, 185, 185) */
     }
-    
+
     .stream-item-time {
         color: rgb(57, 57, 57) !important; /* rgb(198, 198, 198) */
     }
-    
+
     /* translations progress bar */
     .document-progress-bar-big {
         background-color: rgba(255, 255, 255, 0.14) /* GRP: grphigh-4 REP: rgb(36, 36, 36) */ !important; /* rgb(219, 219, 219) */
     }
     .document-progress-bar:after {
         border-color: rgb(24, 24, 24) !important; /* rgb(231, 231, 231) */
-        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 25%, 
-                                    transparent 25%, 
-                                    transparent 50%, 
-                                    rgba(0, 0, 0, 0.4) 50%, 
-                                    rgba(0, 0, 0, 0.4) 75%, 
-                                    transparent 75%, 
-                                    transparent) 
+        background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 25%,
+                                    transparent 25%,
+                                    transparent 50%,
+                                    rgba(0, 0, 0, 0.4) 50%,
+                                    rgba(0, 0, 0, 0.4) 75%,
+                                    transparent 75%,
+                                    transparent)
                     repeat scroll 0% 0% / 30px 30px rgb(2, 16, 45) !important;
     }
     .document-progress-bar .bar-started {
@@ -184,7 +190,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background-color: rgb(149, 149, 149) !important; /* rgb(106, 106, 106) */
         z-index: 10 !important;
     }
-     
+
     /* vote count */
     .vote-module-small .vote-count {
         background-color: rgba(255, 255, 255, 0.06) /* GRP: grpvote REP: rgb(15, 15, 15) */ !important; /* rgb(240, 240, 240) */
@@ -197,10 +203,10 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background-color: rgb(251, 31, 15) !important; /* rgb(224, 40, 4) */
         color: black !important;
     }
-    
+
     /* discussion page */
     .discussion-main-body code,
-    .discussion-comments-list-item .body code { 
+    .discussion-comments-list-item .body code {
         background-color: rgba(255, 234, 93, 0.2) !important;
     }
 
@@ -212,7 +218,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .list-discussion-item-header a,
     .username,
     .stream-item-content a,
-    .nav-tabs > li.active a, 
+    .nav-tabs > li.active a,
     .nav-tabs > li:hover a,
     .nav-footer > li a:hover,
     .blue,
@@ -229,7 +235,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .suggest-store a {
         color: rgb(28, 175, 246) !important;
     }
-    
+
     /* navigation bar */
     .nav-tabs {
         border-bottom-color: rgba(255, 255, 255, 0.14) /* GRP: grpsepar-3 REP: rgb(34, 34, 34) */ !important; /* rgb(221, 221, 221) */
@@ -240,17 +246,17 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .dropdown-menu > .active > a {
         background-color: rgba(255, 255, 255, 0.13) /* GRP: grphigh-7 REP: rgb(32, 32, 32) */ !important; /* rgb(223, 223, 223) */
     }
-    
+
     /* top area notification */
     .persistent-notification,
     .immersion-notification {
         background-color: rgb(12, 12, 12) !important; /* rgb(243, 243, 243) */
         border-color: rgb(24, 24, 24) !important; /* rgb(231, 231, 231) */
     }
-    
+
     /* separator in immersion page, new discussion page, lesson header */
     .list-document-item,
-    .discussion-header, 
+    .discussion-header,
     .player-header {
         border-bottom-color: rgba(255, 255, 255, 0.05) !important; /* rgb(243, 243, 243) */
     }
@@ -263,9 +269,9 @@ visit http://creativecommons.org/licenses/by/4.0/.
     #app.wiki-translation .wiki-translation-popover .head {
         background-color: rgba(255, 255, 255, 0.04) /* GRP: grphigh-3 REP: rgb(10, 10, 10) */ !important; /* rgb(245, 245, 245) */
     }
-    
-    /* line separator in skill tree sidebar, discussion area, 
-        notification bar, dropdown menus, store page, hint table, 
+
+    /* line separator in skill tree sidebar, discussion area,
+        notification bar, dropdown menus, store page, hint table,
         lesson hints, immersion sidebar */
     .sidebar-progress,
     .strenghten-skills-container,
@@ -295,7 +301,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .hint-footer {
         border-color: rgba(255, 255, 255, 0.07) /* GRP: grpsepar-2 REP: rgb(18, 18, 18) */ !important; /* rgb(237, 237, 237) */
     }
-    .progress-xp .col-left, 
+    .progress-xp .col-left,
     .translator-stats .document-info,
     .lingot-bill-items > li,
     .immersion-card .footer,
@@ -311,31 +317,31 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .topbar-stats > li > a {
         color: white !important;
     }
-    
+
     /* restore dropdown hover color */
-    .dropdown-menu > li > a:hover, 
-    .dropdown-menu > li > a:focus, 
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus,
     .dropdown-menu > li > a:hover span {
         color: white !important;
     }
-    
+
     /* tooltip */
     .tooltip .tooltip-inner {
         background: rgba(255, 255, 255, 0.8) !important;
         color: black !important;
     }
-    
+
     /* speech bubble in immersion page */
     .popover .arrow {
         background-color: black !important;
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
     }
-    
+
     /* translation tier sidebar in immersion page */
     .box-colored {
         box-shadow: 0px 0px 25px rgba(255, 255, 255, 0.04) !important;
     }
-    
+
     /* sidebars in immersion page and discussion page */
     .box-gray {
         background-color: #282828 /* GRP: grpbg1 REP: #161616 */ !important; /* #e9e9e9 */
@@ -345,22 +351,22 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .nav-sidebar > li.active {
         background-color: rgba(255, 255, 255, 0.14) /* GRP: grphover REP: rgb(37, 37, 37) */ !important; /* rgb(218, 218, 218) */
     }
-    
+
     /* modal dialog help box */
     .modal {
         box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.2) !important;
     }
-    
+
     /* table styles */
     .table th, .table td, .tips-notes-panel table td {
         border-color: rgba(255, 255, 255, 0.10) /* GRP: grphigh-5 REP: rgb(25, 25, 25) */ !important; /* rgb(230, 230, 230) */
     }
-    
-    .table-striped > tbody > tr:nth-child(2n+1) > td, 
+
+    .table-striped > tbody > tr:nth-child(2n+1) > td,
     .table-striped > tbody > tr:nth-child(2n+1) > th {
         background-color: rgba(255, 255, 255, 0.04) /* GRP: grphigh-3 REP: rgb(10, 10, 10) */ !important; /* rgb(245, 245, 245) */
     }
-    
+
     .table-bordered tr td:first-child,
     .table-bordered td {
         border-color: rgb(25, 25, 25) !important; /* rgb(230, 230, 230) */
@@ -378,9 +384,9 @@ visit http://creativecommons.org/licenses/by/4.0/.
         border-color: transparent /* REP: rgb(41, 41, 41) */ !important; /* rgb(214, 214, 214) */
         color: black !important;
     }
-    .btn-primary, 
-    .btn-blue, 
-    .btn-green, 
+    .btn-primary,
+    .btn-blue,
+    .btn-green,
     .btn-purple,
     .btn-red,
     .success {
@@ -432,7 +438,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
         border-color: rgb(30, 30, 30) !important; /* rgb(225, 225, 225) */
     }
 
-    
+
     /* skill tree / home page */
     .bonus-row {
         background-color: rgba(255, 255, 255, 0.02) /* GRP: grplb REP: rgb(6, 6, 6) */ !important; /* rgb(249, 249, 249) */
@@ -446,7 +452,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .btn-store {
         color: rgb(102, 102, 102) !important; /* rgb(153, 153, 153) */
     }
-    
+
     /* button in strengthen sidebar */
     .btn-outline {
         background: transparent !important;
@@ -455,17 +461,17 @@ visit http://creativecommons.org/licenses/by/4.0/.
         color: white !important;
         border-color: white !important;
     }
-    
+
     /* skip button */
     #skip_button.btn.btn-outline {
         border-color: rgba(255, 255, 255, 0.2) /* GRP: grpbtnout1 REP: rgb(51, 51, 51) */ !important; /* rgb(204, 204, 204) */
     }
-    
+
     /* email invite box in activity page */
     .email-invite-box {
         background: black !important;
     }
-    
+
     /* activity line of activity page */
     .stream-item,
     .stream-item-type {
@@ -484,7 +490,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background-color: rgba(255, 255, 255, 0.04) /* GRP: grphigh-3 REP: rgb(10, 10, 10) */ !important; /* rgb(245, 245, 245) */
         color: rgb(102, 102, 102) !important; /* rgb(153, 153, 153) */
     }
-    
+
     /* personal stream post discussion area */
     .stream-item-comment-list {
         background-color: rgba(255, 255, 255, 0.07) /* GRP: grphigh-1 REP: rgb(18, 18, 18) */ !important; /* rgb(243, 243, 243) */
@@ -492,13 +498,13 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .stream-item-comment-list .stream-item-comment-list {
         background: none !important;
     }
-    
+
     /* input area, textareas */
     input[type="text"],
     input[type="password"],
     .fake-input,
     .textarea-white,
-    textarea, 
+    textarea,
     .fake-textarea {
         background: #181818 /* GRP: grpbg2 REP: black */ !important;
         border-color: rgba(255, 255, 255, 0.08) /* GRP: grptrborder-3 REP: rgb(20, 20, 20) */ !important; /* rgb(235, 235, 235) */
@@ -512,21 +518,21 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .store-shelf > li {
         border-color: rgba(255, 255, 255, 0.16) /* GRP: grpinput REP: rgb(22, 22, 22) */ !important; /* rgb(233, 233, 233) */
     }
-    
-    
+
+
     /* store boxes */
     .rupee-store-items .wrapper {
         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15) !important;
     }
-    
+
     /* hover box in sentence discussion page */
     .hint-popover .inner {
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2) !important;
     }
     .hint-popover .inner:before {
-        box-shadow: -2px -2px 15px rgba(255, 255, 255, 0.15) !important; 
+        box-shadow: -2px -2px 15px rgba(255, 255, 255, 0.15) !important;
     }
-    
+
     /* lesson page */
     .list-lesson-item.locked h3,
     .list-lesson-item p {
@@ -538,7 +544,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .list-lesson-item.past .inner {
         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15) !important;
     }
-    
+
     .player-container {
         box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.08);
     }
@@ -549,7 +555,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .popover-blue .arrow {
         background-color: rgb(28, 175, 246) !important;
     }
-    .speech-bubble .arrow:after, 
+    .speech-bubble .arrow:after,
     .popover .arrow:after {
         box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2) !important;
     }
@@ -566,28 +572,28 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background: rgba(255, 255, 255, 0.8) !important;
         color: black !important;
     }
-    
+
     .select-images > li {
-        background-color: black !important; 
+        background-color: black !important;
         border-color: black !important;
         box-shadow: 0px 2px 7px rgba(255, 255, 255, 0.15) !important;
     }
-    .select-images > li.selected, 
+    .select-images > li.selected,
     .select-images > li:hover {
         background-color: rgb(28, 175, 246) !important;
         border-color: rgb(28, 175, 246) !important;
     }
-    
-    #app.correct .player-footer h1, 
+
+    #app.correct .player-footer h1,
     #app.correct .player-footer h2 {
         color: rgb(118, 156, 0) !important; /* rgb(118, 156, 0) */
     }
-    
-    #app.incorrect .player-footer h1, 
+
+    #app.incorrect .player-footer h1,
     #app.incorrect .player-footer h2 {
         color: rgb(251, 31, 15) !important; /* rgb(224, 40, 4) */
     }
-    
+
     #controls.player-footer #grade h2 { /* non-Duo selector */
         color: white !important;
     }
@@ -600,7 +606,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .white-label {
         box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.2) !important;
     }
-    
+
     .progress-bar-distinct > li {
         background-color: rgba(255, 255, 255, 0.07) /* GRP: grphigh-1 REP: rgb(18, 18, 18) */ !important; /* rgb(243, 243, 243) */
         border-color: #181818 /* GRP: grpbg2 REP: black */ !important;
@@ -614,7 +620,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background-color: rgb(28, 175, 246) !important;
         border-color: #181818 /* GRP: grpbg2 REP: black */ !important;
     }
-    
+
     .language-progress-bar-big,
     .language-progress-bar-big .level-next,
     .language-progress-bar-small,
@@ -636,7 +642,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     #review-page .review-container .badge-wrong-micro {
         background-color: black;
     }
-    
+
     /* report sentence popover */
     .report-options {
         box-shadow: 0px 2px 15px rgba(255, 255, 255, 0.2) !important;
@@ -644,7 +650,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .report-options li.hoverable:hover {
         background-color: rgba(255, 255, 255, 0.05) /* GRP: grpsepar-1 REP: rgba(12, 12, 12) */ !important; /* rgb(243, 243, 243) */
     }
-    
+
     /* flags */
     .translator-tier-flag-micro .double-flag-target,
     .translator-tier-flag .double-flag-target {
@@ -689,7 +695,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     div#word-modal #example-sentences tbody tr:nth-child(1) {
         background-color: rgb(7, 7, 7); /* rgb(248, 248, 248) */
     }
-    
+
     /* immersion page */
     #app.wiki-translation .lesson-like-document #document-hider {
         background-color: #282828 /* GRP: grpbg1 REP: #161616 */ !important; /* #e9e9e9 */
@@ -702,9 +708,9 @@ visit http://creativecommons.org/licenses/by/4.0/.
 
     .wiki-document-body .wikipedia-article .infobox,
     .wiki-document-body .wikipedia-article .infobox_v2,
-    #app.wiki-translation .wiki-paragraph, 
-    .wiki-document-body .wiki-paragraph, 
-    #app.wiki-translation p, 
+    #app.wiki-translation .wiki-paragraph,
+    .wiki-document-body .wiki-paragraph,
+    #app.wiki-translation p,
     .wiki-document-body p,
     .translator-stats .translator-stats-numbers {
         color: white !important;
@@ -718,7 +724,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     #app.wiki-translation .instructions .strengthened-words > li {
         border-color: rgba(255, 255, 255, 0.03) /* GRP: grptrborder-7 (*) REP: rgb(29, 29, 29) */ !important; /* rgb(226, 226, 226) */
     }
-    
+
     .translation-sidebar .legend-circle.not-yet-translated,
     .translation-sidebar .legend-circle.needs-checking,
     .translation-sidebar .legend-circle.checked-by-community,
@@ -729,25 +735,25 @@ visit http://creativecommons.org/licenses/by/4.0/.
         background-color: rgba(0, 0, 0, 0.85) !important;
     }
     #app.wiki-translation .instructions.dimmed {
-        border-color: rgb(28, 28, 28) !important; /* rgb(227, 227, 227) */    
+        border-color: rgb(28, 28, 28) !important; /* rgb(227, 227, 227) */
     }
-    
+
     .tab-switch,
     .tab-switch > li {
         border-color: rgba(255, 255, 255, 0.10) /* GRP: grphigh-2 REP: rgb(28, 28, 28) */ !important; /* rgb(227, 227, 227) */
     }
-    .tab-switch > li > a.active, 
+    .tab-switch > li > a.active,
     .tab-switch > li > a:active {
         background-color: rgba(255, 255, 255, 0.10) /* GRP: grphigh-2 REP: rgb(28, 28, 28) */ !important; /* rgb(227, 227, 227) */
     }
-    #app.wiki-translation .sentence.highlighted, 
+    #app.wiki-translation .sentence.highlighted,
     .wiki-document-body .sentence.highlighted {
         background-color: rgba(255, 250, 213, 0.15) !important; /* rgb(255, 250, 213) */
     }
     .simple-revisions > li:hover {
         background-color: rgba(255, 255, 255, 0.02) /* GRP: grphigh-8 REP: rgba(10, 10, 10) */ !important; /* rgb(249, 249, 249) */
     }
-    #app.wiki-translation .sentence .hint-table, 
+    #app.wiki-translation .sentence .hint-table,
     .wiki-document-body .sentence .hint-table {
         color: rgb(195, 195, 195) !important; /* rgb(60, 60, 60) */
     }
@@ -757,14 +763,14 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .wiki-document-body .sentence.highlighted.user-disapproved {
         color: rgb(109, 165, 21) !important; /* rgb(109, 165, 21) */
     }
-    
+
     .mini-popover-action .vote-down,
     .mini-popover-action .show-more,
     .mini-popover-action .show-less,
     .mini-popover-action .cancel-translation {
         border-left-color: #181818 /* GRP: grpbg2 REP: black */ !important;
     }
-    
+
     .machine-translation {
         color: rgb(191, 191, 191) !important; /* rgb(64, 64, 64) */
     }
@@ -772,7 +778,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .wiki-document-body .sentence.non-translated {
         color: rgb(0, 105, 214) !important; /* rgb(0, 105, 214) */
     }
-    
+
     .wiki-document-body .wikipedia-article div.thumbinner {
         background-color: rgba(255, 255, 255, 0.02) /* GRP: grplb REP: rgb(6, 6, 6) */ !important; /* rgb(249, 249, 249) */
         border-color: rgba(255, 255, 255, 0.2) /* GRP: grpbtnout1 REP: rgb(51, 51, 51) */ !important; /* rgb(204, 204, 204) */
@@ -793,7 +799,7 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .wiki-document-body .wikipedia-article table.wikitable > * > tr > td {
         border-color: rgb(85, 85, 85) !important; /* rgb(170, 170, 170) */
     }
-    
+
     #app.wiki-translation .wiki-translation-popover .last-edit .reputation-tier {
        color: white !important;
     }
@@ -801,19 +807,19 @@ visit http://creativecommons.org/licenses/by/4.0/.
     .wiki-document-body .wikipedia-article .infobox_v2 {
         background-color: rgba(255, 255, 255, 0.02) /* GRP: grplb REP: rgb(6, 6, 6) */ !important; /* rgb(249, 249, 249) */
     }
-    
-    /* immersion - hightlight diff between translations */ 
+
+    /* immersion - hightlight diff between translations */
     span[style^="background-color:yellow"] {
         background-color: rgb(120, 120, 0) !important;
     }
-    
+
     /* immersion upload page */
-    
+
     .pick-upload-plan > li .inner,
     .upload-panel {
         background-color: black !important;
         box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.15) !important;
-        
+
     }
     .pick-upload-plan > li .content a {
         color: rgb(28, 175, 246) !important; /* rgb(28, 175, 246) */
