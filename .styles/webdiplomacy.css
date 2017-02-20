@@ -83,7 +83,7 @@
     a { color: #7cafc2 !important; }
     a.current { color: #d8d8d8 !important; }
 
-    img:not(#mapImage) { filter: invert(100%) hue-rotate(180deg); }
+    html>body>* img:not(#mapImage) { filter: invert(100%) hue-rotate(180deg); }
     .uniticon img { filter: none !important; }
 
     .content-bare, .content > div, .gamePanel > div, table.orders,
