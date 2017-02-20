@@ -82,8 +82,6 @@ function atcrec() {
     ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
 }
 
-alias printer='lp -d home_printer'
-
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 
 function xb() {
