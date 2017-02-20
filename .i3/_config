@@ -111,9 +111,9 @@ bindsym XF86{Copy,Paste} \
 # misc.
 bindsym $mod+i exec i3lock -c 181818        # lock screen
 bindsym $mod+n exec urxvt -name FLOAT -e n  # notes
+bindcode $mod+32 exec ~/.i3/layout-switcher # xmodmap layout, 32 is the "o" key
 
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
-bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 
 }
