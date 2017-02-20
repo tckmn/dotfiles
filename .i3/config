@@ -89,12 +89,15 @@ bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3bl
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight +5%
-bindsym XF86MonBrightnessDown exec xbacklight -5%
+bindsym XF86Cut exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+10 i3blocks
+bindsym XF86Paste exec xbacklight +5% && pkill -RTMIN+10 i3blocks
 bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT -e n
+bindcode $mod+32 exec ~/.i3/layout-switcher
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
-bindsym XF86Explorer exec ~/.i3/layout-switcher
 bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
