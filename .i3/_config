@@ -97,12 +97,16 @@ bindsym XF86Audio{Raise,Lower}Volume \      # volume keys
 bindsym XF86AudioMute \                     # mute volume key
   exec amixer sset Master toggle \
   && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMicMute \                  # mute mic key
+bindsym XF86{AudioMicMute,Cut} \            # mute mic key
   exec amixer sset Capture toggle \
   && pkill -RTMIN+10 i3blocks
 
 bindsym XF86MonBrightness{Up,Down} \        # brightness keys
-  exec xbacklight {+,-}5%
+  exec xbacklight {+,-}5% \
+  && pkill -RTMIN+10 i3blocks
+bindsym XF86{Copy,Paste} \
+  exec xbacklight {-,+}5% \
+  && pkill -RTMIN+10 i3blocks
 
 # misc.
 bindsym $mod+i exec i3lock -c 181818        # lock screen
