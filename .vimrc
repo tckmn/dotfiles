@@ -28,6 +28,8 @@ let maplocalleader=' '
 set mouse=
 set encoding=utf-8
 
+au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
+
 " plugins
 " Vim-LaTeX
 let g:tex_flavor='latex'
