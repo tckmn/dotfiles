@@ -124,6 +124,13 @@ endif
 
 " annoyances
 imap <Nul> <Esc><Leader>
-set noesckeys
+if exists("&esckeys")
+    set noesckeys
+endif
 set shortmess+=I
 let g:netrw_dirhistmax=0
+
+" disable annoying gvim stuff, in the unusual event that I might use it
+if has('gui_running')
+    set toolbar= guioptions=
+endif
