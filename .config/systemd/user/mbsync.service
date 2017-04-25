@@ -3,4 +3,4 @@ Description=Sync emails
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'mbsync -Va; notmuch new'
+ExecStart=/bin/bash -c 'killall -q mbsync; ( mbsync -Va; notmuch new ) & wait'
