@@ -10,17 +10,32 @@
         color: #d8d8d8 !important;
     }
 
-    #chats .chat-content .chat-messages, #tray > div {
-        background-color: #282828 !important;
+    .groupme-list .list-item, .pillar, .message-composer, #tray {
+        border-color: #585858;
+    }
+
+    #chats .chat {
+        border: none;
+    }
+
+    #chats .chat-content .chat-messages,
+            #tray .tray-header,
+            #tray .list-search,
+            #tray .tray-list {
+        background-color: #282828;
+        border-color: #383838;
     }
 
     #chats .chat-header, #chats .chat-input .composer-layout,
             #tray .tray-header .row,
+            #tray .list-search input,
+            .pillar .tab.active,
             #chats .chat-messages .timestamp-divider,
             #chats .chat-messages .message.system,
             .emoji-menu .emoji-preview,
             .emoji-menu .pack-switcher {
-        background-color: #383838 !important;
+        background-color: #383838;
+        border-color: #585858;
     }
 
     #chats .chat-messages .message.me,
@@ -30,7 +45,12 @@
     }
 
     .emoji-menu .pack-container {
-        background-color: #585858 !important;
+        background-color: #585858;
+    }
+
+    .chat-messages .message.highlight {
+        /* override bright white highlight */
+        background-color: #282828;
     }
 
     #chats .chat-header .chat-name {
@@ -75,6 +95,28 @@
 
     .dropdown-menu span, #chats .chat-menu span {
         color: #d8d8d8 !important;
+    }
+
+    /* non-color changes */
+    .chat-messages .message .message-body .content .message-text {
+        font-size: 10pt;
+        line-height: 10pt;
+    }
+    .chat-messages .message, .chat-messages .message.is-continuation {
+        padding: 0;
+    }
+    .chat-messages .message .message-header {
+        padding-top: 7px;
+    }
+    .chat-messages .message.is-bookend {
+        padding-bottom: 7px;
+    }
+    #chats .chat-messages .timestamp-divider {
+        position: absolute;
+        width: 10em;
+        left: 50%;
+        margin-left: -5em;
+        background-color: transparent !important;
     }
 
 }
