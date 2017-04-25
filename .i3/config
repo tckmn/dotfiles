@@ -83,8 +83,8 @@ bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+c exec ppi3 ~/.i3/_config ~/.i3/config && i3-msg reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
-bindsym Mod1+Sys_Req exec maim -s $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
+bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
+bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
 bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
