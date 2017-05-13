@@ -3,7 +3,7 @@
  *  -
  */
 
-@-moz-document domain("app.groupme.com") {
+@-moz-document domain("web.groupme.com"), domain("app.groupme.com") {
 
     body, #app, #page, #chats {
         background-color: #181818 !important;
