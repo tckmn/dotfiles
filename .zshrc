@@ -146,9 +146,9 @@ then
     fi
 fi
 
-if [ -f ~/code/sh/semicolonthing/thing.zsh ]
+if [ -f ~/.shemicolon/shemicolon.zsh ]
 then
-    source ~/code/sh/semicolonthing/thing.zsh
+    source ~/.shemicolon/shemicolon.zsh
 fi
 
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
