@@ -10,6 +10,7 @@ Plug 'wellle/targets.vim'
 Plug 'junegunn/vim-easy-align'
 " language-specific
 Plug 'rust-lang/rust.vim'
+Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
 " appearance
