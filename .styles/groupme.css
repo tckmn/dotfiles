@@ -10,7 +10,15 @@
         color: #d8d8d8 !important;
     }
 
-    .groupme-list .list-item, .pillar, .message-composer, #tray {
+    h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
+        color: #d8d8d8;
+    }
+
+    .groupme-list .list-item,
+            .pillar,
+            .message-composer,
+            #tray,
+            #signin .social-login {
         border-color: #585858;
     }
 
@@ -21,7 +29,9 @@
     #chats .chat-content .chat-messages,
             #tray .tray-header,
             #tray .list-search,
-            #tray .tray-list {
+            #tray .tray-list,
+            .well,
+            #signin .account {
         background-color: #282828;
         border-color: #383838;
     }
@@ -33,7 +43,9 @@
             #chats .chat-messages .timestamp-divider,
             #chats .chat-messages .message.system,
             .emoji-menu .emoji-preview,
-            .emoji-menu .pack-switcher {
+            .emoji-menu .pack-switcher,
+            .form-control,
+            #signin .or {
         background-color: #383838;
         border-color: #585858;
     }
