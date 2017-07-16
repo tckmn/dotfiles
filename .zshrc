@@ -101,6 +101,8 @@ alias cku=checkupdates
 
 alias sudo='sudo '
 
+alias frink='java -cp ~/misc/frink.jar frink.parser.Frink'
+
 да(){yes ${@:-да}}
 
 un() {
