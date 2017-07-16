@@ -1,4 +1,4 @@
 #!/bin/bash
 
 brightness="$(xbacklight)"
-echo "🔅 ${brightness:0:5}%"
+echo "${brightness:0:5}%"
