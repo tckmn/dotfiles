@@ -1,0 +1,22 @@
+key=andy@keyboardfire.com
+rotate=1
+VIM=/usr/share/nvim
+idletime=5000
+declare -a nvimflags=("+sil! so $HOME/.privim")
+:<<'x'
+
+function! s:Privim()
+    set tw=79
+    let l:date = strftime('%F')
+    if search(l:date)
+        keeppatterns +2/^===/-1
+        nohlsearch
+    else
+        put!=l:date
+        norm! YpVr=pDj
+    endif
+    put!=nr2char(10)
+    put!=strftime('[%H:%M] ')
+    startinsert!
+endfunction
+unsilent call s:Privim()
