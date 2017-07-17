@@ -1,0 +1,8 @@
+mpd_music_dir = ~/snd/msc
+playlist_disable_highlight_delay = 0
+message_delay_time = 2
+clock_display_seconds = yes
+ignore_leading_the = yes
+ignore_diacritics = yes
+mouse_support = no
+external_editor = nvim
