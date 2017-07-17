@@ -80,6 +80,8 @@ nop
 bindsym $mod+equal move workspace to output left
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+t exec ~/.i3/toggle-border
 bindsym $mod+Shift+c exec ppi3 ~/.i3/_config ~/.i3/config && i3-msg reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
@@ -90,6 +92,10 @@ bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3bl
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86Cut exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioNext exec mpc next && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioStop exec mpc stop && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+10 i3blocks
@@ -286,9 +292,9 @@ urgent_workspace #dc9656 #ab4642 #d8d8d8
 binding_mode #dc9656 #ab4642 #d8d8d8
 }
 }
-client.focused #383838 #181818 #d8d8d8 #000000 #000000
-client.focused_inactive #585858 #383838 #b8b8b8 #000000 #000000
-client.unfocused #585858 #383838 #b8b8b8 #000000 #000000
+client.focused #383838 #181818 #d8d8d8 #000000 #b8b8b8
+client.focused_inactive #585858 #383838 #b8b8b8 #000000 #585858
+client.unfocused #585858 #383838 #b8b8b8 #000000 #585858
 client.urgent #dc9656 #ab4642 #d8d8d8 #000000 #000000
 client.placeholder #585858 #383838 #b8b8b8 #000000 #000000
 client.background #181818

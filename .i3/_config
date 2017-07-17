@@ -70,9 +70,12 @@ bindsym $mod+Shift+equal {{?\\}}            # shoot all workspaces over to my
 bindsym $mod+equal move workspace to \      # toggle workspace between monitors
   output left
 
-# scratchpad
+# special windows
 bindsym $mod{,+Shift}+z \                   # scratchpad
   {,move }scratchpad{ show,}
+bindsym $mod+Shift+s sticky toggle          # sticky windows
+bindsym $mod+Shift+t \                      # show/hide title bar
+    exec ~/.i3/toggle-border
 
 # restarting/exiting
 bindsym $mod+Shift+c \                      # reload config file, rerun ppi3
@@ -99,6 +102,10 @@ bindsym XF86AudioMute \                     # mute volume key
   && pkill -RTMIN+10 i3blocks
 bindsym XF86{AudioMicMute,Cut} \            # mute mic key
   exec amixer sset Capture toggle \
+  && pkill -RTMIN+10 i3blocks
+
+bindsym XF86Audio{Next,Prev,Play,Stop} \    # misc media keys
+  exec mpc {next,prev,toggle,stop} \
   && pkill -RTMIN+10 i3blocks
 
 bindsym XF86MonBrightness{Up,Down} \        # brightness keys
@@ -227,10 +234,13 @@ bar {
 #                                    COLORS                                   #
 ###############################################################################
 
+# note that child_border is what shows up as the 1pixel border when the title
+# bar is toggled off with mod+shift+t
+
 # class                 border  backgr. text    indicator child_border
-client.focused          #383838 #181818 #d8d8d8 #000000   #000000
-client.focused_inactive #585858 #383838 #b8b8b8 #000000   #000000
-client.unfocused        #585858 #383838 #b8b8b8 #000000   #000000
+client.focused          #383838 #181818 #d8d8d8 #000000   #b8b8b8
+client.focused_inactive #585858 #383838 #b8b8b8 #000000   #585858
+client.unfocused        #585858 #383838 #b8b8b8 #000000   #585858
 client.urgent           #dc9656 #ab4642 #d8d8d8 #000000   #000000
 client.placeholder      #585858 #383838 #b8b8b8 #000000   #000000
 client.background       #181818
