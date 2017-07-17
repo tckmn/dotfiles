@@ -19,4 +19,4 @@ reload-threads 2
 notify-format "%f(%D) feeds with %n(%d) articles"
 notify-program ~/.newsbeuter/notif
 
-browser firefox
+browser waterfox

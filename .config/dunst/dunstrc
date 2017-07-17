@@ -34,7 +34,7 @@
     separator_color = frame
     startup_notification = false
     dmenu = /usr/bin/rofi -dmenu -p dunst:
-    browser = /usr/bin/firefox
+    browser = /usr/bin/waterfox
     # align left/right/off
     icon_position = off
     # NOTE: this don't exist (?)

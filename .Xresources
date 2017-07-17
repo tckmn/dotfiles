@@ -14,7 +14,7 @@ URxvt.iso14755: false
 URxvt.iso14755_52: false
 
 URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/firefox
+URxvt.url-select.launcher: /usr/bin/waterfox
 
 URxvt.resize-font.smaller: C-minus
 URxvt.resize-font.bigger: C-plus

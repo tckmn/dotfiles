@@ -24,7 +24,7 @@ group "default" {
 bindsym $mod{,+Shift}+Return exec rofi \    # rofi (dropin dmenu replacement)
   -show {run,window}
 bindsym $mod{,+Shift}+apostrophe exec \     # most commonly launched programs
-  {i3-sensible-terminal,firefox}
+  {i3-sensible-terminal,waterfox}
 
 # window management
 bindsym $mod{2|,+Shift}+{1|h,j,k,l,\        # focused window manipulation,

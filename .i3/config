@@ -9,7 +9,7 @@ force_focus_wrapping yes
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
-bindsym $mod+Shift+apostrophe exec firefox
+bindsym $mod+Shift+apostrophe exec waterfox
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left $mv
 bindsym $mod+j focus down
