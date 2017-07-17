@@ -1,5 +1,5 @@
 /*
- * dark themed stylesheet for myschoolapp
+ * dark themed stylesheet for myschoolapp  http://kbd.fi/msad
  * Copyright (C) 2017  Keyboard Fire <andy@keyboardfire.com>
  *
  * This program is free software: you can redistribute it and/or modify
@@ -14,6 +14,11 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+ * TODO (aside from partial/no support items on kbd.fi/msad
+ *  - calendars could use a little work (e.g. the date field in official notes)
  */
 
 $red:     #ab4642;
@@ -104,6 +109,57 @@ ul.dropdown-menu > li > a .bb-tab-close-icon, .iti-arrow, .bb-icon {
     font-family: icomoon !important;
 }
 
+/* things that need border color fixed */
+.nav.nav-tabs, .nav-tabs.nav-justified {
+    border-color: $grey2;
+}
+.whiteContainer1, li.divider, hr, .bb-tile hr,
+.calendar-list .bb-tile-content .bb-tile-content-section #myFilters .results .calendarHeader,
+.calendar-list .bb-tile-content .bb-tile-content-section .selectHideCals,
+.fc-unthemed td, .fc-unthemed tbody, .fc th, .fc td, .fc-widget-header,
+#fc-list-view,
+.input-group .btn,
+.table thead tr th, .table tbody tr td,
+.table > thead > tr > th, .table > thead > tr > td, .table > tbody > tr > th,
+.table > tbody > tr > td, .table > tfoot > tr > th, .table > tfoot > tr > td,
+.bb-tile-content-section:not(:last-child),
+.ui-widget-content,
+.bb-card-actions {
+    border-color: $grey3;
+}
+#site-nav ul.topnav li div.subnavtop {
+    border-left-color: transparent !important;
+    border-right-color: transparent !important;
+}
+.tooltip.top .tooltip-arrow {
+    border-top-color: $grey4;
+}
+#media-viewer-grid .grid-item { border-color: $grey1; }
+#media-viewer-grid .grid-item.active { border-color: $grey4; }
+
+/* things that need background color fixed */
+.thumbnail, .table .table,
+#media-viewer .carousel-control,
+.carousel-control.left, .carousel-control.right {
+    background-color: transparent;
+    background-image: none;
+}
+
+/* things that need text color fixed */
+.subnavbar .nav > li > a:hover, .subnavbar .nav > .active > a:hover,
+.bb-section-heading, .bb-page-heading, .bb-emphasized, .bb-headline,
+.thumbnail .caption,
+.calendar-list .nav-list > li,
+.table > thead > tr > th,
+.nav-filter h5,
+div.token-input-dropdown p,
+.popover-content,
+.btn:hover, .btn:focus, .btn.focus,
+#media-viewer .carousel-control {
+    color: $white;
+}
+.bb-section-heading { white-space: nowrap; }
+
 /* darkest black - default background */
 body, .cal-layout .sidebar-nav-fixed, .modal-content {
     background-color: $black;
@@ -116,6 +172,9 @@ body, .cal-layout .sidebar-nav-fixed, .modal-content {
 .bb-tile .bb-tile-title, .bb-tile-content, .bb-action-bar, .bb-card,
 table.table-sky thead,
 .subnavbar .nav > .active > a, .subnavbar .nav > .active > a:hover,
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus,
 .well,
 #site-nav ul.topnav > li > a:hover,
 .section-heading,
@@ -123,7 +182,20 @@ table.table-sky thead,
 .modal-header, .modal-footer,
 .thumbnail,
 .conDefault,
-.teaserBox {
+.teaserBox,
+.ui-widget-header, .ui-state-default, .ui-widget-content .ui-state-default,
+.nav.nav-tabs > li.active > a,
+.nav.nav-tabs > li.active > a:hover,
+.nav.nav-tabs > li.active > a:focus,
+.nav.nav-tabs ul.dropdown-menu > li.active > a,
+.nav.nav-tabs ul.dropdown-menu > li.active > a:hover,
+.nav.nav-tabs ul.dropdown-menu > li.active > a:focus,
+.nav-tabs.nav-justified > li.active > a,
+.nav-tabs.nav-justified > li.active > a:hover,
+.nav-tabs.nav-justified > li.active > a:focus,
+.nav-tabs.nav-justified ul.dropdown-menu > li.active > a,
+.nav-tabs.nav-justified ul.dropdown-menu > li.active > a:hover,
+.nav-tabs.nav-justified ul.dropdown-menu > li.active > a:focus {
     background-color: $grey1;
     background-image: none;
     border-color: $grey2;
@@ -136,18 +208,20 @@ table.table-sky thead,
 .fc-state-default, .fc-state-default .fc-button-inner,
 .fc-event-skin,
 .popContainerStraight,
-.table-striped > tbody > tr:nth-of-type(2n+1),
+.table-striped > tbody > tr:nth-of-type(2n+1), .table thead,
 #courses #coursesContainer .row:nth-child(2n+1),
 #courses #communitiesContainer .row:nth-child(2n+1),
 #courses #advisoryContainer .row:nth-child(2n+1),
 #courses #athleticsContainer .row:nth-child(2n+1),
 .chCal-state-default, .chCal-state-default .chCal-button-inner,
-.fc-unthemed .fc-today,
+.fc-unthemed .fc-today, .fc td.fc-today,
 .containerFull.whiteContainer1,
 .datelabel,
 .nav.nav-tabs > li > a:hover, .nav-filter,
 .fadeBox,
-.sky-wait-mask, {
+.sky-wait-mask,
+.fc-widget-header .fc-agenda-divider-inner,
+.breadcrumb {
     background-color: $grey2;
     background-image: none;
     border-color: $grey3;
@@ -157,7 +231,10 @@ table.table-sky thead,
 /* dropdowns, which are the same but with forced border */
 div.token-input-dropdown,
 .fc-state-active .fc-button-inner,
-.tooltip-inner, .dropdown-menu {
+.tooltip-inner, .dropdown-menu,
+.ui-widget.ui-widget-content,
+.popover,
+li.token-input-token /* not actually a dropdown but who cares */ {
     background-color: $grey2;
     background-image: none;
     border: 1px solid $grey3;
@@ -165,10 +242,41 @@ div.token-input-dropdown,
 }
 
 /* inversion of previous - mostly all hovers and actives */
-.btn-primary:hover, .bb-btn-secondary:hover,
-.btn-default:hover, .btn-default.active, .btn-default:focus, .btn-default.focus,
-.open > .btn-default.dropdown-toggle,
-.dropdown-menu > li > a:hover, .dropdown-menu > li > a.focus {
+.btn-default:hover, .btn-default.active,
+.btn-default:focus, .btn-default.focus,
+.open > .dropdown-toggle.btn-default,
+.bb-btn-primary:hover, .bb-btn-primary.active,
+.bb-btn-primary:focus, .bb-btn-primary.focus,
+.open > .dropdown-toggle.bb-btn-primary,
+.bb-btn-secondary:hover, .bb-btn-secondary.active,
+.bb-btn-secondary:focus, .bb-btn-secondary.focus,
+.open > .dropdown-toggle.bb-btn-secondary,
+.bb-context-menu .dropdown-menu li > a:hover,
+.bb-context-menu .dropdown-menu li > a:focus,
+.bb-context-menu .dropdown-menu .bb-submenu .panel-body a:hover,
+.bb-context-menu .dropdown-menu .bb-submenu .panel-body a:focus,
+.bb-context-menu .dropdown-menu .bb-dropdown-item > a:hover,
+.bb-context-menu .dropdown-menu .bb-dropdown-item > a:focus,
+.bb-context-menu .dropdown-menu .bb-dropdown-item > .bb-btn-secondary:hover,
+.bb-context-menu .dropdown-menu .bb-dropdown-item > .bb-btn-secondary:focus,
+.dropdown-menu bb-context-menu-item li > a:hover,
+.dropdown-menu bb-context-menu-item li > a:focus,
+.dropdown-menu bb-context-menu-item .bb-submenu .panel-body a:hover,
+.dropdown-menu bb-context-menu-item .bb-submenu .panel-body a:focus,
+.dropdown-menu bb-context-menu-item .bb-dropdown-item > a:hover,
+.dropdown-menu bb-context-menu-item .bb-dropdown-item > a:focus,
+.dropdown-menu bb-context-menu-item .bb-dropdown-item > .bb-btn-secondary:hover,
+.dropdown-menu bb-context-menu-item .bb-dropdown-item > .bb-btn-secondary:focus,
+.bb-dropdown-menu.dropdown-menu li > a:hover,
+.bb-dropdown-menu.dropdown-menu li > a:focus,
+.bb-dropdown-menu.dropdown-menu .bb-submenu .panel-body a:hover,
+.bb-dropdown-menu.dropdown-menu .bb-submenu .panel-body a:focus,
+.bb-dropdown-menu.dropdown-menu .bb-dropdown-item > a:hover,
+.bb-dropdown-menu.dropdown-menu .bb-dropdown-item > a:focus,
+.bb-dropdown-menu.dropdown-menu .bb-dropdown-item > .bb-btn-secondary:hover,
+.bb-dropdown-menu.dropdown-menu .bb-dropdown-item > .bb-btn-secondary:focus,
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus,
+.ui-state-highlight, .ui-widget-content .ui-state-highlight {
     background-color: $grey4;
     border-color: $grey3;
     color: $grey2;
@@ -189,48 +297,14 @@ div.token-input-dropdown,
     color: $white;
 }
 
-/* things that need border color fixed */
-.whiteContainer1, li.divider, hr, .bb-tile hr,
-.calendar-list .bb-tile-content .bb-tile-content-section #myFilters .results .calendarHeader,
-.calendar-list .bb-tile-content .bb-tile-content-section .selectHideCals,
-.fc-unthemed td,
-.input-group .btn,
-.table thead tr th,
-.bb-tile-content-section:not(:last-child) {
-    border-color: $grey3;
-}
-#site-nav ul.topnav li div.subnavtop {
-    border-left-color: transparent !important;
-    border-right-color: transparent !important;
-}
-.tooltip.top .tooltip-arrow {
-    border-top-color: $grey4;
-}
-
-/* things that need background color fixed */
-.thumbnail {
-    background-color: transparent;
-}
-
-/* things that need text color fixed */
-.subnavbar .nav > li > a:hover, .subnavbar .nav > .active > a:hover,
-.bb-section-heading, .bb-page-heading,
-.thumbnail .caption,
-.calendar-list .nav-list > li,
-.table > thead > tr > th,
-.nav-filter h5,
-div.token-input-dropdown p {
-    color: $white;
-}
-.bb-section-heading { white-space: nowrap; }
-
 /* override default stylesheet !importants */
 .white-bgc, .sec-15-bgc, .subnavbar {
     background-color: $black !important;
     border-color: $grey1 !important;
     color: $white;
 }
-#site-nav ul.topnav > li > a.active {
+#site-nav ul.topnav > li > a.active,
+#site-nav div.subnav ul > li > a.active {
     background-color: $grey1 !important;
     background-image: none;
     border-color: $grey2 !important;
@@ -243,8 +317,11 @@ div.token-input-dropdown p {
 }
 .black-fgc, .pri-100-fgc,
 #site-nav ul.topnav li a.active span.title,
-.modal-header, .modal-header a {
+.modal-header, .modal-header a:not(:hover) {
     color: $white !important;
+}
+.select-directory-link.pri-100-bgc {
+    background-color: $grey4 !important;
 }
 .white-fgc {
     color: $black !important;
@@ -263,25 +340,63 @@ div.token-input-dropdown p {
     background-color: $grey2 !important;
 }
 /* topics page */
-#academicclassmaincontainer .col-md-3 > div,
+#academicclassmaincontainer .col-md-3:not(.span3) > div,
 #academicclassmaincontainer > div:first-child > div:first-child:not(.row),
-#topic-detail-container .breadcrumb {
+#topic-detail-container .col-md-3 > div:not(.sortContainer),
+#topic-detail-container .col-md-3 > div.sortContainer > div,
+#topic-detail-container .col-md-6 > div:not(.sortContainer),
+#topic-detail-container .col-md-6 > div.sortContainer > div,
+#topic-detail-container .col-md-9 > div:not(.sortContainer),
+#topic-detail-container .col-md-9 > div.sortContainer > div,
+#topic-detail-container .col-md-12 > div:not(.sortContainer),
+#topic-detail-container .col-md-12 > div.sortContainer > div {
     background-color: $grey1 !important;
 }
 #academicclassmaincontainer .fadeBox > #more {
     color: $white !important;
 }
+/* my day -> schedule -> schedule reports */
+#rpttop td, #rpttop div, #rpttop span, #rpttop p, #rpttop a {
+    color: $white !important;
+}
+/* e.g. advisory page */
+#grouppagemaincontainer > div:first-child > div:first-child {
+    background-color: $grey1 !important;
+}
+/* scoreboard */
+.score-container > .containerFull > div:first-child > div:nth-child(2) {
+    background-color: $grey2 !important;
+}
+.score-container h2, .score-container h5, .score-container h6 > a {
+    color: $white !important;
+}
+
+/* only real way to handle some images */
+.eventBack {
+    -webkit-filter: invert(100%) hue-rotate(180deg);
+    filter: invert(100%) hue-rotate(180deg);
+}
 
 /* colors! */
-.alert-info {
+.alert-info, .btn-info, .label-info, .bb-badge-info {
     background-color: mix($blue, $black, 50%);
     border-color: $blue;
     color: mix($blue, $white, 50%);
 }
-.label-success, .bb-badge-success {
+.alert-success, .btn-success, .label-success, .bb-badge-success {
     background-color: mix($green, $black, 50%);
     border-color: $green;
     color: mix($green, $white, 50%);
+}
+.btn-warning {
+    background-color: mix($yellow, $black, 50%);
+    border-color: $yellow;
+    color: mix($yellow, $white, 50%);
+}
+.btn-danger {
+    background-color: mix($red, $black, 50%);
+    border-color: $red;
+    color: mix($red, $white, 50%);
 }
 
 a { color: $blue; }

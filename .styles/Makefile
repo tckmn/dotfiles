@@ -1,10 +1,20 @@
 .PHONY: all default
 
-all: stackexchange.scss myschoolapp.scss
+all: stackexchange.css myschoolapp.css supersite.css cardcastgame.css pretendyourexyzzy.css
+
+stackexchange.css: stackexchange.scss
 	scss stackexchange.scss stackexchange.css --style compressed
+
+myschoolapp.css: myschoolapp.scss
 	scss myschoolapp.scss myschoolapp.css --style compressed
+
+supersite.css: supersite.scss
 	scss supersite.scss supersite.css --style compressed
+
+cardcastgame.css: cardcastgame.scss
 	scss cardcastgame.scss cardcastgame.css --style compressed
+
+pretendyourexyzzy.css: pretendyourexyzzy.scss
 	scss pretendyourexyzzy.scss pretendyourexyzzy.css --style compressed
 
 default:
