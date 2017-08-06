@@ -3,4 +3,4 @@ Description=Send a Telegram message with time left for the Korean Duolingo cours
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'export TZ=America/Chicago; msg="$[$(date +%j -d "aug 17") - $(date +%j)] days until Korean Duolingo"$\'\\n\'; tmux send -t tg "msg 0xh4x0rz $msg msg Schmetterling $msg msg Duolingo $msg"'
+ExecStart=/bin/bash -c 'export TZ=America/Chicago; msg="$[$(date +%j -d "sep 7") - $(date +%j)] days until Korean Duolingo?????"$\'\\n\'; tmux send -t tg "msg 0xh4x0rz $msg msg Schmetterling $msg msg Duolingo $msg"'
