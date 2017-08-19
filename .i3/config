@@ -9,7 +9,7 @@ force_focus_wrapping yes
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
-bindsym $mod+Shift+apostrophe exec waterfox
+bindsym $mod+Shift+apostrophe exec firefox
 bindsym $mod+h focus left
 bindsym $mod+Shift+h move left $mv
 bindsym $mod+j focus down
@@ -104,7 +104,7 @@ bindsym $mod+i exec i3lock -c 181818
 bindsym $mod+n exec urxvt -name FLOAT -e n
 bindcode $mod+32 exec ~/.i3/layout-switcher
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
-bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' && xcowsay --image img/itk.png kajigger
+bindsym XF86PowerOff exec espeak -a 2000 'kuh jigger' & xcowsay --image img/itk.png kajigger
 for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
