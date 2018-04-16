@@ -3,4 +3,4 @@ Description=Randomize the wallpaper
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c 'DISPLAY=:0 feh --randomize --bg-fill /home/llama/.wallpaper/*.png'
+ExecStart=/bin/bash -c 'DISPLAY=:0.0 feh --randomize --bg-fill /home/llama/.wallpaper/*.png; DISPLAY=:0.1 feh --randomize --bg-fill /home/llama/.wallpaper/*.png; true'
