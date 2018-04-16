@@ -6,4 +6,6 @@ dunst &
 
 redshift &
 
+mpd .mpd/mpd.conf
+
 exec i3
