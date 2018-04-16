@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage[export]{adjustbox}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage{microtype}
+\usepackage{tikz,pgfplots}
+\everymath{\displaystyle}
+
+\begin{document}
+\thispagestyle{fancy}
+\fancyhf{}
+\rhead{Andy Tockman\\{{+~strftime('%F')+}}}
+\cfoot{\thepage}
+
+\begin{enumerate}
+
+    \item {{++}}
+
+\end{enumerate}
+
+\end{document}
