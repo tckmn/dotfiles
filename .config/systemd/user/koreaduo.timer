@@ -1,9 +1,0 @@
-[Unit]
-Description=Send a Telegram message with time left for the Korean Duolingo course daily
-
-[Timer]
-OnCalendar=*-*-* 20:00:00
-Persistent=true
-
-[Install]
-WantedBy=timers.target
