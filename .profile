@@ -11,3 +11,4 @@ export VISUAL=/usr/bin/nvim
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
 export PRINTER=home_printer
+export VST_PATH=/home/llama/snd/vst
