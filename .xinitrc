@@ -1,6 +1,6 @@
 xrdb /home/llama/.Xresources
 
-xss-lock -- i3lock -c 181818 &
+xss-lock slock &
 
 dunst &
 
