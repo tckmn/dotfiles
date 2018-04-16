@@ -6118,6 +6118,11 @@
 <Multi_key> <Multi_key> <c> <y>: "ʏ"
 <Multi_key> <Multi_key> <c> <z>: "ᴢ"
 
+## FLIPPED ##
+<dead_dasia> <c> : "ɔ"
+<dead_dasia> <m> : "ɯ"
+<dead_dasia> <r> : "ɹ"
+
 ## JELLY ##
 <Multi_key> <j> <period> : "ȷ" U0131
 <Multi_key> <period> <j> : "ȷ" U0131
@@ -6132,3 +6137,10 @@
 <Multi_key> <asciitilde> <asciitilde> : "≈"
 <Multi_key> <less> <greater> : "♦"
 <Multi_key> <E> <E> : "∈"
+<Multi_key> <comma> <slash> : "✔️"
+<Multi_key> <i> <n> <t> : "∫"
+<Multi_key> <s> <h> : "ʃ"
+<Multi_key> <z> <h> : "ʒ"
+<Multi_key> <s> <j> : "ɕ"
+<Multi_key> <z> <j> : "ʑ"
+<Multi_key> <O> <O> : "ꙮ"
