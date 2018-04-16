@@ -14,7 +14,7 @@
         border-color: #282828 !important;
     }
 
-    .bar, .content, .homeTable td, textarea, .content-notice {
+    .bar, .content, .homeTable td, textarea, .content-notice, .wrap, .bg1, .bg2 {
         background-color: #282828 !important;
         border-color: #585858 !important;
         color: #d8d8d8 !important;
@@ -25,14 +25,16 @@
     }
 
     .barAlt1, .replyalternate1, .memberAlternate1, .threadalternate1,
-            .homeForumPostAlt1, .homeMembersTable .barAlt1 {
+            .homeForumPostAlt1, .homeMembersTable .barAlt1,
+            .homeForumAlt1 {
         background-color: #181818 !important;
         border-color: #585858 !important;
         color: #d8d8d8 !important;
     }
 
     .barAlt2, .replyalternate2, .memberAlternate2, .threadalternate2,
-            .homeForumPostAlt2, .homeMembersTable .barAlt2 {
+            .homeForumPostAlt2, .homeMembersTable .barAlt2,
+            .homeForumAlt2 {
         background-color: #282828 !important;
         border-color: #585858 !important;
         color: #d8d8d8 !important;
