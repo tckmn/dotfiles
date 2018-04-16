@@ -44,3 +44,5 @@
 .mpd/sticker.sql
 
 .ncmpcpp/error.log
+
+.config/mpv/watch_later
