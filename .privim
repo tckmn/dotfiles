@@ -8,7 +8,7 @@ declare -a nvimflags=("+sil! so $HOME/.privim")
 function! s:Privim()
     set tw=79
     let l:date = strftime('%F')
-    if search(l:date)
+    if search('^' . l:date . '$')
         keeppatterns +2/^===/-1
         nohlsearch
     else
