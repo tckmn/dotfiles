@@ -105,6 +105,9 @@ nnoremap Y y$
 " case-insensitive pathname tab completion
 set wildignorecase
 
+" don't double-space after punctuation
+set nojoinspaces
+
 " persistent undo
 set undofile
 
