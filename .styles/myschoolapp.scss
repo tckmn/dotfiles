@@ -110,7 +110,7 @@ ul.dropdown-menu > li > a .bb-tab-close-icon, .iti-arrow, .bb-icon {
 }
 
 /* things that need border color fixed */
-.nav.nav-tabs, .nav-tabs.nav-justified {
+.nav.nav-tabs, .nav-tabs.nav-justified, #course-request-container .department-courses {
     border-color: $grey2;
 }
 .whiteContainer1, li.divider, hr, .bb-tile hr,
@@ -195,7 +195,10 @@ table.table-sky thead,
 .nav-tabs.nav-justified > li.active > a:focus,
 .nav-tabs.nav-justified ul.dropdown-menu > li.active > a,
 .nav-tabs.nav-justified ul.dropdown-menu > li.active > a:hover,
-.nav-tabs.nav-justified ul.dropdown-menu > li.active > a:focus {
+.nav-tabs.nav-justified ul.dropdown-menu > li.active > a:focus,
+#course-request-container .accordion-toggle,
+#course-request-container .requested-courses .requested-course,
+.workspace-footer {
     background-color: $grey1;
     background-image: none;
     border-color: $grey2;
@@ -378,22 +381,38 @@ li.token-input-token /* not actually a dropdown but who cares */ {
 }
 
 /* colors! */
-.alert-info, .btn-info, .label-info, .bb-badge-info {
+.alert-info, .btn-info, .label-info, .label-todo, .bb-badge-info,
+#schedule-maker-bulletin .emergency-bulletin-container, #emergency-bulletin .emergency-bulletin-container, #main-bulletin .main-bulletin-container {
     background-color: mix($blue, $black, 50%);
     border-color: $blue;
     color: mix($blue, $white, 50%);
+}
+.btn-info:hover, .btn-info:focus {
+    color: mix($blue, $black, 50%);
+    border-color: mix($blue, $white, 50%);
+    background-color: $blue;
 }
 .alert-success, .btn-success, .label-success, .bb-badge-success {
     background-color: mix($green, $black, 50%);
     border-color: $green;
     color: mix($green, $white, 50%);
 }
-.btn-warning {
+.btn-success:hover, .btn-success:focus {
+    color: mix($green, $black, 50%);
+    border-color: mix($green, $white, 50%);
+    background-color: $green;
+}
+.btn-warning, .label-warning {
     background-color: mix($yellow, $black, 50%);
     border-color: $yellow;
     color: mix($yellow, $white, 50%);
 }
-.btn-danger {
+.btn-warning:hover, .btn-warning:focus {
+    color: mix($yellow, $black, 50%);
+    border-color: mix($yellow, $white, 50%);
+    background-color: $yellow;
+}
+.btn-danger, .label-danger {
     background-color: mix($red, $black, 50%);
     border-color: $red;
     color: mix($red, $white, 50%);
