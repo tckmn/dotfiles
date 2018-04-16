@@ -92,15 +92,15 @@ bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3bl
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86Cut exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioNext exec mpc next && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioStop exec mpc stop && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+10 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+10 i3blocks
-bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+10 i3blocks
-bindsym XF86Paste exec xbacklight +5% && pkill -RTMIN+10 i3blocks
-bindsym $mod+i exec i3lock -c 181818
+bindsym XF86AudioNext exec mpc next && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioStop exec mpc stop && pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+12 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+12 i3blocks
+bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+12 i3blocks
+bindsym XF86Paste exec xbacklight +5% && pkill -RTMIN+12 i3blocks
+bindsym --release $mod+i exec slock
 bindsym $mod+n exec urxvt -name FLOAT -e n
 bindcode $mod+32 exec ~/.i3/layout-switcher
 bindsym XF86LaunchA exec ~/.i3/toggle-keyboard
@@ -109,6 +109,7 @@ for_window [instance="FLOAT"] floating enable
 for_window [title="FLOAT"] floating enable
 for_window [instance="NOBORDER"] border none
 for_window [title="NOBORDER"] border none
+bindsym XF86Explorer exec killall xdotool
 mode "resize" {
 bindsym h resize shrink width $mv or $mvppt
 bindsym j resize grow height $mv or $mvppt

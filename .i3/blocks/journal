@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo -n 'dr '
+[ $(stat ~/doc/journal -c%Y) -gt $(date -d0 +%s) ] &&
+    echo '<span color="lime">✓</span>' ||
+    echo '<span color="red">✘</span>'
