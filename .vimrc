@@ -115,8 +115,8 @@ set undofile
 nnoremap <Leader>a :A<cr><C-g>
 nnoremap <Leader>m :make<cr>
 nnoremap <Leader>s :w<cr>
-nnoremap <Leader>y mygg"+yG`y
-nnoremap <Leader>z :w<cr><C-z>
+nnoremap <Leader>y :%y+<cr>
+nnoremap <Leader>z :up<cr><C-z>
 
 " title (urxvt/gvim)
 set title
