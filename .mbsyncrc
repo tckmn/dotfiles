@@ -10,6 +10,7 @@ Account keyboardfire
 MaildirStore keyboardfire-local
 Path ~/.mail/keyboardfire/
 Inbox ~/.mail/keyboardfire/Inbox
+SubFolders Verbatim
 
 Channel keyboardfire
 Master :keyboardfire-remote:
