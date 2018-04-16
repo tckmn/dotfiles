@@ -1,0 +1,9 @@
+[Unit]
+Description=Update journal indicator in status bar
+
+[Timer]
+OnCalendar=*-*-* 00:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
