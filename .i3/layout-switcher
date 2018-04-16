@@ -32,6 +32,8 @@ done <<EOS | xmodmap -
 31 abovering
 32 breve
 33 invertedbreve
+41 dasia
+42 greek
 43 grave tilde
 44 macron
 45 horn
@@ -45,6 +47,8 @@ xmodmap - <<EOS
 keycode 62 = Mode_switch Mode_switch Mode_switch Mode_switch
 keycode 65 = space NoSymbol Multi_key
 keycode 105 = Multi_key Multi_key Multi_key Multi_key
+keycode 134 = Mode_switch Mode_switch Mode_switch Mode_switch
+keycode 246 = NoSymbol NoSymbol NoSymbol
 EOS
 
 # pkill -RTMIN+10 i3blocks
