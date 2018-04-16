@@ -11,3 +11,10 @@ nmap -builtin -count j 5j
 nmap -builtin -count k 5k
 
 colorscheme base16
+
+nmap <cr> <nop>
+nmap g<esc> <nop>
+nmap z<esc> <nop>
+map -modes menu <esc> <nop>
+
+set defsearch=duckduckgo
