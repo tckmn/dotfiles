@@ -105,7 +105,7 @@ alias frink='java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
 alias p='killall plover && plover -g none & disown'
 
-да(){yes ${@:-да}}
+да(){yes ${@:-д}}
 
 un() {
     mkdir $1
