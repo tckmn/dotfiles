@@ -139,7 +139,7 @@ PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
 if [[ "$USERNAME" =~ ^llama$ ]] && which ssh-agent >/dev/null
 then
-    if pgrep --ns 0 -u $UID ssh-agent >/dev/null
+    if pgrep -u $UID ssh-agent >/dev/null
     then
         . ~/.cache/ssh-agent >/dev/null
     else
