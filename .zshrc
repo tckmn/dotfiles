@@ -78,9 +78,6 @@ function preexec {
 
 alias cmatrix="cmatrix -b"
 alias xcowsay="xcowsay -f monospace"
-function atcrec() {
-    ttyrec "$(date "+atc_%F_%T.ttyrec")" -e "TERM=xterm atc -g ${1:-default}"
-}
 
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 
@@ -101,9 +98,9 @@ alias cku=checkupdates
 
 alias sudo='sudo '
 
-alias frink='java -cp ~/misc/frink.jar frink.parser.Frink'
+alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
-alias p='killall plover && plover -g none & disown'
+alias p='ps ax | grep plover\\.main | awk "{print \$1}" | xargs kill; plover & disown'
 
 да(){yes ${@:-д}}
 
