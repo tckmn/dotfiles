@@ -130,6 +130,8 @@ fi
 setopt interactivecomments
 # cd by trying to "execute" a directory
 setopt autocd
+# provide a way to run something without adding it to history
+setopt histignorespace
 
 # prompts
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
