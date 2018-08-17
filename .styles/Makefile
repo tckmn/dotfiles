@@ -1,6 +1,6 @@
 .PHONY: all default
 
-all: stackexchange.css myschoolapp.css supersite.css cardcastgame.css pretendyourexyzzy.css webassign.css
+all: stackexchange.css myschoolapp.css supersite.css cardcastgame.css pretendyourexyzzy.css webassign.css gitlab.css
 
 stackexchange.css: stackexchange.scss
 	scss stackexchange.scss stackexchange.css --style compressed
@@ -19,6 +19,9 @@ pretendyourexyzzy.css: pretendyourexyzzy.scss
 
 webassign.css: webassign.scss
 	scss webassign.scss webassign.css --style compressed
+
+gitlab.css: gitlab.scss
+	scss gitlab.scss gitlab.css --style compressed
 
 default:
 	echo '@-moz-document regexp("https?://(discuss\\.area51\\.|((?!chat|area51|blog|business)[^.]+\\.)*)((stackoverflow|serverfault|superuser|stackapps|askubuntu|stackexchange)\\.com|mathoverflow\\.net).*") {' > stackexchange-all-default.css

@@ -1,0 +1,879 @@
+/*
+ * dark themed stylesheet for gitlab
+ * Copyright (C) 2018  Keyboard Fire <andy@keyboardfire.com>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
+/*
+
+CHECKLIST
+
+ [ ] unfinished  [x] finished  [~] unfinished and tree needs expanding
+
+== GITLAB.COM ==
+[x] Top bar
+[x] Projects
+ [x] New project
+  [ ] Import project
+  [ ] CI/CD for external repo
+ [~] Project
+[x] Groups
+ [x] New group
+ [~] Group
+[x] Activity
+[~] Milestones
+[x] Snippets
+ [ ] New snippet
+ [~] Snippet
+[~] Search
+[~] Issues
+[~] Merge requests
+[~] Todos
+[~] Profile
+[x] Settings
+ [x] Profile
+ [~] Account
+ [~] Billing
+ [~] Applications
+ [~] Chat
+ [~] Access Tokens
+ [~] Emails
+ [~] Password
+ [~] Notifications
+ [~] SSH Keys
+ [~] GPG Keys
+ [~] Preferences
+ [~] Active Sessions
+ [~] Authentication log
+ [~] Pipeline quota
+[~] Help
+[~] Login
+
+== DOCS.GITLAB.COM ==
+== ABOUT.GITLAB.COM ==
+(no support yet)
+
+*/
+
+$red:     #ab4642;
+$orange:  #dc9656;
+$yellow:  #f7ca88;
+$green:   #a1b56c;
+$cyan:    #86c1b9;
+$blue:    #7cafc2;
+$magenta: #ba8baf;
+$violet:  #a16946;
+
+$black:   #181818;
+$grey1:   #282828;
+$grey2:   #383838;
+$grey3:   #585858;
+$grey4:   #888888;
+$white:   #d8d8d8;
+
+@-moz-document domain("gitlab.com") {
+
+/*================================= GLOBAL ==================================*/
+
+* {
+    box-shadow: none !important;
+    text-shadow: none !important;
+}
+
+/*=============================== COLOR ONLY ================================*/
+
+h1, h2, h3, h4, h5, h6,
+.landing .inner-content h1, .landing .inner-content h2,
+.landing .inner-content h3, .landing .inner-content h4,
+.landing .inner-content h5, .landing .inner-content h6,
+.landing .inner-content p,
+.text-plain, .text-plain:hover,
+.nav-links li.active a,
+body.ui_dark .nav-sidebar li.active > a,
+.sidebar-top-level-items > li > a:hover,
+.participants-more .sidebar-top-level-items > li > .btn-link:hover,
+.user-list-more .sidebar-top-level-items > li > .btn-link:hover,
+.right-sidebar .title,
+ul.content-list li a,
+.commit a, .commit button,
+.generic_commit_status a, .generic_commit_status button,
+.tree-holder .tree-item .tree-item-file-name i,
+.tree-holder .tree-item .tree-item-file-name a,
+.wiki, .md, .wiki p, .md p,
+.file-holder .file-title a:not(.btn),
+.btn-missing, .project-stats .nav .btn-missing,
+.context-header a,
+.breadcrumb.repo-breadcrumb a,
+.header-user .dropdown-menu-nav,
+.dropdown-menu li a, .dropdown-menu li button,
+.dropdown-menu li .menu-item,
+.dropdown-menu-nav li a, .dropdown-menu-nav li button,
+.dropdown-menu-nav li .menu-item,
+.breadcrumbs-sub-title a,
+.dropdown-menu-selectable li a.is-indeterminate,
+.dropdown-menu-selectable li a.is-active,
+.dropdown-menu-selectable li button.is-indeterminate,
+.dropdown-menu-selectable li button.is-active,
+.dropdown-menu .dropdown-header, .dropdown-menu-nav .dropdown-header,
+.detail-page-description .title, .detail-page-header, .detail-page-header a,
+.context-header:hover, .context-header a:hover,
+.context-header .participants-more .btn-link:hover,
+.participants-more .context-header .btn-link:hover,
+.context-header .user-list-more .btn-link:hover,
+.user-list-more .context-header .btn-link:hover,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items a,
+.branch-commit, .branch-commit .commit-row-message,
+.nothing-here-block,
+.light, .description-block,
+.event-item .event-title, .event-item a,
+.group-row .stats,
+.slead,
+.commit-box .commit-title,
+.cgray, .commit.inline-commit .committed_ago,
+.generic_commit_status.inline-commit .committed_ago,
+.page-content-header .commit-committer-link,
+.page-content-header .commit-author-link,
+.git-revision-dropdown .dropdown-content ul li
+    .info-well .well-segment.branch-info a:hover,
+.git-revision-dropdown .dropdown-content ul li
+    .participants-more .info-well .well-segment.branch-info .btn-link:hover,
+.git-revision-dropdown .dropdown-content ul li
+    .user-list-more .info-well .well-segment.branch-info .btn-link:hover,
+.info-well .well-segment.branch-info .git-revision-dropdown
+    .dropdown-content ul li .participants-more .btn-link:hover,
+.info-well .well-segment.branch-info .git-revision-dropdown
+    .dropdown-content ul li .user-list-more .btn-link:hover,
+.info-well .well-segment.branch-info .git-revision-dropdown
+    .dropdown-content ul li a:hover,
+.info-well .well-segment.branch-info .participants-more
+    .git-revision-dropdown .dropdown-content ul li .btn-link:hover,
+.info-well .well-segment.branch-info .user-list-more
+    .git-revision-dropdown .dropdown-content ul li .btn-link:hover,
+.participants-more .git-revision-dropdown .dropdown-content ul li .info-well
+    .well-segment.branch-info .btn-link:hover,
+.user-list-more .git-revision-dropdown .dropdown-content ul li .info-well
+    .well-segment.branch-info .btn-link:hover,
+.mr-state-widget .info-well .well-segment.branch-info .label-branch:hover,
+.info-well .well-segment.branch-info .mr-state-widget .label-branch:hover,
+.info-well .well-segment.branch-info .ref-name:hover,
+.file-title-flex-parent a,
+.project-stats .nav .stat-text, .project-stats .nav .stat-link,
+.project-stats .nav .stat-link:hover, .project-stats .nav .stat-link:focus,
+.dropdown-menu-inner-title,
+.divergence-graph .graph-side .count,
+.issuable-list li .issuable-milestone a, .issuable-list li .issuable-info a,
+.issuable-list li .task-status a, .issuable-list li .issuable-updated-at a,
+.visibility-level-setting .radio .option-title,
+.select2-results li.select2-result-with-children > .select2-result-label,
+.nav-links li.active a .badge, .nav-links li a:hover .badge,
+.nav-links li .participants-more .btn-link:hover .badge,
+.participants-more .nav-links li .btn-link:hover .badge,
+.nav-links li .user-list-more .btn-link:hover .badge,
+.user-list-more .nav-links li .btn-link:hover .badge,
+.nav-links li a:active .badge, .nav-links li a:focus .badge,
+.cover-block .cover-title, .cover-block .cover-desc,
+.content-list .group-name,
+.projects-dropdown-container .section-header,
+.projects-dropdown-container .projects-list-frequent-container li.section-empty,
+.projects-dropdown-container .projects-list-search-container li.section-empty,
+.close, .close:hover, .close:focus,
+.snippet-title,
+ul.content-list li,
+.nav-links li.active a .badge.badge-pill,
+.nav-links li.active a .shortcut-mappings .key,
+.shortcut-mappings .nav-links li.active a .key,
+.nav-links li a.active .badge.badge-pill,
+.nav-links li a.active .shortcut-mappings .key,
+.shortcut-mappings .nav-links li a.active .key,
+.nav-links li a:hover .badge.badge-pill,
+.nav-links li .participants-more .btn-link:hover .badge.badge-pill,
+.participants-more .nav-links li .btn-link:hover .badge.badge-pill,
+.nav-links li .user-list-more .btn-link:hover .badge.badge-pill,
+.user-list-more .nav-links li .btn-link:hover .badge.badge-pill,
+.nav-links li a:hover .shortcut-mappings .key,
+.shortcut-mappings .nav-links li a:hover .key,
+.nav-links li .participants-more .btn-link:hover .shortcut-mappings .key,
+.shortcut-mappings .nav-links li .participants-more .btn-link:hover .key,
+.participants-more .nav-links li .btn-link:hover .shortcut-mappings .key,
+.shortcut-mappings .participants-more .nav-links li .btn-link:hover .key,
+.nav-links li .user-list-more .btn-link:hover .shortcut-mappings .key,
+.shortcut-mappings .nav-links li .user-list-more .btn-link:hover .key,
+.user-list-more .nav-links li .btn-link:hover .shortcut-mappings .key,
+.shortcut-mappings .user-list-more .nav-links li .btn-link:hover .key,
+.nav-links li a:active .badge.badge-pill,
+.nav-links li a:active .shortcut-mappings .key,
+.shortcut-mappings .nav-links li a:active .key,
+.nav-links li a:focus .badge.badge-pill,
+.nav-links li a:focus .shortcut-mappings .key,
+.shortcut-mappings .nav-links li a:focus .key,
+.header-user .dropdown-menu {
+    color: $white;
+}
+
+svg.tint-box text, svg.spark text,
+.info-well .icon-container.commit-icon svg path,
+div.project-network > div.network-graph > svg text,
+body.ui_dark .nav-sidebar li.active svg,
+body.ui_dark .navbar-gitlab .nav > li.active > a:hover svg,
+body.ui_dark .navbar-gitlab .participants-more .nav > li.active > .btn-link:hover svg,
+.participants-more body.ui_dark .navbar-gitlab .nav > li.active > .btn-link:hover svg,
+body.ui_dark .navbar-gitlab .user-list-more .nav > li.active > .btn-link:hover svg,
+.user-list-more body.ui_dark .navbar-gitlab .nav > li.active > .btn-link:hover svg,
+body.ui_dark .navbar-gitlab .nav > li.dropdown.show > a:hover svg,
+body.ui_dark .navbar-gitlab .participants-more .nav > li.dropdown.show > .btn-link:hover svg,
+.participants-more body.ui_dark .navbar-gitlab .nav > li.dropdown.show > .btn-link:hover svg,
+body.ui_dark .navbar-gitlab .user-list-more .nav > li.dropdown.show > .btn-link:hover svg,
+.user-list-more body.ui_dark .navbar-gitlab .nav > li.dropdown.show > .btn-link:hover svg {
+    fill: $white;
+}
+svg.tint-box g.tick > line, svg.spark g.tick > line,
+svg.tint-box g.axis > path, svg.spark g.axis > path {
+    stroke: $white;
+}
+
+.nav-links li a,
+.nav-sidebar li a,
+.tree-holder .tree-commit .tree-commit-link,
+.tree-holder .tree-time-ago,
+.graphs .graph-author-email,
+.breadcrumbs-links,
+.dropdown-menu-inner-content,
+.issuable-list li .issuable-milestone, .issuable-list li .issuable-info,
+.issuable-list li .task-status, .issuable-list li .issuable-updated-at,
+.visibility-level-setting .radio .option-description,
+.visibility-level-setting .radio .option-disabled-reason,
+.projects-list-item-container .project-namespace,
+ul.content-list li .description {
+    color: $grey4;
+}
+
+/*============================ BACKGROUND COLOR =============================*/
+
+body,
+.file-holder .file-content,
+.panel, .panel-slim,
+.timeline-entry,
+.markdown-area,
+.sub-header-block,
+.diff-files-changed, .diff-files-changed .commit-stat-summary,
+.discussion-form,
+.row-content-block.content-component-block,
+.project-network .network-graph,
+.row-content-block.white,
+.navbar-empty,
+.devise-layout-html body .footer-container,
+.devise-layout-html body hr.footer-fixed,
+.modal-header, .modal-body {
+    color: $white;
+    background-color: $black;
+    border-color: $grey2;
+}
+
+pre,
+.group-list-tree .group-row-contents:hover,
+.nav-sidebar, .right-sidebar,
+.toggle-sidebar-button, .close-nav-button,
+.info-well,
+.light-well, .description-block,
+table.table tr th, .file-holder table tr th, .wiki table tr th,
+.md table tr th, ul.notes > li .note-body .note-text table tr th,
+.file-holder .file-title,
+body.ui_dark .navbar-gitlab,
+.row-content-block,
+.tint-box, #contributors .person .spark,
+.file-title-flex-parent,
+.diff-file .file-title:hover, .diff-file .file-title-flex-parent:hover,
+.diff-file .diff-content,.diff-file .notes_holder td.notes_line,
+.landing,
+.table-striped > tbody > tr:nth-of-type(2n+1),
+.panel-default > .panel-heading, .panel-footer,
+.commit-header,
+.project-network .controls,
+.gitlab-tabs,
+.cover-block,
+.btn.btn-gray,
+.project-feature-settings,
+.settings-content .sub-section,
+.modal-content,
+body.ui_dark .nav-links li.active a, body.ui_dark .nav-links li a.active {
+    color: $white;
+    background-color: $grey1;
+    border-color: $grey2;
+}
+
+.tree-holder .tree-table tr:hover:not(.tree-truncated-warning) td,
+.btn,
+.project-repo-buttons .btn, .group-buttons .btn,
+.project-repo-buttons .count-with-arrow .count,
+.group-buttons .count-with-arrow .count,
+.project-repo-buttons .count-with-arrow .count:hover,
+.group-buttons .count-with-arrow .count:hover,
+.git-clone-holder .form-control,
+.git-clone-holder .search form,
+.search .git-clone-holder form,
+.commit-sha-group .label-monospace,
+.commit-sha-group .label,
+.commit-sha-group .shortcut-mappings .key,
+.shortcut-mappings .commit-sha-group .key,
+.commit-sha-group .btn,
+.dropdown-toggle, .dropdown-menu-toggle,
+.dropdown-menu, .dropdown-menu-nav,
+.toggle-sidebar-button:hover, .close-nav-button:hover,
+.sidebar-top-level-items > li.active > a:hover,
+.participants-more .sidebar-top-level-items > li.active > .btn-link:hover,
+.user-list-more .sidebar-top-level-items > li.active > .btn-link:hover,
+.sidebar-top-level-items > li.is-over > a,
+.sidebar-sub-level-items > li a:hover,
+.sidebar-sub-level-items > li .participants-more .btn-link:hover,
+.participants-more .sidebar-sub-level-items > li .btn-link:hover,
+.sidebar-sub-level-items > li .user-list-more .btn-link:hover,
+.user-list-more .sidebar-sub-level-items > li .btn-link:hover,
+.sidebar-sub-level-items > li a:focus,
+body.ui_dark .navbar-gitlab .navbar-sub-nav > li.active > a,
+body.ui_dark .navbar-gitlab .navbar-sub-nav > li.dropdown.open > a,
+body.ui_dark .navbar-gitlab .navbar-nav > li.active > a,
+body.ui_dark .navbar-gitlab .navbar-nav > li.dropdown.open > a,
+body.ui_dark .navbar-gitlab .navbar-sub-nav > li > a:hover,
+body.ui_dark .navbar-gitlab .participants-more
+    .navbar-sub-nav > li > .btn-link:hover,
+body.ui_dark .navbar-gitlab .user-list-more
+    .navbar-sub-nav > li > .btn-link:hover,
+body.ui_dark .navbar-gitlab .navbar-sub-nav > li > a:focus,
+body.ui_dark .navbar-gitlab .navbar-nav > li > a:hover,
+body.ui_dark .navbar-gitlab .participants-more
+    .navbar-nav > li > .btn-link:hover,
+body.ui_dark .navbar-gitlab .user-list-more
+    .navbar-nav > li > .btn-link:hover,
+body.ui_dark .navbar-gitlab .navbar-nav > li > a:focus,
+.participants-more body.ui_dark .navbar-gitlab
+    .navbar-sub-nav > li > .btn-link:hover,
+.participants-more body.ui_dark .navbar-gitlab
+    .navbar-nav > li > .btn-link:hover,
+.user-list-more body.ui_dark .navbar-gitlab
+    .navbar-sub-nav > li > .btn-link:hover,
+.user-list-more body.ui_dark .navbar-gitlab
+    .navbar-nav > li > .btn-link:hover,
+.form-control, .search form,
+.pagination > li > a, .pagination > li > span,
+.text-expander,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items,
+.select2-container .select2-choice,
+.select2-container.select2-drop-above .select2-choice,
+.select2-drop, .select2-drop.select2-drop-above,
+.select2-search input,
+.select2-container-multi .select2-choices, // TODO settings -> members
+.info-well .label.label-gray, .info-well .shortcut-mappings .label-gray.key,
+.shortcut-mappings .info-well .label-gray.key,
+.code.dark .line_holder .diff-line-num.is-over,
+.code.dark .line_holder .diff-line-num.hll.is-over:not(.empty-cell),
+.add-diff-note,
+.tree-holder .tree-table tr.selected td,
+.gitlab-tabs li.active,
+.form-actions,
+.btn.btn-gray:hover, .btn.btn-gray:focus,
+.login-page .new-session-tabs li:not(.active),
+.project-template .template-input-group .input-group-addon,
+.gl-pagination .pagination .separator a,
+.gl-pagination .pagination .separator:hover a,
+body.ui_dark .navbar-gitlab .nav > li.active > a,
+body.ui_dark .navbar-gitlab .nav > li.dropdown.show > a,
+.nav-tabs .nav-link.active, .nav-tabs .nav-item.show .nav-link,
+// here and below are focused input fields, which have blue borders by default
+// I decided a special style was unnecessary,
+// so this style is identical to the ordinary, non-focused state
+.form-control:focus, .common-note-form .md-area.is-focused,
+.search form:focus, .search.search-active form,
+.login-page .form-control:active,
+.login-page .search form:active,
+.search .login-page form:active,
+.login-page .form-control:focus,
+.login-page .common-note-form .md-area.is-focused,
+.common-note-form .login-page .md-area.is-focused,
+.login-page .search form:focus,
+.search .login-page form:focus,
+.login-page .search.search-active form,
+.search.search-active .login-page form,
+.common-note-form .md-area.is-focused .comment-toolbar,
+.common-note-form .md-area.is-focused .nav-links,
+.projects-dropdown-container .project-dropdown-sidebar,
+.dropdown-input-field:focus, .default-dropdown-input:focus {
+    color: $white;
+    background-color: $grey2;
+    border-color: $grey3;
+}
+
+.page-item.disabled .page-link,
+.pagination > .disabled > span, .pagination > .disabled > span:hover,
+.pagination > .disabled > span:focus, .pagination > .disabled > a,
+.pagination > .disabled > a:hover,
+.participants-more .pagination > .disabled > .btn-link:hover,
+.user-list-more .pagination > .disabled > .btn-link:hover,
+.pagination > .disabled > a:focus,
+.gl-pagination .gap, .gl-pagination .gap:hover,
+.form-control[disabled], .search form[disabled], .form-control[readonly],
+.search form[readonly], fieldset[disabled] .form-control,
+fieldset[disabled] .search form, .search fieldset[disabled] form {
+    color: $grey4;
+    background-color: $grey2;
+    border-color: $grey3;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn,
+.dropdown-toggle[disabled], .dropdown-menu-toggle[disabled],
+.btn.disabled:hover, .btn[disabled]:hover, fieldset[disabled] .btn:hover,
+.dropdown-toggle[disabled]:hover, .dropdown-menu-toggle[disabled]:hover {
+    color: $grey4 !important;
+    background-color: $grey2 !important;
+    border-color: $grey3 !important;
+}
+
+.btn:hover, .btn:focus,
+.btn:active, .btn.active,
+.project-repo-buttons .btn:hover, .project-repo-buttons .btn:focus,
+.group-buttons .btn:hover, .group-buttons .btn:focus,
+.btn-missing:hover, .project-stats .nav .btn-missing:hover,
+.btn-missing:active, .project-stats .nav .btn-missing:active,
+.btn-missing:focus, .project-stats .nav .btn-missing:focus,
+.page-item.active .page-link,
+.pagination > li > a:hover,
+.participants-more .pagination > li > .btn-link:hover,
+.user-list-more .pagination > li > .btn-link:hover,
+.pagination > li > a:focus,
+.pagination > li > span:hover,
+.pagination > li > span:focus,
+.pagination > .active > a,
+.pagination > .active > a:hover,
+.participants-more .pagination > .active > .btn-link:hover,
+.user-list-more .pagination > .active > .btn-link:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span,
+.pagination > .active > span:hover,
+.pagination > .active > span:focus,
+.dropdown-menu li a:hover:not(.disable-hover),
+.dropdown-menu li .participants-more .btn-link:hover:not(.disable-hover),
+.participants-more .dropdown-menu li .btn-link:hover:not(.disable-hover),
+.dropdown-menu li .user-list-more .btn-link:hover:not(.disable-hover),
+.user-list-more .dropdown-menu li .btn-link:hover:not(.disable-hover),
+.dropdown-menu li a:active,
+.dropdown-menu li a:focus,
+.dropdown-menu li a.is-focused,
+.dropdown-menu li button:hover:not(.disable-hover),
+.dropdown-menu li button:active,
+.dropdown-menu li button:focus,
+.dropdown-menu li button.is-focused,
+.dropdown-menu li .menu-item:hover:not(.disable-hover),
+.dropdown-menu li .menu-item:active,
+.dropdown-menu li .menu-item:focus,
+.dropdown-menu li .menu-item.is-focused,
+.dropdown-menu-nav li a:hover:not(.disable-hover),
+.dropdown-menu-nav li .participants-more .btn-link:hover:not(.disable-hover),
+.participants-more .dropdown-menu-nav li .btn-link:hover:not(.disable-hover),
+.dropdown-menu-nav li .user-list-more .btn-link:hover:not(.disable-hover),
+.user-list-more .dropdown-menu-nav li .btn-link:hover:not(.disable-hover),
+.dropdown-menu-nav li a:active,
+.dropdown-menu-nav li a:focus,
+.dropdown-menu-nav li a.is-focused,
+.dropdown-menu-nav li button:hover:not(.disable-hover),
+.dropdown-menu-nav li button:active,
+.dropdown-menu-nav li button:focus,
+.dropdown-menu-nav li button.is-focused,
+.dropdown-menu-nav li .menu-item:hover:not(.disable-hover),
+.dropdown-menu-nav li .menu-item:active,
+.dropdown-menu-nav li .menu-item:focus,
+.dropdown-menu-nav li .menu-item.is-focused,
+.text-expander.open, .text-expander:hover,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items
+    a:hover,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items
+    .participants-more .btn-link:hover,
+.sidebar-top-level-items > li.is-showing-fly-out .sidebar-sub-level-items
+    .user-list-more .btn-link:hover,
+.participants-more .sidebar-top-level-items > li.is-showing-fly-out
+    .sidebar-sub-level-items .btn-link:hover,
+.user-list-more .sidebar-top-level-items > li.is-showing-fly-out
+    .sidebar-sub-level-items .btn-link:hover,
+.sidebar-top-level-items > li.is-showing-fly-out
+    .sidebar-sub-level-items a:focus,
+.sidebar-top-level-items > li .badge,
+.input-group .input-group-addon,
+.select2-results .select2-highlighted .select2-result-label {
+    color: $white;
+    background-color: $grey3;
+    border-color: $grey4;
+}
+
+.badge {
+    color: $grey4;
+    background-color: $grey3;
+    border-color: $grey4;
+}
+
+/*============================ BORDER COLOR ONLY ============================*/
+
+.file-holder,
+.table > thead > tr > th,
+.file-holder table > thead > tr > th,
+.wiki table > thead > tr > th,
+.md table > thead > tr > th,
+ul.notes > li .note-body .note-text table > thead > tr > th,
+.table > thead > tr > td,
+.file-holder table > thead > tr > td,
+.wiki table > thead > tr > td,
+.md table > thead > tr > td,
+ul.notes > li .note-body .note-text table > thead > tr > td,
+.table > tbody > tr > th,
+.file-holder table > tbody > tr > th,
+.wiki table > tbody > tr > th,
+.md table > tbody > tr > th,
+ul.notes > li .note-body .note-text table > tbody > tr > th,
+.table > tbody > tr > td,
+.file-holder table > tbody > tr > td,
+.wiki table > tbody > tr > td,
+.md table > tbody > tr > td,
+ul.notes > li .note-body .note-text table > tbody > tr > td,
+.table > tfoot > tr > th,
+.file-holder table > tfoot > tr > th,
+.wiki table > tfoot > tr > th,
+.md table > tfoot > tr > th,
+ul.notes > li .note-body .note-text table > tfoot > tr > th,
+.table > tfoot > tr > td,
+.file-holder table > tfoot > tr > td,
+.wiki table > tfoot > tr > td,
+.md table > tfoot > tr > td,
+ul.notes > li .note-body .note-text table > tfoot > tr > td,
+.projects-list > li,
+.wiki h1, .wiki h2, .wiki h3, .wiki h4, .wiki h5, .wiki h6,
+.md h1, .md h2, .md h3, .md h4, .md h5, .md h6,
+hr, .md hr, .wiki hr,
+blockquote, .md blockquote, .wiki blockquote,
+.project-home-panel, .group-home-panel, .project-stats,
+.navbar-gitlab,
+.breadcrumbs-container,
+.banner-callout.banner-non-empty-state,
+.tree-holder .tree-table tr,
+.nav-links,
+.top-area, .wiki-page-header,
+.user-access-role,
+.gl-pagination,
+ul.content-list > li, .content-block,
+.common-note-form .md-area,
+.comment-toolbar,
+.detail-page-header,
+.settings,
+.event-item,
+.nav-block.activities,
+.top-area, .wiki-page-header,
+.group-list-tree .group-row:first-child,
+.commit-box,
+.info-well .well-segment:not(:last-of-type),
+.diff-file .notes_holder td.notes_content,
+.project-network,
+ul.bordered-list > li, ul.unstyled-list > li,
+.repo-charts .sub-header-block.border-top,
+.group-nav-container .nav-controls,
+.group-list-tree .group-row-contents,
+.gitlab-tab-content,
+.gitlab-tabs li:not(:last-child),
+.project-template .template-option:not(:first-child),
+.project-visibility-setting, .project-feature-settings,
+.diff-files-changed.is-stuck {
+    color: $white;
+    border-color: $grey2;
+}
+
+body.ui_dark .nav-links li.active a,
+.nav-links li a:hover, .nav-links li .participants-more .btn-link:hover,
+.participants-more .nav-links li .btn-link:hover,
+.nav-links li .user-list-more .btn-link:hover,
+.user-list-more .nav-links li .btn-link:hover,
+.nav-links li a:active, .nav-links li a:focus,
+.panel-default,
+.issue-count-badge-count,
+.modal-footer {
+    color: $white;
+    border-color: $grey3;
+}
+
+.avatar-container,
+.search form:hover, .file-finder-input:hover, .issuable-search-form:hover,
+.search-text-input:hover, .form-control:hover, .filtered-search-box:hover,
+.dropdown-toggle:hover, .dropdown-menu-toggle:hover,
+.open .dropdown-toggle, .open .dropdown-menu-toggle,
+.dropdown-toggle:focus:active, .dropdown-menu-toggle:focus:active,
+.select2-container .select2-choice:hover,
+.select2-container.select2-drop-above .select2-choice:hover,
+.dropdown-divider, .divider {
+    color: $white;
+    border-color: $grey4;
+}
+
+/*============================= MISC GRAYSCALE ==============================*/
+
+.project-repo-buttons .count-with-arrow .arrow::before,
+.group-buttons .count-with-arrow .arrow::before {
+    border-right-color: $grey3;
+}
+.project-repo-buttons .count-with-arrow .arrow::after,
+.group-buttons .count-with-arrow .arrow::after {
+    border-right-color: $grey2;
+}
+
+.dropdown-menu .divider, .dropdown-menu-nav .divider {
+    background-color: $grey4;
+}
+
+.avatar {
+    color: $white !important;
+    background: $grey3 !important;
+}
+
+.md blockquote p, .wiki blockquote p {
+    color: $white !important;
+}
+
+body.navless {
+    background-color: $black !important;
+}
+
+.login-page .login-box, .login-page .omniauth-container {
+    border: 1px solid $grey2;
+}
+
+.dropdown-loading {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+/*================================= COLORS ==================================*/
+
+.cgreen {
+    color: $green;
+}
+
+.label-success,
+.btn.btn-success, .btn.btn-new,
+.btn.btn-create, .btn.comment-btn,
+.btn.btn-save,
+.btn.btn-inverted.btn-success, .btn.btn-inverted.btn-new,
+.btn.btn-inverted.btn-create, .btn.btn-inverted.comment-btn,
+.btn.btn-inverted.btn-save {
+    color: mix($green, $white, 50%);
+    background-color: mix($green, $black, 50%);
+    border-color: $green;
+}
+
+.btn.btn-success:hover, .btn.btn-success:focus,
+.btn.btn-success:active,
+.btn.btn-new:hover, .btn.btn-new:focus,
+.btn.btn-new:active,
+.btn.btn-create:hover, .btn.btn-create:focus,
+.btn.btn-create:active,
+.btn.comment-btn:hover, .btn.comment-btn:focus,
+.btn.comment-btn:active,
+.btn.btn-save:hover, .btn.btn-save:focus,
+.btn.btn-save:active,
+.btn.btn-inverted.btn-success:hover, .btn.btn-inverted.btn-success:focus,
+.btn.btn-inverted.btn-success:active,
+.btn.btn-inverted.btn-new:hover, .btn.btn-inverted.btn-new:focus,
+.btn.btn-inverted.btn-new:active,
+.btn.btn-inverted.btn-create:hover, .btn.btn-inverted.btn-create:focus,
+.btn.btn-inverted.btn-create:active,
+.btn.btn-inverted.comment-btn:hover, .btn.btn-inverted.comment-btn:focus,
+.btn.btn-inverted.comment-btn:active,
+.btn.btn-inverted.btn-save:hover, .btn.btn-inverted.btn-save:focus,
+.btn.btn-inverted.btn-save:active {
+    color: mix($green, $black, 50%);
+    background-color: mix($green, $white, 50%);
+    border-color: $green;
+}
+
+.cred {
+    color: $red;
+}
+
+.btn.btn-danger, .btn.btn-remove, .btn.btn-red,
+.btn.btn-close, .btn.btn-close-color,
+.btn.btn-inverted.btn-remove {
+    color: mix($red, $white, 50%);
+    background-color: mix($red, $black, 50%);
+    border-color: $red;
+}
+
+.btn.btn-danger:hover, .btn.btn-danger:focus,
+.btn.btn-remove:hover, .btn.btn-remove:focus,
+.btn.btn-red:hover, .btn.btn-red:focus,
+.btn.btn-close:hover, .btn.btn-close:focus, .btn.btn-close:active,
+.btn.btn-close-color:hover, .btn.btn-close-color:focus,
+.btn.btn-close-color:active,
+.btn.btn-inverted.btn-remove:hover, .btn.btn-inverted.btn-remove:focus {
+    color: mix($red, $black, 50%);
+    background-color: mix($red, $white, 50%);
+    border-color: $red;
+}
+
+.label-info, .label-primary,
+.btn.btn-info, .btn.btn-primary, .btn.btn-register,
+.bs-callout-info,
+.alert-info, .flash-container .flash-notice {
+    color: mix($blue, $white, 50%);
+    background-color: mix($blue, $black, 50%);
+    border-color: $blue;
+}
+
+.btn.btn-info:hover, .btn.btn-info:focus,
+.btn.btn-primary:hover, .btn.btn-primary:focus,
+.btn.btn-register:hover, .btn.btn-register:focus {
+    color: mix($blue, $black, 50%);
+    background-color: mix($blue, $white, 50%);
+    border-color: $blue;
+}
+
+.warning-title {
+    color: $yellow;
+}
+
+// NOTE this looks a little strange - tweak?
+.settings-message,
+.btn.btn-warning {
+    color: mix($yellow, $black, 50%);
+    background-color: mix($yellow, $white, 50%);
+    border-color: $yellow;
+}
+
+.btn.btn-warning:hover, .btn.btn-warning:focus {
+    color: mix($yellow, $white, 50%);
+    background-color: mix($yellow, $black, 50%);
+    border-color: $yellow;
+}
+
+a, .wiki a, .md a, a:hover, .participants-more .btn-link:hover,
+.account-btn-link, .profile-settings-sidebar a, .settings-sidebar a,
+.user-list-more .btn-link:hover, a:focus,
+.branch-commit .commit-sha, .branch-commit .gfm-commit,
+.branch-commit .gfm-commit_range,
+.diff-stats-summary-toggler, .diff-stats-summary-toggler:hover,
+.diff-stats-summary-toggler:focus,
+.markdown-selector {
+    color: $blue;
+}
+code {
+    color: mix($green, $white, 50%);
+    background-color: $grey1;
+}
+div.js-autodevops-banner > div.banner-graphic,
+div.landing > div.svg-container,
+.ci-status-link, .ci-status-icon,
+// e.g. image when no merge requests / todos exist
+.svg-content svg, .svg-content img {
+    filter: hue-rotate(180deg) invert(85%);
+}
+
+/*=========================== SYNTAX HIGHLIGHTING ===========================*/
+
+.code.dark, .code.dark pre.code, .code.dark .line_holder .line_content,
+.ace-tm {
+    color: $white;
+    background-color: $black;
+}
+
+.code.dark .line-numbers, .code.dark .diff-line-num,
+.ace-tm .ace_gutter, .file-editor .ace_gutter-cell {
+    color: $white;
+    background-color: $grey1;
+}
+
+.code.dark .line_holder .diff-line-num.old,
+.code.dark .line_holder .line_content.old {
+    background-color: mix($red, $black, 25%);
+}
+.code.dark .line_holder .diff-line-num.old.line_content span.idiff,
+.code.dark .line_holder .line_content.old.line_content span.idiff {
+    background-color: mix($red, $black, 50%);
+}
+
+.code.dark .line_holder .diff-line-num.new,
+.code.dark .line_holder .line_content.new {
+    background-color: mix($green, $black, 25%);
+}
+.code.dark .line_holder .diff-line-num.new.line_content span.idiff,
+.code.dark .line_holder .line_content.new.line_content span.idiff {
+    background-color: mix($green, $black, 50%);
+}
+
+// .code.dark .hll { background-color: #373b41 }
+// .code.dark .c { color: #969896 }
+// .code.dark .err { color: #c66 }
+// .code.dark .k { color: #b294bb }
+// .code.dark .l { color: #de935f }
+// .code.dark .n { color: #c5c8c6 }
+// .code.dark .o { color: #8abeb7 }
+// .code.dark .p { color: #c5c8c6 }
+// .code.dark .cm { color: #969896 }
+// .code.dark .cp { color: #969896 }
+// .code.dark .c1 { color: #969896 }
+// .code.dark .cs { color: #969896 }
+// .code.dark .gd { color: #c66 }
+// .code.dark .ge { font-style:italic }
+// .code.dark .gh { color: #c5c8c6; font-weight:600 }
+// .code.dark .gi { color: #b5bd68 }
+// .code.dark .gp { color: #969896; font-weight:600 }
+// .code.dark .gs { font-weight:600 }
+// .code.dark .gu { color: #8abeb7; font-weight:600 }
+// .code.dark .kc { color: #b294bb }
+// .code.dark .kd { color: #b294bb }
+// .code.dark .kn { color: #8abeb7 }
+// .code.dark .kp { color: #b294bb }
+// .code.dark .kr { color: #b294bb }
+// .code.dark .kt { color: #f0c674 }
+// .code.dark .ld { color: #b5bd68 }
+// .code.dark .m { color: #de935f }
+// .code.dark .s { color: #b5bd68 }
+// .code.dark .na { color: #81a2be }
+// .code.dark .nb { color: #c5c8c6 }
+// .code.dark .nc { color: #f0c674 }
+// .code.dark .no { color: #c66 }
+// .code.dark .nd { color: #8abeb7 }
+// .code.dark .ni { color: #c5c8c6 }
+// .code.dark .ne { color: #c66 }
+// .code.dark .nf { color: #81a2be }
+// .code.dark .nl { color: #c5c8c6 }
+// .code.dark .nn { color: #f0c674 }
+// .code.dark .nx { color: #81a2be }
+// .code.dark .py { color: #c5c8c6 }
+// .code.dark .nt { color: #8abeb7 }
+// .code.dark .nv { color: #c66 }
+// .code.dark .ow { color: #8abeb7 }
+// .code.dark .w { color: #c5c8c6 }
+// .code.dark .mf { color: #de935f }
+// .code.dark .mh { color: #de935f }
+// .code.dark .mi { color: #de935f }
+// .code.dark .mo { color: #de935f }
+// .code.dark .sb { color: #b5bd68 }
+// .code.dark .sc { color: #c5c8c6 }
+// .code.dark .sd { color: #969896 }
+// .code.dark .s2 { color: #b5bd68 }
+// .code.dark .se { color: #de935f }
+// .code.dark .sh { color: #b5bd68 }
+// .code.dark .si { color: #de935f }
+// .code.dark .sx { color: #b5bd68 }
+// .code.dark .sr { color: #b5bd68 }
+// .code.dark .s1 { color: #b5bd68 }
+// .code.dark .ss { color: #b5bd68 }
+// .code.dark .bp { color: #c5c8c6 }
+// .code.dark .vc { color: #c66 }
+// .code.dark .vg { color: #c66 }
+// .code.dark .vi { color: #c66 }
+// .code.dark .il { color: #de935f }
+
+}
