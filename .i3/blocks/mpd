@@ -14,7 +14,7 @@ then
     echo -n "<span weight='bold' color='$color'>"
     if [ ${#line1} -gt 20 ]
     then
-        offset=$[$(date +%s) % (${#line1} + 3)]
+        offset=$[3*$(date +%s) % (${#line1} + 3)]
         line1="$line1   $line1"
         echo -n "${line1:$offset:20}"
     else
