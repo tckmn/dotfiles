@@ -18,6 +18,7 @@ Plug 'chriskempson/base16-vim'
 " autocompletion
 Plug 'tpope/vim-endwise'
 Plug 'KeyboardFire/vim-minisnip'
+Plug 'KeyboardFire/vim-xsami'
 " integration
 Plug 'tpope/vim-fugitive'
 call plug#end()
@@ -28,8 +29,6 @@ let mapleader=' '
 let maplocalleader=' '
 set mouse=
 set encoding=utf-8
-
-au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
 
 " plugins
 " Vim-LaTeX
@@ -46,6 +45,8 @@ nnoremap gA ga
 let g:html_indent_inctags = "html,body,head,tbody"
 " C++
 set cinoptions=l1
+" lilypond
+au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
 
 " base16 colors
 set background=dark
@@ -77,25 +78,17 @@ xnoremap <expr> gk mode() ==# 'v' ? 'k'  : 'gk'
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
-if has('nvim')
-    tnoremap <Nul> <C-\><C-n>
-endif
+if has('nvim') | tnoremap <Esc> <C-\><C-n> | endif
 
 " show invisible chars
 set list listchars=tab:▸…,eol:¬,trail:•
 
-" fix brain-damaged default behavior
-set hidden
+" fix bad default behavior
 nnoremap Y y$
-
-" case-insensitive pathname tab completion
-set wildignorecase
-
-" don't double-space after punctuation
-set nojoinspaces
-
-" persistent undo
-set undofile
+set hidden          " allow navigating away from modified buffers
+set wildignorecase  " case-insensitive pathname tab completion
+set nojoinspaces    " don't double-space after punctuation
+set undofile        " persistent undo
 
 " leader mappings
 nnoremap <Leader>a :A<cr><C-g>
@@ -113,14 +106,9 @@ else
 endif
 
 " annoyances
-imap <Nul> <Esc><Leader>
-if exists("&esckeys")
-    set noesckeys
-endif
+if exists("&esckeys") | set noesckeys | endif
 set shortmess+=I
 let g:netrw_dirhistmax=0
 
 " disable annoying gvim stuff, in the unusual event that I might use it
-if has('gui_running')
-    set toolbar= guioptions=
-endif
+if has('gui_running') | set toolbar= guioptions= | endif
