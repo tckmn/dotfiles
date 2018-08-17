@@ -1,4 +1,5 @@
 {
+"H-PLD": "{MODE:SET_SPACE:-}",
 "HR*UR": "{^}{>}",
 "HR-PLD": "{MODE:LOWER}",
 "HRUR": "{>}",
