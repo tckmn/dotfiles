@@ -101,6 +101,7 @@ alias sudo='sudo '
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
 alias p='ps ax | grep plover\\.main | awk "{print \$1}" | xargs kill; plover & disown'
+alias gcal='gcalcli calw'
 
 да(){yes ${@:-д}}
 
