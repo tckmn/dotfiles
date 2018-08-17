@@ -13,6 +13,7 @@ set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
 floating_modifier $mod     # mouse+$mod for manipulating floating windows
 focus_follows_mouse no     # this is annoying
 force_focus_wrapping yes   # always wrap focus instead of switching containers
+mouse_warping none
 
 ###############################################################################
 #                                 KEY BINDINGS                                #

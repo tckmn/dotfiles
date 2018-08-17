@@ -6,6 +6,7 @@ set $mvppt 2ppt
 floating_modifier $mod
 focus_follows_mouse no
 force_focus_wrapping yes
+mouse_warping none
 bindsym $mod+Return exec rofi -show run
 bindsym $mod+Shift+Return exec rofi -show window
 bindsym $mod+apostrophe exec i3-sensible-terminal
