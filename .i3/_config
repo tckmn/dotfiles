@@ -180,7 +180,8 @@ mode $screenshot {
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & \
     echo $! > /tmp/feh-pid; mode $screenshot
 
-set $games "games » [n]ethack [d]css"
+set $games "games » [n]ethack [d]css [a]tc"
+set $atc "atc » [decK2AOTabh34nt]"
 mode $games {
     bindsym n exec urxvt \
         -name FLOAT \
@@ -192,7 +193,26 @@ mode $games {
         -name FLOAT \
         -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; \
         mode "default"
-    bindsym {Escape,space,q,$mod+g} mode "default"
+    bindsym a mode $atc
+    bindsym {Escape,space,q,BackSpace,$mod+g} mode "default"
+}
+mode $atc {
+    bindsym d       exec urxvt -name FLOAT -e atcrec;             mode "default"
+    bindsym e       exec urxvt -name FLOAT -e atcrec easy;        mode "default"
+    bindsym c       exec urxvt -name FLOAT -e atcrec crossover;   mode "default"
+    bindsym Shift+k exec urxvt -name FLOAT -e atcrec Killer;      mode "default"
+    bindsym 2       exec urxvt -name FLOAT -e atcrec game_2;      mode "default"
+    bindsym Shift+a exec urxvt -name FLOAT -e atcrec Atlantis;    mode "default"
+    bindsym Shift+o exec urxvt -name FLOAT -e atcrec OHare;       mode "default"
+    bindsym Shift+t exec urxvt -name FLOAT -e atcrec Tic-Tac-Toe; mode "default"
+    bindsym a       exec urxvt -name FLOAT -e atcrec airports;    mode "default"
+    bindsym b       exec urxvt -name FLOAT -e atcrec box;         mode "default"
+    bindsym h       exec urxvt -name FLOAT -e atcrec crosshatch;  mode "default"
+    bindsym 3       exec urxvt -name FLOAT -e atcrec game_3;      mode "default"
+    bindsym 4       exec urxvt -name FLOAT -e atcrec game_4;      mode "default"
+    bindsym n       exec urxvt -name FLOAT -e atcrec novice;      mode "default"
+    bindsym t       exec urxvt -name FLOAT -e atcrec two-corners; mode "default"
+    bindsym {Escape,space,q,BackSpace} mode $games
 }
 bindsym $mod+g mode $games
 
