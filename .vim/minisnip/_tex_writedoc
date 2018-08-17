@@ -1,0 +1,11 @@
+\documentclass{article}
+\usepackage{microtype}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parskip}{0.5em}
+
+\begin{document}
+
+{{++}}
+
+\end{document}
