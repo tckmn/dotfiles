@@ -122,7 +122,7 @@
 <Multi_key> <p> <exclam>         	: "¶"   paragraph # PILCROW SIGN
 <Multi_key> <P> <exclam>         	: "¶"   paragraph # PILCROW SIGN
 <Multi_key> <plus> <minus>       	: "±"   plusminus # PLUS-MINUS SIGN
-<Multi_key> <minus> <plus> 		: "±"   plusminus # PLUS-MINUS SIGN
+#<Multi_key> <minus> <plus> 		: "±"   plusminus # PLUS-MINUS SIGN
 <Multi_key> <question> <question> 	: "¿"   questiondown # INVERTED QUESTION MARK
 <Multi_key> <s> <s>              	: "ß"   ssharp # LATIN SMALL LETTER SHARP S
 <Multi_key> <S> <S>              	: "ẞ"   U1e9e # LATIN CAPITAL LETTER SHARP S
@@ -6144,3 +6144,8 @@
 <Multi_key> <s> <j> : "ɕ"
 <Multi_key> <z> <j> : "ʑ"
 <Multi_key> <O> <O> : "ꙮ"
+<Multi_key> <question> <period> : "ʔ"
+<Multi_key> <period> <question> : "ʔ"
+<Multi_key> <question> <greater> : "ʔ"
+<Multi_key> <greater> <question> : "ʔ"
+<Multi_key> <minus> <plus> : "∓"
