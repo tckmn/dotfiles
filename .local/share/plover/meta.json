@@ -17,11 +17,12 @@
 "S-PD": "{*?}",
 "S-PLD": "{MODE:SNAKE}",
 "SKWR": "{PLOVER:TOGGLE}",
+"SP": "{^^}",
+"SP*": "{*!}",
+"SP-D": "{*!}",
+"SP-PLD": "{MODE:SET_SPACE:}",
 "STPH-PLD": "{MODE:SNAKE}",
 "T*T": "{*}",
 "T-PLD": "{MODE:TITLE}",
-"THR-PLD": "{MODE:TITLE}",
-"TK*LS": "{*!}",
-"TK-LSD": "{*!}",
-"TK-PLD": "{MODE:SET_SPACE:}"
+"THR-PLD": "{MODE:TITLE}"
 }

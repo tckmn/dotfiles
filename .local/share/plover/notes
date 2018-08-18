@@ -24,7 +24,7 @@ modifiers:
 LUR         = lower
 KPA         = Upper
 KPLA        = CAPITALIZED
-D-LS        = deletespace
+SP          = deletespace
 S-P         = force space
 all modifiers take * to remove space (except S-P), -D to apply to previous word
 
