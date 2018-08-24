@@ -1,6 +1,7 @@
 {
 "H-PLD": "{MODE:SET_SPACE:-}",
 "HR*UR": "{^}{>}",
+"HR*BG": "{PLOVER:LOOKUP}",
 "HR-PLD": "{MODE:LOWER}",
 "HRUR": "{>}",
 "HRURD": "{*>}",
