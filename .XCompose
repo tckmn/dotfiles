@@ -6149,3 +6149,4 @@
 <Multi_key> <question> <greater> : "ʔ"
 <Multi_key> <greater> <question> : "ʔ"
 <Multi_key> <minus> <plus> : "∓"
+<Multi_key> <asciicircum> <T> : "ᵀ"
