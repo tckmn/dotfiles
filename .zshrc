@@ -57,8 +57,8 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # urxvt title
-function title() { printf '\33]2;%s\007' "$1" }
-function t {
+title() { printf '\33]2;%s\007' "$1" }
+t() {
     if [ -z "$@" ]
     then
         TITLE_PREFIX=
@@ -66,10 +66,10 @@ function t {
         TITLE_PREFIX="{{$@}} "
     fi
 }
-function precmd {
+precmd() {
     title "${TITLE_PREFIX}zsh [$(pwd)]"
 }
-function preexec {
+preexec() {
     title "$TITLE_PREFIX${1//
 /} [$(pwd)]"
 }
@@ -81,16 +81,20 @@ alias xcowsay="xcowsay -f monospace"
 
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 
-function xb() {
+xb() {
     [ -n "$1" ] && xbacklight -set "$1" || xbacklight
 }
 
 alias v='nvim'
-function xv() {
+xv() {
     [ -e "$1" ] && echo Warning: file exists && sleep 1
     touch "$1" && chmod +x "$1" && v "$1"
 }
 alias vx=xv
+
+comms() {
+    comm "$1" <(sort "$2") <(sort "$3")
+}
 
 alias sc=systemctl
 alias scu='systemctl --user'
@@ -100,7 +104,6 @@ alias sudo='sudo '
 
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
-alias p='ps ax | grep plover\\.main | awk "{print \$1}" | xargs kill; plover & disown'
 alias gcal='gcalcli calw'
 
 да(){yes ${@:-д}}
