@@ -89,6 +89,7 @@ set hidden          " allow navigating away from modified buffers
 set wildignorecase  " case-insensitive pathname tab completion
 set nojoinspaces    " don't double-space after punctuation
 set undofile        " persistent undo
+set nostartofline   " non-stupid behavior for e.g. <C-v>G
 
 " leader mappings
 nnoremap <Leader>a :A<cr><C-g>
