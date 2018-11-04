@@ -1,0 +1,81 @@
+* { box-shadow: none !important; }
+
+.page--game, .page--vse {
+  background-color: #181818;
+  border-color: #282828;
+  color: #d8d8d8;
+}
+
+.region--aside .element, .region--primary .element,
+.region--game .tabs .tab__item.is-selected,
+.page--game .content-region .element--default,
+.region--lightbox,
+.mini-quote.lightbox__body .element .header--secondary .title,
+.lightbox .lightbox__header, .lightbox .lightbox__footer,
+.chart__figure {
+  background-color: #282828;
+  border-color: #383838;
+  color: #d8d8d8;
+}
+
+.input__results, .input__results .table__row, .input__results > .input__label,
+.row-hover .table__row:hover .table__cell,
+.mini-quote.lightbox__footer,
+.toggle__value,
+.range__container,
+.radio__item .label,
+.lightbox--trade .value-pairs .table__cell:last-child,
+.lightbox--trade .value-pairs .table__cell:last-child.order-total,
+.lightbox--trade .lightbox__footer .btn--outline {
+  background-color: #383838;
+  border-color: #585858;
+  color: #d8d8d8;
+}
+
+.list--allocation .list__item.unchanged:last-of-type {
+  background-color: #383838 !important;
+}
+
+.table__heading, .table__row, .pagination,
+.element--watchlist .header--secondary,
+.element--profile .kv__item::before,
+.mini-quote.lightbox__body .element--intraday,
+.add-top-border .table__row:first-child,
+.lightbox--trade .lightbox__body .element--company,
+.collection {
+  border-color: #383838;
+}
+
+.overlay { background: rgba(0,0,0,0.8); }
+.mini-quote.lightbox__body .element .header--secondary { background: none; }
+
+.kv__value, .input__value,
+.table__cell .link,
+.page--game .content-region .element--default .link,
+.dropdown,
+.table--secondary .table__heading .primary,
+.tabs .tab__item,
+.table__details,
+.intraday__price .value, .company__market,
+.ignore-color.negative, .ignore-color .negative,
+.ignore-color.neutral, .ignore-color .neutral,
+.ignore-color.positive, .ignore-color .positive,
+.negative .ignore-color, .neutral .ignore-color, .positive .ignore-color,
+.lightbox--trade .lightbox__body .share-amount .input--text {
+  color: #d8d8d8;
+}
+
+.kv__label, .input__label, .input__results > .input__label,
+.table--secondary .table__heading .secondary,
+.pagination .text {
+  color: #888888;
+}
+
+rect.highcharts-background { fill: #282828; }
+g.highcharts-grid path { stroke: #585858; }
+mw-chart svg > rect:nth-of-type(2) { fill: #282828; }
+mw-chart svg > path[fill="#F8F8F8"] { fill: #383838; }
+
+.input--radio[disabled] + .label, .input--radio[disabled] + .tab__item { filter: brightness(60%); }
+.container--game > .content-region.region--aside { opacity: 0; }
+.feed.is-loading::before { opacity: 0; }
