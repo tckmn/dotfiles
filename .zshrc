@@ -11,10 +11,7 @@ WORDCHARS=${WORDCHARS/\/}
 
 # colors!
 eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
-for cmd in ls dir vdir grep fgrep egrep
-do
-    alias $cmd="$cmd --color=auto"
-done
+for cmd in ls dir vdir grep fgrep egrep; do alias $cmd="$cmd --color=auto"; done
 
 # use modern completion system
 autoload -Uz compinit
@@ -58,6 +55,9 @@ alias l='ls -CF'
 
 # urxvt title
 title() { printf '\33]2;%s\007' "$1" }
+precmd() { title "${TITLE_PREFIX}zsh [$(pwd)]" }
+preexec() { title "$TITLE_PREFIX${1//
+/} [$(pwd)]" }
 t() {
     if [ -z "$@" ]
     then
@@ -66,24 +66,14 @@ t() {
         TITLE_PREFIX="{{$@}} "
     fi
 }
-precmd() {
-    title "${TITLE_PREFIX}zsh [$(pwd)]"
-}
-preexec() {
-    title "$TITLE_PREFIX${1//
-/} [$(pwd)]"
-}
 
 # aliases / functions
-
-alias cmatrix="cmatrix -b"
-alias xcowsay="xcowsay -f monospace"
-
-alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
-
-xb() {
-    [ -n "$1" ] && xbacklight -set "$1" || xbacklight
-}
+alias sudo='sudo '
+alias sc=systemctl
+alias scu='systemctl --user'
+alias cku=checkupdates
+xb() { [ -n "$1" ] && xbacklight -set "$1" || xbacklight }
+comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
 alias v='nvim'
 xv() {
@@ -92,20 +82,12 @@ xv() {
 }
 alias vx=xv
 
-comms() {
-    comm "$1" <(sort "$2") <(sort "$3")
-}
-
-alias sc=systemctl
-alias scu='systemctl --user'
-alias cku=checkupdates
-
-alias sudo='sudo '
-
+alias cmatrix="cmatrix -b"
+alias xcowsay="xcowsay -f monospace"
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
 alias gcal='gcalcli calw'
-
+alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 да(){yes ${@:-д}}
 
 un() {
@@ -140,6 +122,7 @@ setopt histignorespace
 # prompts
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
+# ssh-agent
 if [[ "$USERNAME" =~ ^llama$ ]] && which ssh-agent >/dev/null
 then
     if pgrep -u $UID ssh-agent >/dev/null
@@ -153,10 +136,7 @@ then
     fi
 fi
 
-if [ -f ~/.shemicolon/shemicolon.zsh ]
-then
-    source ~/.shemicolon/shemicolon.zsh
-fi
+if [ -f ~/.shemicolon/shemicolon.zsh ]; then source ~/.shemicolon/shemicolon.zsh; fi
 
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 fancy-ctrl-z() {
