@@ -1,26 +1,22 @@
 # identify ourselves
 export TERM=screen-256color
 
-# keep lots of history within the shell and save it to ~/misc/ZSH_HISTORY
+# history
 HISTSIZE=10000000
 SAVEHIST=10000000
 HISTFILE=~/.zsh_history
 
 # sane alt+f / alt+b / ctrl+w behavior
+bindkey -e
 WORDCHARS=${WORDCHARS/\/}
 
-# colors!
+# colors
 eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
-for cmd in ls dir vdir grep fgrep egrep; do alias $cmd="$cmd --color=auto"; done
+for cmd in ls {,v}dir {,f,e}grep; do alias $cmd="$cmd --color=auto"; done
 
-# use modern completion system
+# completion
 autoload -Uz compinit
 compinit
-
-# emacs mode
-bindkey -e
-
-# some default completion magic
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
 zstyle ':completion:*' format 'Completing %d'
@@ -34,11 +30,10 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-
-# completion for the `kill' command
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
+# don't suggest directories on ./<tab>
 # http://stackoverflow.com/a/27643846/1223693
 zstyle -e ':completion::complete:-command-::executables' ignored-patterns '
     [[ "$PREFIX" == ./* ]] && {
@@ -47,11 +42,6 @@ zstyle -e ':completion::complete:-command-::executables' ignored-patterns '
         reply=(${(j:|:)tmp})
     }
 '
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # urxvt title
 title() { printf '\33]2;%s\007' "$1" }
@@ -72,6 +62,13 @@ alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
 alias cku=checkupdates
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
+alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
+alias lsc='printf "%s\n" "${(k)commands[@]}" | sort'
+alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
 xb() { [ -n "$1" ] && xbacklight -set "$1" || xbacklight }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
@@ -119,7 +116,7 @@ setopt autocd
 # provide a way to run something without adding it to history
 setopt histignorespace
 
-# prompts
+# prompt
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
 # ssh-agent
