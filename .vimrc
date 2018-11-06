@@ -53,7 +53,7 @@ set background=dark
 colorscheme base16-default-dark
 
 " indentation
-set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
+set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent shiftround
 
 " show more information
 set showmode showcmd ruler relativenumber scrolloff=3
