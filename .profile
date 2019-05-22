@@ -1,4 +1,4 @@
-for pathdir in "$HOME/.gem/ruby/2.5.0/bin" "$HOME/bin"
+for pathdir in "$HOME/.gem/ruby/2.6.0/bin" "$HOME/bin"
 do
     if [ -d "$pathdir" ]
     then
