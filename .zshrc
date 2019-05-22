@@ -57,7 +57,7 @@ t() {
     fi
 }
 
-# aliases / functions
+# aliases / functions for builtins / system tools
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
@@ -72,6 +72,7 @@ alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
 xb() { [ -n "$1" ] && xbacklight -set "$1" || xbacklight }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
+# vim aliases
 alias v='nvim'
 xv() {
     [ -e "$1" ] && echo Warning: file exists && sleep 1
@@ -79,14 +80,26 @@ xv() {
 }
 alias vx=xv
 
+# user command aliases
 alias cmatrix="cmatrix -b"
 alias xcowsay="xcowsay -f monospace"
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias dip='code/py/dipperino/dipperino.py'
-alias gcal='gcalcli calw'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
+alias qmv='qmv -fdo'
+alias qcp='qcp -fdo'
+alias mutta='mutt -F .mutt/kbd_muttrc'
+alias muttb='mutt -F .mutt/mit_muttrc'
+alias muttc='mutt -F .mutt/tck_muttrc'
 да(){yes ${@:-д}}
+dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd '' }
+gcal() { gcalcli calw ${@:-4} }
 
+# dumb stuff
+alias es='zathura ~/doc/dict/spanish.pdf'
+alias ru='zathura ~/doc/dict/russian.pdf'
+
+# usaco
 un() {
     mkdir $1
     cp ~/misc/usacotemplate.cpp $1/$1.cpp
@@ -144,3 +157,11 @@ fancy-ctrl-z() {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+# arduino exports
+export ARDUINO_DIR=/usr/share/arduino
+export ARDMK_DIR=/usr/share/arduino
+export AVR_TOOLS_DIR=/
+
+# gpg/git exports
+export GPG_TTY=$(tty)
