@@ -97,6 +97,12 @@ nnoremap <Leader>m :make<cr>
 nnoremap <Leader>s :w<cr>
 nnoremap <Leader>y :%y+<cr>
 nnoremap <Leader>z :up<cr><C-z>
+nnoremap <silent> <Leader>d :call DTS()<cr>
+function! DTS()
+    let l:v = winsaveview()
+    keeppatterns %s/\s*$
+    call winrestview(l:v)
+endfunction
 
 " title (urxvt/gvim)
 set title
