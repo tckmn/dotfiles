@@ -1,0 +1,19 @@
+[database]
+path=/home/llama/.mail/tockmanmit
+
+[user]
+name=Andy Tockman
+primary_email=andy@tck.mn
+
+[new]
+tags=unread;inbox;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg
