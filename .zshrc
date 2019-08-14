@@ -147,6 +147,18 @@ then
 fi
 
 if [ -f ~/.shemicolon/shemicolon.zsh ]; then source ~/.shemicolon/shemicolon.zsh; fi
+# if pgrep -u $UID frinkserver >/dev/null; then :; else ~/.frinkserver/frinkserver & disown; fi
+
+command_not_found_handler() {
+    if [[ "$1" =~ ^[0-9] ]]
+    then
+        echo whee
+        return 0
+    fi
+
+    printf >&2 "zsh: command not found: %s\n" "$1"
+    return 127
+}
 
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 fancy-ctrl-z() {

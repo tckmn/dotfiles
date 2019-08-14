@@ -6153,4 +6153,7 @@
 <Multi_key> <p> <d> : "∂"
 <Multi_key> <d> <e> <r> : "∂"
 
+<dead_grave> <dead_grave> : "̀"   U0300      # COMBINING GRAVE ACCENT
 <dead_acute> <dead_acute> : "́"   U0301      # COMBINING ACUTE ACCENT
+<dead_circumflex> <dead_circumflex>      : "̂"   U0302               # COMBINING CIRCUMFLEX ACCENT
+<dead_caron> <dead_caron> 	      : "̌"   U030C               # COMBINING CARON
