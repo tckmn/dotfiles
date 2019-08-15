@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+border="$(i3-msg -t get_tree | jq -r '..|objects|select(.focused).border')"
+if [ "$border" = normal ]
+then
+    i3-msg border 1pixel
+elif [ "$border" = pixel ]
+then
+    i3-msg border normal 0
+else
+    # ???
+    exit 1
+fi

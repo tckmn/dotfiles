@@ -1,5 +1,0 @@
-i3-msg 'workspace 10; append_layout /home/llama/.i3/slow.json'
-urxvt -name mutta -e mutt -F .mutt/kbd_muttrc &
-urxvt -name muttb -e mutt -F .mutt/mit_muttrc &
-urxvt -name muttc -e mutt -F .mutt/tck_muttrc &
-urxvt -name newsboat -e newsboat &

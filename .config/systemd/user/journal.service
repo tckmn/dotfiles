@@ -1,6 +1,0 @@
-[Unit]
-Description=Update journal indicator in status bar
-
-[Service]
-Type=oneshot
-ExecStart=/usr/bin/pkill -RTMIN+13 i3blocks

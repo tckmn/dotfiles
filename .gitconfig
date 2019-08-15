@@ -1,14 +1,14 @@
 [user]
-	name = Andy Tockman
-	email = andy@tck.mn
-	signingkey = andy@tck.mn
+    name = Andy Tockman
+    email = andy@tck.mn
+    signingkey = andy@tck.mn
 [push]
-	default = simple
+    default = simple
 [core]
-	editor = nvim
+    editor = nvim
 [diff]
-	tool = nvimdiff
+    tool = nvimdiff
 [difftool]
-	prompt = false
+    prompt = false
 [difftool "nvimdiff"]
     cmd = nvim -d "$LOCAL" "$REMOTE"

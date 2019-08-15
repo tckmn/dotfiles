@@ -1,9 +1,0 @@
-[Unit]
-Description=Check for pacman and AUR updates hourly
-
-[Timer]
-OnCalendar=hourly
-Persistent=true
-
-[Install]
-WantedBy=timers.target

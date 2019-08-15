@@ -1,6 +1,0 @@
-[Unit]
-Description=Sync emails
-
-[Service]
-Type=oneshot
-ExecStart=/home/llama/bin/ms

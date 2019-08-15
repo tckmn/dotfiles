@@ -1,4 +1,4 @@
-for pathdir in "$HOME/.gem/ruby/2.6.0/bin" "$HOME/bin"
+for pathdir in "$HOME/bin"
 do
     if [ -d "$pathdir" ]
     then
@@ -11,4 +11,4 @@ export VISUAL=/usr/bin/nvim
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
 export PRINTER=home_printer
-export VST_PATH=/home/llama/snd/vst
+export TERMINAL=termite

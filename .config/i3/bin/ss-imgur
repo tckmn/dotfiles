@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+notify-send 'imgur upload finished' "$( \
+    curl -H "Authorization: Client-ID $(cat ~/.config/i3/imgur_authid)" \
+        -F "image=@$(~/.config/i3/bin/ss-last)" https://api.imgur.com/3/image \
+        2>/dev/null | jq -r .data.link | tee >(xsel -ip) >(xsel -ib))"

@@ -1,0 +1,20 @@
+IMAPAccount keyboardfire
+Host mail.gandi.net
+User andy@keyboardfire.com
+PassCmd "head -1 ~/.config/mutt/kbd_private | cut -c 18- | rev | cut -c 2- | rev"
+SSLType IMAPS
+
+IMAPStore keyboardfire-remote
+Account keyboardfire
+
+MaildirStore keyboardfire-local
+Path ~/.mail/keyboardfire/
+Inbox ~/.mail/keyboardfire/Inbox
+SubFolders Verbatim
+
+Channel keyboardfire
+Master :keyboardfire-remote:
+Slave :keyboardfire-local:
+Patterns *
+Create Both
+SyncState *

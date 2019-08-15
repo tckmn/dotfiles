@@ -1,0 +1,19 @@
+[database]
+path=~/.mail/tckmn
+
+[user]
+name=Andy Tockman
+primary_email=tockman@mit.edu
+
+[new]
+tags=unread;inbox;
+ignore=
+
+[search]
+exclude_tags=deleted;spam;
+
+[maildir]
+synchronize_flags=true
+
+[crypto]
+gpg_path=gpg

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+last="$(~/.config/i3/bin/ss-last)"
+mv "$last" "$(dirname "$last")/$(~/.config/i3/bin/vinput .png +'inoremap <space> _')"

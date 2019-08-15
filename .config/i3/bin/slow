@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+cat >/tmp/slow.json <<x
+{"layout": "splitv", "percent": 0.5, "nodes": [
+    {"percent": 0.5, "swallows": [{"class": "^Termite$", "instance": "^mutta$"}]},
+    {"percent": 0.5, "swallows": [{"class": "^Termite$", "instance": "^muttb$"}]}
+]}
+{"layout": "splitv", "percent": 0.5, "nodes": [
+    {"percent": 0.5, "swallows": [{"class": "^Termite$", "instance": "^newsboat$"}]},
+    {"percent": 0.5, "swallows": [{"class": "^Termite$", "instance": "^muttc$"}]}
+]}
+x
+
+i3-msg 'workspace 10; append_layout /tmp/slow.json'
+rm /tmp/slow.json
+
+termite --name=mutta -e 'mutt -F ~/.config/mutt/kbd_muttrc' &
+termite --name=muttb -e 'mutt -F ~/.config/mutt/mit_muttrc' &
+termite --name=muttc -e 'mutt -F ~/.config/mutt/tck_muttrc' &
+termite --name=newsboat -e newsboat &

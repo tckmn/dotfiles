@@ -88,9 +88,9 @@ alias dip='code/py/dipperino/dipperino.py'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias qmv='qmv -fdo'
 alias qcp='qcp -fdo'
-alias mutta='mutt -F .mutt/kbd_muttrc'
-alias muttb='mutt -F .mutt/mit_muttrc'
-alias muttc='mutt -F .mutt/tck_muttrc'
+alias mutta='mutt -F ~/.config/mutt/kbd_muttrc'
+alias muttb='mutt -F ~/.config/mutt/mit_muttrc'
+alias muttc='mutt -F ~/.config/mutt/tck_muttrc'
 да(){yes ${@:-д}}
 dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd '' }
 gcal() { gcalcli calw ${@:-4} }
@@ -133,7 +133,7 @@ setopt histignorespace
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 
 # ssh-agent
-if [[ "$USERNAME" =~ ^llama$ ]] && which ssh-agent >/dev/null
+if [[ "$USERNAME" =~ ^tckmn$ ]] && which ssh-agent >/dev/null
 then
     if pgrep -u $UID ssh-agent >/dev/null
     then

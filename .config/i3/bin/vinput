@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+
+tmpfile="$(mktemp)"
+echo "$1" >"$tmpfile"
+shift
+
+starttime="$(stat -c%y "$tmpfile")"
+
+termite -name VINPUT -e \
+    nvim +'set nonu nornu notitle laststatus=0' \
+         +'startinsert' \
+         +'inoremap <cr> <esc>:wq<cr>' \
+         +'noremap <C-c> <esc>:cq<cr>' \
+         +'inoremap <C-c> <esc>:cq<cr>' \
+         "$@" \
+         "$tmpfile"
+
+endtime="$(stat -c%y "$tmpfile")"
+
+if [ "$starttime" = "$endtime" ]
+then
+    exit 1
+else
+    cat "$tmpfile"
+    rm "$tmpfile"
+    exit 0
+fi

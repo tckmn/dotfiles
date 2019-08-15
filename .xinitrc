@@ -1,4 +1,4 @@
-xrdb /home/llama/.Xresources
+xrdb .Xresources
 xss-lock slock &
 dunst &
 redshift &

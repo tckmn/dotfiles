@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ "$1" -gt 0 -o "$3" -gt 0 -o "$4" -gt 0 ]
+then
+    notify-send -- 'new mail' "$2: $3 new, $4 old; $1 mailboxes"
+fi
+
+echo -n -- "$5"
+
+# vim: ft=sh

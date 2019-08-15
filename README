@@ -1,0 +1,15 @@
+to install with GNU stow:
+
+    git clone https://github.com/tckmn/dotfiles
+    stow --no-folding -t $HOME dotfiles
+
+files with private information (to be installed manually):
+
+    .ssh/id_rsa
+    .config/mpd/playlists/*
+    .config/mutt/*_private
+    .config/i3/imgur_authid
+
+other files to install manually:
+
+    .vim/autoload/plug.vim (because it self-updates)

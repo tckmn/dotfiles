@@ -1,8 +1,0 @@
-{"layout": "splitv", "percent": 0.5, "nodes": [
-    {"percent": 0.5, "swallows": [{"class": "^URxvt$", "instance": "^mutta$"}]},
-    {"percent": 0.5, "swallows": [{"class": "^URxvt$", "instance": "^muttb$"}]}
-]}
-{"layout": "splitv", "percent": 0.5, "nodes": [
-    {"percent": 0.5, "swallows": [{"class": "^URxvt$", "instance": "^newsboat$"}]},
-    {"percent": 0.5, "swallows": [{"class": "^URxvt$", "instance": "^muttc$"}]}
-]}

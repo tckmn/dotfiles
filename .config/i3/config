@@ -1,0 +1,325 @@
+set $mod Mod4
+font pango:monospace 8
+new_window normal 0
+set $mv 20px
+set $mvppt 2ppt
+floating_modifier $mod
+focus_follows_mouse no
+force_focus_wrapping yes
+mouse_warping none
+set $conf ~/.config/i3
+set $bin ~/.config/i3/bin
+bindsym $mod+Return exec rofi -show run
+bindsym $mod+Shift+Return exec rofi -show window
+bindsym $mod+apostrophe exec i3-sensible-terminal
+bindsym $mod+Shift+apostrophe exec firefox
+bindsym $mod+h focus left
+bindsym $mod+Shift+h move left $mv
+bindsym $mod+j focus down
+bindsym $mod+Shift+j move down $mv
+bindsym $mod+k focus up
+bindsym $mod+Shift+k move up $mv
+bindsym $mod+l focus right
+bindsym $mod+Shift+l move right $mv
+bindsym $mod+Left focus left
+bindsym $mod+Shift+Left move left $mv
+bindsym $mod+Down focus down
+bindsym $mod+Shift+Down move down $mv
+bindsym $mod+Up focus up
+bindsym $mod+Shift+Up move up $mv
+bindsym $mod+Right focus right
+bindsym $mod+Shift+Right move right $mv
+bindsym $mod+backslash split h
+bindsym $mod+minus split v
+bindsym $mod+f fullscreen toggle
+bindsym $mod+q layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+semicolon focus mode_toggle
+bindsym $mod+Shift+semicolon floating toggle
+bindsym $mod+a focus parent
+bindsym $mod+s focus child
+bindsym $mod+d kill
+bindsym $mod+1 workspace number 1
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+2 workspace number 2
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+3 workspace number 3
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+4 workspace number 4
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+5 workspace number 5
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+6 workspace number 6
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+7 workspace number 7
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+8 workspace number 8
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+9 workspace number 9
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+0 workspace number 10
+bindsym $mod+Shift+0 move container to workspace number 10
+bindsym $mod+grave workspace back_and_forth
+bindsym $mod+Shift+grave move container to workspace back_and_forth
+bindsym $mod+comma workspace prev
+bindsym $mod+Shift+comma move container to workspace prev
+bindsym $mod+period workspace next
+bindsym $mod+Shift+period move container to workspace next
+bindsym $mod+x exec $bin/rename-wksp
+bindsym $mod+Tab focus output right
+bindsym $mod+Shift+Tab move output right
+bindsym $mod+Shift+equal \
+workspace number 2; move workspace to output HDMI2; \
+workspace number 3; move workspace to output HDMI2; \
+workspace number 4; move workspace to output HDMI2; \
+workspace number 5; move workspace to output HDMI2; \
+workspace number 6; move workspace to output HDMI2; \
+workspace number 7; move workspace to output HDMI2; \
+workspace number 8; move workspace to output HDMI2; \
+workspace number 9; move workspace to output HDMI2; \
+workspace number 10; move workspace to output HDMI2; \
+nop
+bindsym $mod+equal move workspace to output left
+bindsym $mod+z scratchpad show
+bindsym $mod+Shift+z move scratchpad
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+t exec $bin/toggle-border
+bindsym $mod+Shift+c exec ppi3 $conf/_config $conf/config && i3-msg reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
+bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
+bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
+bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86Cut exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioNext exec mpc next && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+11 i3blocks
+bindsym XF86AudioStop exec mpc stop && pkill -RTMIN+11 i3blocks
+bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+12 i3blocks
+bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+12 i3blocks
+bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+12 i3blocks
+bindsym XF86Paste exec xbacklight +5% && pkill -RTMIN+12 i3blocks
+bindsym --release $mod+i exec slock
+bindsym $mod+n exec urxvt -name FLOAT -e n
+bindcode $mod+32 exec $bin/layout-switcher
+bindsym XF86PowerOff nop
+for_window [instance="FLOAT"] floating enable
+for_window [instance="NOBORDER"] border none
+for_window [instance="VINPUT"] floating enable; border none; resize set 40 3
+mode "resize" {
+bindsym h resize shrink width $mv or $mvppt
+bindsym j resize grow height $mv or $mvppt
+bindsym k resize shrink height $mv or $mvppt
+bindsym l resize grow width $mv or $mvppt
+bindsym Left resize shrink width $mv or $mvppt
+bindsym Down resize grow height $mv or $mvppt
+bindsym Up resize shrink height $mv or $mvppt
+bindsym Right resize grow width $mv or $mvppt
+bindsym Shift+h resize shrink width 1px or 1ppt
+bindsym Shift+j resize grow height 1px or 1ppt
+bindsym Shift+k resize shrink height 1px or 1ppt
+bindsym Shift+l resize grow width 1px or 1ppt
+bindsym Shift+Left resize shrink width 1px or 1ppt
+bindsym Shift+Down resize grow height 1px or 1ppt
+bindsym Shift+Up resize shrink height 1px or 1ppt
+bindsym Shift+Right resize grow width 1px or 1ppt
+bindsym Return mode "default"
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym $mod+r mode "default"
+}
+bindsym $mod+r mode "resize"
+
+mode "mouse" {
+bindsym h exec xdotool mousemove_relative -- -30 0
+bindsym j exec xdotool mousemove_relative -- 0 30
+bindsym k exec xdotool mousemove_relative -- 0 -30
+bindsym l exec xdotool mousemove_relative -- 30 0
+bindsym y exec xdotool mousemove_relative -- -30 -30
+bindsym u exec xdotool mousemove_relative -- 30 -30
+bindsym b exec xdotool mousemove_relative -- -30 30
+bindsym n exec xdotool mousemove_relative -- 30 30
+bindsym KP_4 exec xdotool mousemove_relative -- -10 0
+bindsym KP_2 exec xdotool mousemove_relative -- 0 10
+bindsym KP_8 exec xdotool mousemove_relative -- 0 -10
+bindsym KP_6 exec xdotool mousemove_relative -- 10 0
+bindsym KP_7 exec xdotool mousemove_relative -- -10 -10
+bindsym KP_9 exec xdotool mousemove_relative -- 10 -10
+bindsym KP_1 exec xdotool mousemove_relative -- -10 10
+bindsym KP_3 exec xdotool mousemove_relative -- 10 10
+bindsym Left exec xdotool mousemove_relative -- -1 0
+bindsym Down exec xdotool mousemove_relative -- 0 1
+bindsym Up exec xdotool mousemove_relative -- 0 -1
+bindsym Right exec xdotool mousemove_relative -- 1 0
+bindsym Return exec xdotool click 1
+bindsym Shift+Return exec xdotool click 3
+bindsym period exec xdotool mousedown 1
+bindsym comma exec xdotool mouseup 1
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym q mode "default"
+bindsym $mod+m mode "default"
+}
+bindsym $mod+Shift+m mode "mouse"
+set $screenshot "screenshot » [i]mgur [r]ename"
+mode $screenshot {
+bindsym i exec $bin/ss-imgur; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
+bindsym r exec $bin/ss-rename; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
+bindsym q exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
+bindsym Escape exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
+}
+bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & echo $! > /tmp/feh-pid; mode $screenshot
+set $games "games » [n]ethack [d]css [a]tc"
+set $atc "atc » [decK2AOTabh34nt]"
+mode $games {
+bindsym n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org; mode "default"
+bindsym d exec urxvt -is -name FLOAT -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; mode "default"
+bindsym a mode $atc
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym q mode "default"
+bindsym BackSpace mode "default"
+bindsym $mod+g mode "default"
+}
+mode $atc {
+bindsym d exec urxvt -name FLOAT -e atcrec; mode "default"
+bindsym e exec urxvt -name FLOAT -e atcrec easy; mode "default"
+bindsym c exec urxvt -name FLOAT -e atcrec crossover; mode "default"
+bindsym Shift+k exec urxvt -name FLOAT -e atcrec Killer; mode "default"
+bindsym 2 exec urxvt -name FLOAT -e atcrec game_2; mode "default"
+bindsym Shift+a exec urxvt -name FLOAT -e atcrec Atlantis; mode "default"
+bindsym Shift+o exec urxvt -name FLOAT -e atcrec OHare; mode "default"
+bindsym Shift+t exec urxvt -name FLOAT -e atcrec Tic-Tac-Toe; mode "default"
+bindsym a exec urxvt -name FLOAT -e atcrec airports; mode "default"
+bindsym b exec urxvt -name FLOAT -e atcrec box; mode "default"
+bindsym h exec urxvt -name FLOAT -e atcrec crosshatch; mode "default"
+bindsym 3 exec urxvt -name FLOAT -e atcrec game_3; mode "default"
+bindsym 4 exec urxvt -name FLOAT -e atcrec game_4; mode "default"
+bindsym n exec urxvt -name FLOAT -e atcrec novice; mode "default"
+bindsym t exec urxvt -name FLOAT -e atcrec two-corners; mode "default"
+bindsym Escape mode $games
+bindsym space mode $games
+bindsym q mode $games
+bindsym BackSpace mode $games
+}
+bindsym $mod+g mode $games
+mode "mark" {
+bindsym a mark a; mode "default"
+bindsym b mark b; mode "default"
+bindsym c mark c; mode "default"
+bindsym d mark d; mode "default"
+bindsym e mark e; mode "default"
+bindsym f mark f; mode "default"
+bindsym g mark g; mode "default"
+bindsym h mark h; mode "default"
+bindsym i mark i; mode "default"
+bindsym j mark j; mode "default"
+bindsym k mark k; mode "default"
+bindsym l mark l; mode "default"
+bindsym m mark m; mode "default"
+bindsym n mark n; mode "default"
+bindsym o mark o; mode "default"
+bindsym p mark p; mode "default"
+bindsym q mark q; mode "default"
+bindsym r mark r; mode "default"
+bindsym s mark s; mode "default"
+bindsym t mark t; mode "default"
+bindsym u mark u; mode "default"
+bindsym v mark v; mode "default"
+bindsym w mark w; mode "default"
+bindsym x mark x; mode "default"
+bindsym y mark y; mode "default"
+bindsym z mark z; mode "default"
+bindsym BackSpace mark DEL; unmark DEL; mode "default"
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym $mod+m mode "default"
+}
+bindsym $mod+m mode "mark"
+mode "focus mark" {
+bindsym a [con_mark="a"] focus; mode "default"
+bindsym b [con_mark="b"] focus; mode "default"
+bindsym c [con_mark="c"] focus; mode "default"
+bindsym d [con_mark="d"] focus; mode "default"
+bindsym e [con_mark="e"] focus; mode "default"
+bindsym f [con_mark="f"] focus; mode "default"
+bindsym g [con_mark="g"] focus; mode "default"
+bindsym h [con_mark="h"] focus; mode "default"
+bindsym i [con_mark="i"] focus; mode "default"
+bindsym j [con_mark="j"] focus; mode "default"
+bindsym k [con_mark="k"] focus; mode "default"
+bindsym l [con_mark="l"] focus; mode "default"
+bindsym m [con_mark="m"] focus; mode "default"
+bindsym n [con_mark="n"] focus; mode "default"
+bindsym o [con_mark="o"] focus; mode "default"
+bindsym p [con_mark="p"] focus; mode "default"
+bindsym q [con_mark="q"] focus; mode "default"
+bindsym r [con_mark="r"] focus; mode "default"
+bindsym s [con_mark="s"] focus; mode "default"
+bindsym t [con_mark="t"] focus; mode "default"
+bindsym u [con_mark="u"] focus; mode "default"
+bindsym v [con_mark="v"] focus; mode "default"
+bindsym w [con_mark="w"] focus; mode "default"
+bindsym x [con_mark="x"] focus; mode "default"
+bindsym y [con_mark="y"] focus; mode "default"
+bindsym z [con_mark="z"] focus; mode "default"
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym $mod+slash mode "default"
+}
+bindsym $mod+slash mode "focus mark"
+mode "move to mark" {
+bindsym a move window to mark a; mode "default"
+bindsym b move window to mark b; mode "default"
+bindsym c move window to mark c; mode "default"
+bindsym d move window to mark d; mode "default"
+bindsym e move window to mark e; mode "default"
+bindsym f move window to mark f; mode "default"
+bindsym g move window to mark g; mode "default"
+bindsym h move window to mark h; mode "default"
+bindsym i move window to mark i; mode "default"
+bindsym j move window to mark j; mode "default"
+bindsym k move window to mark k; mode "default"
+bindsym l move window to mark l; mode "default"
+bindsym m move window to mark m; mode "default"
+bindsym n move window to mark n; mode "default"
+bindsym o move window to mark o; mode "default"
+bindsym p move window to mark p; mode "default"
+bindsym q move window to mark q; mode "default"
+bindsym r move window to mark r; mode "default"
+bindsym s move window to mark s; mode "default"
+bindsym t move window to mark t; mode "default"
+bindsym u move window to mark u; mode "default"
+bindsym v move window to mark v; mode "default"
+bindsym w move window to mark w; mode "default"
+bindsym x move window to mark x; mode "default"
+bindsym y move window to mark y; mode "default"
+bindsym z move window to mark z; mode "default"
+bindsym Escape mode "default"
+bindsym space mode "default"
+bindsym $mod+Shift+slash mode "default"
+}
+bindsym $mod+Shift+slash mode "move to mark"
+bar {
+status_command i3blocks -c $conf/i3/i3blocks.conf
+colors {
+background #181818
+statusline #d8d8d8
+separator #585858
+focused_workspace #383838 #181818 #d8d8d8
+active_workspace #383838 #181818 #d8d8d8
+inactive_workspace #585858 #383838 #b8b8b8
+urgent_workspace #dc9656 #ab4642 #d8d8d8
+binding_mode #dc9656 #ab4642 #d8d8d8
+}
+}
+client.focused #383838 #181818 #d8d8d8 #000000 #b8b8b8
+client.focused_inactive #585858 #383838 #b8b8b8 #000000 #585858
+client.unfocused #585858 #383838 #b8b8b8 #000000 #585858
+client.urgent #dc9656 #ab4642 #d8d8d8 #000000 #000000
+client.placeholder #585858 #383838 #b8b8b8 #000000 #000000
+client.background #181818

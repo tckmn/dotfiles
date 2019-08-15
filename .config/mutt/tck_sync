@@ -1,0 +1,20 @@
+IMAPAccount tckmn
+Host mail.gandi.net
+User andy@tck.mn
+PassCmd "head -1 ~/.config/mutt/tck_private | cut -c 18- | rev | cut -c 2- | rev"
+SSLType IMAPS
+
+IMAPStore tckmn-remote
+Account tckmn
+
+MaildirStore tckmn-local
+Path ~/.mail/tckmn/
+Inbox ~/.mail/tckmn/Inbox
+SubFolders Verbatim
+
+Channel tckmn
+Master :tckmn-remote:
+Slave :tckmn-local:
+Patterns *
+Create Both
+SyncState *

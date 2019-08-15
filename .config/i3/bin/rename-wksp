@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+name="$(~/.config/i3/bin/vinput)"
+[ $? -eq 0 ] || exit $?
+num="$(~/.config/i3/bin/cur-wksp)"
+if [ -z "$name" ]
+then
+    i3-msg "rename workspace to $num"
+else
+    i3-msg 'rename workspace to "'"$num:$name"'"'
+fi

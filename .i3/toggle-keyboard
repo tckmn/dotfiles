@@ -1,9 +1,0 @@
-#!/bin/bash
-exit
-name='AT Translated Set 2 keyboard'
-if xinput list "$name" | grep -iq disable
-then
-    xinput enable "$name"
-else
-    xinput disable "$name"
-fi
