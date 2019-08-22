@@ -1,7 +1,7 @@
 IMAPAccount tckmn
 Host mail.gandi.net
 User andy@tck.mn
-PassCmd "head -1 ~/.config/mutt/tck_private | cut -c 18- | rev | cut -c 2- | rev"
+PassCmd "grep -o '[^\"]*' ~/.config/mutt/tck_private | tail -1"
 SSLType IMAPS
 
 IMAPStore tckmn-remote

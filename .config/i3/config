@@ -99,17 +99,17 @@ bindsym XF86AudioNext exec mpc next && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioStop exec mpc stop && pkill -RTMIN+11 i3blocks
-bindsym XF86MonBrightnessUp exec xbacklight +5% && pkill -RTMIN+12 i3blocks
-bindsym XF86MonBrightnessDown exec xbacklight -5% && pkill -RTMIN+12 i3blocks
-bindsym XF86Copy exec xbacklight -5% && pkill -RTMIN+12 i3blocks
-bindsym XF86Paste exec xbacklight +5% && pkill -RTMIN+12 i3blocks
+bindsym XF86MonBrightnessUp exec light -A 1 && pkill -RTMIN+12 i3blocks
+bindsym XF86MonBrightnessDown exec light -U 1 && pkill -RTMIN+12 i3blocks
+bindsym XF86Copy exec light -U 1 && pkill -RTMIN+12 i3blocks
+bindsym XF86Paste exec light -A 1 && pkill -RTMIN+12 i3blocks
 bindsym --release $mod+i exec slock
-bindsym $mod+n exec urxvt -name FLOAT -e n
+bindsym $mod+n exec termite --name=FLOAT -e n
 bindcode $mod+32 exec $bin/layout-switcher
 bindsym XF86PowerOff nop
+for_window [title="FLOAT"] floating enable
 for_window [instance="FLOAT"] floating enable
-for_window [instance="NOBORDER"] border none
-for_window [instance="VINPUT"] floating enable; border none; resize set 40 3
+for_window [instance="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
 mode "resize" {
 bindsym h resize shrink width $mv or $mvppt
 bindsym j resize grow height $mv or $mvppt
@@ -172,12 +172,12 @@ bindsym r exec $bin/ss-rename; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid;
 bindsym q exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
 bindsym Escape exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
 }
-bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$(~/.i3/screenshot/last)" & echo $! > /tmp/feh-pid; mode $screenshot
+bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$($bin/ss-last)" & echo $! > /tmp/feh-pid; mode $screenshot
 set $games "games » [n]ethack [d]css [a]tc"
 set $atc "atc » [decK2AOTabh34nt]"
 mode $games {
-bindsym n exec urxvt -name FLOAT --color0 '#383838' -e ssh nethack@nethack.alt.org; mode "default"
-bindsym d exec urxvt -is -name FLOAT -e ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org; mode "default"
+bindsym n exec termite --name=FLOAT -e 'ssh nethack@nethack.alt.org'; mode "default"
+bindsym d exec urxvt --name=FLOAT -e 'ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org'; mode "default"
 bindsym a mode $atc
 bindsym Escape mode "default"
 bindsym space mode "default"
@@ -186,21 +186,21 @@ bindsym BackSpace mode "default"
 bindsym $mod+g mode "default"
 }
 mode $atc {
-bindsym d exec urxvt -name FLOAT -e atcrec; mode "default"
-bindsym e exec urxvt -name FLOAT -e atcrec easy; mode "default"
-bindsym c exec urxvt -name FLOAT -e atcrec crossover; mode "default"
-bindsym Shift+k exec urxvt -name FLOAT -e atcrec Killer; mode "default"
-bindsym 2 exec urxvt -name FLOAT -e atcrec game_2; mode "default"
-bindsym Shift+a exec urxvt -name FLOAT -e atcrec Atlantis; mode "default"
-bindsym Shift+o exec urxvt -name FLOAT -e atcrec OHare; mode "default"
-bindsym Shift+t exec urxvt -name FLOAT -e atcrec Tic-Tac-Toe; mode "default"
-bindsym a exec urxvt -name FLOAT -e atcrec airports; mode "default"
-bindsym b exec urxvt -name FLOAT -e atcrec box; mode "default"
-bindsym h exec urxvt -name FLOAT -e atcrec crosshatch; mode "default"
-bindsym 3 exec urxvt -name FLOAT -e atcrec game_3; mode "default"
-bindsym 4 exec urxvt -name FLOAT -e atcrec game_4; mode "default"
-bindsym n exec urxvt -name FLOAT -e atcrec novice; mode "default"
-bindsym t exec urxvt -name FLOAT -e atcrec two-corners; mode "default"
+bindsym d exec termite --name=FLOAT -e 'atcrec'; mode "default"
+bindsym e exec termite --name=FLOAT -e 'atcrec easy'; mode "default"
+bindsym c exec termite --name=FLOAT -e 'atcrec crossover'; mode "default"
+bindsym Shift+k exec termite --name=FLOAT -e 'atcrec Killer'; mode "default"
+bindsym 2 exec termite --name=FLOAT -e 'atcrec game_2'; mode "default"
+bindsym Shift+a exec termite --name=FLOAT -e 'atcrec Atlantis'; mode "default"
+bindsym Shift+o exec termite --name=FLOAT -e 'atcrec OHare'; mode "default"
+bindsym Shift+t exec termite --name=FLOAT -e 'atcrec Tic-Tac-Toe'; mode "default"
+bindsym a exec termite --name=FLOAT -e 'atcrec airports'; mode "default"
+bindsym b exec termite --name=FLOAT -e 'atcrec box'; mode "default"
+bindsym h exec termite --name=FLOAT -e 'atcrec crosshatch'; mode "default"
+bindsym 3 exec termite --name=FLOAT -e 'atcrec game_3'; mode "default"
+bindsym 4 exec termite --name=FLOAT -e 'atcrec game_4'; mode "default"
+bindsym n exec termite --name=FLOAT -e 'atcrec novice'; mode "default"
+bindsym t exec termite --name=FLOAT -e 'atcrec two-corners'; mode "default"
 bindsym Escape mode $games
 bindsym space mode $games
 bindsym q mode $games
@@ -305,7 +305,7 @@ bindsym $mod+Shift+slash mode "default"
 }
 bindsym $mod+Shift+slash mode "move to mark"
 bar {
-status_command i3blocks -c $conf/i3/i3blocks.conf
+status_command i3blocks -c $conf/i3blocks.conf
 colors {
 background #181818
 statusline #d8d8d8

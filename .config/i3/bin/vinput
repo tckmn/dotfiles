@@ -6,14 +6,14 @@ shift
 
 starttime="$(stat -c%y "$tmpfile")"
 
-termite -name VINPUT -e \
+termite --name=VINPUT -e "$(printf '%q ' \
     nvim +'set nonu nornu notitle laststatus=0' \
          +'startinsert' \
          +'inoremap <cr> <esc>:wq<cr>' \
          +'noremap <C-c> <esc>:cq<cr>' \
          +'inoremap <C-c> <esc>:cq<cr>' \
          "$@" \
-         "$tmpfile"
+         "$tmpfile")"
 
 endtime="$(stat -c%y "$tmpfile")"
 

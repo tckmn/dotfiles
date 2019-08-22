@@ -1,0 +1,3 @@
+#! /nix/store/cinw572b38aln37glr0zb8lxwrgaffl4-bash-4.4-p23/bin/bash -e
+export PATH='/nix/store/wkn794y64qgrqbwr3vakl356a8m6qngk-acpi-1.7/bin'${PATH:+':'}$PATH
+exec -a "$0" "/nix/store/0f83w4np6bac5hwrlp62cmd741vx2kxw-i3blocks-1.4/libexec/i3blocks/.battery-wrapped"  "${extraFlagsArray[@]}" "$@"

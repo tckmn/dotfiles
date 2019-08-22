@@ -1,5 +1,5 @@
 [database]
-path=~/.mail/tockmanmit
+path=.mail/tockmanmit
 
 [user]
 name=Andy Tockman

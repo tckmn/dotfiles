@@ -12,6 +12,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
+Plug 'LnL7/vim-nix'
 " appearance
 Plug 'chriskempson/base16-vim'
 " autocompletion
@@ -31,12 +32,12 @@ let maplocalleader=' '
 set mouse=
 set encoding=utf-8
 set background=dark
+let base16colorspace=256
 colorscheme base16-default-dark
 
 
 let g:tex_flavor='latex'
-let g:Tex_DefaultTargetFormat='pdf'
-let g:Tex_ViewRule_pdf='gv 2>/dev/null'
+let g:vimtex_view_method='zathura'
 
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -46,6 +47,8 @@ let g:html_indent_inctags = "html,body,head,tbody"
 set cinoptions=l1
 au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
 au! FileType scheme inoremap <buffer> <C-\> λ
+
+au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
 
 
 " display

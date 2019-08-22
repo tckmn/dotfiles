@@ -1,5 +1,5 @@
 [database]
-path=~/.mail/tckmn
+path=.mail/tckmn
 
 [user]
 name=Andy Tockman

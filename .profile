@@ -6,9 +6,9 @@ do
     fi
 done
 
-export EDITOR=/usr/bin/nvim
-export VISUAL=/usr/bin/nvim
+export EDITOR="$(which nvim)"
+export VISUAL="$(which nvim)"
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
 export PRINTER=home_printer
-export TERMINAL=termite
+export TERMINAL="$(which termite)"

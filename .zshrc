@@ -1,5 +1,5 @@
 # identify ourselves
-export TERM=screen-256color
+export TERM=xterm
 
 # history
 HISTSIZE=10000000
@@ -69,6 +69,7 @@ alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
 alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
 alias lsc='printf "%s\n" "${(k)commands[@]}" | sort'
 alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
+alias sb='nix-build --option build-use-sandbox true -A'
 xb() { [ -n "$1" ] && xbacklight -set "$1" || xbacklight }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
@@ -91,6 +92,7 @@ alias qcp='qcp -fdo'
 alias mutta='mutt -F ~/.config/mutt/kbd_muttrc'
 alias muttb='mutt -F ~/.config/mutt/mit_muttrc'
 alias muttc='mutt -F ~/.config/mutt/tck_muttrc'
+alias python=python3
 да(){yes ${@:-д}}
 dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd '' }
 gcal() { gcalcli calw ${@:-4} }
@@ -98,18 +100,6 @@ gcal() { gcalcli calw ${@:-4} }
 # dumb stuff
 alias es='zathura ~/doc/dict/spanish.pdf'
 alias ru='zathura ~/doc/dict/russian.pdf'
-
-# usaco
-un() {
-    mkdir $1
-    cp ~/misc/usacotemplate.cpp $1/$1.cpp
-    sed -i "s/MEEMS/$1/;" $1/$1.cpp
-}
-uc() {
-    g++ -std=c++11 -O3 *.cpp -o a
-    ./a
-    cat *.out
-}
 
 # licenses
 if [ -d ~/.license ]
@@ -131,6 +121,7 @@ setopt histignorespace
 
 # prompt
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
+RPROMPT=
 
 # ssh-agent
 if [[ "$USERNAME" =~ ^tckmn$ ]] && which ssh-agent >/dev/null

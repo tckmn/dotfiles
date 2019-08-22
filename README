@@ -2,6 +2,7 @@ to install with GNU stow:
 
     git clone https://github.com/tckmn/dotfiles
     stow --no-folding -t $HOME dotfiles
+    ln -s ~/.vim ~/.config/nvim
 
 files with private information (to be installed manually):
 
