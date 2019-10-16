@@ -84,3 +84,5 @@ if [[ "$tx_rate" -gt 1048576 ]]; then
 else
   printf '%3sK' $tx_kib
 fi
+
+echo

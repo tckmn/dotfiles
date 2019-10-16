@@ -1,4 +1,4 @@
-#!/nix/store/cinw572b38aln37glr0zb8lxwrgaffl4-bash-4.4-p23/bin/sh
+#!/bin/sh
 # Copyright (C) 2014 Julien Bonjean <julien@bonjean.info>
 
 # This program is free software: you can redistribute it and/or modify
@@ -38,7 +38,7 @@ awk -v type=$TYPE '
 END {
 	# full text
 	if (type == "swap")
-		printf("%.1fG\n", (swap_total-swap_free)/1024/1024)
+		printf("§ %.1fG\n", (swap_total-swap_free)/1024/1024)
 	else
 		printf("%.1fG\n", mem_free/1024/1024)
 
