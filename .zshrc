@@ -61,7 +61,6 @@ t() {
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
-alias cku=checkupdates
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
@@ -92,6 +91,7 @@ alias qcp='qcp -fdo'
 alias mutta='mutt -F ~/.config/mutt/kbd_muttrc'
 alias muttb='mutt -F ~/.config/mutt/mit_muttrc'
 alias muttc='mutt -F ~/.config/mutt/tck_muttrc'
+alias z='zathura --fork'
 alias python=python3
 да(){yes ${@:-д}}
 dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd '' }
