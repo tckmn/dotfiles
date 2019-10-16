@@ -10,5 +10,5 @@ export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
-export PRINTER=home_printer
+export PRINTER=mitprint
 export TERMINAL="$(which termite)"
