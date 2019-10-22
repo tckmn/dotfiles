@@ -1,9 +1,6 @@
-for pathdir in "$HOME/bin"
+for pathdir in "$HOME/bin" "$HOME/.config/i3/bin"
 do
-    if [ -d "$pathdir" ]
-    then
-        export PATH="$pathdir:$PATH"
-    fi
+    [ -d "$pathdir" ] && export PATH="$pathdir:$PATH"
 done
 
 export EDITOR="$(which nvim)"
