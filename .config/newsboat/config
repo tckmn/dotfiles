@@ -11,6 +11,8 @@ bind-key j next
 bind-key k prev
 bind-key J next-feed
 bind-key K prev-feed
+unbind-key q feedlist
+unbind-key Q
 
 auto-reload yes
 reload-time 15
