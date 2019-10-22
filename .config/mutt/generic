@@ -27,3 +27,7 @@ set status_format = "$HOME/.config/mutt/notify-script '%b' '%f' '%n' '%o' '-%r-M
 
 # set the terminal title
 set ts_enabled = yes
+
+set sort = date-received
+
+unset quit

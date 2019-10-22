@@ -8,6 +8,8 @@ set smtp_url = 'smtps://tockman@outgoing.mit.edu:465/'
 source ~/.config/mutt/generic
 source ~/.config/mutt/mit_private
 
+set smtp_authenticators = 'login'
+
 macro index <F8> \
 "<enter-command>set my_old_pipe_decode=\$pipe_decode my_old_wait_key=\$wait_key nopipe_decode nowait_key<enter>\
 <shell-escape>NOTMUCH_CONFIG=~/.config/mutt/mit_notmuch notmuch-mutt -r --prompt search<enter>\
