@@ -9,19 +9,23 @@
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{microtype}
-\usepackage{tikz,pgfplots}
-\everymath{\displaystyle}
+\usepackage{multirow}
+\usepackage{pgfplots}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\pgfplotsset{compat=1.16}
+
+\setlength\parindent{0pt}
+\setlength\parskip{10pt}
 
 \begin{document}
-\thispagestyle{fancy}
+
+\pagestyle{fancy}
 \fancyhf{}
-\rhead{Andy Tockman\\{{+~strftime('%F')+}}}
-\cfoot{\thepage}
+\lhead{Andrew Tockman}
+\chead{{{++}}}
 
-\begin{enumerate}
-
-    \item {{++}}
-
-\end{enumerate}
+{{++}}
 
 \end{document}
