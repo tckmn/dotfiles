@@ -61,15 +61,13 @@ t() {
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
+alias rf='resolvectl flush-caches'
 alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
 alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
 alias lsc='printf "%s\n" "${(k)commands[@]}" | sort'
 alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
 alias sb='nix-build --option build-use-sandbox true -A'
-xb() { [ -n "$1" ] && xbacklight -set "$1" || xbacklight }
+b() { [ -n "$1" ] && light -S "$1" || light -G }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
 # vim aliases
@@ -98,8 +96,8 @@ dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd
 gcal() { gcalcli calw ${@:-4} }
 
 # dumb stuff
-alias es='zathura ~/doc/dict/spanish.pdf'
-alias ru='zathura ~/doc/dict/russian.pdf'
+alias es='zathura --fork ~/doc/dict/spanish.pdf'
+alias ru='zathura --fork ~/doc/dict/russian.pdf'
 
 # licenses
 if [ -d ~/.license ]
