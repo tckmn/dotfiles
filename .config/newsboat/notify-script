@@ -1,2 +1,2 @@
-#!/usr/bin/env bash
-notify-send newsbeuter "$1"
+#!/bin/sh
+~/.config/notif newsboat "$1"
