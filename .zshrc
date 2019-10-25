@@ -61,6 +61,7 @@ t() {
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
+alias ms='systemctl --user start mbsync'
 alias rf='resolvectl flush-caches'
 alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
 alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
