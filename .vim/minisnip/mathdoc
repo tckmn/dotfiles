@@ -27,6 +27,11 @@
 \rhead{{{++}}}
 \cfoot{\thepage}
 
-{{++}}
+\begin{enumerate}
+
+    \item
+        {{++}}
+
+\end{enumerate}
 
 \end{document}
