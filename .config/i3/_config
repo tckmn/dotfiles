@@ -1,6 +1,9 @@
 # i3 config file (with ppi3)
 # vim: ft=config
 
+exec systemctl --user import-environment DISPLAY
+exec systemctl --user start graphical-session.target
+
 ###############################################################################
 #                                  VARIABLES                                  #
 ###############################################################################
