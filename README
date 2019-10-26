@@ -14,3 +14,8 @@ files with private information (to be installed manually):
 other files to install manually:
 
     .vim/autoload/plug.vim (because it self-updates)
+
+steps to take manually:
+
+    cd ~/.ghc
+    ghc -dynamic -c Tools.hs

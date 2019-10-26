@@ -13,6 +13,7 @@ Plug 'JuliaEditorSupport/julia-vim'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
 Plug 'LnL7/vim-nix'
+Plug 'neovimhaskell/haskell-vim'
 " appearance
 Plug 'chriskempson/base16-vim'
 " autocompletion
