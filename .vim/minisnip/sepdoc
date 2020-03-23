@@ -6,6 +6,7 @@
 \usepackage{color}
 \usepackage{enumitem}
 \usepackage{fancyhdr}
+\usepackage[no-math]{fontspec}
 \usepackage{graphicx}
 \usepackage{mathtools}
 \usepackage{microtype}
@@ -15,6 +16,9 @@
 \usepackage{tikz}
 \usetikzlibrary{arrows.meta}
 \pgfplotsset{compat=1.16}
+
+\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\im{im}
 
 \setlength\parindent{0pt}
 \setlength\parskip{10pt}
