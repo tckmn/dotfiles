@@ -1,3 +1,6 @@
+" ugh, this has to be up here for vimtex
+au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
+
 call plug#begin()
 " motions/commands
 Plug 'tpope/vim-surround'
@@ -14,6 +17,7 @@ Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
 Plug 'LnL7/vim-nix'
 Plug 'neovimhaskell/haskell-vim'
+Plug 'tounaishouta/coq.vim'
 " appearance
 Plug 'chriskempson/base16-vim'
 " autocompletion
@@ -36,21 +40,20 @@ set background=dark
 let base16colorspace=256
 colorscheme base16-default-dark
 
-
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-
+" easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 nnoremap gA ga
 
-let g:html_indent_inctags = "html,body,head,tbody"
+" language specific
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:html_indent_inctags='html,body,head,tbody'
 set cinoptions=l1
 au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
 au! FileType scheme inoremap <buffer> <C-\> λ
-
+au! FileType coq nnoremap <silent> <cr> :CoqRunToCursor<cr> | let b:commentary_format='(*%s*)'
 au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
-
 
 " display
 set showmode showcmd ruler relativenumber scrolloff=3
@@ -91,29 +94,21 @@ set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
-if has('nvim') | tnoremap <Esc> <C-\><C-n> | endif
 nnoremap <Leader>a :A<cr><C-g>
 nnoremap <Leader>m :make<cr>
 nnoremap <Leader>s :w<cr>
 nnoremap <Leader>y :%y+<cr>
 nnoremap <Leader>z :up<cr><C-z>
-nnoremap <silent> <Leader>d :call DTS()<cr>
+if has('nvim') | tnoremap <Esc> <C-\><C-n> | endif
+
+" more complex mappings
 function! DTS()
     let l:v = winsaveview()
     keeppatterns %s/\s*$
     call winrestview(l:v)
 endfunction
-cabbrev n norm
-cabbrev N %norm
-cabbrev /n /norm
+nnoremap <silent> <Leader>d :call DTS()<cr>
 
-" annoyances
-if exists("&esckeys") | set noesckeys | endif
-set shortmess+=I
-let g:netrw_dirhistmax=0
-if has('gui_running') | set toolbar= guioptions= | endif
-
-" random garbage
 function! Col()
     exe '%!column -c'.winwidth(0)
     " irritatingly, we can't pipe to expand(1) because it breaks on unicode
@@ -123,3 +118,18 @@ function! Col()
     let &l:ts=l:t
 endfunction
 nnoremap <silent> col :call Col()<cr>
+
+function! ToggleAlpha()
+    if &nrformats =~ "alpha"
+        set nrformats-=alpha
+    else
+        set nrformats+=alpha
+    endif
+endfunction
+nnoremap <silent> yoa :call ToggleAlpha()<cr>
+
+" annoyances
+if has('gui_running') | set toolbar= guioptions= | endif
+if exists("&esckeys") | set noesckeys | endif
+let g:netrw_dirhistmax=0
+set shortmess+=I
