@@ -6152,6 +6152,7 @@
 <Multi_key> <asciicircum> <T> : "ᵀ"
 <Multi_key> <p> <d> : "∂"
 <Multi_key> <d> <e> <r> : "∂"
+<Multi_key> <c> <p> : "∘"
 
 <dead_grave> <dead_grave> : "̀"   U0300      # COMBINING GRAVE ACCENT
 <dead_acute> <dead_acute> : "́"   U0301      # COMBINING ACUTE ACCENT
