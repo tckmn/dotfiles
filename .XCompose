@@ -6158,3 +6158,6 @@
 <dead_acute> <dead_acute> : "́"   U0301      # COMBINING ACUTE ACCENT
 <dead_circumflex> <dead_circumflex>      : "̂"   U0302               # COMBINING CIRCUMFLEX ACCENT
 <dead_caron> <dead_caron> 	      : "̌"   U030C               # COMBINING CARON
+
+<Multi_key> <b> <r> <a> : "⟨"
+<Multi_key> <k> <e> <t> : "⟩"
