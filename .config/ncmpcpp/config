@@ -6,3 +6,4 @@ ignore_leading_the = yes
 ignore_diacritics = yes
 mouse_support = no
 external_editor = nvim
+follow_now_playing_lyrics = yes
