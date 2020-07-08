@@ -11,12 +11,9 @@ Plug 'tpope/vim-rsi'
 Plug 'wellle/targets.vim'
 Plug 'junegunn/vim-easy-align'
 " language-specific
-Plug 'rust-lang/rust.vim'
-Plug 'JuliaEditorSupport/julia-vim'
+Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
-Plug 'LnL7/vim-nix'
-Plug 'neovimhaskell/haskell-vim'
 Plug 'tounaishouta/coq.vim'
 " appearance
 Plug 'chriskempson/base16-vim'
@@ -50,7 +47,6 @@ let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:html_indent_inctags='html,body,head,tbody'
 set cinoptions=l1
-au! BufNewFile,BufRead *.ly,*.ily set ft=lilypond
 au! FileType scheme inoremap <buffer> <C-\> λ
 au! FileType coq nnoremap <silent> <cr> :CoqRunToCursor<cr> | let b:commentary_format='(*%s*)'
 au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
