@@ -7,5 +7,6 @@ export EDITOR="$(which nvim)"
 export VISUAL="$(which nvim)"
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
-export PRINTER=mitprint
+export PRINTER=houston
 export TERMINAL="$(which termite)"
+export QT_STYLE_OVERRIDE=Adwaita-Dark
