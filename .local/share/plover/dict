@@ -1,0 +1,225 @@
+# GENERAL
+
+AKS/LOLT        axolotl
+ARPT            apart
+ELT             element
+FRIF            forgive
+FU_LT           futile
+KWA/LA          koala
+L-RT            alright
+LOIJ            logic
+SAURT           solder
+SEG             segment
+SNAM            tsunami
+STRA_SHN        demonstration
+TMENL           fundamental
+
+FORCH           fortune
+FORCHT          fortunate
+FORCHLT         fortunately
+
+SPAND           expand
+KPAND           expand
+SPANSHN         expansion
+KPANSHN         expansion
+SPA*ND          spanned
+
+XLU             exclude
+XLUSHN          exclusion
+
+PERP            pepper
+PE_RP           perp
+P*ERP           perp
+
+PERT/FI         petrify
+PERT/FI_        petrify
+PERT/FISHN      petrification
+PERT/FI_SHN     petrification
+PERT/FIKSHN     petrification
+PERT/FI_KSHN    petrification
+
+AK/TIF          active
+PAEF            passive
+
+S-F             scifi
+S-F/S-F         science fiction
+S*F             science fiction
+
+-MT             {^ment}
+
+# PERSONALLY COMMON MISSTROKES
+
+MAEKS           makes
+
+# DOMAIN-SPECIFIC - MATH
+
+F-/F-           iff
+PO/SET          poset
+PO_/SET         poset
+
+IN/JEFK         injective
+SUR/JEFK        surjective
+BI/JEFK         bijective
+IN/JEKSHN       injection
+SUR/JEKSHN      surjection
+BI/JEKSHN       bijection
+
+PORD            partial order
+PORD/-D         partially ordered
+TORD            total order
+TORD/-D         totally ordered
+
+# DOMAIN-SPECIFIC - GAMES
+
+NET/HAK         NetHack
+CHIK/TRIS       chickatrice
+KOK/TRIS        cockatrice
+FOO/TRIS        footrice
+YEN/DOR         Yendor
+POL/MOFR        polymorph
+
+# DOMAIN-SPECIFIC - LINGUISTICS
+
+C-/KMAND        c-command
+WUG             wug
+
+T-P             toki pona
+J-B             Lojban
+
+PRIPT           prescriptive
+DRIPT           descriptive
+
+# DOMAIN-SPECIFIC - TECH
+
+F-F             Firefox
+CAUN/F*IG       config
+
+NIX/OS          NixOS
+NIX/O_S         NixOS
+PWAOUPBT        Ubuntu
+
+SEG/FAULT       segfault
+KHRAOT          chroot
+
+# NAMES / PROPER NOUNS
+
+AN/DRA_*        Andrey
+ARNS            Arslan
+ARS/LAN         Arslan
+DEF/EN          Deven
+DEF/IN          Devin
+DHINL           Dhilan
+DINL            Dylan
+E_/SHAN         Ishan
+IX/YA           Ixa
+LI_/NUS         Linus
+MELG            Meghal
+RA*UNG          Raunak
+RAUN            Raun
+ROOSH           Roosh
+SHO_/MIK        Shomik
+
+HAX/ORZ         0xh4x0rz
+SMET            Schmett
+SMET/LING       Schmetterling
+
+H-G             Hitchhiker's Guide
+H-G/H-G         The Hitchhiker's Guide to the Galaxy
+
+# EMOTES
+
+AFPLT           ah
+OFPLT           oh
+EFPLT           eh
+UFPLT           uh
+HAFPLT          hah
+HOFPLT          hoh
+HEFPLT          heh
+HUFPLT          huh
+
+BAFPLT          bah
+GAFPLT          gah
+YAFPLT          yeah
+MEFPLT          meh
+
+HA                      ha
+HA/HA                   haha
+HA/HA/HA                hahaha
+HA/HA/HA/HA             hahahaha
+HA/HA/HA/HA/HA          hahahahaha
+HA/HA/HA/HA/HA/HA       hahahahahaha
+HA/HA/HA/HA/HA/HA/HA    hahahahahahaha
+HA/HA/HA/HA/HA/HA/HA/HA hahahahahahahaha
+HE                      he
+HE/HE                   hehe
+HE/HE/HE                hehehe
+HE/HE/HE/HE             hehehehe
+HE/HE/HE/HE/HE          hehehehehe
+HE/HE/HE/HE/HE/HE       hehehehehehe
+HE/HE/HE/HE/HE/HE/HE    hehehehehehehe
+HE/HE/HE/HE/HE/HE/HE/HE hehehehehehehehe
+
+BR-B            brb
+BR*B            be right back
+TW-B            btw
+TW*B            by the way
+OOM             lmao
+OO*M            almo
+M-F             mfw
+M*F             my face when
+OMG             omg
+O*MG            oh my god
+ROFL            rofl
+RO*FL           Rolf
+RO*FL/E         Rolfe
+RO*FL/RO*FL     Rolfe
+FW-             tfw
+FW*             ftw
+TW-F            wtf
+TW*F            what the fuck
+TWAF            wtaf
+TWA*F           what the actual fuck
+
+WAU             wow
+WAOU            waow
+
+SH-RG           ¯\_(ツ)_/¯
+TBL-FPL         (╯°□°）╯︵ ┻━┻
+DPR-FL          ಠ_ಠ
+
+# META
+
+KPA             {:case:cap_first_word}
+KPLA            {:case:upper_first_word}
+LUR             {:case:lower_first_char}
+SP              {^^}
+S-P             {^ ^}
+
+KPAD            {:retro_case:cap_first_word}
+KPLAD           {:retro_case:upper_first_word}
+LURD            {:retro_case:lower_first_char}
+SP-D            {*!}
+S-PD            {*?}
+
+KPA*            {^^}{:case:cap_first_word}
+KPLA*           {^^}{:case:upper_first_word}
+L*UR            {^^}{:case:lower_first_char}
+
+H*MD            {MODE:SET_SPACE:-}
+K*MD            {MODE:CAPS}
+KL*MD           {MODE:CAMEL}
+L*MD            {MODE:LOWER}
+R*MD            {MODE:RESET}
+S*MD            {MODE:SET_SPACE:_}
+SP*MD           {MODE:SET_SPACE:}
+T*MD            {MODE:TITLE}
+
+\#*             {*}
+PLUP            {PLOVER:LOOKUP}
+PL-FKS          {PLOVER:FOCUS}
+
+# JOKES
+
+KR-RCH          Pshhhkkkkkrrrrkakingkakingkakingtshchchchchchchchchdingdingding
+
+# vim: ft=config
