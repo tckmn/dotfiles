@@ -17,5 +17,4 @@ other files to install manually:
 
 steps to take manually:
 
-    cd ~/.ghc
-    ghc -dynamic -c Tools.hs
+    ghci -fobject-code
