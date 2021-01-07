@@ -1,2 +1,2 @@
-map <C-q> feedkeys :set<Space>first-page-column<Space>1<Return>
-map <C-w> feedkeys :set<Space>first-page-column<Space>1:2<Return>
+map <C-a> set 'first-page-column 1'
+map <C-s> set 'first-page-column 1:2'
