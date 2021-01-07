@@ -17,11 +17,30 @@
 \usetikzlibrary{arrows.meta}
 \pgfplotsset{compat=1.16}
 
-\DeclareMathOperator\tr{tr}
+\DeclareMathOperator\Hom{Hom}
+\DeclareMathOperator\Max{Max}
+\DeclareMathOperator\Ob{Ob}
+\DeclareMathOperator\Spec{Spec}
+\DeclareMathOperator\grad{grad}
+\DeclareMathOperator\id{id}
 \DeclareMathOperator\im{im}
+\DeclareMathOperator\lcm{lcm}
+\DeclareMathOperator\sech{sech}
+\DeclareMathOperator\sign{sign}
+\DeclareMathOperator\tr{tr}
+\DeclarePairedDelimiterX\braket[2]{\langle}{\rangle}{#1 \delimsize\vert #2}
+\DeclarePairedDelimiter\bra{\langle}{\rvert}
+\DeclarePairedDelimiter\ket{\lvert}{\rangle}
+\newcommand\Boo{\text{\textbf{Boo}}}
+\newcommand\CRing{\text{\textbf{CRing}}}
+\newcommand\C{\mathbb C}
+\newcommand\N{\mathbb N}
+\newcommand\Q{\mathbb Q}
+\newcommand\Ring{\text{\textbf{Ring}}}
+\newcommand\R{\mathbb R}
+\newcommand\Z{\mathbb Z}
 
-\setlength\parindent{0pt}
-\setlength\parskip{10pt}
+\setlist[enumerate]{first={\parskip=8pt}}
 
 \begin{document}
 
