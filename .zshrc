@@ -113,7 +113,7 @@ alias kaero='fold -1 | tal'
 # licenses
 if [ -d ~/.license ]
 then
-    < <(find ~/.license/ -type f) while read license
+    < <(find -L ~/.license/ -type f) while read license
     do
         license="$(basename $license)"
         alias $license="[ -f LICENSE ] && echo 'file LICENSE exists' || \
@@ -127,6 +127,8 @@ setopt interactivecomments
 setopt autocd
 # provide a way to run something without adding it to history
 setopt histignorespace
+# fancy globs
+setopt extendedglob
 
 # prompt
 PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
@@ -145,9 +147,6 @@ then
             'ssh-add ~/.ssh/"$(basename {} | head -c -5)"' \;
     fi
 fi
-
-if [ -f ~/.shemicolon/shemicolon.zsh ]; then source ~/.shemicolon/shemicolon.zsh; fi
-# if pgrep -u $UID frinkserver >/dev/null; then :; else ~/.frinkserver/frinkserver & disown; fi
 
 command_not_found_handler() {
     if [[ "$1" =~ ^[0-9] ]]
@@ -186,3 +185,11 @@ export AVR_TOOLS_DIR=/
 
 # gpg/git exports
 export GPG_TTY=$(tty)
+
+export stm=~/.steam/steam/steamapps/common
+export SSH_ASKPASS=
+
+for f in ~/misc/zsh-nix-shell/nix-shell.plugin.zsh ~/.shemicolon/shemicolon.zsh
+do
+    [ -f "$f" ] && source "$f"
+done
