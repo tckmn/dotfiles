@@ -33,8 +33,8 @@
     horizontal_padding = 8
     separator_color = frame
     startup_notification = false
-    dmenu = /usr/bin/rofi -dmenu -p dunst:
-    browser = /usr/bin/firefox
+    dmenu = /usr/bin/env rofi -dmenu -p dunst
+    browser = /usr/bin/env firefox
     # align left/right/off
     icon_position = off
     # NOTE: this don't exist (?)
