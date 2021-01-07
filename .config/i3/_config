@@ -1,24 +1,23 @@
 # i3 config file (with ppi3)
 # vim: ft=config
 
-exec systemctl --user import-environment DISPLAY
-exec systemctl --user start graphical-session.target
+exec ~/.config/i3/startup.sh
 
 ###############################################################################
 #                                  VARIABLES                                  #
 ###############################################################################
 
-set $mod Mod4              # super / "windows key"
-font pango:monospace 8     # window titles, status bar
-new_window normal 0        # no borders
-set $mv 20px               # amount to resize windows (also used for how far to
-set $mvppt 2ppt            #   move floating windows with mod+shift+hjkl)
-floating_modifier $mod     # mouse+$mod for manipulating floating windows
-focus_follows_mouse no     # this is annoying
-force_focus_wrapping yes   # always wrap focus instead of switching containers
+set $mod Mod4
+set $mv 20px
+set $mvppt 2ppt
+font pango:monospace 8
+new_window normal 0
+floating_modifier $mod
+focus_follows_mouse no
+force_focus_wrapping yes
 mouse_warping none
-set $conf ~/.config/i3     # path to config
-set $bin ~/.config/i3/bin  # path to scripts
+set $conf ~/.config/i3
+set $bin ~/.config/i3/bin
 
 ###############################################################################
 #                                 KEY BINDINGS                                #
@@ -26,105 +25,58 @@ set $bin ~/.config/i3/bin  # path to scripts
 
 group "default" {
 
-# launching
-bindsym $mod{,+Shift}+Return exec rofi \    # rofi (dropin dmenu replacement)
-  -show {run,window}
-bindsym $mod{,+Shift}+apostrophe exec \     # most commonly launched programs
-  {i3-sensible-terminal,firefox}
+# launching programs
+bindsym $mod{,+Shift}+Return exec rofi -show {run,window}
+bindsym $mod{,+Shift}+apostrophe exec {i3-sensible-terminal,firefox}
 
-# window management
-bindsym $mod{2|,+Shift}+{1|h,j,k,l,\        # focused window manipulation,
-  Left,Down,Up,Right} {2|focus,move} \      #   vikeys and arrow key support
-  {1|left,down,up,right}{2|, $mv}
+# window manipulation
+bindsym $mod{2|,+Shift}+{1|h,j,k,l,Left,Down,Up,Right} {2|focus,move} {1|left,down,up,right}{2|, $mv}
+bindsym $mod+{a,s} focus {parent,child}
+bindsym $mod+d kill
 
-bindsym $mod+{backslash,minus} split {h,v}  # split (| = shift+\)
-bindsym $mod+f fullscreen toggle            # fullscreen
-bindsym $mod+{q,w,e} \                      # change container layout
-  layout {stacking,tabbed,toggle split}
-bindsym $mod{,+Shift}+semicolon \           # manage floating windows with
-  {focus mode_,floating }toggle             #   keyboard
+# layouts
+bindsym $mod+{backslash,minus} split {h,v}
+bindsym $mod+f fullscreen toggle
+bindsym $mod+{q,w,e} layout {stacking,tabbed,toggle split}
+bindsym $mod{,+Shift}+semicolon {focus mode_,floating }toggle
 
-bindsym $mod+{a,s} focus {parent,child}     # focus parent/child
-bindsym $mod+d kill                         # delete focused window
-
-# workspaces
-bindsym $mod{2|,+Shift}+{1|1..9,0} \        # workspaces!
-  {2|,move container to }\
-  workspace number {1|1..10}
-
-bindsym $mod{,+Shift}+grave \               # last used workspace
-  {,move container to }\
-  workspace back_and_forth
-
-bindsym $mod{,+Shift}+comma \               # next/prev workspace
-  {,move container to }\
-  workspace prev
-bindsym $mod{,+Shift}+period \
-  {,move container to }\
-  workspace next
-
-# workspace names
-bindsym $mod+x exec $bin/rename-wksp        # rename workspace or clear name
-
-# dual-monitor setup
-bindsym $mod{,+Shift}+Tab {focus,move} \    # other monitor
-  output right
-bindsym $mod+Shift+equal {{?\\}}            # shoot all workspaces over to my
-  workspace number {2..10}; move \          #   large monitor except 1
-    workspace to output HDMI2; {{?\\}}
-  nop
-bindsym $mod+equal move workspace to \      # toggle workspace between monitors
-  output left
+# workspaces and outputs
+bindsym $mod{2|,+Shift}+{1|1..9,0} {2|,move container to }workspace number {1|1..10}
+bindsym $mod{,+Shift}+grave {,move container to }workspace back_and_forth
+bindsym $mod{,+Shift}+comma {,move container to }workspace prev
+bindsym $mod{,+Shift}+period {,move container to }workspace next
+bindsym $mod+x exec $bin/rename-wksp
+bindsym $mod{2|,+Shift,+Control}+{1|u,i,o} {2|focus,move container to,move workspace to} output {1|eDP-1,HDMI-1,HDMI-2}
 
 # special windows
-bindsym $mod{,+Shift}+z \                   # scratchpad
-  {,move }scratchpad{ show,}
-bindsym $mod+Shift+s sticky toggle          # sticky windows
-bindsym $mod+Shift+t \                      # show/hide title bar
-    exec $bin/toggle-border
+bindsym $mod{,+Shift}+z {,move }scratchpad{ show,}
+bindsym $mod+Shift+s sticky toggle
+bindsym $mod+Shift+t exec $bin/toggle-border
 
 # restarting/exiting
-bindsym $mod+Shift+c \                      # reload config file, rerun ppi3
-  exec ppi3 $conf/_config $conf/config \
-  && i3-msg reload
-bindsym $mod+Shift+r restart                # restart i3 inplace
-bindsym $mod+Shift+e exec i3-nagbar \       # exit i3 (log out of X)
-  -t warning -m 'You pressed the exit \
-  shortcut. Do you really want to exit \
-  i3? This will end your X session.' \
-  -b 'Yes, exit i3' 'i3-msg exit'
+bindsym $mod+Shift+c exec ppi3 $conf/_config $conf/config && i3-msg reload
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'
 
-# function keys
-bindsym {1|Print,Mod1+Sys_Req} exec \       # screenshot keys
-  maim -u{1|, -s} $(date \
-  +"$(xdg-user-dir PICTURES)\
-  screenshots/screenshot_%F_%T.png")
+# screenshot
+bindsym {1|Print,Mod1+Sys_Req} exec maim -u{1|, -s} $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
 
-bindsym XF86Audio{Raise,Lower}Volume \      # volume keys
-  exec amixer sset Master 5%{+,-} \
-  && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute \                     # mute volume key
-  exec amixer sset Master toggle \
-  && pkill -RTMIN+10 i3blocks
-bindsym XF86{AudioMicMute,Cut} \            # mute mic key
-  exec amixer sset Capture toggle \
-  && pkill -RTMIN+10 i3blocks
+# volume
+bindsym XF86Audio{Raise,Lower}Volume exec pactl set-sink-volume @DEFAULT_SINK@ {+,-}5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 
-bindsym XF86Audio{Next,Prev,Play,Stop} \    # misc media keys
-  exec mpc {next,prev,toggle,stop} \
-  && pkill -RTMIN+11 i3blocks
+# media
+bindsym XF86Audio{Next,Prev,Play,Stop} exec mpc {next,prev,toggle,stop} && pkill -RTMIN+11 i3blocks
 
-bindsym XF86MonBrightness{Up,Down} \        # brightness keys
-  exec light -{A,U} 1 \
-  && pkill -RTMIN+12 i3blocks
-bindsym XF86{Copy,Paste} \
-  exec light -{U,A} 1 \
-  && pkill -RTMIN+12 i3blocks
+# brightness
+bindsym XF86MonBrightness{Up,Down} exec light -{A,U} 1 && pkill -RTMIN+12 i3blocks
+bindsym XF86{Copy,Paste} exec light -{U,A} 1 && pkill -RTMIN+12 i3blocks
 
 # misc.
-bindsym --release $mod+i exec slock             # lock screen
-bindsym $mod+n exec termite --name=FLOAT -e n   # notes
-bindcode $mod+32 exec $bin/layout-switcher      # xmodmap layout, 32 is "o"
+bindsym --release $mod+Shift+d exec slock
+bindsym $mod+n exec termite --name=FLOAT -e n -t notes
+bindcode $mod+33 exec $bin/layout-switcher  # 33 is "p"
 
 bindsym XF86PowerOff nop
 
@@ -134,6 +86,9 @@ bindsym XF86PowerOff nop
 for_window [title="FLOAT"] floating enable
 for_window [instance="FLOAT"] floating enable
 for_window [instance="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
+
+# stop being obnoxious, zoom
+no_focus [class="zoom"]
 
 ###############################################################################
 #                                    MODES                                    #
@@ -181,7 +136,7 @@ mode $screenshot {
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$($bin/ss-last)" & \
     echo $! > /tmp/feh-pid; mode $screenshot
 
-set $games "games » [n]ethack [d]css [a]tc"
+set $games "games » [n]ethack [d]css [a]tc [s]horthike"
 set $atc "atc » [decK2AOTabh34nt]"
 mode $games {
     bindsym n exec termite \
@@ -193,6 +148,7 @@ mode $games {
         -e 'ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org'; \
         mode "default"
     bindsym a mode $atc
+    bindsym s mode "shorthike"
     bindsym {Escape,space,q,BackSpace,$mod+g} mode "default"
 }
 mode $atc {
@@ -212,6 +168,12 @@ mode $atc {
     bindsym n       exec termite --name=FLOAT -e 'atcrec novice';      mode "default"
     bindsym t       exec termite --name=FLOAT -e 'atcrec two-corners'; mode "default"
     bindsym {Escape,space,q,BackSpace} mode $games
+}
+mode "shorthike" {
+    bindsym --release s mode "default"; exec xdotool type --delay 50 loadgameplz && i3-msg 'mode "shorthike"'
+    bindsym --release d mode "default"; exec xdotool type --delay 50 saveplz && i3-msg 'mode "shorthike"'
+    bindsym --release g mode "default"; exec xdotool type --delay 50 newgameplz && i3-msg 'mode "shorthike"'
+    bindsym Escape mode "default"
 }
 bindsym $mod+g mode $games
 

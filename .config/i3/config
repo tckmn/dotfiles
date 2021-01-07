@@ -1,8 +1,9 @@
+exec ~/.config/i3/startup.sh
 set $mod Mod4
-font pango:monospace 8
-new_window normal 0
 set $mv 20px
 set $mvppt 2ppt
+font pango:monospace 8
+new_window normal 0
 floating_modifier $mod
 focus_follows_mouse no
 force_focus_wrapping yes
@@ -29,6 +30,9 @@ bindsym $mod+Up focus up
 bindsym $mod+Shift+Up move up $mv
 bindsym $mod+Right focus right
 bindsym $mod+Shift+Right move right $mv
+bindsym $mod+a focus parent
+bindsym $mod+s focus child
+bindsym $mod+d kill
 bindsym $mod+backslash split h
 bindsym $mod+minus split v
 bindsym $mod+f fullscreen toggle
@@ -37,9 +41,6 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 bindsym $mod+semicolon focus mode_toggle
 bindsym $mod+Shift+semicolon floating toggle
-bindsym $mod+a focus parent
-bindsym $mod+s focus child
-bindsym $mod+d kill
 bindsym $mod+1 workspace number 1
 bindsym $mod+Shift+1 move container to workspace number 1
 bindsym $mod+2 workspace number 2
@@ -67,34 +68,28 @@ bindsym $mod+Shift+comma move container to workspace prev
 bindsym $mod+period workspace next
 bindsym $mod+Shift+period move container to workspace next
 bindsym $mod+x exec $bin/rename-wksp
-bindsym $mod+Tab focus output right
-bindsym $mod+Shift+Tab move output right
-bindsym $mod+Shift+equal \
-workspace number 2; move workspace to output HDMI2; \
-workspace number 3; move workspace to output HDMI2; \
-workspace number 4; move workspace to output HDMI2; \
-workspace number 5; move workspace to output HDMI2; \
-workspace number 6; move workspace to output HDMI2; \
-workspace number 7; move workspace to output HDMI2; \
-workspace number 8; move workspace to output HDMI2; \
-workspace number 9; move workspace to output HDMI2; \
-workspace number 10; move workspace to output HDMI2; \
-nop
-bindsym $mod+equal move workspace to output left
+bindsym $mod+u focus output eDP-1
+bindsym $mod+Shift+u move container to output eDP-1
+bindsym $mod+Control+u move workspace to output eDP-1
+bindsym $mod+i focus output HDMI-1
+bindsym $mod+Shift+i move container to output HDMI-1
+bindsym $mod+Control+i move workspace to output HDMI-1
+bindsym $mod+o focus output HDMI-2
+bindsym $mod+Shift+o move container to output HDMI-2
+bindsym $mod+Control+o move workspace to output HDMI-2
 bindsym $mod+z scratchpad show
 bindsym $mod+Shift+z move scratchpad
 bindsym $mod+Shift+s sticky toggle
 bindsym $mod+Shift+t exec $bin/toggle-border
 bindsym $mod+Shift+c exec ppi3 $conf/_config $conf/config && i3-msg reload
 bindsym $mod+Shift+r restart
-bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'
-bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
-bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES)screenshots/screenshot_%F_%T.png")
-bindsym XF86AudioRaiseVolume exec amixer sset Master 5%+ && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec amixer sset Master 5%- && pkill -RTMIN+10 i3blocks
+bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'
+bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
+bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86Cut exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioNext exec mpc next && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+11 i3blocks
@@ -103,13 +98,14 @@ bindsym XF86MonBrightnessUp exec light -A 1 && pkill -RTMIN+12 i3blocks
 bindsym XF86MonBrightnessDown exec light -U 1 && pkill -RTMIN+12 i3blocks
 bindsym XF86Copy exec light -U 1 && pkill -RTMIN+12 i3blocks
 bindsym XF86Paste exec light -A 1 && pkill -RTMIN+12 i3blocks
-bindsym --release $mod+i exec slock
-bindsym $mod+n exec termite --name=FLOAT -e n
-bindcode $mod+32 exec $bin/layout-switcher
+bindsym --release $mod+Shift+d exec slock
+bindsym $mod+n exec termite --name=FLOAT -e n -t notes
+bindcode $mod+33 exec $bin/layout-switcher
 bindsym XF86PowerOff nop
 for_window [title="FLOAT"] floating enable
 for_window [instance="FLOAT"] floating enable
 for_window [instance="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
+no_focus [class="zoom"]
 mode "resize" {
 bindsym h resize shrink width $mv or $mvppt
 bindsym j resize grow height $mv or $mvppt
@@ -173,12 +169,13 @@ bindsym q exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode 
 bindsym Escape exec $bin/ss-; exec kill $(cat /tmp/feh-pid) && rm /tmp/feh-pid; mode default
 }
 bindsym $mod+c exec feh -x -g 500x350 -^ FLOAT "$($bin/ss-last)" & echo $! > /tmp/feh-pid; mode $screenshot
-set $games "games » [n]ethack [d]css [a]tc"
+set $games "games » [n]ethack [d]css [a]tc [s]horthike"
 set $atc "atc » [decK2AOTabh34nt]"
 mode $games {
 bindsym n exec termite --name=FLOAT -e 'ssh nethack@nethack.alt.org'; mode "default"
 bindsym d exec urxvt --name=FLOAT -e 'ssh -C -i .ssh/cao_key -l joshua crawl.akrasiac.org'; mode "default"
 bindsym a mode $atc
+bindsym s mode "shorthike"
 bindsym Escape mode "default"
 bindsym space mode "default"
 bindsym q mode "default"
@@ -205,6 +202,12 @@ bindsym Escape mode $games
 bindsym space mode $games
 bindsym q mode $games
 bindsym BackSpace mode $games
+}
+mode "shorthike" {
+bindsym --release s mode "default"; exec xdotool type --delay 50 loadgameplz && i3-msg 'mode "shorthike"'
+bindsym --release d mode "default"; exec xdotool type --delay 50 saveplz && i3-msg 'mode "shorthike"'
+bindsym --release g mode "default"; exec xdotool type --delay 50 newgameplz && i3-msg 'mode "shorthike"'
+bindsym Escape mode "default"
 }
 bindsym $mod+g mode $games
 mode "mark" {
