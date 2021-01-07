@@ -61,13 +61,20 @@ t() {
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
+alias srn='systemctl restart iwd'
+alias srb='systemctl restart bluetooth'
 alias ms='systemctl --user start mbsync'
 alias rf='resolvectl flush-caches'
 alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
 alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
 alias lsc='printf "%s\n" "${(k)commands[@]}" | sort'
 alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
-alias sb='nix-build --option build-use-sandbox true -A'
+alias bn='nix-build --option build-use-sandbox true -A'
+alias sum="awk '{s+=\$1}END{print s}'"
+alias prod="awk 'BEGIN{p=1}{p*=\$1}END{print p}'"
+alias len="awk '{print length(\$0), \$0}'"
+alias lens="awk '{print length(\$0), \$0}' | sort -n"
+br() { nix-build --option build-use-sandbox true -E "(import <nixpkgs> {}).callPackage ./pkgs/$1 {}" }
 b() { [ -n "$1" ] && light -S "$1" || light -G }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
 
@@ -80,10 +87,9 @@ xv() {
 alias vx=xv
 
 # user command aliases
-alias cmatrix="cmatrix -b"
-alias xcowsay="xcowsay -f monospace"
+alias cmatrix='cmatrix -b'
+alias xcowsay='xcowsay -f monospace'
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
-alias dip='code/py/dipperino/dipperino.py'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias qmv='qmv -fdo'
 alias qcp='qcp -fdo'
@@ -99,6 +105,10 @@ gcal() { gcalcli calw ${@:-4} }
 # dumb stuff
 alias es='zathura --fork ~/doc/dict/spanish.pdf'
 alias ru='zathura --fork ~/doc/dict/russian.pdf'
+alias sz='zathura --fork ~/.steam/steam/steamapps/common/SHENZHEN\ IO/Content/SHENZHEN_IO_Manual_English.pdf'
+alias tal='sort | uniq -c | sort -n'
+alias talr='sort | uniq -c | sort -nr'
+alias kaero='fold -1 | tal'
 
 # licenses
 if [ -d ~/.license ]
@@ -159,6 +169,15 @@ fancy-ctrl-z() {
 }
 zle -N fancy-ctrl-z
 bindkey '^Z' fancy-ctrl-z
+
+incog-ret() {
+    BUFFER=" $BUFFER"
+    zle accept-line
+}
+incog() {
+    zle -N incog-ret
+    bindkey '^M' incog-ret
+}
 
 # arduino exports
 export ARDUINO_DIR=/usr/share/arduino
