@@ -1,6 +1,8 @@
 " ugh, this has to be up here for vimtex
 au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
 
+let g:gutentags_define_advanced_commands = 1
+
 call plug#begin()
 " motions/commands
 Plug 'tpope/vim-surround'
@@ -24,6 +26,7 @@ Plug 'tckmn/vim-xsami'
 " integration
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
+Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 
@@ -44,7 +47,9 @@ nnoremap gA ga
 
 " language specific
 let g:tex_flavor='latex'
+let g:vimtex_compiler_method='tectonic'
 let g:vimtex_view_method='zathura'
+let g:vimtex_view_forward_search_on_start=0
 let g:html_indent_inctags='html,body,head,tbody'
 set cinoptions=l1
 au! FileType scheme inoremap <buffer> <C-\> λ
@@ -73,13 +78,15 @@ xnoremap <expr> gk mode() ==# 'v' ? 'k'  : 'gk'
 
 " search
 set ignorecase smartcase incsearch hlsearch
+set grepprg=rg\ -n\ $*
 nnoremap <C-l> :noh<cr><C-l>
 if has('nvim') | set inccommand=nosplit | endif
 
 " behavior
 nnoremap Y y$
-set hidden              " allow navigating away from modified buffers
 set wildignorecase      " case-insensitive pathname tab completion
+set path=.,**,,         " for various path-aware commands, e.g. :find
+set hidden              " allow navigating away from modified buffers
 set nojoinspaces        " don't double-space after punctuation
 set undofile            " persistent undo
 set nostartofline       " reasonable behavior for e.g. <C-v>G
@@ -87,14 +94,23 @@ set nrformats=bin,hex   " not octal, so <C-a> on 07 isn't 010
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
 
 " mappings
+set wildcharm=<C-z>
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
 nnoremap <Leader>a :A<cr><C-g>
+nnoremap <Leader>e :e **/*<C-z><S-Tab>
+nnoremap <Leader>f :find *
+nnoremap <Leader>g :grep 
 nnoremap <Leader>m :make<cr>
-nnoremap <Leader>s :w<cr>
+nnoremap <Leader>s :up<cr>
+nnoremap <Leader>t :ltag /\c
 nnoremap <Leader>y :%y+<cr>
 nnoremap <Leader>z :up<cr><C-z>
+noremap <silent> g{ :<C-u>call cursor(line("'{")+empty(getline(line("'{"))), col('.'))<cr>
+noremap <silent> g} :<C-u>call cursor(line("'}")-empty(getline(line("'}"))), col('.'))<cr>
+vnoremap <silent> g{ :<C-u>call cursor(line("'{")+empty(getline(line("'{"))), col('.'))<cr>`<1v``
+vnoremap <silent> g} :<C-u>call cursor(line("'}")-empty(getline(line("'}"))), col('.'))<cr>`>1v``
 if has('nvim') | tnoremap <Esc> <C-\><C-n> | endif
 
 " more complex mappings
@@ -123,9 +139,25 @@ function! ToggleAlpha()
     endif
 endfunction
 nnoremap <silent> yoa :call ToggleAlpha()<cr>
+nnoremap <silent> [oa :set nrformats+=alpha<cr>
+nnoremap <silent> ]oa :set nrformats-=alpha<cr>
+
+function! ToggleQuickFix()
+    if empty(filter(getwininfo(), 'v:val.quickfix')) | copen | else | cclose | endif
+endfunction
+function! ToggleLocation()
+    if empty(filter(getwininfo(), 'v:val.loclist')) | lopen | else | lclose | endif
+endfunction
+nnoremap <silent> <Leader>c :call ToggleQuickFix()<cr>
+nnoremap <silent> <Leader>l :call ToggleLocation()<cr>
 
 " annoyances
 if has('gui_running') | set toolbar= guioptions= | endif
 if exists("&esckeys") | set noesckeys | endif
 let g:netrw_dirhistmax=0
 set shortmess+=I
+
+" local project-specific settings (path, different shiftwidth, etc)
+if filereadable($HOME.'/.vim/local.vim')
+    source $HOME/.vim/local.vim
+endif
