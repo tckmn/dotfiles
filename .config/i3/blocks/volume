@@ -56,7 +56,6 @@ format() {
   # If dB was selected, print that instead
   perl_filter+=$([[ $STEP = *dB ]] && echo '$3' || echo '$1')
   perl_filter+='"; exit}'
-  echo -n '♪ '
   perl -ne "$perl_filter"
 }
 
