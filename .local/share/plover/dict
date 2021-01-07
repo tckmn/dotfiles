@@ -1,111 +1,542 @@
-# GENERAL
+################################### GENERAL ###################################
 
-AKS/LOLT        axolotl
+# general
+(IN/)SPLIB      inexplicable
+ROIB            ruby
+KLERKT          collector
+KLIG            clicking
+H*IND           hidden
+S*ELS           zealous
+SL*ELS          zealously
+BLA_NT          blatant
+BLA_NLT         blatantly
+(IN/)SPLIBL     inexplicably
+(IN/)SPLIK      inexplicable
+*UNS,AOURND     understood
+A/KPAEL         a capella
+AERNG           angry
+VAFLT           vastly
+PLOX            approximately
+N-GTS           noticing
+AF/TAR          avatar
+AFR             arrive
+AJD             adjective
+ALG             along
+ARJT            arrangement
 ARPT            apart
+ATD             added
+AX/LOLT         axolotl
+B-RM            bathroom
+BA_FBL          baseball
+BLIG            obligatory
+BLILG           obligatorily
+BLI_NLD         blindly
+BR-M            bedroom
+CHOKT           chocolate
+DAUFT,AUD/STI   audacity
+DBIGT           disambiguate
+DBIKSHN         disambiguation
+DEFR?PT         desperate
+DLA_?RSHN       declaration
+DLA_R           declare
+DMISHN          admission
+DOIZ            dizzy
+DRAES           address
+DRERS           dresser
+DROIR           destroyer
+DRUNS           redundancy
+DRUNTD?         redundant
+DU_S            deduce
+DWEPL           develop
+DWERPL,DWORP    developer
+EFD             evidence
+EKT             exact
 ELT             element
-FRIF            forgive
-FU_LT           futile
-KWA/LA          koala
-L-RT            alright
-LOIJ            logic
-SAURT           solder
-SEG             segment
-SNAM            tsunami
-STRA_SHN        demonstration
-TMENL           fundamental
-
+ELTS            elements
+ELZ             easily
+ERZ             easier
+E_NT            eaten
+FAF             favorite
+FAURL           for all
+FA_G            faking
+FE_RCH          for each
+FLURT           flutter
+FOIN            funny
 FORCH           fortune
-FORCHT          fortunate
 FORCHLT         fortunately
-
-SPAND           expand
-KPAND           expand
-SPANSHN         expansion
-KPANSHN         expansion
-SPA*ND          spanned
-
+FORCHT          fortunate
+FO_RD           foreward
+FRAUL           from all
+FRA_F           forgave
+FREFR           forever
+FRE_CH          from each
+FRIF            forgive
+FRIFBL          forgivable
+FRIP            friendship
+FU_LT           futile
+GA*RLG          garlic
+GARN            garden
+GEFNT           against
+GOEN            gotten
+GOILT           guilty
+GRALD           gradual
+HAED            ahead
+HAEND           handy
+HAFM,HAND/SOM   handsome
+HOFPLT?         hospital
+HOIN            honey
+HOIRM           harmony
+HOIRNG          hungry
+HO_M/SIK/TP-PL  {#}
+IM/PERNT        impersonate
+K-FN?LT         confidently
+KANLD           candle
+KAUN/TEFNT      contestant
+KLA_FRL         carefully
+KLOUS           callous
+KMU_?LT?        cumulative
+KOFLT           costly
+KOIM            camera
+KOIT            kitty
+KPAEL           capella
+KPENLT          competently
+KRILT           critical
+KRURNS          occurrence
+KWA/LA          koala
+KWE_RT,KWOIRT   qwerty
+L-RT            alright
+LA*RT           lather
+LALSHN          additionally
+LEFNL           eventually
+LOIJ            logic
+LOING           lingo
+LOIRLT?         literally
+LOULD           loudly
+ME_NT           meantime
+MO*?ING         monkey
+NI_*RT          neither
+NTEBL           intelligible
+NTR?A_N         entertain
+NTU_FT?         intuitive
+NTU_SHN         intuition
+NTU_T           intuit
+OPLT            optimal
+PAEF            passive
+PARNT           apparent
+PED/PAPL        pedipalp
+PERT/FI_?       petrify
+PERT/FI_?K?SHN  petrification
+PIR             picture
+PO*ING          pinky
+PO/SES          possess
+POINL           pencil
+POIP            puppy
+POIT            pity
+PRIBL           predictable
+PROEFBL         provably
+PROFBL          provable
+PROKT           product
+PURCHS          purchase
+R*ELG           relic
+R*ELGS          relax
+RASHLT          rationality
+RE_PSHN         repetition
+RIK/ROL         rickroll
+ROIPL           reply
+S*IKT           sixth
+S?KIFNLT        consistently
+S?KIFNT         consistent
+SA?UB/OPLT      suboptimal
+SACHT           saturate
+SAURT           solder
+SEFRN?T         servant
+SEG             segment
+SE_*/NO_?/FO_B  xenophobe
+SE_*N/FO_B      xenophobe
+SKE_L           conceal
+SLAEP           asleep
+SLIMPL          simply
+SLO_*L          solely
+SLUBLT          subtly
+SM-BL           assemble
+SMER            summer
+SMIBL           assembly
+SMOILT          simultaneously
+SNAM            tsunami
+SPEFNS          expensive
+SPLAERT         splatter
+SPOIS           spicy
+SPR*EFS?        expressive
+SPR*ES          express
+SPR*ESHN        expression
+SPRAS           surpass
+SPRI_GS         surprising
+SPRI_GZ         surprising
+SRO_*           zero
+STIFK           statistic
+STIFL           statistical
+STLIFL          statistically
+STLUBLT         subltety
+STOINT          student
+STRA_SHN        demonstration
+STU_PLD         stupidly
+TIG             ticking
+TMOIK,TMAIK     atomic
+TO*ING          tectonic
+TO*T            tot
+TOFRM           tourism
+TRE_CH          teacher
+TRO?IF          trivia
+UFPT            upset
+ULT/MA_MT?      ultimatum
+WE_RLD          weirdly
+WORG            working
 XLU             exclude
 XLUSHN          exclusion
+XR*EFS?         expressive
+XR*ES           express
+XR*ESHN         expression
+YA_R            area
+YO_KT           idiotic
+YO_T            idiot
 
+# questionable ones
+DIRKSHN,DRIKSHN dictionary
+S-GT,-GTS       things
+TMENL           fundamental
+
+# default dictionary overrides
+A*NL            Alan
+ANL             alone
+HI?RP           {hyper^}
+HI_RP           hyper
+SP-R            {super^}
+SURP            supper
+SU_P            soup
+SU_RP           super
+M*ILD           milled
+MILD            middle
+
+A*EM            {ambi^}
+AEPL            apple
+AFRD            arrived
+AOFRD           afford
+BERT            better
+BERT²,BE_RT     Bert
+GIRT            guitar
+GIRT²           girt
+GR*IFM          organism
+GRIFM           algorithm
+HA*RLD          Harold
+HARLD           hardly
+I_*Z            {^ize}
+I_Z             eyes
+KO*URNT         {counter^}
+KOURNT          counter
+KU_F            confuse
+KU_FS           confuses
+LI_*S           lice
+LI_S            lies
+MAENL           manually
+MANL            manual
+N-SHN,NA_*SHN   {^ination}
+NA_SHN          nation
 PERP            pepper
-PE_RP           perp
-P*ERP           perp
+PE_RP,P*ERP     perp
+PRO*M,PROM²     prom
+PROM            problem
+PROM/A_?KT?     problematic
+PROM/TIK        problematic
+S*EFL           {^self}
+SEFL            self
+SPA*ND          spanned
+SPAND,KPAND     expand
+SPANSHN,KPANSHN expansion
+T?M-NL          animal
+WRI_*GT         Wright
+WRI_GT          writing
+XA?EBL          accessible
+XA?EBLT         accessibility
+XAES            access
+XEFLS           excessively
+XEFS            excessive
+XES             excess
+XRE_*M          extremely
+XRE_M           extreme
 
-PERT/FI         petrify
-PERT/FI_        petrify
-PERT/FISHN      petrification
-PERT/FI_SHN     petrification
-PERT/FIKSHN     petrification
-PERT/FI_KSHN    petrification
+NISH            finish
+F*ISH           phish
 
-AK/TIF          active
-PAEF            passive
+AENGS           answering
+B*K             became
+FREKS           frequency
+KLO_S/YUR,KLO_Z/YUR     close your
 
+# TKP- as def-
+DP*END          defend
+DP*ENS          defense
+DPAU?LT         default
+DPA_M           defame
+DPA_S           deface
+DPEKSHN         defection
+DPEKT           defect
+DPEN/STRA_SHN   defenestration
+DPEN/STRA_T     defenestrate
+DPER            defer
+DPE_T           defeat
+DPINSHN         definition
+DPI_            defy
+DPI_L           defile
+DPI_N           define
+DPLA_T          deflate
+DPLEKT          deflect
+DPORM           deform
+DPRAUD          defraud
+DPROFT          defrost
+DPUNGT          defunct
+DPU_S           defuse
+
+# disambiguators
+FA_FR²          favour
+STR²            centre
+
+# briefs
+BR-D,B-RD       birthday
 S-F             scifi
-S-F/S-F         science fiction
-S*F             science fiction
+S-F²,S*F        science fiction
 
+# multiword briefs
+NROM            no problem
+SPOBL?          as soon as possible
+WU_PT           with all due respect
+
+# special
 -MT             {^ment}
+-NT             {^n't}
+DR-H            Dr.{-|}
+MR-H            Mr.{-|}
 
-# PERSONALLY COMMON MISSTROKES
+# currently mapped to "no" - wtf?
+MET/FO_R        metaphor
 
+######################### PERSONALLY COMMON MISSTROKES ########################
+
+LO_LG           local
 MAEKS           makes
+NTRE_           entry
+RIKD            restricted
+KOLD            cold
+STOL            stole
 
-# DOMAIN-SPECIFIC - MATH
+############################# MAGNUM-STYLE BRIEFS #############################
 
+KOBT            couldn't be
+SHOBT           shouldn't be
+WOBT            wouldn't be
+KOUFB           could have been
+SHOUFB          should have been
+WOUFB           would have been
+KO*UFB          could've been
+SHO*UFB         should've been
+WO*UFB          would've been
+KOUFT           couldn't have
+SHOUFT          shouldn't have
+WOUFT           wouldn't have
+KOUFBT          couldn't have been
+SHOUFBT         shouldn't have been
+WOUFBT          wouldn't have been
+MUFB            must be
+
+THUN            this one
+THAUN           that one
+THE_NS          these ones
+THO_NS          those ones
+
+BA_BL           be able
+BA_BLT          be able to
+DONLT           do not
+E_RCH           each other
+G-GT            going to the
+G-T             go to the
+GO              go to
+GOG             going to
+H-B             had been
+KOU             could you
+L-N             less than
+LI_KT           like the
+SN-             is in
+TOD             to do
+TOG             to go
+TWA             it was
+WHAIF           what if
+WHOR            who are
+WHOU            who you
+
+############################ DOMAIN-SPECIFIC - MATH ###########################
+
+AD/JOINT        adjoint
+BE_L            abelian
+F*?UNGT         functor
 F-/F-           iff
-PO/SET          poset
-PO_/SET         poset
+HER/ME_SHN      Hermitian
+KMU_/TIF        commutative
+KMU_FT          commutative
+KMU_T/IF        commutative
+NTEJ            integer
+NTEJS           integers
+PER/MU_T        permute
+PLO_M           polynomial
+POUR/SET        powerset
+PO_?/SET        poset
+SDI_BLD?        decidable
+SO_SH/TIF       associative
+SO_SHT/IF       associative
+TRANS/PO_S      transpose
+
+N-P             NP
+N-P/KPLE_T      NP-complete
+N-P/HARD        NP-hard
+P*P/SPA_S       PSPACE
+P*P/SPA_S/KPLE_T PSPACE-complete
+P*P/SPA_S/HARD  PSPACE-hard
 
 IN/JEFK         injective
-SUR/JEFK        surjective
-BI/JEFK         bijective
 IN/JEKSHN       injection
+SUR/JEFK        surjective
 SUR/JEKSHN      surjection
+BI/JEFK         bijective
 BI/JEKSHN       bijection
+
+MOFRM           morphism
+AUT/MOFRK       automorphic
+AUT/MOFRM       automorphism
+BI/MOFRK        bimorphic
+BI/MOFRM        bimorphism
+DIF/MOFRK       diffeomorphic
+DIF/MOFRM       diffeomorphism
+END/MOFRK       endomorphic
+END/MOFRM       endomorphism
+EP/MOFRK        epimorphic
+EP/MOFRM        epimorphism
+HOM/MOFRK       homomorphic
+HOM/MOFRM       homomorphism
+HO_M/MOFRK      homeomorphic
+HO_M/MOFRM      homeomorphism
+I_S/MOFRK       isomorphic
+I_S/MOFRM       isomorphism
+MON/MOFRK       monomorphic
+MON/MOFRM       monomorphism
 
 PORD            partial order
 PORD/-D         partially ordered
 TORD            total order
 TORD/-D         totally ordered
 
-# DOMAIN-SPECIFIC - GAMES
+########################### DOMAIN-SPECIFIC - GAMES ###########################
 
 NET/HAK         NetHack
 CHIK/TRIS       chickatrice
-KOK/TRIS        cockatrice
 FOO/TRIS        footrice
-YEN/DOR         Yendor
+KOK/TRIS        cockatrice
 POL/MOFR        polymorph
+YEN/DOR         Yendor
 
-# DOMAIN-SPECIFIC - LINGUISTICS
+SLEFT           Celeste
+BUBS/DROP       bubsdrop
+DMO_/DASH       demodash
+DMO_/HI_P/ER    demohyper
+DMO_/HI_RP      demohyper
+
+SPE_D/RUN       speedrun
+SPE_RN          speedrun
+HUPT            100%
+LO_PT           low%
+NIPT            any%
+TAS             TAS
+TRA             RTA
+
+######################## DOMAIN-SPECIFIC - LINGUISTICS ########################
 
 C-/KMAND        c-command
+CHOMS?          Chomsky
+KOGT            cognate
 WUG             wug
+
+PORCH/GE_S      Portuguese
+PORCH/GE_Z      Portuguese
 
 T-P             toki pona
 J-B             Lojban
+SPRO_NT         Esperanto
 
 PRIPT           prescriptive
 DRIPT           descriptive
 
-# DOMAIN-SPECIFIC - TECH
+ABL/TIF         ablative
+ABS/TIF         absolutive
+AK/TIF          accusative
+COM/TIF         comitative
+DA_?T?/TIF      dative
+ERG/TIF         ergative
+JEN/TIF         genitive
+LO_?K/TIF       locative
+NOM/TIF         nominative
+VO_?K/TIF       vocative
 
-F-F             Firefox
+############################ DOMAIN-SPECIFIC - TECH ###########################
+
+BHOX            hbox
+BU_NT           Ubuntu
 CAUN/F*IG       config
-
-NIX/OS          NixOS
-NIX/O_S         NixOS
-PWAOUPBT        Ubuntu
-
-SEG/FAULT       segfault
+F-F             Firefox
+FEH             feh
+JIT/SE_         Jitsi
+KE_/KAP         keycap
+KE_/SWICH       keyswitch
 KHRAOT          chroot
+KWIK/SORT       quicksort
+LE_/CHES        Lichess
+NIX/O_?S        NixOS
+NIX/P-KS?       nixpkgs
+NU_*            GNU
+P-RL            perl
+PLUN            plugin
+PR-L            perl
+S*SH            zsh
+SEG/FAULT       segfault
+SMOD/MAP        xmodmap
+THI/PAD         ThinkPad
+YAML            YAML
+FR*ING          Frink
 
-# NAMES / PROPER NOUNS
+########################## DOMAIN-SPECIFIC - PUZZLES ##########################
+
+KROURD          crossword
+UNCH            unch
+
+########################### DOMAIN-SPECIFIC - MUSIC ###########################
+
+AR/KO_?         arco
+CHI_K           Tchaikovsky
+FERM/TA         fermata
+FOIRT           forte
+FOIRT²          fortissimo
+FOIRT³          fortississimo
+FOIRT⁴          fortissississimo
+FOIRT⁵          fortississississimo
+P*IZ            pizz
+PO_N            piano
+PO_N²           pianissimo
+PO_N³           pianississimo
+PO_N⁴           pianissississimo
+PO_N⁵           pianississississimo
+WLA             viola
+WLI?N           violin
+
+############################# NAMES / PROPER NOUNS ############################
 
 AN/DRA_*        Andrey
-ARNS            Arslan
-ARS/LAN         Arslan
+ARS/LAN,ARNS    Arslan
 DEF/EN          Deven
 DEF/IN          Devin
 DHINL           Dhilan
@@ -117,7 +548,14 @@ MELG            Meghal
 RA*UNG          Raunak
 RAUN            Raun
 ROOSH           Roosh
-SHO_/MIK        Shomik
+SHO_/MIK,SHO_M  Shomik
+
+SIP/SER         Sipser
+VON/NOIM        von Neumann
+
+ANG             Aang
+TKRA            Katara
+SU_*K           Zuko
 
 HAX/ORZ         0xh4x0rz
 SMET            Schmett
@@ -126,38 +564,44 @@ SMET/LING       Schmetterling
 H-G             Hitchhiker's Guide
 H-G/H-G         The Hitchhiker's Guide to the Galaxy
 
-# EMOTES
+FERS            Ferris
 
-AFPLT           ah
-OFPLT           oh
-EFPLT           eh
-UFPLT           uh
-HAFPLT          hah
-HOFPLT          hoh
-HEFPLT          heh
-HUFPLT          huh
+#################################### EMOTES ###################################
 
-BAFPLT          bah
-GAFPLT          gah
-YAFPLT          yeah
-MEFPLT          meh
+AH              ah
+O_?H            oh
+EH              eh
+UH              uh
+HAH             hah
+HO_H            hoh
+HEH             heh
+HUH             huh
 
-HA                      ha
-HA/HA                   haha
-HA/HA/HA                hahaha
-HA/HA/HA/HA             hahahaha
-HA/HA/HA/HA/HA          hahahahaha
-HA/HA/HA/HA/HA/HA       hahahahahaha
-HA/HA/HA/HA/HA/HA/HA    hahahahahahaha
-HA/HA/HA/HA/HA/HA/HA/HA hahahahahahahaha
-HE                      he
-HE/HE                   hehe
-HE/HE/HE                hehehe
-HE/HE/HE/HE             hehehehe
-HE/HE/HE/HE/HE          hehehehehe
-HE/HE/HE/HE/HE/HE       hehehehehehe
-HE/HE/HE/HE/HE/HE/HE    hehehehehehehe
-HE/HE/HE/HE/HE/HE/HE/HE hehehehehehehehe
+BAH             bah
+GAH             gah
+MEH             meh
+NAH             nah
+WO_?H           woah
+YAH,YEH,YAEH    yeah
+
+HA              ha
+HA²             haha
+HA³             hahaha
+HA⁴             hahahaha
+HA⁵             hahahahaha
+HA⁶             hahahahahaha
+HA⁷             hahahahahahaha
+HA⁸             hahahahahahahaha
+HA⁹             hahahahahahahahaha
+HE              he
+HE²             hehe
+HE³             hehehe
+HE⁴             hehehehe
+HE⁵             hehehehehe
+HE⁶             hehehehehehe
+HE⁷             hehehehehehehe
+HE⁸             hehehehehehehehe
+HE⁹             hehehehehehehehehe
 
 BR-B            brb
 BR*B            be right back
@@ -183,27 +627,133 @@ TWA*F           what the actual fuck
 WAU             wow
 WAOU            waow
 
+DPR-FL          ಠ_ಠ
 SH-RG           ¯\_(ツ)_/¯
 TBL-FPL         (╯°□°）╯︵ ┻━┻
-DPR-FL          ಠ_ಠ
+TPH-PL          .-.
 
-# META
+# for some reason the default dictionary one is weird with capitalization
+LOL             lol
 
-KPA             {:case:cap_first_word}
-KPLA            {:case:upper_first_word}
-LUR             {:case:lower_first_char}
+################################### SYMBOLS ###################################
+
+# pattern inspired by https://stenomod.blogspot.com/2020/03/a-pattern-for-stroking-symbols-with.html
+
+BR-FPLT  {~|[^}
+BR-RBGS  {^~|]}
+GL-FPLT  {~|<^}
+GL-RBGS  {^~|>}
+KBR-FPLT {~|\{^}
+KBR-RBGS {^~|\}}
+PR-FPLT  {~|(^}
+PR-RBGS  {^~|)}
+
+B-FBGT   {~||}
+B-FPLT   {~||^}
+B-RBGS   {^~||}
+B-RPLS   {^~||^}
+DL-FBGT  {~|$}
+DL-FPLT  {~|$^}
+DL-RBGS  {^~|$}
+DL-RPLS  {^~|$^}
+GR-FBGT  {~|`}
+GR-FPLT  {~|`^}
+GR-RBGS  {^~|`}
+GR-RPLS  {^~|`^}
+H-FBGT   {~|-}
+H-FPLT   {~|-^}
+H-RBGS   {^~|-}
+H-RPLS   {^~|-^}
+KL-FBGT  {~|:}
+KL-FPLT  {~|:^}
+KL-RBGS  {^~|:}
+KL-RPLS  {^~|:^}
+KP-FBGT  {~|/}
+KP-FPLT  {~|/^}
+KP-RBGS  {^~|/}
+KP-RPLS  {^~|/^}
+KR-FBGT  ^
+KR-FPLT  ^{^}
+KR-RBGS  {^}^
+KR-RPLS  {^}^{^}
+KW-FBGT  {~|"}
+KW-FPLT  {~|"^}
+KW-RBGS  {^~|"}
+KW-RPLS  {^~|"^}
+KWL-FBGT {~|=}
+KWL-FPLT {~|=^}
+KWL-RBGS {^~|=}
+KWL-RPLS {^~|=^}
+N-FBGT   {~|#}
+N-FPLT   {~|#^}
+N-RBGS   {^~|#}
+N-RPLS   {^~|#^}
+P-FBGT   {~|%}
+P-FPLT   {~|%^}
+P-RBGS   {^~|%}
+P-RPLS   {^~|%^}
+PL-FBGT  {~|+}
+PL-FPLT  {~|+^}
+PL-RBGS  {^~|+}
+PL-RPLS  {^~|+^}
+SKL-FBGT {~|;}
+SKL-FPLT {~|;^}
+SKL-RBGS {^~|;}
+SKL-RPLS {^~|;^}
+SKP-FBGT {~|&}
+SKP-FPLT {~|&^}
+SKP-RBGS {^~|&}
+SKP-RPLS {^~|&^}
+SKR-FBGT {~|_}
+SKR-FPLT {~|_^}
+SKR-RBGS {^~|_}
+SKR-RPLS {^~|_^}
+STR-FBGT {~|*}
+STR-FPLT {~|*^}
+STR-RBGS {^~|*}
+STR-RPLS {^~|*^}
+T-FBGT   {~|'}
+T-FPLT   {~|'^}
+T-RBGS   {^~|'}
+T-RPLS   {^~|'^}
+TL-FBGT  {~|~}
+TL-FPLT  {~|~^}
+TL-RBGS  {^~|~}
+TL-RPLS  {^~|~^}
+TW-FBGT  {~|\}
+TW-FPLT  {~|\^}
+TW-RBGS  {^~|\}
+TW-RPLS  {^~|\^}
+Y-FBGT   {~|@}
+Y-FPLT   {~|@^}
+Y-RBGS   {^~|@}
+Y-RPLS   {^~|@^}
+
+################################### COMMANDS ##################################
+
+STPH-RPG {#Control_L(Up)}{^}
+STPH-RBG {#Control_L(Down)}{^}
+STPH-RPB {#Home}{^}
+STPH-PBG {#End}{^}
+B*FP     {#Control_L(BackSpace}{^}
+
+##################################### META ####################################
+
+KPA             {-|}
+KPLA            {<}
+LUR             {>}
 SP              {^^}
 S-P             {^ ^}
 
-KPAD            {:retro_case:cap_first_word}
-KPLAD           {:retro_case:upper_first_word}
-LURD            {:retro_case:lower_first_char}
+KPAD            {*-|}
+KPLAD           {*<}
+LURD            {*>}
 SP-D            {*!}
 S-PD            {*?}
 
-KPA*            {^^}{:case:cap_first_word}
-KPLA*           {^^}{:case:upper_first_word}
-L*UR            {^^}{:case:lower_first_char}
+KPA*            {^^}{-|}
+KPLA*           {^^}{<}
+L*UR            {^^}{>}
 
 H*MD            {MODE:SET_SPACE:-}
 K*MD            {MODE:CAPS}
@@ -218,8 +768,13 @@ T*MD            {MODE:TITLE}
 PLUP            {PLOVER:LOOKUP}
 PL-FKS          {PLOVER:FOCUS}
 
-# JOKES
+#################################### JOKES ####################################
 
 KR-RCH          Pshhhkkkkkrrrrkakingkakingkakingtshchchchchchchchchdingdingding
+ME_*M           meem
+NO*RKSHN        I have no recollection of that?
+PA*?F?BLD       Passersby were amazed by the unusually large amounts of blood.
+YE_*N           aneoaia
+PHR*RBGD        please, stop putting fish inside of me, I am dying
 
-# vim: ft=config
+# vim: ft=cfg
