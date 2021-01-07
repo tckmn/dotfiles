@@ -59,7 +59,7 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'
 
 # screenshot
-bindsym {1|Print,Mod1+Sys_Req} exec maim -u{1|, -s} $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
+bindsym {1|Print,Mod1+Sys_Req} exec maim -u{1|, -s} $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
 
 # volume
 bindsym XF86Audio{Raise,Lower}Volume exec pactl set-sink-volume @DEFAULT_SINK@ {+,-}5% && pkill -RTMIN+10 i3blocks

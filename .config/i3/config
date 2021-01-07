@@ -84,8 +84,8 @@ bindsym $mod+Shift+t exec $bin/toggle-border
 bindsym $mod+Shift+c exec ppi3 $conf/_config $conf/config && i3-msg reload
 bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'
-bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
-bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES) screenshots/screenshot_%F_%T.png")
+bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
+bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
