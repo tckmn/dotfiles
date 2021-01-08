@@ -10,8 +10,6 @@ files to install manually:
     .config/mpd/playlists/*
     .config/mutt/*_private      email
     doc/journal/*               diary
-    misc/apl.xkb                apl keyboard layout
-    misc/symbols/aplfixed
     .vim/autoload/plug.vim      (because it self-updates)
 
 steps to take manually:
