@@ -6,11 +6,12 @@ files to install manually:
 
     .ssh/id_rsa                 private keys / passwords
     .config/i3/imgur_authid
+    .config/mutt/*_private
     snd/msc/*                   music
     .config/mpd/playlists/*
-    .config/mutt/*_private      email
     doc/journal/*               diary
     .vim/autoload/plug.vim      (because it self-updates)
+    misc/frink.jar              for the frink alias (todo: make a nix derivation for this)
 
 steps to take manually:
 
