@@ -2,16 +2,17 @@ to install with nix, simply run nix-shell
 
 to install with other package managers, first install GNU stow, then run install.sh
 
-files with private information (to be installed manually):
+files to install manually:
 
-    .ssh/id_rsa
-    .config/mpd/playlists/*
-    .config/mutt/*_private
+    .ssh/id_rsa                 private keys / passwords
     .config/i3/imgur_authid
-
-other files to install manually:
-
-    .vim/autoload/plug.vim (because it self-updates)
+    snd/msc/*                   music
+    .config/mpd/playlists/*
+    .config/mutt/*_private      email
+    doc/journal/*               diary
+    misc/apl.xkb                apl keyboard layout
+    misc/symbols/aplfixed
+    .vim/autoload/plug.vim      (because it self-updates)
 
 steps to take manually:
 

@@ -16,7 +16,7 @@ awk '!x[$0]++' | rofi -dmenu -sync -p layout)"
 
 if [ "$newlayout" = apl ]
 then
-    xkbcomp -I/home/tckmn/misc /home/tckmn/misc/apl.xkb :0
+    xkbcomp -I$HOME/misc ~/misc/apl.xkb :0
 elif [ -n "$newlayout" ]
 then
     setxkbmap -layout "$newlayout"
