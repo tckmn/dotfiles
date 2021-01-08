@@ -57,7 +57,7 @@ t() {
     fi
 }
 
-# aliases / functions for builtins / system tools
+# aliases / functions
 alias sudo='sudo '
 alias sc=systemctl
 alias scu='systemctl --user'
@@ -69,46 +69,33 @@ alias lsa='printf "%s\n" "${(k)aliases[@]}" | sort'
 alias lsb='printf "%s\n" "${(k)builtins[@]}" | sort'
 alias lsc='printf "%s\n" "${(k)commands[@]}" | sort'
 alias lsf='printf "%s\n" "${(k)functions[@]}" | sort'
-alias bn='nix-build --option build-use-sandbox true -A'
 alias sum="awk '{s+=\$1}END{print s}'"
 alias prod="awk 'BEGIN{p=1}{p*=\$1}END{print p}'"
 alias len="awk '{print length(\$0), \$0}'"
 alias lens="awk '{print length(\$0), \$0}' | sort -n"
+alias tal='sort | uniq -c | sort -n'
+alias talr='sort | uniq -c | sort -nr'
+alias kaero='fold -1 | tal'
+alias bn='nix-build --option build-use-sandbox true -A'
 br() { nix-build --option build-use-sandbox true -E "(import <nixpkgs> {}).callPackage ./pkgs/$1 {}" }
-b() { [ -n "$1" ] && light -S "$1" || light -G }
+b() { [ -n "$1" ] && \light -S "$1" || light -G }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
-
-# vim aliases
-alias v='nvim'
+alias v=nvim
 xv() {
-    [ -e "$1" ] && echo Warning: file exists && sleep 1
+    [ -e "$1" ] && echo Warning: file exists && sleep 2
     touch "$1" && chmod +x "$1" && v "$1"
 }
 alias vx=xv
-
-# user command aliases
-alias cmatrix='cmatrix -b'
-alias xcowsay='xcowsay -f monospace'
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias qmv='qmv -fdo'
 alias qcp='qcp -fdo'
-alias mutta='mutt -F ~/.config/mutt/kbd_muttrc'
-alias muttb='mutt -F ~/.config/mutt/mit_muttrc'
-alias muttc='mutt -F ~/.config/mutt/tck_muttrc'
+alias muttmit='mutt -F ~/.config/mutt/mit_muttrc'
+alias mutttck='mutt -F ~/.config/mutt/tck_muttrc'
 alias z='zathura --fork'
 alias python=python3
 да(){yes ${@:-д}}
 dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd '' }
-gcal() { gcalcli calw ${@:-4} }
-
-# dumb stuff
-alias es='zathura --fork ~/doc/dict/spanish.pdf'
-alias ru='zathura --fork ~/doc/dict/russian.pdf'
-alias sz='zathura --fork ~/.steam/steam/steamapps/common/SHENZHEN\ IO/Content/SHENZHEN_IO_Manual_English.pdf'
-alias tal='sort | uniq -c | sort -n'
-alias talr='sort | uniq -c | sort -nr'
-alias kaero='fold -1 | tal'
 
 # licenses
 if [ -d ~/.license ]
