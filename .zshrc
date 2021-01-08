@@ -11,7 +11,7 @@ bindkey -e
 WORDCHARS=${WORDCHARS/\/}
 
 # colors
-eval "$([ -r ~/.dircolors ] && dircolors -b ~/.dircolors || dircolors -b)"
+eval "$(dircolors -b)"
 for cmd in ls {,v}dir {,f,e}grep; do alias $cmd="$cmd --color=auto"; done
 
 # completion
