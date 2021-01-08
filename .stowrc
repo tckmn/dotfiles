@@ -1,0 +1,7 @@
+-v
+-t ~
+--no-folding
+--ignore .stowrc
+--ignore install.sh
+--ignore shell.nix
+--ignore tags

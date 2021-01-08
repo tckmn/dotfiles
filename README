@@ -1,8 +1,6 @@
-to install with GNU stow:
+to install with nix, simply run nix-shell
 
-    git clone https://github.com/tckmn/dotfiles
-    stow --no-folding -t $HOME dotfiles
-    ln -s ~/.vim ~/.config/nvim
+to install with other package managers, first install GNU stow, then run install.sh
 
 files with private information (to be installed manually):
 
