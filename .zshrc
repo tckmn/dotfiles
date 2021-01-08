@@ -159,11 +159,6 @@ command_not_found_handler() {
     return 127
 }
 
-for f in ~/misc/zsh-nix-shell/nix-shell.plugin.zsh ~/.shemicolon/shemicolon.zsh
-do
-    [ -f "$f" ] && source "$f"
-done
-
 # http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 fancy-ctrl-z() {
     if [ $#BUFFER -eq 0 -a -n "$(jobs)" ]; then
