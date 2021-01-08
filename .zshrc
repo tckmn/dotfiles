@@ -135,7 +135,7 @@ PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 RPROMPT=
 
 # ssh-agent
-if [[ "$USERNAME" =~ ^tckmn$ ]] && which ssh-agent >/dev/null
+if [ $(find ~/.ssh -iname '*.pub' -printf x) ] && which ssh-agent >/dev/null
 then
     if pgrep -u $UID ssh-agent >/dev/null
     then
