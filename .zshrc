@@ -118,7 +118,7 @@ setopt histignorespace
 setopt extendedglob
 
 # prompt
-PS1="%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
+PS1="$([ -n "$IN_NIX_SHELL" ] && echo 'nix-shell:')%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
 RPROMPT=
 
 # ssh-agent
