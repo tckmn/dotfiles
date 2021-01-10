@@ -76,6 +76,7 @@ alias lens="awk '{print length(\$0), \$0}' | sort -n"
 alias tal='sort | uniq -c | sort -n'
 alias talr='sort | uniq -c | sort -nr'
 alias kaero='fold -1 | tal'
+alias ape='nix-shell --run "autoPatchelf ." -p autoPatchelfHook'
 alias bn='nix-build --option build-use-sandbox true -A'
 br() { nix-build --option build-use-sandbox true -E "(import <nixpkgs> {}).callPackage ./pkgs/$1 {}" }
 b() { [ -n "$1" ] && \light -S "$1" || light -G }
