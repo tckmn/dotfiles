@@ -91,6 +91,7 @@ alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.F
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias qmv='qmv -fdo'
 alias qcp='qcp -fdo'
+alias lhd='lighttpd -f lighttpd.conf'
 alias muttmit='mutt -F ~/.config/mutt/mit_muttrc'
 alias mutttck='mutt -F ~/.config/mutt/tck_muttrc'
 alias z='zathura --fork'
