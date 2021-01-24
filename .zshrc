@@ -119,6 +119,9 @@ setopt autocd
 setopt histignorespace
 # fancy globs
 setopt extendedglob
+# make completion competent
+setopt menu_complete
+bindkey "${terminfo[kcbt]}" reverse-menu-complete
 
 # prompt
 PS1="$([ -n "$IN_NIX_SHELL" ] && echo 'nix-shell:')%K{red}%F{white}%n@%m%f%k:%B%F{cyan}%(4~|...|)%3~%F{white}%(!.#.$) %b%f%k"
