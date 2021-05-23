@@ -171,7 +171,7 @@ SPRI_GZ         surprising
 SRO_*           zero
 STIFK           statistic
 STIFL           statistical
-STI_RE          satire
+STI_R           satire
 STLIFL          statistically
 STLUBLT         subltety
 STO*IN          stenography
@@ -541,7 +541,7 @@ DMO_/HI_RP      demohyper
 HUPT            100%
 LO_PT           low%
 NIPT            any%
-OIT/SCRORL      autoscroller
+OIT/SKRORL      autoscroller
 PAUS/BUFR       pausebuffer
 SPE_D/RUN       speedrun
 SPE_RN          speedrun
@@ -625,7 +625,7 @@ PO_N³           pianississimo
 PO_N⁴           pianissississimo
 PO_N⁵           pianississississimo
 WLA             viola
-WLI?N           violin
+WLI??N          violin
 
 ############################# NAMES / PROPER NOUNS ############################
 
@@ -878,7 +878,7 @@ ME_*M           meem
 NO_?*RKSHN      I have no recollection of that?
 O/O             ꙮ
 PA*?F?BLD       Passersby were amazed by the unusually large amounts of blood.
-PL*?SHGD        please, stop putting fish inside of me, I am dying
+PL*??SHGD       please, stop putting fish inside of me, I am dying
 YE_*N           aneoaia
 WE_B            weeb
 DORP            dorp
@@ -886,4 +886,4 @@ DORP            dorp
 TP-BG/T-G       !tgguess
 TP-BG/ARNS      !arslan
 
-# vim: ft=cfg
+# vim: ft=conf

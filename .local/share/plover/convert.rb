@@ -62,16 +62,29 @@ Y-    KWR
 
 '.gsub(/^-/, '[AO*EU-].*\K').gsub('- ', '(?=.*[AO*EU-]) ').lines.map(&:chomp).reject(&:empty?).map{|x| a,b = x.split; [Regexp.new(a), b]}
 
+rep = '²³⁴⁵⁶⁷⁸⁹'
+preg = /\(([^)]+)\)/
+qqeg = /(.)\?\?/
+qreg = /(.)\?/
+process = -> s {
+    s =~ preg ? (process[s.sub(preg, '')] + process[s.sub(preg, '\1')]) :
+    s =~ qqeg ? (process[s.sub(qqeg, ?-)] + process[s.sub(qqeg, '\1')]) :
+    s =~ qreg ? (process[s.sub(qreg, '')] + process[s.sub(qreg, '\1')]) :
+    rep.index(s[-1]) ? [([s[0..-2]] * (rep.index(s[-1]) + 2)) * ?/] :
+    [s]
+}
+
 File.write 'dict.json',
     File.readlines('dict')
         .map(&:strip)
         .reject{|x| x.empty? || x[0] == ?# }
-        .each{|x|
-            x.sub!(/^\\#/, ?#)
-            1 while x.sub!(/(?<=^|,)([^ ,]*)(.)\?([^ ,]*)/, '\1\2\3,\1\3')
-            1 while x.sub!(/(?<=^|,)([^ ,]*)\((.+)\)([^ ,]*)/, '\1\2\3,\1\3')
-            '²³⁴⁵⁶⁷⁸⁹'.chars.each.with_index{|c,i| x.gsub! /(?<=^|[,\/])([^ ,\/]*)#{c}/, (['\1']*(i+2))*?/}
+        .flat_map{|x|
+            parts = x.split '; '
+            mid = parts.size/2
+            parts[0...mid].zip(parts[mid+1..-1]) + [parts[mid].split(nil, 2)]
         }
-        .flat_map{|x| a,b = x.split nil, 2; a.split(?,).map{|a| [a,(b||'')]} }.to_h
-        .transform_keys{|k| k.split(?/).map{|s| check subs.reduce(s){|s,r| s.gsub *r}, k}*?/ }
+        .flat_map{|x| a,b = x; a.split(?,).map{|a| [a,b]} }
+        .flat_map{|x| a,b = x; process[a].map{|a| [a,b]} }
+        .to_h
+        .transform_keys{|k| k.sub(/^\\#/, ?#).split(?/).map{|s| check subs.reduce(s){|s,r| s.gsub *r}, k}*?/ }
         .to_json
