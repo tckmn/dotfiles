@@ -1,37 +1,27 @@
 ################################### GENERAL ###################################
 
 # general
-(IN/)SPLIB      inexplicable
-ROIB            ruby
-KLERKT          collector
-KLIG            clicking
-H*IND           hidden
-S*ELS           zealous
-SL*ELS          zealously
-BLA_NT          blatant
-BLA_NLT         blatantly
+(IN/)SPLIBG?    inexplicable
 (IN/)SPLIBL     inexplicably
-(IN/)SPLIK      inexplicable
 *UNS,AOURND     understood
+A*UT/TIK        authentic
 A/KPAEL         a capella
 AERNG           angry
-VAFLT           vastly
-PLOX            approximately
-N-GTS           noticing
 AF/TAR          avatar
 AFR             arrive
 AJD             adjective
 ALG             along
 ARJT            arrangement
 ARPT            apart
-ATD             added
 AX/LOLT         axolotl
 B-RM            bathroom
 BA_FBL          baseball
+BLA_NLT         blatantly
+BLA_NT          blatant
 BLIG            obligatory
 BLILG           obligatorily
-BLI_NLD         blindly
 BR-M            bedroom
+CHIRT           chitter
 CHOKT           chocolate
 DAUFT,AUD/STI   audacity
 DBIGT           disambiguate
@@ -39,8 +29,8 @@ DBIKSHN         disambiguation
 DEFR?PT         desperate
 DLA_?RSHN       declaration
 DLA_R           declare
+DLA_R/TIF       declarative
 DMISHN          admission
-DOIZ            dizzy
 DRAES           address
 DRERS           dresser
 DROIR           destroyer
@@ -53,7 +43,6 @@ EFD             evidence
 EKT             exact
 ELT             element
 ELTS            elements
-ELZ             easily
 ERZ             easier
 E_NT            eaten
 FAF             favorite
@@ -61,7 +50,6 @@ FAURL           for all
 FA_G            faking
 FE_RCH          for each
 FLURT           flutter
-FOIN            funny
 FORCH           fortune
 FORCHLT         fortunately
 FORCHT          fortunate
@@ -77,121 +65,133 @@ FU_LT           futile
 GA*RLG          garlic
 GARN            garden
 GEFNT           against
+GLI_RD          glider
 GOEN            gotten
-GOILT           guilty
 GRALD           gradual
+H*IND           hidden
 HAED            ahead
 HAEND           handy
 HAFM,HAND/SOM   handsome
+HA_NS           heinous
+HA_RKT          haircut
 HOFPLT?         hospital
-HOIN            honey
-HOIRM           harmony
-HOIRNG          hungry
-HO_M/SIK/TP-PL  {#}
 IM/PERNT        impersonate
-K-FN?LT         confidently
+K-BLT           accountable
 KANLD           candle
 KAUN/TEFNT      contestant
-KLA_FRL         carefully
+KLERKT          collector
+KLIG            clicking
 KLOUS           callous
+KMORN           commoner
 KMU_?LT?        cumulative
-KOFLT           costly
 KOIM            camera
-KOIT            kitty
 KPAEL           capella
-KPENLT          competently
+KPALSHN         capitalization
 KRILT           critical
 KRURNS          occurrence
 KWA/LA          koala
+KWAG            quacking
+KWA_G           quaking
 KWE_RT,KWOIRT   qwerty
 L-RT            alright
 LA*RT           lather
-LALSHN          additionally
-LEFNL           eventually
+LIRDZ           lizard
 LOIJ            logic
-LOING           lingo
-LOIRLT?         literally
-LOULD           loudly
 ME_NT           meantime
+MIR             mirror
 MO*?ING         monkey
+MROON           maroon
+N-GTS           noticing
 NI_*RT          neither
 NTEBL           intelligible
 NTR?A_N         entertain
 NTU_FT?         intuitive
 NTU_SHN         intuition
 NTU_T           intuit
+OFBLT           objectively
+OFBT            objective
 OPLT            optimal
 PAEF            passive
+PAFRD           password
 PARNT           apparent
 PED/PAPL        pedipalp
 PERT/FI_?       petrify
 PERT/FI_?K?SHN  petrification
 PIR             picture
+PLURLZ          pluralize
 PO*ING          pinky
 PO/SES          possess
 POINL           pencil
-POIP            puppy
-POIT            pity
+PORNGD          pondering
 PRIBL           predictable
 PROEFBL         provably
 PROFBL          provable
 PROKT           product
+PROU?FKT        productive
 PURCHS          purchase
 R*ELG           relic
 R*ELGS          relax
 RASHLT          rationality
+RE/B*?ULT       rebuttal
+RE/LIJ          religion
 RE_PSHN         repetition
 RIK/ROL         rickroll
-ROIPL           reply
+S*ELS           zealous
 S*IKT           sixth
 S?KIFNLT        consistently
 S?KIFNT         consistent
 SA?UB/OPLT      suboptimal
 SACHT           saturate
 SAURT           solder
+SDI_FRBL        decipherable
 SEFRN?T         servant
 SEG             segment
 SE_*/NO_?/FO_B  xenophobe
 SE_*N/FO_B      xenophobe
+SIFRPLT         simplicity
 SKE_L           conceal
+SKIRP           skipper
+SKOORL          schooler
 SLAEP           asleep
-SLIMPL          simply
-SLO_*L          solely
-SLUBLT          subtly
 SM-BL           assemble
 SMER            summer
-SMIBL           assembly
-SMOILT          simultaneously
 SNAM            tsunami
 SPEFNS          expensive
+SPEGS           possession
+SPES            possess
 SPLAERT         splatter
-SPOIS           spicy
+SPLO_F          explosive
 SPR*EFS?        expressive
 SPR*ES          express
 SPR*ESHN        expression
+SPRAFD          surpassed
 SPRAS           surpass
 SPRI_GS         surprising
 SPRI_GZ         surprising
 SRO_*           zero
 STIFK           statistic
 STIFL           statistical
+STI_RE          satire
 STLIFL          statistically
 STLUBLT         subltety
-STOINT          student
+STO*IN          stenography
+STO_NL          stolen
 STRA_SHN        demonstration
-STU_PLD         stupidly
+STU_CH          statue
 TIG             ticking
 TMOIK,TMAIK     atomic
 TO*ING          tectonic
 TO*T            tot
 TOFRM           tourism
+TRANS/PO_FD     transposed
 TRE_CH          teacher
 TRO?IF          trivia
 UFPT            upset
 ULT/MA_MT?      ultimatum
-WE_RLD          weirdly
 WORG            working
 XLU             exclude
+XLUF            exclusive
+XLUFL           exclusively
 XLUSHN          exclusion
 XR*EFS?         expressive
 XR*ES           express
@@ -200,29 +200,89 @@ YA_R            area
 YO_KT           idiotic
 YO_T            idiot
 
+# L-/-L = ly
+BLI_NLD         blindly
+ELZ             easily
+K-FN?LT         confidently
+KLA_FRL         carefully
+KLUFL           inclusively
+KOFLT           costly
+KPENLT          competently
+LALSHN          additionally
+LEFNL           eventually
+LOIRLT?         literally
+LOULD           loudly
+PLOX            approximately
+SL*ELS          zealously
+SLIMPL          simply
+SLO_*L          solely
+SLUBLT          subtly
+STU_PLD         stupidly
+VAFLT           vastly
+WE_RLD          weirdly
+
+# I/OI = ly
+SMIBL           assembly
+SMOILT          simultaneously
+
+# OI = -y (or other trailing vowel)
+CHOIL           cello
+DOIZ            dizzy
+FOIN            funny
+GOILT           guilty
+HOIN            honey
+HOIRM           harmony
+HOIRNG          hungry
+KOIT            kitty
+LOING           lingo
+POIP            puppy
+POIT            pity
+ROIB            ruby
+ROIPL           reply
+SPOIS           spicy
+
+# -FR = m
+MUMBL          mumble
+STUMBL         stumble
+GRUMBL         grumble
+THIMBL         thimble
+BRAMBL         bramble
+BUMBL          bumble
+KRUMBL         crumble
+SKRAMBL        scramble
+
+# -TD = dded
+ATD             added
+BLENTD          blended
+
 # questionable ones
 DIRKSHN,DRIKSHN dictionary
 S-GT,-GTS       things
-TMENL           fundamental
 
 # default dictionary overrides
 A*NL            Alan
 ANL             alone
 HI?RP           {hyper^}
 HI_RP           hyper
+M*ILD           milled
+MILD            middle
 SP-R            {super^}
 SURP            supper
 SU_P            soup
 SU_RP           super
-M*ILD           milled
-MILD            middle
 
 A*EM            {ambi^}
 AEPL            apple
 AFRD            arrived
 AOFRD           afford
+B-G             becoming
 BERT            better
 BERT²,BE_RT     Bert
+BO*ID           Boyd
+BOID            body
+BRO             bro
+BRO_            borrow
+BRO_*           borough
 GIRT            guitar
 GIRT²           girt
 GR*IFM          organism
@@ -253,6 +313,9 @@ SPA*ND          spanned
 SPAND,KPAND     expand
 SPANSHN,KPANSHN expansion
 T?M-NL          animal
+TRANS           trance
+W-P             Wikipedia
+W-P²            WordPress
 WRI_*GT         Wright
 WRI_GT          writing
 XA?EBL          accessible
@@ -264,12 +327,22 @@ XES             excess
 XRE_*M          extremely
 XRE_M           extreme
 
-NISH            finish
+NISH,F-SH       finish
 F*ISH           phish
 
+# kills "piffle", but who cares
+PIFL            positively
+
+# a bit questionable
+FLUL            fully
+TMENL           fundamental
+FLENL           fundamentally
+
 AENGS           answering
+AFRDZ           afterwards
 B*K             became
 FREKS           frequency
+SDORT           distort
 KLO_S/YUR,KLO_Z/YUR     close your
 
 # TKP- as def-
@@ -283,6 +356,7 @@ DPEKT           defect
 DPEN/STRA_SHN   defenestration
 DPEN/STRA_T     defenestrate
 DPER            defer
+DPERL           deferral
 DPE_T           defeat
 DPINSHN         definition
 DPI_            defy
@@ -296,7 +370,7 @@ DPROFT          defrost
 DPUNGT          defunct
 DPU_S           defuse
 
-# disambiguators
+# british nonsense
 FA_FR²          favour
 STR²            centre
 
@@ -327,6 +401,19 @@ NTRE_           entry
 RIKD            restricted
 KOLD            cold
 STOL            stole
+U_P             {up^}
+TO_NT           tonight
+REPT/TIF        representative
+R*NL,RINL       reasonably
+SDWISH          distinguish
+SDWISHL         distinguishable
+HAERT           heart
+HAERT/BAO?ET    heartbeat
+THO_?RT/T?IF    authoritative
+SDRUFT          distrust
+SNANLT          instantly
+SKRIT           secret
+JOURN           journey
 
 ############################# MAGNUM-STYLE BRIEFS #############################
 
@@ -371,6 +458,10 @@ TWA             it was
 WHAIF           what if
 WHOR            who are
 WHOU            who you
+G-F             go of
+
+HOUKT           how can the
+STROB           have to be
 
 ############################ DOMAIN-SPECIFIC - MATH ###########################
 
@@ -447,11 +538,13 @@ DMO_/DASH       demodash
 DMO_/HI_P/ER    demohyper
 DMO_/HI_RP      demohyper
 
-SPE_D/RUN       speedrun
-SPE_RN          speedrun
 HUPT            100%
 LO_PT           low%
 NIPT            any%
+OIT/SCRORL      autoscroller
+PAUS/BUFR       pausebuffer
+SPE_D/RUN       speedrun
+SPE_RN          speedrun
 TAS             TAS
 TRA             RTA
 
@@ -467,7 +560,7 @@ PORCH/GE_Z      Portuguese
 
 T-P             toki pona
 J-B             Lojban
-SPRO_NT         Esperanto
+SPRO_?NT        Esperanto
 
 PRIPT           prescriptive
 DRIPT           descriptive
@@ -508,6 +601,7 @@ SMOD/MAP        xmodmap
 THI/PAD         ThinkPad
 YAML            YAML
 FR*ING          Frink
+CO*K            Coq
 
 ########################## DOMAIN-SPECIFIC - PUZZLES ##########################
 
@@ -537,8 +631,8 @@ WLI?N           violin
 
 AN/DRA_*        Andrey
 ARS/LAN,ARNS    Arslan
-DEF/EN          Deven
-DEF/IN          Devin
+DEF/EN,DWEN     Deven
+DEF/IN,DWIN     Devin
 DHINL           Dhilan
 DINL            Dylan
 E_/SHAN         Ishan
@@ -549,13 +643,19 @@ RA*UNG          Raunak
 RAUN            Raun
 ROOSH           Roosh
 SHO_/MIK,SHO_M  Shomik
+TOK/MAN         Tockman
 
 SIP/SER         Sipser
 VON/NOIM        von Neumann
 
 ANG             Aang
 TKRA            Katara
+SKA,SOK/KA      Sokka
+TO*F,TAUF       Toph
 SU_*K           Zuko
+SO_/S*IN        Sozin
+O_/SI_*         Ozai
+A/SU_*L         Azula
 
 HAX/ORZ         0xh4x0rz
 SMET            Schmett
@@ -565,6 +665,9 @@ H-G             Hitchhiker's Guide
 H-G/H-G         The Hitchhiker's Guide to the Galaxy
 
 FERS            Ferris
+FRA*NG/STI_N    Frankenstein
+
+BRA*Z           Brazil
 
 #################################### EMOTES ###################################
 
@@ -772,9 +875,15 @@ PL-FKS          {PLOVER:FOCUS}
 
 KR-RCH          Pshhhkkkkkrrrrkakingkakingkakingtshchchchchchchchchdingdingding
 ME_*M           meem
-NO*RKSHN        I have no recollection of that?
+NO_?*RKSHN      I have no recollection of that?
+O/O             ꙮ
 PA*?F?BLD       Passersby were amazed by the unusually large amounts of blood.
+PL*?SHGD        please, stop putting fish inside of me, I am dying
 YE_*N           aneoaia
-PHR*RBGD        please, stop putting fish inside of me, I am dying
+WE_B            weeb
+DORP            dorp
+
+TP-BG/T-G       !tgguess
+TP-BG/ARNS      !arslan
 
 # vim: ft=cfg
