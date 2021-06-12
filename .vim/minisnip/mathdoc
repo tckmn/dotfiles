@@ -17,10 +17,14 @@
 \usetikzlibrary{arrows.meta}
 \pgfplotsset{compat=1.16}
 
+\DeclareMathOperator\Alt{Alt}
+\DeclareMathOperator\Ext{Ext}
 \DeclareMathOperator\Hom{Hom}
 \DeclareMathOperator\Max{Max}
 \DeclareMathOperator\Ob{Ob}
+\DeclareMathOperator\Res{Res}
 \DeclareMathOperator\Spec{Spec}
+\DeclareMathOperator\Sym{Sym}
 \DeclareMathOperator\grad{grad}
 \DeclareMathOperator\id{id}
 \DeclareMathOperator\im{im}
@@ -34,13 +38,19 @@
 \newcommand\Boo{\text{\textbf{Boo}}}
 \newcommand\CRing{\text{\textbf{CRing}}}
 \newcommand\C{\mathbb C}
+\newcommand\E{\mathbb E}
+\newcommand\F{\mathbb F}
 \newcommand\N{\mathbb N}
 \newcommand\Q{\mathbb Q}
 \newcommand\Ring{\text{\textbf{Ring}}}
 \newcommand\R{\mathbb R}
 \newcommand\Z{\mathbb Z}
+\renewcommand\sl[1]{\mathfrak{sl}_{#1}}
 
 \setlist[enumerate]{first={\parskip=8pt}}
+\setlist[itemize]{first={\parskip=8pt}}
+\parskip=8pt
+\parindent=0pt
 
 \begin{document}
 
