@@ -1,5 +1,8 @@
-" ugh, this has to be up here for vimtex
+" plugin stuff that needs to be run before loading plugins
 au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
+
+let g:coqtail_nomap = 1
+au! ColorScheme * hi def CoqtailChecked ctermbg=236 | hi def CoqtailSent ctermbg=237
 
 let g:gutentags_define_advanced_commands = 1
 
@@ -16,7 +19,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'sheerun/vim-polyglot'
 Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
-Plug 'tounaishouta/coq.vim'
+Plug 'whonore/Coqtail'
 " appearance
 Plug 'chriskempson/base16-vim'
 " autocompletion
@@ -53,7 +56,7 @@ let g:vimtex_view_forward_search_on_start=0
 let g:html_indent_inctags='html,body,head,tbody'
 set cinoptions=l1
 au! FileType scheme inoremap <buffer> <C-\> λ
-au! FileType coq nnoremap <silent> <cr> :CoqRunToCursor<cr> | let b:commentary_format='(*%s*)'
+au! FileType coq nnoremap <silent> <cr> :CoqToLine<cr>| let b:commentary_format='(*%s*)'
 au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
 
 " display
