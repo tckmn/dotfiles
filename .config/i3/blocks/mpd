@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+case $BLOCK_BUTTON in
+    3) mpc random >/dev/null ;;
+    4) mpc volume +5 >/dev/null ;;
+    5) mpc volume -5 >/dev/null ;;
+esac
+
 exec 4< <(mpc -f '%title%')
 read line1 <&4
 read line2 <&4
