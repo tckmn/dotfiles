@@ -309,6 +309,7 @@ bindsym $mod+Shift+slash mode "default"
 bindsym $mod+Shift+slash mode "move to mark"
 bar {
 status_command i3blocks -c $conf/i3blocks.conf
+tray_output primary
 colors {
 background #181818
 statusline #d8d8d8
