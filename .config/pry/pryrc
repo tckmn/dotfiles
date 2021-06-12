@@ -1,5 +1,5 @@
 # vim: ft=ruby
-Pry.config.prompt = [
+Pry.config.prompt = Pry::Prompt.new :p, ?p, [
     -> obj, nest_level, _ { "#{obj}(#{nest_level}):#{Pry.current_line.to_s.rjust(3, ?0)}> " },
     -> obj, nest_level, _ { "#{obj}(#{nest_level}):#{Pry.current_line.to_s.rjust(3, ?0)}* " }
 ]
