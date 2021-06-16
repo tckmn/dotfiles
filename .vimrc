@@ -94,6 +94,7 @@ set nojoinspaces        " don't double-space after punctuation
 set undofile            " persistent undo
 set nostartofline       " reasonable behavior for e.g. <C-v>G
 set nrformats=bin,hex   " not octal, so <C-a> on 07 isn't 010
+set noautoread          " nvim has this on by default, which is dangerous
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
 
 " mappings
