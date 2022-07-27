@@ -1,208 +1,188 @@
 ################################### GENERAL ###################################
 
 # general
-(IN/)SPLIBG?    inexplicable
-(IN/)SPLIBL     inexplicably
-*UNS,AOURND     understood
-A*UT/TIK        authentic
-A/KPAEL         a capella
-AERNG           angry
-AF/TAR          avatar
-AFR             arrive
-AJD             adjective
-ALG             along
-ARJT            arrangement
-ARPT            apart
-AX/LOLT         axolotl
-B-RM            bathroom
-BA_FBL          baseball
-BLA_NLT         blatantly
-BLA_NT          blatant
-BLIG            obligatory
-BLILG           obligatorily
-BR-M            bedroom
-CHIRT           chitter
-CHOKT           chocolate
-DAUFT,AUD/STI   audacity
-DBIGT           disambiguate
-DBIKSHN         disambiguation
-DEFR?PT         desperate
-DLA_?RSHN       declaration
-DLA_R           declare
-DLA_R/TIF       declarative
-DMISHN          admission
-DRAES           address
-DRERS           dresser
-DROIR           destroyer
-DRUNS           redundancy
-DRUNTD?         redundant
-DU_S            deduce
-DWEPL           develop
-DWERPL,DWORP    developer
-EFD             evidence
-EKT             exact
-ELT             element
-ELTS            elements
-ERZ             easier
-E_NT            eaten
-FAF             favorite
-FAURL           for all
+(IN/)SPLIBG?; (IN/)SPLIBL       inexplicable; inexplicably
+RE_J                            region
+*UNS,AOURND                     understood
+TRANZ|S/DENL                    transcendental
+A*UT/TIK                        authentic
+BRAE?LG                         algebra
+POF; POFL                       positive; positively
+A/KPAEL                         a capella
+AERNG                           angry
+AF/TAR                          avatar
+AFR                             arrive
+AJD                             adjective
+ALG                             along
+ARJT                            arrangement
+ARPT                            apart
+AX/LOLT                         axolotl
+BR-M; B-RM                      bedroom; bathroom
+BA_FBL                          baseball
+BLA_NT; BLA_NLT                 blatant; blatantly
+BLIG; BLILG                     obligatory; obligatorily
+CHIRT                           chitter
+CHOKT                           chocolate
+DAUFT,AUD/STI                   audacity
+DBIGT; DBIKSHN                  disambiguate; disambiguation
+DEFR?PT                         desperate
+DLA_R; DLA_R/TIF; DLA_?RSHN     declare; declarative; declaration
+DMISHN                          admission
+DRAES                           address
+DRERS                           dresser
+DROIR                           destroyer
+DRUNT; DRUNS                    redundant; redundancy
+DU_S                            deduce
+DWEPL; DWERPL,DWORP             develop; developer
+EFD                             evidence
+EKT                             exact
+ELT                             element
+ERZ                             easier
+E_NT                            eaten
+FAF                             favorite
+FAURL                           for all
+FE_RCH                          for each
+FLURT                           flutter
+FORCH; FORCHT; FORCHLT          fortune; fortunate; fortunately
+FO_RD                           foreward
+FRAUL                           from all
+FRA_F                           forgave
+FREFR                           forever
+FRE_CH                          from each
+FRIF; FRIFBL                    forgive; forgivable
+FRIP                            friendship
+FU_LT                           futile
+GA*RLG                          garlic
+GARN                            garden
+GEFNT                           against
+GLI_RD                          glider
+GOEN                            gotten
+GRALD                           gradual
+H*IND                           hidden
+HAED                            ahead
+HAEND                           handy
+HAFM,HAND/SOM                   handsome
+HA_NS                           heinous
+HA_RKT                          haircut
+HOFPLT?                         hospital
+IM/PERNT                        impersonate
+K-BLT                           accountable
+KANLD                           candle
+KAUN/TEFNT                      contestant
+KLERKT                          collector
+KLOUS                           callous
+KMORN                           commoner
+KMU_?LT?                        cumulative
+KOIM                            camera
+KPAEL                           capella
+KPALSHN                         capitalization
+KRILT                           critical
+KRURNS                          occurrence
+KWA/LA                          koala
+KW[E_]|[OI]RT                   qwerty
+L-RT                            alright
+LA*RT                           lather
+LIRDZ                           lizard
+LOIJ                            logic
+ME_NT                           meantime
+MIR                             mirror
+MROON                           maroon
+N-GTS                           noticing
+NI_*RT                          neither
+NTEBL                           intelligible
+NTR?A_N                         entertain
+NTU_T; NTU_FT?; NTU_SHN         intuit; intuitive; intuition
+OFBT; OFBLT                     objective; objectively
+OPLT                            optimal
+PAEF                            passive
+PAFRD                           password
+PARNT                           apparent
+PED/PAPL                        pedipalp
+PERT/FI_?; PERT/FI_?K?SHN       petrify; petrification
+PIR                             picture
+PLURLZ                          pluralize
+PO/SES                          possess
+POINL                           pencil
+PORNGD                          pondering
+PRIBL                           predictable
+PROEFBL                         provably
+PROFBL                          provable
+PROKT; PROU?FKT                 product; productive
+PURCHS                          purchase
+R*ELG                           relic
+R*ELGS                          relax
+RASHLT                          rationality
+RE/B*?ULT                       rebuttal
+RE/LIJ                          religion
+RE_PSHN                         repetition
+RIK/ROL                         rickroll
+S*ELS                           zealous
+S*IKT                           sixth
+S?KIFNT; S?KIFNLT               consistent; consistently
+SA?UB/OPLT                      suboptimal
+SACHT                           saturate
+SAURT                           solder
+SDI_FRBL                        decipherable
+SEFRN?T                         servant
+SEG                             segment
+SE_*N/FO_B,SE_*/NO_?/FO_B       xenophobe
+SIFRPLT                         simplicity
+SKE_L                           conceal
+SKIRP                           skipper
+SKOORL                          schooler
+SLAEP                           asleep
+SM-BL                           assemble
+SMER                            summer
+SNAM                            tsunami
+SPEFNS                          expensive
+SPES; SPEGS                     possess; possession
+SPLAERT                         splatter
+SPLO_F                          explosive
+SPR*EFS?                        expressive
+SPR*ES                          express
+SPR*ESHN                        expression
+SPRAS; SPRAFD                   surpass; surpassed
+SPRI_GS|Z                       surprising
+SRO_*                           zero
+STIFK; STIFL; STLIFL            statistic; statistical; statistically
+STI_R                           satire
+STLUBLT                         subltety
+STO*IN                          stenography
+STO_NL                          stolen
+STRA_SHN                        demonstration
+STU_CH                          statue
+TMA|OIK                         atomic
+TO*ING                          tectonic
+TO*T                            tot
+TOFRM                           tourism
+TRANS/PO_FD                     transposed
+TRE_CH                          teacher
+TRO?IF                          trivia
+UFPT                            upset
+ULT/MA_MT?                      ultimatum
+XLU                             exclude
+XLUF                            exclusive
+XLUFL                           exclusively
+XLUSHN                          exclusion
+XR*EFS?                         expressive
+XR*ES                           express
+XR*ESHN                         expression
+YA_R                            area
+YO_T; YO_KT                     idiot; idiotic
+
+# -G = king
 FA_G            faking
-FE_RCH          for each
-FLURT           flutter
-FORCH           fortune
-FORCHLT         fortunately
-FORCHT          fortunate
-FO_RD           foreward
-FRAUL           from all
-FRA_F           forgave
-FREFR           forever
-FRE_CH          from each
-FRIF            forgive
-FRIFBL          forgivable
-FRIP            friendship
-FU_LT           futile
-GA*RLG          garlic
-GARN            garden
-GEFNT           against
-GLI_RD          glider
-GOEN            gotten
-GRALD           gradual
-H*IND           hidden
-HAED            ahead
-HAEND           handy
-HAFM,HAND/SOM   handsome
-HA_NS           heinous
-HA_RKT          haircut
-HOFPLT?         hospital
-IM/PERNT        impersonate
-K-BLT           accountable
-KANLD           candle
-KAUN/TEFNT      contestant
-KLERKT          collector
 KLIG            clicking
-KLOUS           callous
-KMORN           commoner
-KMU_?LT?        cumulative
-KOIM            camera
-KPAEL           capella
-KPALSHN         capitalization
-KRILT           critical
-KRURNS          occurrence
-KWA/LA          koala
 KWAG            quacking
 KWA_G           quaking
-KWE_RT,KWOIRT   qwerty
-L-RT            alright
-LA*RT           lather
-LIRDZ           lizard
-LOIJ            logic
-ME_NT           meantime
-MIR             mirror
-MO*?ING         monkey
-MROON           maroon
-N-GTS           noticing
-NI_*RT          neither
-NTEBL           intelligible
-NTR?A_N         entertain
-NTU_FT?         intuitive
-NTU_SHN         intuition
-NTU_T           intuit
-OFBLT           objectively
-OFBT            objective
-OPLT            optimal
-PAEF            passive
-PAFRD           password
-PARNT           apparent
-PED/PAPL        pedipalp
-PERT/FI_?       petrify
-PERT/FI_?K?SHN  petrification
-PIR             picture
-PLURLZ          pluralize
-PO*ING          pinky
-PO/SES          possess
-POINL           pencil
-PORNGD          pondering
-PRIBL           predictable
-PROEFBL         provably
-PROFBL          provable
-PROKT           product
-PROU?FKT        productive
-PURCHS          purchase
-R*ELG           relic
-R*ELGS          relax
-RASHLT          rationality
-RE/B*?ULT       rebuttal
-RE/LIJ          religion
-RE_PSHN         repetition
-RIK/ROL         rickroll
-S*ELS           zealous
-S*IKT           sixth
-S?KIFNLT        consistently
-S?KIFNT         consistent
-SA?UB/OPLT      suboptimal
-SACHT           saturate
-SAURT           solder
-SDI_FRBL        decipherable
-SEFRN?T         servant
-SEG             segment
-SE_*/NO_?/FO_B  xenophobe
-SE_*N/FO_B      xenophobe
-SIFRPLT         simplicity
-SKE_L           conceal
-SKIRP           skipper
-SKOORL          schooler
-SLAEP           asleep
-SM-BL           assemble
-SMER            summer
-SNAM            tsunami
-SPEFNS          expensive
-SPEGS           possession
-SPES            possess
-SPLAERT         splatter
-SPLO_F          explosive
-SPR*EFS?        expressive
-SPR*ES          express
-SPR*ESHN        expression
-SPRAFD          surpassed
-SPRAS           surpass
-SPRI_GS         surprising
-SPRI_GZ         surprising
-SRO_*           zero
-STIFK           statistic
-STIFL           statistical
-STI_R           satire
-STLIFL          statistically
-STLUBLT         subltety
-STO*IN          stenography
-STO_NL          stolen
-STRA_SHN        demonstration
-STU_CH          statue
 TIG             ticking
-TMOIK,TMAIK     atomic
-TO*ING          tectonic
-TO*T            tot
-TOFRM           tourism
-TRANS/PO_FD     transposed
-TRE_CH          teacher
-TRO?IF          trivia
-UFPT            upset
-ULT/MA_MT?      ultimatum
 WORG            working
-XLU             exclude
-XLUF            exclusive
-XLUFL           exclusively
-XLUSHN          exclusion
-XR*EFS?         expressive
-XR*ES           express
-XR*ESHN         expression
-YA_R            area
-YO_KT           idiotic
-YO_T            idiot
+SHOG            shocking
 
 # L-/-L = ly
 BLI_NLD         blindly
 ELZ             easily
+FLUL            fully
 K-FN?LT         confidently
 KLA_FRL         carefully
 KLUFL           inclusively
@@ -212,6 +192,7 @@ LALSHN          additionally
 LEFNL           eventually
 LOIRLT?         literally
 LOULD           loudly
+PIFL            positively      # kills "piffle", but who cares
 PLOX            approximately
 SL*ELS          zealously
 SLIMPL          simply
@@ -220,6 +201,7 @@ SLUBLT          subtly
 STU_PLD         stupidly
 VAFLT           vastly
 WE_RLD          weirdly
+
 
 # I/OI = ly
 SMIBL           assembly
@@ -235,6 +217,8 @@ HOIRM           harmony
 HOIRNG          hungry
 KOIT            kitty
 LOING           lingo
+MO*?ING         monkey
+PO*ING          pinky
 POIP            puppy
 POIT            pity
 ROIB            ruby
@@ -242,82 +226,58 @@ ROIPL           reply
 SPOIS           spicy
 
 # -FR = m
-MUMBL          mumble
-STUMBL         stumble
-GRUMBL         grumble
-THIMBL         thimble
-BRAMBL         bramble
-BUMBL          bumble
-KRUMBL         crumble
-SKRAMBL        scramble
+MUMBL           mumble
+STUMBL          stumble
+GRUMBL          grumble
+THIMBL          thimble
+BRAMBL          bramble
+BUMBL           bumble
+KRUMBL          crumble
+SKRAMBL         scramble
 
 # -TD = dded
 ATD             added
 BLENTD          blended
 
-# questionable ones
+# highly questionable ones
 DIRKSHN,DRIKSHN dictionary
 S-GT,-GTS       things
+TMENL; FLENL    fundamental; fundamentally
 
 # default dictionary overrides
-A*NL            Alan
-ANL             alone
-HI?RP           {hyper^}
-HI_RP           hyper
-M*ILD           milled
-MILD            middle
-SP-R            {super^}
-SURP            supper
-SU_P            soup
-SU_RP           super
-
-A*EM            {ambi^}
-AEPL            apple
-AFRD            arrived
-AOFRD           afford
+ANL; A*NL                       alone; Alan
+HI_RP; HI?RP                    hyper; {hyper^}
+MILD; M*ILD                     middle; milled
+SU_RP; SU_P; SURP; SP-R         super; soup; supper; {super^}
+AEPL; A*EM                      apple; {ambi^}
+AFRD; AOFRD                     arrived; afford
+BERT; BERT²,BE_RT               better; Bert
+BURT; BURT²,BU_RT               butter; Burt
+BOID; BO*ID                     body; Boyd
+BRO; BRO_; BRO_*                bro; borrow; borough
+GIRT; GIRT²                     guitar; girt
+GRIFM; GR*IFM                   algorithm; organism
+HARLD; HA*RLD                   hardly; Harold
+I_Z; I_*Z                       eyes; {^ize}
+KOURNT; KO*URNT                 counter; {counter^}
+LI_S; LI_*S                     lies; lice
+NA_SHN; N-SHN,NA_*SHN           nation; {^ination}
+PERP; PE_RP,P*ERP               pepper; perp
+PROM; PRO*M,PROM²               problem; prom
+PROM/[A_?KT?]|[TIK]             problematic
+SEFL; S*EFL                     self; {^self}
+W-P; W-P²                       Wikipedia; WordPress
+WRI_GT; WRI_*GT                 writing; Wright
 B-G             becoming
-BERT            better
-BERT²,BE_RT     Bert
-BO*ID           Boyd
-BOID            body
-BRO             bro
-BRO_            borrow
-BRO_*           borough
-GIRT            guitar
-GIRT²           girt
-GR*IFM          organism
-GRIFM           algorithm
-HA*RLD          Harold
-HARLD           hardly
-I_*Z            {^ize}
-I_Z             eyes
-KO*URNT         {counter^}
-KOURNT          counter
 KU_F            confuse
 KU_FS           confuses
-LI_*S           lice
-LI_S            lies
 MAENL           manually
 MANL            manual
-N-SHN,NA_*SHN   {^ination}
-NA_SHN          nation
-PERP            pepper
-PE_RP,P*ERP     perp
-PRO*M,PROM²     prom
-PROM            problem
-PROM/A_?KT?     problematic
-PROM/TIK        problematic
-S*EFL           {^self}
-SEFL            self
 SPA*ND          spanned
 SPAND,KPAND     expand
 SPANSHN,KPANSHN expansion
 T?M-NL          animal
 TRANS           trance
-W-P             Wikipedia
-W-P²            WordPress
-WRI_*GT         Wright
-WRI_GT          writing
 XA?EBL          accessible
 XA?EBLT         accessibility
 XAES            access
@@ -329,14 +289,6 @@ XRE_M           extreme
 
 NISH,F-SH       finish
 F*ISH           phish
-
-# kills "piffle", but who cares
-PIFL            positively
-
-# a bit questionable
-FLUL            fully
-TMENL           fundamental
-FLENL           fundamentally
 
 AENGS           answering
 AFRDZ           afterwards
@@ -376,8 +328,7 @@ STR²            centre
 
 # briefs
 BR-D,B-RD       birthday
-S-F             scifi
-S-F²,S*F        science fiction
+S-F; S-F²,S*F   scifi; science fiction
 
 # multiword briefs
 NROM            no problem
@@ -405,8 +356,7 @@ U_P             {up^}
 TO_NT           tonight
 REPT/TIF        representative
 R*NL,RINL       reasonably
-SDWISH          distinguish
-SDWISHL         distinguishable
+SDWISH; SDWISHL distinguish; distinguishable
 HAERT           heart
 HAERT/BAO?ET    heartbeat
 THO_?RT/T?IF    authoritative
@@ -607,6 +557,8 @@ CO*K            Coq
 
 KROURD          crossword
 UNCH            unch
+
+HA_/WAK         Heyawake
 
 ########################### DOMAIN-SPECIFIC - MUSIC ###########################
 
