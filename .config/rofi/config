@@ -1,1 +1,1 @@
-rofi.theme: base16-default-dark
+@theme "base16-default-dark"
