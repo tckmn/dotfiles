@@ -12,6 +12,8 @@
     prompt = false
 [difftool "nvimdiff"]
     cmd = nvim -d "$LOCAL" "$REMOTE"
+[merge]
+    tool = nvimdiff
 [pull]
     ff = only
 [init]
