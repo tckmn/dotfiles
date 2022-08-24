@@ -82,7 +82,7 @@ alias bn='nix-build --option build-use-sandbox true -A'
 br() { nix-build --option build-use-sandbox true -E "(import <nixpkgs> {}).callPackage ./pkgs/$1 {}" }
 b() { [ -n "$1" ] && \light -S "$1" || light -G }
 comms() { comm "$1" <(sort "$2") <(sort "$3") }
-alias v=nvim
+alias v=$(which nvim >/dev/null && echo nvim || echo vim)
 xv() {
     [ -e "$1" ] && echo Warning: file exists && sleep 2
     touch "$1" && chmod +x "$1" && v "$1"
@@ -102,6 +102,8 @@ dump() { objdump -sj .text $1 | tail -n+5 | cut -c 10-44 | tr -d ' ' | paste -sd
 alias pd='sqlite3 ~/.local/share/pzplus/p.db'
 alias pon='xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
 alias pof='xmodmap -e "pointer = 1 2 3 4 5 6 7 8 0 10"'
+mouse() { xinput set-prop "$(xinput | grep -i mouse | head -1 | grep -o 'id=[0-9]*' | cut -c 4-)" 177 $1 0 0 0 $1 0 0 0 1 }
+tp() { xinput ${1}able "$(xinput | grep Synaptics | grep -o 'id=\S*' | cut -c4-)" }
 
 # licenses
 if [ -d ~/.license ]
