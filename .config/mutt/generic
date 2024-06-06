@@ -32,5 +32,3 @@ set sort = date-received
 set pgp_verify_command="gpg --batch -o - --verify %s %f"
 set pgp_verify_key_command="gpg --batch --fingerprint --check-sigs %r"
 set pgp_good_sign="^gpg: Good signature from"
-
-unset quit
