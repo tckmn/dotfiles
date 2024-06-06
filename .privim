@@ -1,7 +1,6 @@
 key=andy@tck.mn
 rotate=1
-VIM=/usr/share/nvim
-idletime=5000
+VIM=/run/current-system/sw/bin/nvim
 declare -a nvimflags=("+sil! so $HOME/.privim")
 :<<'x'
 
@@ -12,7 +11,7 @@ function! s:Privim()
         keeppatterns +2/^===/-1
         nohlsearch
     else
-        put!=l:date
+        0put!=l:date
         norm! YpVr=pDj
     endif
     put!=nr2char(10)
