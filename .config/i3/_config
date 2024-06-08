@@ -63,9 +63,9 @@ bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg ex
 bindsym {1|Print,Mod1+Sys_Req} exec maim -u{1|, -s} $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
 
 # volume
-bindsym XF86Audio{Raise,Lower}Volume exec pactl set-sink-volume @DEFAULT_SINK@ {+,-}5% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86Audio{Raise,Lower}Volume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-} && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -RTMIN+10 i3blocks
 
 # media
 bindsym XF86Audio{Next,Prev,Play,Stop} exec mpc {next,prev,toggle,stop} && pkill -RTMIN+11 i3blocks
