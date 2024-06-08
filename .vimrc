@@ -49,8 +49,8 @@ augroup highlighting
 augroup end
 
 " easy-align
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
+xnoremap ga <Plug>(EasyAlign)
+nnoremap ga <Plug>(EasyAlign)
 nnoremap gA ga
 
 " language specific
@@ -104,15 +104,24 @@ set nrformats=bin,hex   " not octal, so <C-a> on 07 isn't 010
 set noautoread          " nvim has this on by default, which is dangerous
 set tabstop=4 shiftwidth=4 softtabstop=4 expandtab autoindent
 
+" helpers for complex mappings
+function! DTS()
+    let l:v = winsaveview()
+    keeppatterns %s/\s*$
+    call winrestview(l:v)
+endfunction
+
 " mappings
 set wildcharm=<C-z>
 nnoremap <C-n> :bn<cr>
 nnoremap <C-p> :bp<cr>
 nnoremap <bs> :b#<cr>
 nnoremap <Leader>a :A<cr><C-g>
+nnoremap <silent> <Leader>d :call DTS()<cr>
 nnoremap <Leader>e :e **/*<C-z><S-Tab>
 nnoremap <Leader>f :find *
 nnoremap <Leader>g :grep 
+nnoremap <Leader>i :%s/\s*$<cr>:v/./d<cr>ggguG<Plug>(EasyAlign)G*<c-x><tab><cr>:sort<bar>noh<cr>
 nnoremap <Leader>m :make<cr>
 nnoremap <Leader>s :up<cr>
 nnoremap <Leader>t :ltag /\c
@@ -123,14 +132,6 @@ noremap <silent> g} :<C-u>call cursor(line("'}")-empty(getline(line("'}"))), col
 vnoremap <silent> g{ :<C-u>call cursor(line("'{")+empty(getline(line("'{"))), col('.'))<cr>`<1v``
 vnoremap <silent> g} :<C-u>call cursor(line("'}")-empty(getline(line("'}"))), col('.'))<cr>`>1v``
 if has('nvim') | tnoremap <Esc> <C-\><C-n> | endif
-
-" more complex mappings
-function! DTS()
-    let l:v = winsaveview()
-    keeppatterns %s/\s*$
-    call winrestview(l:v)
-endfunction
-nnoremap <silent> <Leader>d :call DTS()<cr>
 
 function! Col()
     exe '%!column -c'.winwidth(0)
