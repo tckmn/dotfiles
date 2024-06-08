@@ -36,6 +36,7 @@ bindsym $mod+d kill
 bindsym $mod+backslash split h
 bindsym $mod+minus split v
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f exec xdotool getactivewindow windowmove 0 0 windowsize 100% 100%
 bindsym $mod+q layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
@@ -86,10 +87,13 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg exit'
 bindsym Print exec maim -u $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
 bindsym Mod1+Sys_Req exec maim -u -s $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5% && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMute exec amixer sset Master toggle && pkill -RTMIN+10 i3blocks
-bindsym XF86AudioMicMute exec amixer sset Capture toggle && pkill -RTMIN+10 i3blocks
+bindsym ctrl+space exec dunstctl close
+bindsym ctrl+grave exec dunstctl history-pop
+bindsym ctrl+shift+period exec dunstctl history-pop
+bindsym XF86AudioRaiseVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioLowerVolume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -RTMIN+10 i3blocks
+bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioNext exec mpc next && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPrev exec mpc prev && pkill -RTMIN+11 i3blocks
 bindsym XF86AudioPlay exec mpc toggle && pkill -RTMIN+11 i3blocks
@@ -102,6 +106,7 @@ bindsym --release $mod+Shift+d exec slock
 bindsym $mod+n exec termite --name=FLOAT -e n -t notes
 bindcode $mod+33 exec $bin/layout-switcher
 bindsym XF86PowerOff nop
+bindsym XF86Sleep nop
 for_window [title="FLOAT"] floating enable
 for_window [instance="FLOAT"] floating enable
 for_window [instance="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
