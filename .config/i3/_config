@@ -80,6 +80,7 @@ bindsym $mod+n exec termite --name=FLOAT -e n -t notes
 bindcode $mod+33 exec $bin/layout-switcher  # 33 is "p"
 
 bindsym XF86PowerOff nop
+bindsym XF86Sleep nop
 
 }
 
