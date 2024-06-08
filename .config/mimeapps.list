@@ -12,5 +12,5 @@ application/x-extension-shtml=firefox.desktop
 application/xhtml+xml=firefox.desktop
 application/x-extension-xhtml=firefox.desktop
 application/x-extension-xht=firefox.desktop
-x-scheme-handler/discord-430794114037055489=discord-430794114037055489.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-R1UYV0.desktop
+x-scheme-handler/tg=org.telegram.desktop.desktop
+x-scheme-handler/quaver=Quaver-scheme-handler.desktop
