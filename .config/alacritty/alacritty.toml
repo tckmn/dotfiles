@@ -1,0 +1,8 @@
+import = ["~/.cache/cocyc/alacritty.toml"]
+
+[font]
+normal = { family = 'DejaVu Sans Mono' }
+size = 6.5
+
+[window]
+dimensions = { columns = 80, lines = 24 }

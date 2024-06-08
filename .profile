@@ -8,5 +8,5 @@ export VISUAL="$(which nvim)"
 export TEXMFHOME="$HOME/.local/share/texmf"
 export LC_TIME=C
 export PRINTER=houston
-export TERMINAL="$(which termite)"
+export TERMINAL="$(which alacritty)"
 export QT_STYLE_OVERRIDE=Adwaita-Dark

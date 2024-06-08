@@ -41,7 +41,7 @@ set mouse=
 set encoding=utf-8
 set background=dark
 let base16colorspace=256
-colorscheme base16-default-dark
+if filereadable($HOME.'/.cache/cocyc/vim.vim') | source $HOME/.cache/cocyc/vim.vim | else | colorscheme base16-default-dark | endif
 
 " easy-align
 xmap ga <Plug>(EasyAlign)
