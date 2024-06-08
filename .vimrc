@@ -40,6 +40,7 @@ let maplocalleader=' '
 set mouse=
 set encoding=utf-8
 set background=dark
+set termguicolors
 let base16colorspace=256
 if filereadable($HOME.'/.cache/cocyc/vim.vim') | source $HOME/.cache/cocyc/vim.vim | else | colorscheme base16-default-dark | endif
 
