@@ -37,6 +37,7 @@ bindsym $mod+d kill
 # layouts
 bindsym $mod+{backslash,minus} split {h,v}
 bindsym $mod+f fullscreen toggle
+bindsym $mod+Shift+f exec xdotool getactivewindow windowmove 0 0 windowsize 100% 100%
 bindsym $mod+{q,w,e} layout {stacking,tabbed,toggle split}
 bindsym $mod{,+Shift}+semicolon {focus mode_,floating }toggle
 
