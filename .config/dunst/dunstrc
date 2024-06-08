@@ -44,14 +44,6 @@
     width = 3
     color = "#585858"
 
-[shortcuts]
-    close = ctrl+space
-    close_all = ctrl+shift+space
-    # redisplay last message
-    history = ctrl+grave
-    # context menu
-    context = ctrl+shift+period
-
 [urgency_low]
     # mix(#d8d8d8, #181818, 25%)
     background = "#484848"

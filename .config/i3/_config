@@ -62,6 +62,11 @@ bindsym $mod+Shift+e exec i3-nagbar -t warning -m 'exit i3?' -b 'yes' 'i3-msg ex
 # screenshot
 bindsym {1|Print,Mod1+Sys_Req} exec maim -u{1|, -s} $(date +"$(xdg-user-dir PICTURES)/screenshots/screenshot_%F_%T.png")
 
+# notifications
+bindsym ctrl+space exec dunstctl close
+bindsym ctrl+grave exec dunstctl history-pop
+bindsym ctrl+shift+period exec dunstctl context
+
 # volume
 bindsym XF86Audio{Raise,Lower}Volume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%{+,-} && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -RTMIN+10 i3blocks
