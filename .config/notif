@@ -1,3 +1,6 @@
 #!/bin/sh
-cw=~/.config/i3/bin/cur-wksp
-[ ! -e ~/dnd -a \( ! -x "$cw" -o "$($cw)" != 10 \) ] && notify-send -- "$@"
+if [ -n "$DISPLAY" ]
+then
+    cw=~/.config/i3/bin/cur-wksp
+    [ ! -e ~/dnd -a \( ! -x "$cw" -o "$($cw)" != 10 \) ] && notify-send -- "$@"
+fi
