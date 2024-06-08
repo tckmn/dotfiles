@@ -73,6 +73,8 @@ alias sum="awk '{s+=\$1}END{print s}'"
 alias prod="awk 'BEGIN{p=1}{p*=\$1}END{print p}'"
 alias len="awk '{print length(\$0), \$0}'"
 alias lens="awk '{print length(\$0), \$0}' | sort -n"
+alias lc='tr A-Z a-z'
+alias uc='tr a-z A-Z'
 alias tal='sort | uniq -c | sort -n'
 alias talr='sort | uniq -c | sort -nr'
 alias kaero='fold -1 | tal'
@@ -87,14 +89,13 @@ xv() {
     [ -e "$1" ] && echo Warning: file exists && sleep 2
     touch "$1" && chmod +x "$1" && v "$1"
 }
-alias vx=xv
+alias feh='feh --action1 "echo -n %F | xsel -ib"'
 alias frink='rlwrap -H ~/.frink_history java -cp ~/misc/frink.jar frink.parser.Frink'
 alias ws='watch -n0.1 echo '"'"'${LINES}x$COLUMNS'"'"
 alias qmv='qmv -fdo'
 alias qcp='qcp -fdo'
 alias lhd='lighttpd -f lighttpd.conf'
-alias muttmit='mutt -F ~/.config/mutt/mit_muttrc'
-alias mutttck='mutt -F ~/.config/mutt/tck_muttrc'
+alias tck='mutt -F ~/.config/mutt/tck_muttrc'
 alias z='zathura --fork'
 alias python=python3
 да(){yes ${@:-д}}
@@ -103,7 +104,7 @@ alias pd='sqlite3 ~/.local/share/pzplus/p.db'
 alias pon='xmodmap -e "pointer = 1 2 3 4 5 6 7 8 9 10"'
 alias pof='xmodmap -e "pointer = 1 2 3 4 5 6 7 8 0 10"'
 mouse() { xinput set-prop "$(xinput | grep -i mouse | head -1 | grep -o 'id=[0-9]*' | cut -c 4-)" 177 $1 0 0 0 $1 0 0 0 1 }
-tp() { xinput ${1}able "$(xinput | grep Synaptics | grep -o 'id=\S*' | cut -c4-)" }
+tp() { xinput ${1}able "$(xinput | grep Touchpad | grep -o 'id=\S*' | cut -c4-)" }
 
 # licenses
 if [ -d ~/.license ]
