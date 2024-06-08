@@ -1,10 +1,10 @@
 " plugin stuff that needs to be run before loading plugins
-au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
-
 let g:coqtail_nomap = 1
-au! ColorScheme * hi def CoqtailChecked ctermbg=236 | hi def CoqtailSent ctermbg=237
-
 let g:gutentags_define_advanced_commands = 1
+augroup preplug
+    au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
+    au! ColorScheme * hi def CoqtailChecked guibg=#113311 | hi def CoqtailSent guibg=#007630
+augroup end
 
 call plug#begin()
 " motions/commands
@@ -43,6 +43,11 @@ set background=dark
 let base16colorspace=256
 if filereadable($HOME.'/.cache/cocyc/vim.vim') | source $HOME/.cache/cocyc/vim.vim | else | colorscheme base16-default-dark | endif
 
+" highlighting should look around more
+augroup highlighting
+  au! Syntax * syntax sync minlines=1000
+augroup end
+
 " easy-align
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -55,9 +60,11 @@ let g:vimtex_view_method='zathura'
 let g:vimtex_view_forward_search_on_start=0
 let g:html_indent_inctags='html,body,head,tbody'
 set cinoptions=l1
-au! FileType scheme inoremap <buffer> <C-\> λ
-au! FileType coq nnoremap <silent> <cr> :CoqToLine<cr>| let b:commentary_format='(*%s*)'
-au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
+augroup langs
+  au! FileType scheme inoremap <buffer> <C-\> λ
+  au! FileType coq nnoremap <silent> <cr> :CoqToLine<cr>| let b:commentary_format='(*%s*)'
+  au! BufRead all-packages.nix setl fdm=expr fde=getline(v:lnum)!~'###'
+augroup end
 
 " display
 set showmode showcmd ruler relativenumber scrolloff=3
