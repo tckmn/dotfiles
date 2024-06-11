@@ -204,35 +204,27 @@ mode "move to mark" {
 bindsym $mod+Shift+slash mode "move to mark"
 
 ###############################################################################
-#                                  STATUS BAR                                 #
-###############################################################################
-
-bar {
-    status_command i3blocks -c $conf/i3blocks.conf
-    tray_output primary
-    colors {
-        background #181818
-        statusline #d8d8d8
-        separator  #585858
-        focused_workspace  #383838 #181818 #d8d8d8
-        active_workspace   #383838 #181818 #d8d8d8
-        inactive_workspace #585858 #383838 #b8b8b8
-        urgent_workspace   #dc9656 #ab4642 #d8d8d8
-        binding_mode       #dc9656 #ab4642 #d8d8d8
-    }
-}
-
-###############################################################################
 #                                    COLORS                                   #
 ###############################################################################
 
-# note that child_border is what shows up as the 1pixel border when the title
-# bar is toggled off with mod+shift+t
+# split into separate file due to variable expansion mechanics
 
-# class                 border  backgr. text    indicator child_border
-client.focused          #383838 #181818 #d8d8d8 #000000   #b8b8b8
-client.focused_inactive #585858 #383838 #b8b8b8 #000000   #585858
-client.unfocused        #585858 #383838 #b8b8b8 #000000   #585858
-client.urgent           #dc9656 #ab4642 #d8d8d8 #000000   #000000
-client.placeholder      #585858 #383838 #b8b8b8 #000000   #000000
-client.background       #181818
+set $base00 #181818
+set $base01 #282828
+set $base02 #383838
+set $base03 #585858
+set $base04 #b8b8b8
+set $base05 #d8d8d8
+set $base06 #e8e8e8
+set $base07 #f8f8f8
+set $base08 #ab4642
+set $base09 #dc9656
+set $base0A #f7ca88
+set $base0B #a1b56c
+set $base0C #86c1b9
+set $base0D #7cafc2
+set $base0E #ba8baf
+set $base0F #a16946
+
+include ~/.cache/cocyc/i3.config
+include colors

@@ -1,0 +1,33 @@
+###############################################################################
+#                                  STATUS BAR                                 #
+###############################################################################
+
+bar {
+    status_command i3blocks -c $conf/i3blocks.conf
+    tray_output primary
+    colors {
+        background $base00
+        statusline $base05
+        separator  $base03
+        focused_workspace  $base02 $base00 $base05
+        active_workspace   $base02 $base00 $base05
+        inactive_workspace $base03 $base02 $base04
+        urgent_workspace   $base09 $base08 $base05
+        binding_mode       $base09 $base08 $base05
+    }
+}
+
+###############################################################################
+#                                    COLORS                                   #
+###############################################################################
+
+# note that child_border is what shows up as the 1pixel border when the title
+# bar is toggled off with mod+shift+t
+
+# class                 border  backgr. text    indicator child_border
+client.focused          $base02 $base00 $base05 #ff0000   $base04
+client.focused_inactive $base03 $base01 $base04 #ff0000   $base03
+client.unfocused        $base03 $base02 $base04 #ff0000   $base03
+client.urgent           $base09 $base08 $base05 #ff0000   $base08
+client.placeholder      $base03 $base02 $base04 #ff0000   #ff0000
+client.background       $base00
