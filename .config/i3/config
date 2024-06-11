@@ -103,7 +103,7 @@ bindsym XF86MonBrightnessDown exec light -U 1 && pkill -RTMIN+12 i3blocks
 bindsym XF86Copy exec light -U 1 && pkill -RTMIN+12 i3blocks
 bindsym XF86Paste exec light -A 1 && pkill -RTMIN+12 i3blocks
 bindsym --release $mod+Shift+d exec slock
-bindsym $mod+n exec alacritty --class=FLOAT -e n -T notes
+bindsym $mod+n exec alacritty --class=FLOAT -T notes -e n
 bindcode $mod+33 exec $bin/layout-switcher
 bindsym XF86PowerOff nop
 bindsym XF86Sleep nop

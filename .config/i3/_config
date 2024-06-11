@@ -84,7 +84,7 @@ bindsym XF86{Copy,Paste} exec light -{U,A} 1 && pkill -RTMIN+12 i3blocks
 
 # misc.
 bindsym --release $mod+Shift+d exec slock
-bindsym $mod+n exec alacritty --class=FLOAT -e n -T notes
+bindsym $mod+n exec alacritty --class=FLOAT -T notes -e n
 bindcode $mod+33 exec $bin/layout-switcher  # 33 is "p"
 
 bindsym XF86PowerOff nop
