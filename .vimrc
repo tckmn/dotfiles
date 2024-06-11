@@ -21,7 +21,7 @@ Plug 'lervag/vimtex'
 Plug 'vim-scripts/a.vim'
 Plug 'whonore/Coqtail'
 " appearance
-Plug 'chriskempson/base16-vim'
+Plug 'tckmn/base16-vim', { 'branch': 'fix-slugs' }
 " autocompletion
 Plug 'tpope/vim-endwise'
 Plug 'tckmn/vim-minisnip'
@@ -29,7 +29,7 @@ Plug 'tckmn/vim-xsami'
 " integration
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-vinegar'
-Plug 'ludovicchabant/vim-gutentags'
+" Plug 'ludovicchabant/vim-gutentags'
 call plug#end()
 
 
