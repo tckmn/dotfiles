@@ -72,6 +72,9 @@ bindsym XF86Audio{Raise,Lower}Volume exec wpctl set-volume @DEFAULT_AUDIO_SINK@ 
 bindsym XF86AudioMute exec wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && pkill -RTMIN+10 i3blocks
 bindsym XF86AudioMicMute exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -RTMIN+10 i3blocks
 
+# bindsym Next exec wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && pkill -RTMIN+10 i3blocks
+# bindsym Next exec maim -u -g 1074x1895 $(date +"$(xdg-user-dir PICTURES)/sdvx/screenshot_%F_%T.png")
+
 # media
 bindsym XF86Audio{Next,Prev,Play,Stop} exec mpc {next,prev,toggle,stop} && pkill -RTMIN+11 i3blocks
 
