@@ -1,6 +1,7 @@
 " plugin stuff that needs to be run before loading plugins
 let g:coqtail_nomap = 1
 let g:gutentags_define_advanced_commands = 1
+let g:vimtex_version_check = 0
 augroup preplug
     au! FileType tex imap [[ \( | imap ] <plug>(vimtex-delim-close)
     au! ColorScheme * hi def CoqtailChecked guibg=#113311 | hi def CoqtailSent guibg=#007630
