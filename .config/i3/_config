@@ -95,7 +95,7 @@ bindsym XF86Sleep nop
 # useful for_window mappings, so that I can activate i3 functionality
 for_window [title="FLOAT"] floating enable
 for_window [instance="FLOAT"] floating enable
-for_window [instance="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
+for_window [title="VINPUT"] floating enable; exec i3-msg 'border none'; exec i3-msg 'resize set 400 80'
 
 # stop being obnoxious, zoom
 no_focus [class="zoom"]

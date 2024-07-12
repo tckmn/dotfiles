@@ -1,6 +1,23 @@
 #!/usr/bin/env bash
 
+now=$(date +%s)
+mod=$(stat ~/doc/journal -c%Y)
+
+secs=$[now - mod]
+mins=$[secs / 60]
+secs=$[secs % 60]
+hrs=$[mins / 60]
+mins=$[mins % 60]
+
+roll1=$(date -d '8am yesterday' +%s)
+roll2=$(date -d '8am' +%s)
+roll=$[roll2 > now ? roll1 : roll2]
+timepast=$[now - roll]
+yesterday=$[roll - mod]
+
 echo -n 'dr '
-[ $(stat ~/doc/journal -c%Y) -gt $(date -d0 +%s) ] &&
-    echo '<span color="lime">✓</span>' ||
-    echo '<span color="red">✘</span>'
+if [ $roll -lt $mod ]; then echo -n '<span color="lime">✓'
+elif [ $yesterday -lt 86400 -a $timepast -lt 43200 ]; then echo -n '<span color="yellow">~'
+else echo -n '<span color="red">✘'
+fi
+printf ' %d:%02d</span>\n' $hrs $mins
