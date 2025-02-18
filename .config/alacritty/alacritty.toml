@@ -2,7 +2,10 @@ import = ["~/.cache/cocyc/alacritty.toml"]
 
 [font]
 normal = { family = 'DejaVu Sans Mono' }
-size = 6.5
+size = 9.75
 
 [window]
 dimensions = { columns = 80, lines = 24 }
+
+[env]
+WINIT_X11_SCALE_FACTOR = "1"
